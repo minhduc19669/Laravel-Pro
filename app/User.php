@@ -16,10 +16,18 @@ class User extends Authenticatable
      * @var array
      */
 <<<<<<< HEAD
+
+
+=======
+<<<<<<< HEAD
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','avatar','role_id','phone','address'
     ];
 
+<<<<<<< HEAD
+
+=======
 =======
 
 
@@ -29,6 +37,7 @@ class User extends Authenticatable
 
 
 >>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -48,6 +57,9 @@ class User extends Authenticatable
     ];
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
 
 
     public function roles(){
@@ -55,5 +67,8 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role','role_user','user_id','role_id');
 
     }
+<<<<<<< HEAD
+=======
 >>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
 }

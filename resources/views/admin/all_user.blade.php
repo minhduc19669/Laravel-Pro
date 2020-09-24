@@ -28,6 +28,10 @@
                 <td>{{$user->email}}</td>
         <td><a style="margin-right: 10px" href="{{route('user.edit',$user->id)}}"><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('Bạn có chắc chắn không?')" style="margin-left: 10px" href=""><i class=" ion ion-md-close"></i></a></td>
             </tr>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
             @endforeach
             </tbody>
         </table>
