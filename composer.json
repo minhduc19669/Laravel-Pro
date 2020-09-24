@@ -13,19 +13,11 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.24",
-<<<<<<< HEAD
-        "laravel/tinker": "^2.0",
         "realrashid/sweet-alert": "^3.1",
         "spatie/laravel-permission": "^3.17"
-=======
-<<<<<<< HEAD
-        "laravel/tinker": "^2.0"
-=======
-        "laravel/tinker": "^2.0",
-        "realrashid/sweet-alert": "^3.1",
-        "spatie/laravel-permission": "^3.17"
->>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
+
+
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -17,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'LoginController@showFormLogin')->name('login');
 Route::post('login', 'LoginController@login')->name('admin.login');
 Route::get('logout','LoginController@logout')->name('admin.logout');
-<<<<<<< HEAD
 
-=======
 //login
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
 
 Route::middleware(['auth'])->group(function (){
         Route::prefix('users')->group(function(){
@@ -39,11 +37,10 @@ Route::middleware(['auth'])->group(function (){
         Route::get('product','ProductController@list')->name('product.list');
         Route::get('add-product','ProductController@add')->name('product.add');
         Route::post('save-product','ProductController@save');
-<<<<<<< HEAD
         Route::get('edit-product/{id}','ProductController@edit')->name('product.edit');
         Route::post('update-product/{id}','ProductController@update')->name('product.update');
-=======
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
+
         //Category
         Route::get('category','CategoryController@list')->name('category.list');
         Route::get('add-category','CategoryController@add')->name('category.add');
@@ -53,7 +50,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('remove-cate/{id}','CategoryController@remove');
         Route::get('active-category/{id}','CategoryController@active');
         Route::get('unactive-category/{id}','CategoryController@unactive');
-<<<<<<< HEAD
+
          //brand
         Route::get('brand','BrandController@list')->name('brand.list');
         Route::get('add-brand','BrandController@add')->name('brand.add');
@@ -63,9 +60,6 @@ Route::middleware(['auth'])->group(function (){
         Route::get('remove-brand/{id}','BrandController@remove');
         Route::get('active-brand/{id}','BrandController@active');
         Route::get('unactive-brand/{id}','BrandController@unactive');
-
-=======
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
     });
 });
 
