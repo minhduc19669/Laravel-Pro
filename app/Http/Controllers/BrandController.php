@@ -98,23 +98,19 @@ public function edit($id){
                     DB::table('brands')->where('id',$id)->update($data);
                     Alert()->success('Sửa  thành công !')->autoClose(1500);
                     return \redirect()->route('brand.list');
-<<<<<<< HEAD
                 }else{
                     DB::table('brands')->where('id',$id)->update($data);
                     Alert()->success('Sửa  thành công !')->autoClose(1500);
                     return \redirect()->route('brand.list');
                 }
             }
-=======
                 }
                 $data['brand_image'] = '';
                 DB::table('brands')->where('id',$id)->update($data);
 
                 Alert()->success('Thêm thành công !')->autoClose(1500);
-                return \redirect()->route('brand.list');        }
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+                return \redirect()->route('brand.list');
         }
-    }
 public function remove($id){
     DB::table('brands')->where('id',$id)->delete();
     Alert()->success('Xóa thành công !')->autoClose(1500);
