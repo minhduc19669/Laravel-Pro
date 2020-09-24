@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('admin_layout')
 @section('admin_content')
     <form action="{{\Illuminate\Support\Facades\URL::to('admin/save-brand')}}" method="post" enctype="multipart/form-data" class="mx-5" >
@@ -68,3 +69,6 @@
 
 
 @endsection
+=======
+<?php
+>>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
