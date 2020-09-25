@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends('admin_layout')
 @section('admin_content')
     <h4 class="header-title">Thương hiệu</h4>
@@ -37,6 +37,6 @@
     </div>
 @endsection
 
-=======
+
 <?php
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
