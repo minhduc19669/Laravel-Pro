@@ -2,15 +2,11 @@
 
 namespace App\Http;
 
-<<<<<<< HEAD
 use App\Http\Middleware\CheckAdmin;
 use App\Http\Middleware\checkker;
-=======
-<<<<<<< HEAD
-=======
-use App\Http\Middleware\CheckAdmin;
->>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
+
+
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -30,14 +26,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
     ];
 
     /**
@@ -80,13 +68,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-<<<<<<< HEAD
         'isAdmin'=>CheckAdmin::class,
-=======
-<<<<<<< HEAD
-=======
-        'isAdmin'=>CheckAdmin::class,
->>>>>>> 69558efc04f36b30aa6bbeed4512b91261b27542
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
+
     ];
 }
