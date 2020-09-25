@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends('admin_layout')
 @section('admin_content')
     @foreach($list as $key => $edit)
@@ -75,6 +75,3 @@
 
 
 @endsection
-=======
-<?php
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
