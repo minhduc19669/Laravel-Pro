@@ -2,7 +2,7 @@
 @section('admin_content')
     @foreach($edit as $key => $edit_value)
 
-        <form action="{{\Illuminate\Support\Facades\URL::to('admin/update-category/'.$edit_value->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+        <form action="{{\Illuminate\Support\Facades\URL::to('users/update-category/'.$edit_value->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Sửa  danh mục sản phẩm</h2>
         <div class="row">

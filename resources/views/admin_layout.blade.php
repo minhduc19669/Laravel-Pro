@@ -538,13 +538,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-<<<<<<< HEAD
                             <li><a href={{route('brand.add')}}>Thêm thương hiệu</a></li>
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
-=======
-                            <li><a href="layouts-dark-sidebar.html">Thêm thương hiệu</a></li>
-                            <li><a href="layouts-small-sidebar.html">Liệt kê thương hiệu</a></li>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
                         </ul>
                     </li>
 
