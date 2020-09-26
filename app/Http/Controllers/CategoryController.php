@@ -34,7 +34,7 @@ public function save(Request $request ){
           $dataView['err'] = $validator->errors()->toArray();
           echo "<pre>";
           $request ->flash();
-          return Redirect::to('admin/add-category')->withErrors($validator->errors());
+          return \redirect()->route('category.add')->withErrors($validator->errors());
 
       }else{
           $data = array();

@@ -105,11 +105,7 @@ public function edit($id){
                 }
             }
                 }
-                $data['brand_image'] = '';
-                DB::table('brands')->where('id',$id)->update($data);
 
-                Alert()->success('Thêm thành công !')->autoClose(1500);
-                return \redirect()->route('brand.list');
         }
 public function remove($id){
     DB::table('brands')->where('id',$id)->delete();
