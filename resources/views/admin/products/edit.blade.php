@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+<?php
 @extends('admin_layout');
 @section('admin_content')
        @foreach($list as $key => $edit)
-    <form action="{{\Illuminate\Support\Facades\URL::to('/admin/update-product/'.$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    < action="{{\Illuminate\Support\Facades\URL::to('/admin/update-product/'.$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm sản phẩm</h2>
         <div class="row">
@@ -122,22 +122,4 @@
                 <img class="img-fluid img-thumbnail" id="imgPreview" src="">
             </div>
         </div>
-    </form>
-       @endforeach
-    <!--    --><?php
-    //    $message = Session::get('message');
-    //    if ($message){
-    //        echo'<span class="text-alert">',$message,'</span>' ;
-    //        Session::put('message',null);
-    //    }
-    //
-    //    ?>
-
-
-
-
 @endsection
-
-=======
-<?php
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
