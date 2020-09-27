@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <form action="{{\Illuminate\Support\Facades\URL::to('admin/save-category')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{\Illuminate\Support\Facades\URL::to('users/save-category')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
         <h2>Thêm danh mục sản phẩm</h2>
@@ -33,6 +33,9 @@
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>
+                        @if ($errors->has('category_status'))
+                            <p style="color: red">{{ $errors->first('category_status') }}</p>
+                        @endif
                     </div>
 
                 </div>
