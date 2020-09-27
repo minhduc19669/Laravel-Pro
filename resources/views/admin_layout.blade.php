@@ -542,7 +542,6 @@
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-flip-horizontal"></i>
