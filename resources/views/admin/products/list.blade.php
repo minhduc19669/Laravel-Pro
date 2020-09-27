@@ -2,11 +2,13 @@
 @section('admin_content')
     <h4 class="header-title">Danh sách sản phẩm</h4>
     <a href="{{route('product.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
+
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
+
+
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Danh mục sản phẩm</th>
@@ -15,6 +17,7 @@
                 <th>Giá sản phẩm</th>
                 <th>Giảm giá sản phẩm</th>
                 <th>Ảnh sản phẩm</th>
+
                 <th>ghi chú</th>
                 <th>Trạng thái</th>
 
@@ -36,6 +39,7 @@
                     <td>{{$product->product_desc}}</td>
                     <td></td>
                     <td><a style="margin-right: 10px" href="{{\Illuminate\Support\Facades\URL::to('admin/edit-product/'.$product->id)}}"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
+
                     <td>{{$product->category_id}}</td>
                     <td>{{$product->brand_id}}</td>
                     <th>{{$product->product_content}}</th>
@@ -45,7 +49,6 @@
                     <td>{{$product->product_desc}}</td>
                     <td></td>
                     <td><a style="margin-right: 10px" href="#"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
-
                 </tr>
             @endforeach
             </tbody>
