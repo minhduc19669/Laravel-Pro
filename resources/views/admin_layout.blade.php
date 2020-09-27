@@ -540,11 +540,8 @@
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href={{route('brand.add')}}>Thêm thương hiệu</a></li>
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
-                            <li><a href="layouts-dark-sidebar.html">Thêm thương hiệu</a></li>
-                            <li><a href="layouts-small-sidebar.html">Liệt kê thương hiệu</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-flip-horizontal"></i>

@@ -7,14 +7,6 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Mã</th>
-                <th>Tên</th>
-                <th>Danh mục</th>
-                <th>Thương hiệu</th>
-                <th>Chi tiết</th>
-                <th>Giá</th>
-                <th>Giá khuyến mãi</th>
-                <th>Ảnh</th>
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Danh mục sản phẩm</th>
@@ -53,6 +45,7 @@
                     <td>{{$product->product_desc}}</td>
                     <td></td>
                     <td><a style="margin-right: 10px" href="#"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
+
                 </tr>
             @endforeach
             </tbody>

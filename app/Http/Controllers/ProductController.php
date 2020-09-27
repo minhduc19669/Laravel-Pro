@@ -69,7 +69,7 @@ class ProductController extends Controller
              $dataView['err'] = $validator->errors()->toArray();
              echo "<pre>";
              $request->flash();
-          return Redirect::to('admin/add-product')->withErrors($validator->errors());
+          return Redirect::to('users/add-product')->withErrors($validator->errors());
 
         }else{
          $data = array();
@@ -92,12 +92,12 @@ class ProductController extends Controller
              $data['product_image']=$new_image;
              DB::table('products')->insert($data);
              Session::put('message', 'thêm sản phẩm thành thành công');
-             return  Redirect::to('admin/product');
+             return  Redirect::to('users/product');
          }
          $data['product_image'] = '';
          DB::table('products')->insert($data);
              Session::put('message', 'thêm sản phẩm thành thành công');
-             return Redirect::to('admin/product');
+             return Redirect::to('users/product');
          }
     }
 }
