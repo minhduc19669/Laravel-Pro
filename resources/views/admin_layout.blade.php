@@ -538,13 +538,10 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-<<<<<<< HEAD
                             <li><a href={{route('brand.add')}}>Thêm thương hiệu</a></li>
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
-=======
                             <li><a href="layouts-dark-sidebar.html">Thêm thương hiệu</a></li>
                             <li><a href="layouts-small-sidebar.html">Liệt kê thương hiệu</a></li>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
                         </ul>
                     </li>
 
@@ -701,10 +698,8 @@
 <!--Morris Chart-->
 <script src="{{asset('assets\libs\morris-js\morris.min.js')}}"></script>
 <script src="{{asset('assets\libs\raphael\raphael.min.js')}}"></script>
-
 <!-- Dashboard init js-->
 <script src="{{asset('assets\js\pages\dashboard.init.js')}}"></script>
-
 <!-- App js -->
 <script src="{{asset('assets\js\app.min.js')}}"></script>
 <script>
@@ -713,9 +708,9 @@
         id_user.click(function (e) {
             let $this = $(this);
             document.getElementById('user-id').value = $this.attr('data-key');
-            console.log($this.attr('data-key'))
+            console.log($this.attr('data-key'));
         })
-    })
+    });
 </script>
 </body>
 </html>

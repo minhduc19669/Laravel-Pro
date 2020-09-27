@@ -1,16 +1,15 @@
-<?php
-@extends('admin_layout');
+
+@extends('admin_layout')
 @section('admin_content')
-       @foreach($list as $key => $edit)
-    < action="{{\Illuminate\Support\Facades\URL::to('/admin/update-product/'.$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{\Illuminate\Support\Facades\URL::to('/admin/save-product')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h2>Thêm sản phẩm</h2>
+        <h3>Thêm sản phẩm</h3>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="modelName">Tên sản phẩm</label>
-                        <input value="{{$edit->product_name}}" type="text" class="form-control" name="product_name" placeholder="Product Name">
+                        <input type="text" class="form-control" name="product_name" placeholder="Product Name">
                         @if ($errors->has('product_name'))
                             <p style="color: red">{{ $errors->first('product_name') }}</p>
                         @endif
@@ -19,22 +18,26 @@
                         <label  for="category" >danh mục sản phẩm </label>
                         <select name="product_cate" class="form-control">
                             @foreach($cate_product as $key => $cate)
-                                @if($cate->id == $edit->id)
-                                <option selected value="{{$cate->id}}">{{$cate->category_name}}</option>
-                                @else
-                                    <option  value="{{$cate->id}}">{{$cate->category_name}}</option>
-                                @endif
+
+
+                                <option value="{{$cate->id}}">{{$cate->category_name}}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('product_cate'))
                             <p style="color: red">{{ $errors->first('product_cate') }}</p>
                         @endif
+
+                                <option value="{{$cate->id}}">{{$cate->category_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="modelName">mã sản phẩm</label>
                         <input type="text" class="form-control" name="product_code" placeholder="Product Code">
+
+                        <input type="text" class="form-control" name="product_name" placeholder="Product Name">
                         @if ($errors->has('product_code'))
                             <p style="color: red">{{ $errors->first('product_code') }}</p>
                         @endif
@@ -50,25 +53,37 @@
                         @if ($errors->has('product_brand'))
                             <p style="color: red">{{ $errors->first('product_brand') }}</p>
                         @endif
+
+                                <option value="{{$cate->id}}">{{$cate->brand_name}}</option>
+                            @endforeach
+                        </select>
+
                     </div>
 
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="price">Giá sản phẩm</label>
+
                         <input type="number" class="form-control" min="1000" name="product_price" placeholder="Price">
+
+                        <input type="number" class="form-control" name="product_price" placeholder="Price">
+
                         @if ($errors->has('product_name'))
                             <p style="color: red">{{ $errors->first('product_price') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md">
                         <label for="price">Giá khuyến mãi sản phẩm</label>
+
                         <input type="number" min="1000" class="form-control" name="product_price_sale" placeholder="Price sale">
+
+                        <input type="number" class="form-control" name="product_price_sale" placeholder="Price">
+
                         @if ($errors->has('product_price_sale'))
                             <p style="color: red">{{ $errors->first('product_price_sale') }}</p>
                         @endif
                     </div>
-
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -91,7 +106,8 @@
                     <div class="form-group col-md-3">
                         <label for="quantity">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="product_status">
-                            <option></option>
+
+
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>
@@ -100,26 +116,30 @@
                         @endif
                     </div>
 
+
+                            <option value="0">Ẩn </option>
+                            <option value="1">Hiển thị</option>
+                        </select>
+                    </div>
+
                     <div class="form-group col-md-3">
                         <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
                         <br>
                         <input type="file" class="form-control-file" name="product_image" >
-                        @if ($errors->has('product_image'))
-                            <p style="color: red">{{ $errors->first('product_image') }}</p>
-                        @endif
+                                                @if ($errors->has('product_image'))
+                                                    <p style="color: red">{{ $errors->first('product_image') }}</p>
+                                                @endif
                     </div>
                     <div class="form-group col-md-6">
-                        <br>
+                       <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
-
-
                     </div>
-
                 </div>
-
             </div>
             <div class="col-md-4">
                 <img class="img-fluid img-thumbnail" id="imgPreview" src="">
             </div>
         </div>
+    </form>
 @endsection
+

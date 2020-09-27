@@ -1,17 +1,12 @@
 @extends('admin_layout')
 @section('admin_content')
     <h4 class="header-title">Danh sách sản phẩm</h4>
-<<<<<<< HEAD
     <a href="{{route('product.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
-=======
-    <a href="{{route('admin.add_member')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>
-<<<<<<< HEAD
                 <th>Mã</th>
                 <th>Tên</th>
                 <th>Danh mục</th>
@@ -20,7 +15,6 @@
                 <th>Giá</th>
                 <th>Giá khuyến mãi</th>
                 <th>Ảnh</th>
-=======
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Danh mục sản phẩm</th>
@@ -29,7 +23,6 @@
                 <th>Giá sản phẩm</th>
                 <th>Giảm giá sản phẩm</th>
                 <th>Ảnh sản phẩm</th>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
                 <th>ghi chú</th>
                 <th>Trạng thái</th>
 
@@ -42,7 +35,6 @@
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$product->product_code}}</td>
                     <td>{{$product->product_name}}</td>
-<<<<<<< HEAD
                     <td>{{$product->category_name}}</td>
                     <td>{{$product->brand_name}}</td>
                     <th>{{$product->product_content}}</th>
@@ -52,7 +44,6 @@
                     <td>{{$product->product_desc}}</td>
                     <td></td>
                     <td><a style="margin-right: 10px" href="{{\Illuminate\Support\Facades\URL::to('admin/edit-product/'.$product->id)}}"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
-=======
                     <td>{{$product->category_id}}</td>
                     <td>{{$product->brand_id}}</td>
                     <th>{{$product->product_content}}</th>
@@ -62,7 +53,6 @@
                     <td>{{$product->product_desc}}</td>
                     <td></td>
                     <td><a style="margin-right: 10px" href="#"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
                 </tr>
             @endforeach
             </tbody>
