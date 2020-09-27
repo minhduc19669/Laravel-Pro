@@ -542,7 +542,6 @@
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-flip-horizontal"></i>
@@ -696,10 +695,8 @@
 <!--Morris Chart-->
 <script src="{{asset('assets\libs\morris-js\morris.min.js')}}"></script>
 <script src="{{asset('assets\libs\raphael\raphael.min.js')}}"></script>
-
 <!-- Dashboard init js-->
 <script src="{{asset('assets\js\pages\dashboard.init.js')}}"></script>
-
 <!-- App js -->
 <script src="{{asset('assets\js\app.min.js')}}"></script>
 <script>
@@ -708,9 +705,9 @@
         id_user.click(function (e) {
             let $this = $(this);
             document.getElementById('user-id').value = $this.attr('data-key');
-            console.log($this.attr('data-key'))
+            console.log($this.attr('data-key'));
         })
-    })
+    });
 </script>
 </body>
 </html>
