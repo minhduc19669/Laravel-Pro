@@ -17,8 +17,6 @@ class ProductController extends Controller
             ->join('categories','categories.id','=','products.category_id')
             ->join('brands','brands.id','=','products.brand_id');
         $query->orderBy('products.id', 'asc');
-        $query = DB::table('products');
-        $query->orderBy('id', 'asc');
         $bang = $query->get();
         return view('admin.products.list', ['list' => $bang]);
     }
@@ -44,11 +42,7 @@ class ProductController extends Controller
              'product_status' => 'required',
              'product_brand' => 'required',
              'product_cate' => 'required',
-             'product_price' =>'required|min:1000',
-             'product_price_sale'=>'required|min:1000',
-             'product_content'=> 'required|min:1000',
-             'product_desc' => 'required|min:1000',
-             'product_image' => 'required|image',
+
          ];
          $msg = [
             'product_name.required' => 'bạn cần nhập tên vào',
@@ -88,7 +82,6 @@ class ProductController extends Controller
              $name_image = current(explode('.',$get_name_image));
              $new_image =  $name_image . rand(0,99) . '.' .$get_image->getClientOriginalExtension();
              $get_image->move('product',$new_image);
-             $get_image->move('public\upaload\product',$new_image);
              $data['product_image']=$new_image;
              DB::table('products')->insert($data);
              Session::put('message', 'thêm sản phẩm thành thành công');

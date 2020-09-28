@@ -1,9 +1,12 @@
-
-@extends('admin_layout')
+@extends('admin_layout');
 @section('admin_content')
-    <form action="{{\Illuminate\Support\Facades\URL::to('/admin/save-product')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+       @foreach($list as $key => $edit)
+    <form action="{{\Illuminate\Support\Facades\URL::to('users/update-product/'.$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h3>Thêm sản phẩm</h3>
+        <h2>Sửa sản phẩm</h2>
+
+
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
@@ -141,5 +144,7 @@
             </div>
         </div>
     </form>
+       @endforeach
+
 @endsection
 
