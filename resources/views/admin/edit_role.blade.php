@@ -16,7 +16,7 @@
                         <div class="form-check">
                         <input {{$permissionsOfRole->contains($item->id) ? 'checked' : ''}} name="permission[]" class="form-check-input" type="checkbox" value="{{$item->id}}" id="defaultCheck1">
             <label class="form-check-label" for="defaultCheck1">
-    {{$item->per_name}}
+    {{$item->display_name}}
   </label>
 </div>
                         @endforeach

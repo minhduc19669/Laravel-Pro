@@ -25,19 +25,19 @@ Route::middleware(['auth'])->group(function (){
         Route::prefix('users')->group(function(){
             //user
             Route::get('dashboard','UserController@dashboard')->name('admin.dashboard');
-            Route::get('list','UserController@index')->name('user.list');
-            Route::get('add','UserController@create')->name('user.create');
+            Route::get('list','UserController@index')->middleware('isAdmin:user-list')->name('user.list');
+            Route::get('add','UserController@create')->middleware('isAdmin:user-add')->name('user.create');
             Route::post('store', 'UserController@store')->name('user.store');
-            Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
+            Route::get('edit/{id}', 'UserController@edit')->middleware('isAdmin:user-edit')->name('user.edit');
             Route::post('update/{id}', 'UserController@update')->name('user.update');
             Route::post('change','UserController@changeRole')->name('user.changeRole');
             Route::post('upload/{id}','UserController@uploadCover')->name('user.upload');
-            Route::get('delete/{id}','UserController@delete')->name('user.delete');
+            Route::get('delete/{id}','UserController@delete')->middleware('isAdmin:user-delete')->name('user.delete');
             //Role
             Route::prefix('role')->group(function(){
-                Route::get('list','RoleController@index')->name('role.index');
-            Route::get('create', 'RoleController@create')->name('role.create');
-            Route::get('edit/{id}', 'RoleController@edit')->name('role.edit');
+                Route::get('list','RoleController@index')->middleware('isAdmin:role-list')->name('role.index');
+            Route::get('create', 'RoleController@create')->middleware('isAdmin:role-add')->name('role.create');
+            Route::get('edit/{id}', 'RoleController@edit')->middleware('isAdmin:role-edit')->name('role.edit');
             Route::post('update/{id}', 'RoleController@update')->name('role.update');
             Route::post('store', 'RoleController@store')->name('role.store');
             Route::get('delete/{id}', 'RoleController@delete')->name('role.delete');

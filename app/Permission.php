@@ -9,7 +9,9 @@ class Permission extends Model
     //
 
     protected $table='permissions';
+    protected $fillable = ['per_name', 'display_name'];
     public function roles(){
         return $this->belongsToMany('App\Role','role_permission','role_id', 'permission_id');
     }
+
 }
