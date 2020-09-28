@@ -120,9 +120,9 @@
                                     <hr/>
                                     <hr/>
                                     <div class="row" style="margin-left: 400px">
-                                        <button onclick="goBack()" class="btn btn-secondary waves-effect">
+                                    <a href="{{route('user.list')}}" class="btn btn-secondary waves-effect">
                                 Trở về
-                            </button>
+                            </a>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel"
@@ -226,10 +226,5 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-    <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
     <!-- /.modal
 @endsection
