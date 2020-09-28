@@ -63,6 +63,20 @@ class RoleController extends Controller
         }
     }
     public function delete($id){
-
+        try {
+            DB::beginTransaction();
+            $role = Role::find($id);
+            //delete user of role_user_table
+            //delete role_user
+            $role->permissions()->detach();
+            $role->delete();
+            DB::commit();
+            Alert()->success('Xóa thành công!')->autoClose(1500);
+            return \redirect()->route('role.index');
+        } catch (\Exception $e) {
+            \abort(403);
+            DB::rollBack();
+            Log::error($e->getMessage() . $e->getLine());
+        }
     }
 }
