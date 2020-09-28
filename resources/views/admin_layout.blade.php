@@ -574,7 +574,7 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('user.list')}}">Quản lí thành viên</a></li>
-                            <li><a href="">Them chuc vu</a></li>
+                        <li><a href="{{ route('role.index') }}">Chức vụ</a></li>
 
                         </ul>
                     </li>

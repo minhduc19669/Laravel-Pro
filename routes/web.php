@@ -33,7 +33,19 @@ Route::middleware(['auth'])->group(function (){
             Route::post('change','UserController@changeRole')->name('user.changeRole');
             Route::post('upload/{id}','UserController@uploadCover')->name('user.upload');
             Route::get('delete/{id}','UserController@delete')->name('user.delete');
-            // Route::post('updateRole/{id}')
+            //Role
+            Route::prefix('role')->group(function(){
+                Route::get('list','RoleController@index')->name('role.index');
+            Route::get('create', 'RoleController@create')->name('role.create');
+            Route::get('edit/{id}', 'RoleController@edit')->name('role.edit');
+            Route::post('update/{id}', 'RoleController@update')->name('role.update');
+            Route::post('store', 'RoleController@store')->name('role.store');
+            Route::get('delete/{id}', 'RoleController@delete')->name('role.delete');
+            });
+
+
+
+
         //product
         Route::get('product','ProductController@list')->name('product.list');
         Route::get('add-product','ProductController@add')->name('product.add');
