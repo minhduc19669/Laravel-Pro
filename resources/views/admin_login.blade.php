@@ -45,6 +45,9 @@
                             <input id="submit" type="password" name="password">
                         </td>
                     </tr>
+                    @if(Session::get('mess'))
+                <span>{{Session::get('mess')}}</span>
+                @endif
                 </table>
                 <b style="color: red;"></b>
                 <input id="btndangnhap" type="submit" name="login" value="Login">

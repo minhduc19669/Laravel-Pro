@@ -90,13 +90,16 @@ class UserController extends Controller
     public function delete($id){
         try {
             DB::beginTransaction();
-            $user=User::findOrFail($id)->delete();
+            $user=User::find($id);
             //delete user of role_user_table
+            //delete role_user
             $user->roles()->detach();
+            $user->delete();
             DB::commit();
-            Alert()->success('Thêm thành công !')->autoClose(1500);
+            Alert()->success('Xóa thành công!')->autoClose(1500);
             return \redirect()->route('user.list');
         } catch (\Exception $e) {
+            \abort(403);
             DB::rollBack();
         }
     }
