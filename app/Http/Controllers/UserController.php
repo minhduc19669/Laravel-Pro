@@ -86,5 +86,19 @@ class UserController extends Controller
         alert('Cập nhập thành công', 'Successfully', 'success')->autoClose(1500);
         return redirect()->back();
     }
+
+    public function delete($id){
+        try {
+            DB::beginTransaction();
+            $user=User::findOrFail($id)->delete();
+            //delete user of role_user_table
+            $user->roles()->detach();
+            DB::commit();
+            Alert()->success('Thêm thành công !')->autoClose(1500);
+            return \redirect()->route('user.list');
+        } catch (\Exception $e) {
+            DB::rollBack();
+        }
+    }
 }
 

@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function (){
             Route::post('update/{id}', 'UserController@update')->name('user.update');
             Route::post('change','UserController@changeRole')->name('user.changeRole');
             Route::post('upload/{id}','UserController@uploadCover')->name('user.upload');
+            Route::get('delete/{id}','UserController@delete')->name('user.delete');
             // Route::post('updateRole/{id}')
         //product
         Route::get('product','ProductController@list')->name('product.list');
