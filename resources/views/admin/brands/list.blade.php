@@ -17,14 +17,13 @@
             </thead>
             <tbody>
             @foreach($list as $key => $brand )
-
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$brand->brand_name}}</td>
                     <td><img width="50px" src="\brand\{{$brand->brand_image}}"></td>
                     <td>{{$brand->brand_desc}}</td>
                     @if($brand->brand_status==0)
-                        <td><a href={{\Illuminate\Support\Facades\URL::to('/users/unactive-brand/'.$brand->id)}}><i style="color: red" class="fas fa-smile-wink"></i></a></td>
+                        <td><a href={{\Illuminate\Support\Facades\URL::to('/users/unactive-brand/'.$brand->id)}}><i style="color: #ff0000" class="fas fa-smile-wink"></i></a></td>
                     @else
                         <td><a href={{\Illuminate\Support\Facades\URL::to('/users/active-brand/'.$brand->id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
 
@@ -36,6 +35,5 @@
         </table>
     </div>
 @endsection
-
 
 

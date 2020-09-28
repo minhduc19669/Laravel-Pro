@@ -20,7 +20,7 @@
                         <label  for="category" >Danh mục sản phẩm </label>
                         <select name="product_cate" class="form-control">
                             @foreach($cate_product as $key => $cate)
-
+                                <option></option>
                                 <option value="{{$cate->id}}">{{$cate->category_name}}</option>
                             @endforeach
                         </select>
@@ -32,7 +32,7 @@
                         <label  for="brand" >Thương hiệu sản phẩm</label>
                         <select name="product_brand" class="form-control">
                             @foreach($brand_product as $key => $cate)
-
+                                <option></option>
                                 <option value="{{$cate->id}}">{{$cate->brand_name}}</option>
                             @endforeach
                         </select>
@@ -55,7 +55,7 @@
                         <label for="price">Giá sản phẩm</label>
                         <input type="number" class="form-control" min="1000" name="product_price" placeholder="Price">
 
-                        @if ($errors->has('product_name'))
+                        @if ($errors->has('product_price'))
                             <p style="color: red">{{ $errors->first('product_price') }}</p>
                         @endif
                     </div>
@@ -79,7 +79,7 @@
                         <label for="modelName">Chi tiết sản phẩm</label>
                         <input type="text" class="form-control" name="product_content" placeholder="Content">
                         @if ($errors->has('product_content'))
-                            <p style="color: red">{{ $errors->first('product_name') }}</p>
+                            <p style="color: red">{{ $errors->first('product_content') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md-4">

@@ -39,7 +39,10 @@ Route::middleware(['auth'])->group(function (){
         Route::get('add-product','ProductController@add')->name('product.add');
         Route::post('save-product','ProductController@save');
         Route::get('edit-product/{id}','ProductController@edit')->name('product.edit');
-        Route::post('update-product/{id}','ProductController@update')->name('product.update');
+        Route::post('update-product/{id}','ProductController@update');
+        Route::get('remove-product/{id}','ProductController@remove');
+        Route::get('active-product/{id}','ProductController@active');
+        Route::get('unactive-product/{id}','ProductController@unactive');
         //Category
         Route::get('category','CategoryController@list')->name('category.list');
         Route::get('add-category','CategoryController@add')->name('category.add');
