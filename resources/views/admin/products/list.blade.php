@@ -36,7 +36,7 @@
                     <td><img width="50px" src="\product\{{$product->product_image}}"> </td>
                     <td>{{$product->product_desc}}</td>
                     <td></td>
-                    <td><a style="margin-right: 10px" href="{{\Illuminate\Support\Facades\URL::to('admin/edit-product/'.$product->id)}}"><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
+                    <td><a style="margin-right: 10px" href={{\Illuminate\Support\Facades\URL::to('users/edit-product/'.$product->id)}}><i class=" ion ion-md-color-filter"></i></a>|<a style="margin-left: 10px" href="#"><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>
