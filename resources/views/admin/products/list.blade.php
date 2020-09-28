@@ -7,6 +7,7 @@
         <table class="table mb-0">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Danh mục sản phẩm</th>
@@ -15,7 +16,6 @@
                 <th>Giá sản phẩm</th>
                 <th>Giảm giá sản phẩm</th>
                 <th>Ảnh sản phẩm</th>
-
                 <th>ghi chú</th>
                 <th>Trạng thái</th>
 
@@ -23,7 +23,6 @@
             </thead>
             <tbody>
             @foreach($list as $key => $product )
-
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$product->product_code}}</td>

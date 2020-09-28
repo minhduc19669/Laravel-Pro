@@ -36,6 +36,7 @@
                     <div class="form-group col-md-4">
                         <label for="modelName">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="brand_status">
+                            <option></option>
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>

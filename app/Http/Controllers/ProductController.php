@@ -16,7 +16,7 @@ class ProductController extends Controller
         $query = DB::table('products')
             ->join('categories','categories.id','=','products.category_id')
             ->join('brands','brands.id','=','products.brand_id');
-        $query->orderBy('products.id', 'asc');
+        $query->orderBy('products.id', 'desc');
         $bang = $query->get();
         return view('admin.products.list', ['list' => $bang]);
     }
