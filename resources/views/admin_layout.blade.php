@@ -549,8 +549,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="layouts-dark-sidebar.html">Quản lí mã giảm giá</a></li>
-                            <li><a href="layouts-small-sidebar.html">Danh sách mã giảm giá</a></li>
+                            <li><a href="">Quản lí mã giảm giá</a></li>
+                        <li><a href="{{ route('coupon.list') }}">Danh sách mã giảm giá</a></li>
                         </ul>
                     </li>
 
