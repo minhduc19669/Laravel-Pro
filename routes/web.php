@@ -17,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'LoginController@showFormLogin')->name('login');
 Route::post('login', 'LoginController@login')->name('admin.login');
 Route::get('logout','LoginController@logout')->name('admin.logout');
-
 //login
-
-
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
@@ -67,7 +64,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-category/{id}', 'CategoryController@active');
             Route::get('unactive-category/{id}', 'CategoryController@unactive');
         });
-
+//brand
         Route::middleware('isAdmin:category')->group(function () {
             Route::get('brand', 'BrandController@list')->name('brand.list');
             Route::get('add-brand', 'BrandController@add')->name('brand.add');
@@ -77,11 +74,18 @@ Route::middleware(['auth'])->group(function (){
             Route::get('remove-brand/{id}', 'BrandController@remove');
             Route::get('active-brand/{id}', 'BrandController@active');
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
+        });
+    });
+            Route::get('newscategory','NewscategoryController@list')->name('newscategory.list');
+            Route::get('add-newscategory','NewscategoryController@add')->name('newscategory.add');
+            Route::post('save-newscategory','NewscategoryController@save');
+            Route::get('edit-newscategory/{id}','NewscategoryController@edit')->name('newscategory.edit');
+            Route::post('update-newscategory/{id}','NewscategoryController@update');
+            Route::get('remove-newscategory/{id}','NewscategoryController@remove');
+            Route::get('active-newscategory/{id}','NewscategoryController@active');
+            Route::get('unactive-newscategory/{id}','NewscategoryController@unactive');
 
         });
-         //brand
-
-    });
 });
 
 
