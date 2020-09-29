@@ -14,11 +14,10 @@
                         <label>Quyền hạn(*):</label>
                         @foreach ($permissions as $item)
                         <div class="form-check">
-                        <input name="permission[]" class="form-check-input" type="checkbox" value="{{$item->id}}" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-    {{$item->per_name}}
-  </label>
-</div>
+                           <input name="permission[]" class="form-check-input" type="checkbox" value="{{$item->id}}"  id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                                {{$item->display_name}}</label>
+                        </div>
                         @endforeach
                     </div>
                     <div class="form-group">

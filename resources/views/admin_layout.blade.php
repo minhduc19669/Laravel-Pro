@@ -218,7 +218,11 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
                    href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset("storage/images/".Auth::user()->avatar)}}" alt="user-image" class="rounded-circle">
+                   @if(Auth::user()->avatar)
+                    <img src="{{asset("storage/images/".Auth::user()->avatar)}}" alt="" class="rounded-circle">
+                    @else
+                    <img src="https://lh3.googleusercontent.com/proxy/V5nUtAbyab_yqhuEZM0ypjrZdRpcK-k_lh3Z7HQCRZUAAMeT5poS47XKClSPr4JoZOGlFFRVDDFE5hfn4d6rzllbfqOTOGjIs_GfSK8uKs1KioSKRbVsMiZ-9bnJGyJUB9dgdaJg9FBwsftD" alt="" class="rounded-circle">
+                    @endif
                     <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}
                         </span>
                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
@@ -533,11 +537,11 @@
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-puzzle-outline"></i>
-                            <span> danh mục sản phẩm </span>
+                            <span> Danh mục sản phẩm </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="{{route('category.add')}}">thêm danh mục</a></li>
+                            <li><a href="{{route('category.add')}}">Thêm danh mục</a></li>
                             <li><a href={{route('category.list')}}>Liệt kê danh mục</a></li>
                         </ul>
                     </li>
@@ -560,8 +564,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="layouts-dark-sidebar.html">Quản lí mã giảm giá</a></li>
-                            <li><a href="layouts-small-sidebar.html">Danh sách mã giảm giá</a></li>
+                            <li><a href="">Quản lí mã giảm giá</a></li>
+                        <li><a href="{{ route('coupon.list') }}">Danh sách mã giảm giá</a></li>
                         </ul>
                     </li>
 
@@ -585,7 +589,7 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('user.list')}}">Quản lí thành viên</a></li>
-                        <li><a href="{{ route('role.index') }}">Chức vụ</a></li>
+                        <li><a href="{{ route('role.index') }}">Quản lí chức vụ</a></li>
 
                         </ul>
                     </li>

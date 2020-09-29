@@ -54,7 +54,7 @@ class RoleController extends Controller
             $permissions = $request->permission;
             Role::find($id)->permissions()->attach($permissions);
             DB::commit();
-            Alert()->success('Thêm thành công !')->autoClose(1500);
+            Alert()->success('Cập nhật thành công !')->autoClose(1500);
             return \redirect()->route('role.index');
         } catch (\Exception $e) {
             Alert()->error('Thêm thất bại !')->autoClose(1500);
