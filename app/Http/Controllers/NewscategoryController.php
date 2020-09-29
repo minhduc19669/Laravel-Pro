@@ -38,12 +38,38 @@ class NewscategoryController extends Controller
         return view('admin.newscategory.edit',['newscategory'=>$newscategory]);
     }
     public function update(ValidateFormUpdateNewscategory $request,$id){
+        DB::beginTransaction();
         Newscategory::find($id)->update([
             'news_cate_title' => $request->news_cate_title,
             'news_cate_desc' => $request->news_cate_desc,
             'news_cate_status' => $request->news_cate_status
         ]);
+        DB::commit();
         Alert()->success('sửa  thành công !')->autoClose(1500);
-        return \redirect()->back();
+        return \redirect()->route('newscategory.list');
     }
+    public function remove($id){
+        DB::beginTransaction();
+         Newscategory::find($id)->delete();
+        DB::commit();
+            Alert()->success('Xóa thành công!')->autoClose(1500);
+            return \redirect()->route('newscategory.list');
+
+    }
+    public function active($id){
+          DB::beginTransaction();
+          Newscategory::find($id)->update(['news_cate_status'=>0]);
+          DB::commit();
+        Alert()->success('hủy kích hoạt thành công!')->autoClose(1500);
+        return \redirect()->route('newscategory.list');
+    }
+    public function unactive($id){
+        DB::beginTransaction();
+        Newscategory::find($id)->update(['news_cate_status'=>1]);
+        DB::commit();
+        Alert()->success('kích hoạt thành công!')->autoClose(1500);
+        return \redirect()->route('newscategory.list');
+    }
+
 }
+

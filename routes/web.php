@@ -75,6 +75,9 @@ Route::middleware(['auth'])->group(function (){
             Route::post('save-newscategory','NewscategoryController@save');
             Route::get('edit-newscategory/{id}','NewscategoryController@edit')->name('newscategory.edit');
             Route::post('update-newscategory/{id}','NewscategoryController@update');
+            Route::get('remove-newscategory/{id}','NewscategoryController@remove');
+            Route::get('active-newscategory/{id}','NewscategoryController@active');
+            Route::get('unactive-newscategory/{id}','NewscategoryController@unactive');
 
         });
 });
