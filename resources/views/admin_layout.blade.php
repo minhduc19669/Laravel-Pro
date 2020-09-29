@@ -506,12 +506,12 @@
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-black-mesa"></i>
-                            <span> Danh mục </span>
+                            <span> Danh mục tin tức </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="icons-materialdesign.html">Material Design</a></li>
-                            <li><a href="icons-ionicons.html">Ion Icons</a></li>
+                            <li><a href={{route('newscategory.add')}} >Thêm danh mục</a></li>
+                            <li><a href={{route('newscategory.list')}}>Liệt kê danh mục</a></li>
                         </ul>
                     </li>
 
