@@ -104,7 +104,6 @@
                                         </div>
                                         @if($role_user)
                                         <div class="col-md-8 col-6">
-
                                             @foreach ($user->roles as $role)
                                                 {{$role->role_name}}<br>
                                             @endforeach
