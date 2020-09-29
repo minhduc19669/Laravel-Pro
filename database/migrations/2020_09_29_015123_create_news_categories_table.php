@@ -17,7 +17,7 @@ class CreateNewsCategoriesTable extends Migration
             $table->id();
             $table->string('news_cate_title');
             $table->string('news_cate_desc');
-            $table->string('news_cate_status');
+            $table->integer('news_cate_status');
             $table->timestamps();
         });
     }

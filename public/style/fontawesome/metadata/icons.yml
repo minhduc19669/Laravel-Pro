@@ -7765,7 +7765,7 @@ hacker-news:
   changes:
     - '4.1'
     - 5.0.0
-  label: Hacker News
+  label: Hacker news
   search:
     terms: []
   styles:
@@ -7775,7 +7775,7 @@ hacker-news:
 hacker-news-square:
   changes:
     - 5.0.0
-  label: Hacker News Square
+  label: Hacker news Square
   search:
     terms: []
   styles:
