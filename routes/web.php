@@ -21,8 +21,9 @@ Route::get('logout','LoginController@logout')->name('admin.logout');
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
-        Route::get('dashboard', 'UserController@dashboard')->name('admin.dashboard');
-            Route::middleware('isAdmin:admin')->group(function(){
+
+    Route::get('dashboard', 'UserController@dashboard')->name('admin.dashboard');
+        Route::middleware('isAdmin:admin')->group(function(){
             Route::get('list', 'UserController@index')->name('user.list');
             Route::get('add', 'UserController@create')->name('user.create');
             Route::post('store', 'UserController@store')->name('user.store');
@@ -52,6 +53,15 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-product/{id}', 'ProductController@active');
             Route::get('unactive-product/{id}', 'ProductController@unactive');
         });
+		//Sale-code
+
+		Route::prefix('coupon')->group(function(){
+			Route::get('list','CouponController@index')->name('coupon.list');
+
+
+
+		});
+
 
         //Category
         Route::middleware('isAdmin:category')->group(function(){

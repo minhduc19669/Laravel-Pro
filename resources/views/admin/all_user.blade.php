@@ -27,9 +27,14 @@
                                          style="width: 100px; height: 100px" class="img-thumbnail"/>
                                 @endif</td>
                 <td>{{$user->email}}</td>
-                <td>@foreach ($user->roles as $role)
+                <td>
+                            @foreach ($user->roles as $role)
+
                                                 {{$role->role_name}}<br>
-                                            @endforeach</td>
+
+                                            @endforeach
+                </td>
+
                 <td><a style="margin-right: 10px" href="{{route('user.edit',$user->id)}}"><i class=" ion ion-md-color-filter"></i></a>|
                     @if (Auth::id()==$user->id)
                         <a style="pointer-events: none;cursor:default; color:black;" onclick="return confirm('Bạn có chắc chắn không?')" style="margin-left: 10px" href="{{route('user.delete',$user->id)}}"><i class=" ion ion-md-close"></i></a>
