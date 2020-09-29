@@ -105,7 +105,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('unactive-news/{id}','NewsController@unactive');
         });
 
-});
 
 
 

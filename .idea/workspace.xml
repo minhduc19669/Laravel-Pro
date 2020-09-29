@@ -21,13 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_015123_create_news_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_29_015123_create_news_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style/fontawesome/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/fontawesome/metadata/icons.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/News/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/News/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/News/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +200,7 @@
       <workItem from="1601190645597" duration="982000" />
       <workItem from="1601273120945" duration="6700000" />
       <workItem from="1601343057251" duration="11757000" />
-      <workItem from="1601359657747" duration="13139000" />
+      <workItem from="1601359657747" duration="13721000" />
     </task>
     <servers />
   </component>
