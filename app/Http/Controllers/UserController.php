@@ -51,7 +51,6 @@ class UserController extends Controller
         $roles=Role::all();
         $role_user=[];
         $listRoleUser=RoleUser::where('user_id',$id)->pluck('role_id');
-
         foreach($user->roles as $role){
             $role_user[]=$role->role_name;
         }
@@ -99,7 +98,7 @@ class UserController extends Controller
             Alert()->success('Xóa thành công!')->autoClose(1500);
             return \redirect()->route('user.list');
         } catch (\Exception $e) {
-            \abort(403);
+            \var_dump($e->getMessage());
             DB::rollBack();
         }
     }
