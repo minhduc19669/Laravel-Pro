@@ -15,7 +15,7 @@ class AddColumnNickNameOnRolesTable extends Migration
     {
         //
         Schema::table('roles', function (Blueprint $table) {
-            $table->string('nick_name')->after('role_name')->default(null);
+            $table->string('nick_name')->after('role_name')->nullable();
         });
     }
 

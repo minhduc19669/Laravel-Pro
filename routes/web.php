@@ -85,7 +85,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-newscategory/{id}','NewscategoryController@active');
             Route::get('unactive-newscategory/{id}','NewscategoryController@unactive');
 
-        });
 });
 
 
