@@ -13,15 +13,17 @@ class CouponController extends Controller
     }
     public function create(){
 
+        return \view('admin.coupons.add');
     }
     public function store(Request $request){
-
+        //code o day
     }
     public function edit($id){
-
+        $coupon=Coupon::find($id);
+        return \view('admin.coupons.edit',\compact('$coupon'));
     }
     public function update(Request $request,$id){
-
+        //code o day
     }
 
 }
