@@ -94,6 +94,16 @@ Route::middleware(['auth'])->group(function (){
             Route::get('remove-newscategory/{id}','NewscategoryController@remove');
             Route::get('active-newscategory/{id}','NewscategoryController@active');
             Route::get('unactive-newscategory/{id}','NewscategoryController@unactive');
+            //news
+            Route::get('news','NewsController@index')->name('news.list');
+            Route::get('add-news','NewsController@add')->name('news.add');
+            Route::post('save-news','NewsController@save');
+            Route::get('edit-news/{id}','NewsController@edit')->name('news.edit');
+            Route::post('update-news/{id}','NewsController@update');
+            Route::get('romove-news/{id}','NewsController@remove')->name('news.remove');
+            Route::get('active-news/{id}','NewsController@active');
+            Route::get('unactive-news/{id}','NewsController@unactive');
+        });
 
 });
 

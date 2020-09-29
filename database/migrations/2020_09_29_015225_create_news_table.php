@@ -14,16 +14,16 @@ class CreateNewsTable extends Migration
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {
-            $table->id();
+            $table->id('news_id');
             $table->string('news_title');
             $table->unsignedBigInteger('news_cate_id');
             $table->foreign('news_cate_id')->references('id')->on('news_categories');
             $table->string('news_content');
             $table->string('news_image');
             $table->string('news_desc');
-            $table->string('news_view');
-            $table->string('news_date');
-            $table->string('news_status');
+            $table->integer('news_view');
+            $table->date('news_date');
+            $table->integer('news_status');
             $table->timestamps();
         });
     }

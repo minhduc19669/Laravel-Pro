@@ -509,7 +509,7 @@
 
                     <li>
                         <a href="javascript: void(0);">
-                            <i class="mdi mdi-black-mesa"></i>
+                            <i class="mdi mdi-book-open-page-variant"></i>
                             <span> Danh mục tin tức </span>
                             <span class="menu-arrow"></span>
                         </a>
@@ -518,6 +518,21 @@
                             <li><a href={{route('newscategory.list')}}>Liệt kê danh mục</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-book-open"></i>
+                            <span> Tin tức </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href={{route('news.add')}} >Thêm tin tức</a></li>
+                            <li><a href={{route('news.list')}}>Liệt kê tin tức</a></li>
+                        </ul>
+                    </li>
+
+
+
+
 
                     <li>
                         <a href="javascript: void(0);">
