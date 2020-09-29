@@ -24,15 +24,14 @@ class CheckAdmin
 
 
         //lay tat ca cac role khi user login vao he thong
-        $listRoleOfUser1=DB::table('users')->join('role_user','users.id','=','role_user.user_id')->join('roles','role_user.role_id','=','roles.id')->where('users.id', Auth::id())->select('roles.*')->get()->pluck('id')->toArray();
-
+        $listRoleOfUser1=DB::table('users')->join('role_user','users.id','=','role_user.user_id')->join('roles','role_user.role_id','=','roles.id')->where('users.id', Auth::id())->select('roles.*')->get()->pluck('id');
 
         //lay tat ca cac permission khi user login vao he thong
-        $listRoleOfUser=DB::table('roles')->join('role_permission','roles.id','=','role_permission.role_id')->join('permissions','role_permission.permission_id','=','permissions.id')->whereIn('roles.id', $listRoleOfUser1)->select('permissions.*')->get()->pluck('id');
+        // $listRoleOfUser=DB::table('roles')->join('role_permission','roles.id','=','role_permission.role_id')->join('permissions','role_permission.permission_id','=','permissions.id')->whereIn('roles.id', $listRoleOfUser1)->select('permissions.*')->get()->pluck('id');
         //lay cac man hinh tuong ung voi user
             $checkPermission = DB::table('roles')->where("nick_name", $permission)->value('id');
         // die();
-        if ($listRoleOfUser->contains($checkPermission)) {
+        if ($listRoleOfUser1->contains($checkPermission)) {
                 return $next($request);
             }
             abort(403, 'Oops ! Bạn không có quyền thực hiện thao tác này!');
