@@ -55,10 +55,13 @@ Route::middleware(['auth'])->group(function (){
 		//Sale-code
 
 		Route::prefix('coupon')->group(function(){
-			Route::get('list','CouponController@index')->name('coupon.list');
+            Route::get('list','CouponController@index')->name('coupon.list');
+            Route::get('create','CouponController@create')->name('coupon.create');
+            Route::get('edit/{id}', 'CouponController@edit')->name('coupon.edit');
+            Route::post('store', 'CouponController@store')->name('coupon.store');
+            Route::post('update/{id}', 'CouponController@update')->name('coupon.update');
+            Route::get('delete/{id}', 'CouponController@delete')->name('coupon.delete');
 		});
-
-
         //Category
         Route::middleware('isAdmin:category')->group(function(){
             Route::get('category', 'CategoryController@list')->name('category.list');
@@ -81,7 +84,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-brand/{id}', 'BrandController@active');
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
         });
-    });
            //newscategory
             Route::get('newscategory','NewscategoryController@list')->name('newscategory.list');
             Route::get('add-newscategory','NewscategoryController@add')->name('newscategory.add');
@@ -101,6 +103,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-news/{id}','NewsController@active');
             Route::get('unactive-news/{id}','NewsController@unactive');
         });
+});
+
 
 
 
