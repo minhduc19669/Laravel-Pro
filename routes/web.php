@@ -112,6 +112,10 @@ Route::middleware(['auth'])->group(function (){
             Route::get('remove-slide/{id}','SlideController@remove')->name('slide.remove');
             Route::get('active-slide/{id}','SlideController@active')->name('slide.active');
             Route::get('unactive-slide/{id}','SlideController@unactive')->name('slide.unactive');
+             //order
+              Route::get('order','OrderController@list')->name('order.list');
+              Route::get('add-order','OrderController@add')->name('order.add');
+               Route::post('save-order','OrderController@save')->name('order.save');
 
     });
 
