@@ -120,7 +120,7 @@
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="" class="dropdown-item notify-item">
                             <div class="notify-icon bg-secondary">
                                 <i class="mdi mdi-heart"></i>
                             </div>
@@ -234,7 +234,7 @@
                     </div>
 
                     <!-- item-->
-                    <a href="" class="dropdown-item notify-item">
+                    <a href="{{route('user.edit',Auth::id())}}" class="dropdown-item notify-item">
                         <i class="mdi mdi-account-outline"></i>
                         <span>Profile</span>
                     </a>
@@ -272,10 +272,10 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="index.html" class="logo text-center logo-dark">
+        <a href="{{route('admin.dashboard')}}" class="logo text-center logo-dark">
                         <span class="logo-lg">
-{{--                            <img src="{{asset('assets\images\logo.png')}}" alt="" height="22">--}}
-                           <span class="logo-lg-text-dark">ADMIN</span>
+                           <img src="{{asset('assets\images\vnext.png')}}" alt="" width="100" height="60">
+                           {{-- <span class="logo-lg-text-dark">VNEXT</span> --}}
                         </span>
                 <span class="logo-sm">
                             <!-- <span class="logo-lg-text-dark">U</span> -->
