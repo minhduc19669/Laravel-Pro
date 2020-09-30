@@ -489,7 +489,7 @@
                             <span> Đơn hàng </span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="layouts-dark-sidebar.html">Quản lí đơn hàng</a></li>
+                            <li><a href={{route('order.list')}}>Quản lí đơn hàng</a></li>
                         </ul>
                     </li>
 
@@ -522,6 +522,8 @@
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-book-open"></i>
                             <span> Tin tức </span>
+                            <span style="margin-right: 30px"
+                                  class="badge badge-danger badge-pill float-right">New</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
