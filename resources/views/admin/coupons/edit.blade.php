@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="mt-4">
-                <h4 class="header-title">*Thêm mã giảm giá</h4>
+                <h4 class="header-title">*Sửa mã giảm giá</h4>
                 <form class="form-horizontal parsley-examples" action="{{route('coupon.update',$coupon->id)}}" method="post">
 				@csrf
                     <div class="form-group">
