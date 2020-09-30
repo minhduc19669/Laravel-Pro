@@ -82,7 +82,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-brand/{id}', 'BrandController@active');
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
         });
-
+    });
+           //newscategory
             Route::get('newscategory','NewscategoryController@list')->name('newscategory.list');
             Route::get('add-newscategory','NewscategoryController@add')->name('newscategory.add');
             Route::post('save-newscategory','NewscategoryController@save');
