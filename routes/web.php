@@ -102,10 +102,21 @@ Route::middleware(['auth'])->group(function (){
             Route::get('romove-news/{id}','NewsController@remove')->name('news.remove');
             Route::get('active-news/{id}','NewsController@active');
             Route::get('unactive-news/{id}','NewsController@unactive');
-        });
+            //slide
+            Route::get('slide','SlideController@list')->name('slide.list');
+            Route::get('add-slide','SlideController@add')->name('slide.add');
+            Route::post('save-slide','SlideController@save')->name('slide.save');
+            Route::get('add-slide','SlideController@add')->name('slide.add');
+            Route::get('edit-slide/{id}','SlideController@edit')->name('slide.edit');
+            Route::post('update-slide/{id}','SlideController@update')->name('slide.update');
+            Route::get('remove-slide/{id}','SlideController@remove')->name('slide.remove');
+            Route::get('active-slide/{id}','SlideController@active')->name('slide.active');
+            Route::get('unactive-slide/{id}','SlideController@unactive')->name('slide.unactive');
+
+    });
+
+
 });
-
-
 
 
 

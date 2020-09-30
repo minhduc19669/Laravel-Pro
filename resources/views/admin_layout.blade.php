@@ -478,8 +478,8 @@
                                 <span> Slider </span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="layouts-dark-sidebar.html">Liệt kê slide</a></li>
-                                <li><a href="layouts-small-sidebar.html">Thêm slide</a></li>
+                                <li><a href={{route('slide.add')}}>Thêm slide</a></li>
+                                <li><a href={{route('slide.list')}}>Liệt kê slide</a></li>
                             </ul>
                         </li>
 
