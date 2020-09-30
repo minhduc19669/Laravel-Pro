@@ -21,7 +21,6 @@ Route::get('logout','LoginController@logout')->name('admin.logout');
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
-
     Route::get('dashboard', 'UserController@dashboard')->name('admin.dashboard');
         Route::middleware('isAdmin:admin')->group(function(){
             Route::get('list', 'UserController@index')->name('user.list');
@@ -102,7 +101,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-news/{id}','NewsController@active');
             Route::get('unactive-news/{id}','NewsController@unactive');
         });
-});
+
 
 
 
