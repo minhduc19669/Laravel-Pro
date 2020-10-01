@@ -17,12 +17,14 @@ class LoginController extends Controller
             'password'=>$password
         ];
         if (Auth::attempt($user)) {
+
             Alert()->success('Đăng nhập thành công !')->autoClose(1500);
             return \redirect()->route('admin.dashboard');
         }else{
             Session::put('mess','Sai tên tài khoản hoặc mật khẩu');
             return \redirect()->route('login');
         }
+
     }
     public function logout(){
         Auth::logout();

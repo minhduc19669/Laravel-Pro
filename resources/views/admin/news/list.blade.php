@@ -11,7 +11,7 @@
                 <th>Danh mục</th>
                 <th>Nội dung</th>
                 <th>Ảnh</th>
-                <th>ghi chú</th>
+                <th>Ghi chú</th>
                 <th>Lượt xem</th>
                 <th>Ngày đăng tin </th>
                 <th>Trạng thái</th>
@@ -33,7 +33,7 @@
                     @else
                         <td><a href={{\Illuminate\Support\Facades\URL::to('users/active-news/'.$list->news_id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
                     @endif
-                    <td><a style="margin-right: 10px" href={{route('news.edit',$list->news_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('news.remove',$list->news_id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a href={{route('news.edit',$list->news_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{route('news.remove',$list->news_id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

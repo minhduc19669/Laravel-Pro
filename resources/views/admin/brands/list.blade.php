@@ -26,9 +26,8 @@
                         <td><a href={{\Illuminate\Support\Facades\URL::to('/users/unactive-brand/'.$brand->id)}}><i style="color: #ff0000" class="fas fa-smile-wink"></i></a></td>
                     @else
                         <td><a href={{\Illuminate\Support\Facades\URL::to('/users/active-brand/'.$brand->id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
-
                     @endif
-                    <td><a style="margin-right: 10px" href={{\Illuminate\Support\Facades\URL::to('users/edit-brand/'.$brand->id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{\Illuminate\Support\Facades\URL::to('users/remove-brand/'.$brand->id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a href={{\Illuminate\Support\Facades\URL::to('users/edit-brand/'.$brand->id)}}><i class=" ion ion-md-color-filter"></i></a><a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{\Illuminate\Support\Facades\URL::to('users/remove-brand/'.$brand->id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

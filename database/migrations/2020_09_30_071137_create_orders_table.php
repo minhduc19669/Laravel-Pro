@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id('order_id');
             $table->unsignedBigInteger('shipping_id');
             $table->foreign('shipping_id')->references('id')->on('shippings');
-            $table->integer('order_total');
+            $table->string('order_code');
             $table->integer('order_status');
             $table->timestamps();
         });
