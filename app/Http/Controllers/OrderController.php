@@ -32,4 +32,28 @@ class OrderController extends Controller
         return \redirect()->route('order.list');
 
     }
+    public function edit($id){
+        $shipping = DB::table('shippings')->get();
+        $order = Order::where('order_id',$id)->get();
+   return view('admin.order.edit',compact('shipping','order'));
+
+    }
+    public function update(ValidateFormOrder $request,$id){
+        DB::beginTransaction();
+            Order::where('order_id',$id)->update([
+                'shipping_id' => $request->shipping_order,
+                'order_total' => $request->order_total,
+                'order_status' => $request->order_status,
+            ]);
+        DB::commit();
+        Alert()->success('Sửa  thành công !')->autoClose(1500);
+        return \redirect()->route('order.list');
+
+    }
+    public function remove($id){
+        DB::beginTransaction();
+        Order::where('order_id',$id)->delete();
+        DB::commit();
+        Alert()->success('Xóa  thành công !')->autoClose(1500);
+        return \redirect()->route('order.list');    }
 }

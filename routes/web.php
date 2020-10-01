@@ -115,7 +115,10 @@ Route::middleware(['auth'])->group(function (){
              //order
               Route::get('order','OrderController@list')->name('order.list');
               Route::get('add-order','OrderController@add')->name('order.add');
-               Route::post('save-order','OrderController@save')->name('order.save');
+              Route::post('save-order','OrderController@save')->name('order.save');
+              Route::get('edit-order/{id}','OrderController@edit')->name('order.edit');
+              Route::post('update-order/{id}','OrderController@update')->name('order.update');
+              Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
 
     });
 
