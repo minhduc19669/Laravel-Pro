@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/custom/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/custom/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/custom/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_01_021244_create_customs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_01_021244_create_customs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +204,9 @@
       <workItem from="1601394584526" duration="260000" />
       <workItem from="1601425185565" duration="806000" />
       <workItem from="1601429810127" duration="17982000" />
-      <workItem from="1601516002575" duration="10055000" />
+      <workItem from="1601516002575" duration="11336000" />
+      <workItem from="1601529645406" duration="600000" />
+      <workItem from="1601531052604" duration="1135000" />
     </task>
     <servers />
   </component>

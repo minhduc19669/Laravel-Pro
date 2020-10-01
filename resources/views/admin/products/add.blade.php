@@ -62,7 +62,7 @@
                     <div class="form-group col-md-4">
                         <label for="price">Giá khuyến mãi sản phẩm</label>
 
-                        <input type="number" min="1000" class="form-control" name="product_price_sale" placeholder="Price sale">
+                        <input type="number" min="0" class="form-control" name="product_price_sale" placeholder="Price sale">
 
                         @if ($errors->has('product_price_sale'))
                             <p style="color: red">{{ $errors->first('product_price_sale') }}</p>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="salePrice">Ghi chú</label>
-                        <input type="text" class="form-control" name="product_desc" placeholder="desc">
+                        <input type="text" class="form-control" name="product_desc" placeholder="Desc">
                         @if ($errors->has('product_desc'))
                             <p style="color: red">{{ $errors->first('product_desc') }}</p>
                         @endif
