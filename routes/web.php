@@ -126,10 +126,16 @@ Route::middleware(['auth'])->group(function (){
               Route::get('edit-order/{id}','OrderController@edit')->name('order.edit');
               Route::post('update-order/{id}','OrderController@update')->name('order.update');
               Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
+              //custom
+            Route::get('custom','CustomController@list')->name('custom.list');
+            Route::get('add-custom','CustomController@add')->name('custom.add');
+            Route::post('save-custom','CustomController@save')->name('custom.save');
+            Route::get('edit-custom/{id}','CustomController@edit')->name('custom.edit');
+            Route::post('update-custom/{id}','CustomController@update')->name('custom.update');
+            Route::get('remove-custom/{id}','CustomController@remove')->name('custom.remove');
+
 
     });
-
-
 });
 
 

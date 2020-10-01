@@ -32,16 +32,11 @@
     />
   </head>
   <body>
+      @include('layout.header')
 
+        @yield('content')
 
-
-
-
-
-
-
-
-
+    @include('layout.footer')
         <!-- modal -->
     <div
       class="modal fade"
