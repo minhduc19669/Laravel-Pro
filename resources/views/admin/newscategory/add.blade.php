@@ -18,7 +18,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="news_cate_desc" placeholder="desc">
+                        <textarea type="text" class="form-control" name="news_cate_desc" placeholder="desc"></textarea>
                     </div>
 
                 </div>
@@ -29,7 +29,7 @@
                     <div class="form-group col-md-4">
                         <label for="modelName">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="news_cate_status">
-                            <option></option>
+
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>
