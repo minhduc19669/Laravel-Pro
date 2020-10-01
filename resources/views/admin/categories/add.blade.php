@@ -9,7 +9,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục</label>
-                        <input type="text" class="form-control" name="category_name" placeholder="Name">
+                        <input type="text" class="form-control" name="category_name" placeholder="Tên danh mục">
                     </div>
                 </div>
                 @if ($errors->has('category_name'))
@@ -18,7 +18,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="category_desc" placeholder="desc">
+                        <input type="text" class="form-control" name="category_desc" placeholder="Ghi chú">
                     </div>
 
                 </div>

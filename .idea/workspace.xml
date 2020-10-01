@@ -21,6 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/storage/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/custom/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/custom/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/custom/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/custom/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/newscategory/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/newscategory/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/newscategory/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/newscategory/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/newscategory/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/newscategory/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,10 +261,18 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1601519712578" />
-    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601521980924">
+    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601535647948">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1601521980924" />
+    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1601535647948" />
+    <state x="100" y="127" width="1166" height="541" key="dock-window-1" timestamp="1601533403122">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="100" y="127" width="1166" height="541" key="dock-window-1/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
+    <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2" timestamp="1601533403122">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
     <state x="347" y="174" key="run.anything.popup" timestamp="1601453805752">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

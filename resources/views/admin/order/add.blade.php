@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group col-md-8">
                         <label for="price">Tổng tiền</label>
-                        <input type="number" class="form-control" name="order_total" placeholder="Total">
+                        <input type="number" class="form-control" name="order_total" placeholder="Tổng giá tiền">
                     </div>
 
                 </div>

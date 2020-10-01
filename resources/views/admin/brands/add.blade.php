@@ -3,6 +3,7 @@
     <form action="{{\Illuminate\Support\Facades\URL::to('users/save-brand')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm thương hiệu</h2>
+        <br>
         <div class="row">
             <div class="col-md-8">
                 <div class="form-row">

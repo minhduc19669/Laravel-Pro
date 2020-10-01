@@ -1,16 +1,16 @@
 @extends('admin_layout')
 @section('admin_content')
-    <h4 class="header-title">Danh sách danh mục</h4>
+    <h4 class="header-title">Danh mục sản phẩm</h4>
     <a href="{{route('category.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên dannh mục sản phẩm</th>
+                <th>Tên</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
-
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>

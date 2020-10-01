@@ -15,6 +15,7 @@
                 <th>Lượt xem</th>
                 <th>Ngày đăng tin </th>
                 <th>Trạng thái</th>
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
