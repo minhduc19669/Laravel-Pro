@@ -592,6 +592,8 @@
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('user.list')}}">Quản lí thành viên</a></li>
                         <li><a href="{{ route('role.index') }}">Quản lí chức vụ</a></li>
+                            <li><a href="{{ route('custom.list') }}">Quản lí khách hàng</a></li>
+
 
                         </ul>
                     </li>
