@@ -6,7 +6,7 @@
         {{csrf_field()}}
         <h2>Thêm sản phẩm</h2>
 
-        <div class="row">
+        <div class="row" style="margin-l">
             <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-4">
