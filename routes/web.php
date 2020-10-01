@@ -23,7 +23,7 @@ Route::get('logout','LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
 
 
-Route::get('/','HomeController@index');
+Route::get('/','HomeController@index')->name('home');
 Route::get('/product', 'HomeController@product')->name('home.product');
 });
 

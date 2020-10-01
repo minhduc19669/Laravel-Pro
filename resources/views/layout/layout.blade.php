@@ -33,7 +33,8 @@
     />
   </head>
   <body>
-          <header class="header-area">
+    @section('sidebar')
+              <header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
           <div class="row">
@@ -114,15 +115,7 @@
                 <nav>
                   <ul>
                     <li>
-                      <a href="index.html">HOME</a>
-                      <ul class="submenu">
-                        <li>
-                          <a href="index.html">home version 1</a>
-                        </li>
-                        <li>
-                          <a href="index-2.html">home version 2</a>
-                        </li>
-                      </ul>
+                    <a href="{{route('home')}}">HOME</a>
                     </li>
                     <li class="mega-menu-position">
                       <a href="shop-page.html">Food</a>
@@ -406,7 +399,8 @@
         </div>
       </div>
     </header>
-@yield('content')
+    @show
+    @yield('content')
     <!-- modal -->
     <div
       class="modal fade"
