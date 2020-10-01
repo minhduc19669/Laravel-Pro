@@ -24,11 +24,11 @@ public function save(Request $request){
             'brand_status' => 'required',
         ];
         $msg = [
-            'brand_name.required' => 'Bạn cần nhập tên thương hiệu',
-            'brand_image.required' => 'Bạn cần thêm logo',
-            'brand_image.image' => 'Bạn cần nhập đúng định dạng ảnh',
-            'brand_desc.required' => 'Bạn cần nhập ghi chú vào',
-            'brand_status.required' => 'Bạn cần nhập thêm trạng thái',
+            'brand_name.required' => 'Không được phép để trống',
+            'brand_image.required' => 'Không được phép để trống',
+            'brand_image.image' => 'Cần nhập đúng định dạng ảnh',
+            'brand_desc.required' => 'Không được phép để trống',
+            'brand_status.required' => 'Không được phép để trống',
         ];
         $validator = Validator::make($request->all(),$rule,$msg);
         if($validator->fails()){
@@ -72,9 +72,9 @@ public function edit($id){
                 'brand_status' => 'required',
             ];
             $msg = [
-                'brand_name.required' => 'Bạn cần nhập tên thương hiệu',
-                'brand_desc.required' => 'Bạn cần nhập ghi chú vào',
-                'brand_status.required' => 'Bạn cần nhập thêm trạng thái',
+                'brand_name.required' => 'Không được phép để trống',
+                'brand_desc.required' => 'Không được phép để trống',
+                'brand_status.required' => 'Không được phép để trống',
             ];
             $validator = Validator::make($request->all(),$rule,$msg);
             if($validator->fails()){
@@ -114,13 +114,13 @@ public function remove($id){
 }
     public function active($id){
         DB::table('brands')->where('id',$id)->update(['brand_status'=>0]);
-        Alert()->success('hủy kích hoạt thành công !')->autoClose(1500);
+        Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
         return \redirect()->route('brand.list');
 
     }
     public function unactive($id){
         DB::table('brands')->where('id',$id)->update(['brand_status'=>1]);
-        Alert()->success('kích hoạt thành công !')->autoClose(1500);
+        Alert()->success('Kích hoạt thành công !')->autoClose(1500);
         return \redirect()->route('brand.list');
     }
 

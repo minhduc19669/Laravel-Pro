@@ -9,8 +9,8 @@
             <div class="col-md-8">
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="modelName">Tên danh mục</label>
-                        <input type="text" class="form-control" name="news_cate_title" placeholder=" Tên danh mục">
+                        <label for="modelName">Tiêu đề</label>
+                        <input type="text" class="form-control" name="news_cate_title" placeholder=" Tiêu đề">
                     </div>
                 </div>
                 @if ($errors->has('news_cate_title'))
@@ -20,7 +20,7 @@
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
 
-                        <textarea type="text" class="form-control" name="news_cate_desc" placeholder="desc"></textarea>
+                        <textarea type="text" class="form-control" name="news_cate_desc" placeholder="Ghi chú"></textarea>
                     </div>
 
                 </div>

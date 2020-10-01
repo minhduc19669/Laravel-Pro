@@ -31,7 +31,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input value="{{$edit->brand_desc}}" type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">
+                        <textarea type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">{{$edit->brand_desc}}</textarea>
                     </div>
 
                 </div>
@@ -65,14 +65,7 @@
         </div>
     </form>
     @endforeach
-    <?php
-    $message = Session::get('message');
-    if ($message){
-        echo'<span class="text-alert">',$message,'</span>' ;
-        Session::put('message',null);
-    }
 
-    ?>
 
 
 @endsection

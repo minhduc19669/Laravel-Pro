@@ -5,13 +5,13 @@
     <form action="{{\Illuminate\Support\Facades\URL::to('/users/save-product')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm sản phẩm</h2>
-
+<br>
         <div class="row" style="margin-l">
             <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="modelName">Tên sản phẩm</label>
-                        <input type="text" class="form-control" name="product_name" placeholder="Product Name">
+                        <input type="text" class="form-control" name="product_name" placeholder="Tên sản phẩm">
                         @if ($errors->has('product_name'))
                             <p style="color: red">{{ $errors->first('product_name') }}</p>
                         @endif
@@ -20,7 +20,6 @@
                         <label  for="category" >Danh mục sản phẩm </label>
                         <select name="product_cate" class="form-control">
                             @foreach($cate_product as $key => $cate)
-                                <option></option>
                                 <option value="{{$cate->id}}">{{$cate->category_name}}</option>
                             @endforeach
                         </select>
@@ -32,7 +31,6 @@
                         <label  for="brand" >Thương hiệu sản phẩm</label>
                         <select name="product_brand" class="form-control">
                             @foreach($brand_product as $key => $cate)
-                                <option></option>
                                 <option value="{{$cate->id}}">{{$cate->brand_name}}</option>
                             @endforeach
                         </select>
@@ -46,14 +44,14 @@
                 <div class="form-row col-md-12">
                     <div class="form-group col-md-4">
                         <label for="modelName">mã sản phẩm</label>
-                        <input type="text" class="form-control" name="product_code" placeholder="Product Code">
+                        <input type="text" class="form-control" name="product_code" placeholder="Mã sản phẩm">
                         @if ($errors->has('product_code'))
                             <p style="color: red">{{ $errors->first('product_code') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md-4">
                         <label for="price">Giá sản phẩm</label>
-                        <input type="number" class="form-control" min="1000" name="product_price" placeholder="Price">
+                        <input type="number" class="form-control" min="1000" name="product_price" placeholder="Giá sản phẩm">
 
                         @if ($errors->has('product_price'))
                             <p style="color: red">{{ $errors->first('product_price') }}</p>
@@ -62,7 +60,7 @@
                     <div class="form-group col-md-4">
                         <label for="price">Giá khuyến mãi sản phẩm</label>
 
-                        <input type="number" min="0" class="form-control" name="product_price_sale" placeholder="Price sale">
+                        <input type="number" min="0" class="form-control" name="product_price_sale" placeholder="Giá khuyến mãi">
 
                         @if ($errors->has('product_price_sale'))
                             <p style="color: red">{{ $errors->first('product_price_sale') }}</p>
@@ -77,14 +75,14 @@
                 <div class="form-row col-md-12">
                     <div class="form-group col-md-4">
                         <label for="modelName">Chi tiết sản phẩm</label>
-                        <input type="text" class="form-control" name="product_content" placeholder="Content">
+                        <textarea type="text" class="form-control" name="product_content" placeholder="Chi tiết sản phẩm"></textarea>
                         @if ($errors->has('product_content'))
                             <p style="color: red">{{ $errors->first('product_content') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md-4">
                         <label for="salePrice">Ghi chú</label>
-                        <input type="text" class="form-control" name="product_desc" placeholder="Desc">
+                        <textarea type="text" class="form-control" name="product_desc" placeholder="Ghi chú"></textarea>
                         @if ($errors->has('product_desc'))
                             <p style="color: red">{{ $errors->first('product_desc') }}</p>
                         @endif
@@ -92,7 +90,6 @@
                     <div class="form-group col-md-4">
                         <label for="quantity">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="product_status">
-                            <option></option>
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>

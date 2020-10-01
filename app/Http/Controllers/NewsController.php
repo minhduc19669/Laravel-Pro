@@ -89,14 +89,14 @@ public function remove($id){
         DB::beginTransaction();
         News::where('news_id',$id)->update(['news_status'=>0]);
         DB::commit();
-        Alert()->success('hủy kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Hủy kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('news.list');
     }
     public function unactive($id){
         DB::beginTransaction();
         News::where('news_id',$id)->update(['news_status'=>1]);
         DB::commit();
-        Alert()->success('kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('news.list');
     }
 
