@@ -19,9 +19,8 @@
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$list->shipping_name}}</td>
                     <td>{{$list->order_total}}</td>
-
                     @if($list->order_status==0)
-                    <td>Chưa giao</td>
+                        <td>Chưa giao</td>
                     @elseif($list->order_status==1)
                         <td>Đang giao</td>
                     @elseif($list->order_status==2)
@@ -29,9 +28,7 @@
                     @else
                         <td>Hủy đơn hàng</td>
                     @endif
-
-
-{{--                    <td><a style="margin-right: 10px" href={{\Illuminate\Support\Facades\URL::to('users/edit-category/'.$category->id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{\Illuminate\Support\Facades\URL::to('users/remove-cate/'.$category->id)}}><i class=" ion ion-md-close"></i></a></td>--}}
+                    <td><a style="margin-right: 10px" href={{route('order.edit',$list->order_id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href="{{route('order.remove',$list->order_id)}}"><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>
