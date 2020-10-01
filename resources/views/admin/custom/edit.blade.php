@@ -12,7 +12,7 @@
                     @csrf
                     <div class="form-group">
                         <label>Tên khách hàng(*)</label>
-                        <input value="{{$edit->custom_name}}" autofocus type="text" name="custom_name"  class="form-control {{$errors->first('custom_name') ? 'text-danger': ''}}" required="" placeholder="Enter a valid username" value="{{old('username')}}">
+                        <input value="{{$edit->custom_name}}" autofocus type="text" name="custom_name"  class="form-control {{$errors->first('custom_name') ? 'text-danger': ''}}" required="" placeholder="Tên người dùng" value="{{old('username')}}">
                         <span class="{{$errors->first('custom_name') ? 'is-invalid' : ''}}"></span>
                     </div>
                     @if($errors->first('custom_name'))
@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label>E-Mail(*)</label>
                         <div>
-                            <input value="{{$edit->custom_email}}" type="email" name="custom_email" class="form-control {{$errors->first('custom_email') ? 'text-danger': ''}}" value="{{old('email')}}" required="" parsley-type="email" placeholder="Enter a valid e-mail">
+                            <input value="{{$edit->custom_email}}" type="email" name="custom_email" class="form-control {{$errors->first('custom_email') ? 'text-danger': ''}}" value="{{old('email')}}" required="" parsley-type="email" placeholder="Địa chỉ email">
                         </div>
                         <span class="{{$errors->first('custom_email') ? 'is-invalid' : ''}}"></span>
                         @if($errors->first('custom_email'))
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label>Số điện thoại(*)</label>
-                        <input value="{{$edit->custom_phone}}" type="text" name="custom_phone" class="form-control {{$errors->first('custom_phone') ? 'text-danger': ''}}" required="" placeholder="Enter a valid phone">
+                        <input value="{{$edit->custom_phone}}" type="text" name="custom_phone" class="form-control {{$errors->first('custom_phone') ? 'text-danger': ''}}" required="" placeholder="Số điện thoại">
                         <span class="{{$errors->first('custom_phone') ? 'is-invalid' : ''}}"></span>
                     </div>
                     @if($errors->first('custom_phone'))
@@ -43,7 +43,7 @@
                     @endif
                     <div class="form-group">
                         <label>Địa chỉ(*)</label>
-                        <input value="{{$edit->custom_address}}" type="text" name="custom_address" class="form-control {{$errors->first('custom_address') ? 'text-danger': ''}}" required="" placeholder="Enter address" value="{{old('address')}}">
+                        <input value="{{$edit->custom_address}}" type="text" name="custom_address" class="form-control {{$errors->first('custom_address') ? 'text-danger': ''}}" required="" placeholder="Địa chỉ" value="{{old('address')}}">
                         <span class="{{$errors->first('custom_address') ? 'is-invalid' : ''}}"></span>
                     </div>
                     @if($errors->first('custom_address'))
@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <label>Mật khẩu(*)</label>
                         <div>
-                            <input value="{{$edit->custom_password}}" name="custom_password" type="password" class="form-control {{$errors->first('custom_password') ? 'text-danger': ''}}" required="" parsley-type="email" placeholder="Enter a valid password">
+                            <input value="{{$edit->custom_password}}" name="custom_password" type="password" class="form-control {{$errors->first('custom_password') ? 'text-danger': ''}}" required="" parsley-type="email" placeholder="Mật khẩu">
                             <span class="{{$errors->first('custom_password') ? 'is-invalid' : ''}}"></span>
                         </div>
                         @if($errors->first('custom_password'))

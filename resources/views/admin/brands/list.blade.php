@@ -8,11 +8,11 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên thương hiệu</th>
+                <th>Tên</th>
                 <th>Logo</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
-
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
@@ -27,7 +27,7 @@
                     @else
                         <td><a href={{\Illuminate\Support\Facades\URL::to('/users/active-brand/'.$brand->id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
                     @endif
-                    <td><a href={{\Illuminate\Support\Facades\URL::to('users/edit-brand/'.$brand->id)}}><i class=" ion ion-md-color-filter"></i></a><a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{\Illuminate\Support\Facades\URL::to('users/remove-brand/'.$brand->id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a href={{\Illuminate\Support\Facades\URL::to('users/edit-brand/'.$brand->id)}}><i class=" ion ion-md-color-filter"></i></a> | <a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{\Illuminate\Support\Facades\URL::to('users/remove-brand/'.$brand->id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

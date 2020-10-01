@@ -10,7 +10,7 @@
                 <th>Tên dannh mục tin tức</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
-
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>

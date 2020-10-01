@@ -8,7 +8,7 @@
                 <div class="form">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tiêu đề</label>
-                        <input type="text" class="form-control" name="news_title" placeholder="Title">
+                        <input type="text" class="form-control" name="news_title" placeholder="Tiêu đề">
                         @if ($errors->has('news_title'))
                             <p style="color: red">{{ $errors->first('news_title') }}</p>
                         @endif
@@ -28,14 +28,14 @@
                     <div class="form-row col-md-12">
                         <div class="form-group col-md-4">
                             <label for="modelName">Lượt xem</label>
-                            <input min="0" type="number" class="form-control" name="news_view" placeholder="views">
+                            <input min="0" type="number" class="form-control" name="news_view" placeholder="Lượt xem">
                             @if ($errors->has('news_view'))
                                 <p style="color: red">{{ $errors->first('news_view') }}</p>
                             @endif
                         </div>
                         <div class="form-group col-md-4">
                             <label for="price">Ngày đăng </label>
-                            <input type="date" class="form-control" min="1000" name="news_date" placeholder="Date">
+                            <input type="date" class="form-control" min="1000" name="news_date" placeholder="Ngày đăng">
 
                             @if ($errors->has('news_date'))
                                 <p style="color: red">{{ $errors->first('news_date') }}</p>
@@ -54,6 +54,7 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="salePrice">Ghi chú</label>
+
                                 <textarea type="text" class="form-control" name="news_desc" placeholder="desc">
                                 </textarea>
                                 @if ($errors->has('news_desc'))

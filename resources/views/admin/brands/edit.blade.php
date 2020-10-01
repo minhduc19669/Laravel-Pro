@@ -6,6 +6,7 @@
         {{csrf_field()}}
 
         <h2>Cập nhật thương hiệu</h2>
+        <br>
         <div class="row">
             <div class="col-md-8">
                 <div class="form-row">

@@ -4,14 +4,14 @@
 @foreach($news as $key => $edit)
     <form action="{{\Illuminate\Support\Facades\URL::to('/users/update-news/'.$edit->news_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h2>Sửa tin tức</h2>
+        <h2>Cập nhật tin tức</h2>
 
         <div class="row">
             <div class="col-md">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="modelName">Tiêu đề</label>
-                        <input value="{{$edit->news_title}}" type="text" class="form-control" name="news_title" placeholder="Title">
+                        <input value="{{$edit->news_title}}" type="text" class="form-control" name="news_title" placeholder="Tiêu đề">
                         @if ($errors->has('news_title'))
                             <p style="color: red">{{ $errors->first('news_title') }}</p>
                         @endif
@@ -41,14 +41,14 @@
                     <div class="form-row col-md-12">
                         <div class="form-group col-md-4">
                             <label for="modelName">Lượt xem</label>
-                            <input min="0" value="{{$edit->news_view}}" type="number" class="form-control" name="news_view" placeholder="views">
+                            <input min="0" value="{{$edit->news_view}}" type="number" class="form-control" name="news_view" placeholder="Lượt xem">
                             @if ($errors->has('news_view'))
                                 <p style="color: red">{{ $errors->first('news_view') }}</p>
                             @endif
                         </div>
                         <div class="form-group col-md-4">
                             <label for="price">Ngày đăng </label>
-                            <input value="{{$edit->news_date}}" type="date" class="form-control" min="1000" name="news_date" placeholder="Date">
+                            <input value="{{$edit->news_date}}" type="date" class="form-control" min="1000" name="news_date" placeholder="Ngày">
 
                             @if ($errors->has('news_date'))
                                 <p style="color: red">{{ $errors->first('news_date') }}</p>
@@ -63,33 +63,22 @@
                         <div class="form-row col-md-12">
                             <div class="form-group col-md-4">
                                 <label for="modelName">Nội dung</label>
-                                <input value="{{$edit->news_content}}" type="text" class="form-control" name="news_content" placeholder="Content">
+                                <input value="{{$edit->news_content}}" type="text" class="form-control" name="news_content" placeholder="Nội dung">
                                 @if ($errors->has('news_content'))
                                     <p style="color: red">{{ $errors->first('news_content') }}</p>
                                 @endif
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="salePrice">Ghi chú</label>
-                                <input value="{{$edit->news_desc}}" type="text" class="form-control" name="news_desc" placeholder="desc">
+                                <input value="{{$edit->news_desc}}" type="text" class="form-control" name="news_desc" placeholder="Ghi chú">
                                 @if ($errors->has('news_desc'))
                                     <p style="color: red">{{ $errors->first('news_desc') }}</p>
                                 @endif
                             </div>
 
                         </div>
-                        <div class="form-row col-md-9">
-
-                            <div class="form-group col-md">
-                                <br>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                            <div class="form-group col-md">
-                                <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
-                                <br>
-                                <input type="file" class="form-control-file" name="news_image" >
-
-                            </div>
-                            <div class="form-group col-md-3">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
                                 <label for="quantity">Trạng thái</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="news_status">
                                     @if($edit->news_status == 0)
@@ -100,17 +89,26 @@
                                         <option selected value="1">Hiển thị</option>
 
                                     @endif
-
-
                                 </select>
                                 @if ($errors->has('news_status'))
                                     <p style="color: red">{{ $errors->first('news_status') }}</p>
                                 @endif
                             </div>
+                            <div class="form-group col-md">
+                                <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
+                                <br>
+                                <input type="file" class="form-control-file" name="news_image" >
+                            </div>
+
+
                         </div>
+                        <div class="form-row col-md-9">
 
-
-
+                            <div class="form-group col-md">
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

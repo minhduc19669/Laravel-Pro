@@ -17,7 +17,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="slide_desc" placeholder="desc">
+                        <input type="text" class="form-control" name="slide_desc" placeholder="Ghi chú">
                     </div>
                 </div>
                 @if ($errors->has('slide_desc'))

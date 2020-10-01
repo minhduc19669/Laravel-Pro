@@ -4,13 +4,14 @@
     <form action="{{\Illuminate\Support\Facades\URL::to('users/update-newscategory/'.$newscate->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
-        <h2>Sửa danh mục tin tức</h2>
+        <h2>Cập nhật danh mục tin tức</h2>
+        <br>
         <div class="row">
             <div class="col-md-8">
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục</label>
-                        <input value="{{$newscate->news_cate_title}}" type="text" class="form-control" name="news_cate_title" placeholder="newscategory title">
+                        <input value="{{$newscate->news_cate_title}}" type="text" class="form-control" name="news_cate_title" placeholder="Tên danh mục">
                     </div>
                 </div>
                 @if ($errors->has('news_cate_title'))
@@ -19,7 +20,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input value="{{$newscate->news_cate_desc}}" type="text" class="form-control" name="news_cate_desc" placeholder="desc">
+                        <input value="{{$newscate->news_cate_desc}}" type="text" class="form-control" name="news_cate_desc" placeholder="Ghi chú">
                     </div>
 
                 </div>
