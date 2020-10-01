@@ -7,7 +7,7 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên dannh mục tin tức</th>
+                <th>Tiêu đề</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>

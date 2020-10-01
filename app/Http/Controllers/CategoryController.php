@@ -24,9 +24,9 @@ public function save(Request $request ){
           'category_status' => 'required',
         ];
         $msg = [
-            'category_name.required' => 'bạn cần nhập tên danh mục sản phẩm vào',
-            'category_desc.required' => 'bạn cần nhập ghi chú sản phẩm vào',
-            'category_status.required' => 'bạn cần nhập trạng thái sản phẩm vào',
+            'category_name.required' => 'Không được phép để trống',
+            'category_desc.required' => 'Không được phép để trống',
+            'category_status.required' => 'Không được phép để trống',
         ];
       $validator = Validator::make($request->all(),$rule,$msg );
       if($validator->fails()){
@@ -61,8 +61,8 @@ public function save(Request $request ){
                  'category_desc' => 'required',
              ];
              $msg = [
-                  'category_name.required' => 'Cần có tên danh mục sản phẩm',
-                  'category_desc.required' => 'cần có ghi chú',
+                  'category_name.required' => 'Không được phép để trống',
+                  'category_desc.required' => 'Không được phép để trống',
              ];
              $validator = Validator::make($request->all(),$rule,$msg);
              if ($validator->fails()){
@@ -85,20 +85,20 @@ public function save(Request $request ){
         }
          public function active($id){
            DB::table('categories')->where('id',$id)->update(['category_status'=>0]);
-             Alert()->success('hủy kích hoạt thành công !')->autoClose(1500);
+             Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
              return \redirect()->route('category.list');
 
          }
          public function unactive($id){
              DB::table('categories')->where('id',$id)->update(['category_status'=>1]);
-             Alert()->success('kích hoạt thành công !')->autoClose(1500);
+             Alert()->success('Kích hoạt thành công !')->autoClose(1500);
              return \redirect()->route('category.list');
          }
 
         public function remove($id){
             DB::table('categories')->where('id',$id)->delete();
-            Session::put('message','xóa sản phẩm thành công');
-            return Redirect::to('admin/category');
+            Session::put('message','Xóa sản phẩm thành công');
+            return Redirect::to('users/category');
         }
 
 

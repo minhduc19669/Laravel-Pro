@@ -18,9 +18,9 @@ public function rules(){
 public function messages()
 {
     return [
-      'news_cate_title.required'  => 'Bạn cần nhập tiêu đề danh mục tin tức',
-        'news_cate_desc.required'  => 'Bạn cần nhập ghi chú danh mục tin tức',
-        'news_cate_status.required'  => 'Bạn cần nhập trạng thái danh mục tin tức',
+      'news_cate_title.required'  => 'Không được phép để trống',
+        'news_cate_desc.required'  => 'Không được phép để trống',
+        'news_cate_status.required'  => 'Không được phép để trống',
 
     ];
 }

@@ -37,15 +37,15 @@ class ValidateFormAddNews extends FormRequest
     public function messages()
     {
         return [
-            'news_title.required' => 'Cần nhập tiêu đề ',
-            'news_cate.required' => 'Cần nhập danh mục tin tức',
-            'news_content.required' => 'Cần nhập nội dung',
-            'news_desc.required' => 'Cần nhập ghi chú',
-            'news_date.required' => 'Cần nhập ngày đăng tin tức',
-            'news_views.required' => 'Cần nhập lượt xem',
-            'news_image.required' => 'Cần nhập ảnh',
-            'news_image.image' => 'Ảnh phải đúng định dạng',
-            'news_status.required' => 'Cần nhập trạng thái vào',
+            'news_title.required' => 'Không được phép để trống ',
+            'news_cate.required' => 'Không được phép để trống',
+            'news_content.required' => 'Không được phép để trống',
+            'news_desc.required' => 'Không được phép để trống',
+            'news_date.required' => 'Không được phép để trống',
+            'news_views.required' => 'Không được phép để trống',
+            'news_image.required' => 'Không được phép để trống',
+            'news_image.image' => 'Cần nhập đúng định dạng ảnh',
+            'news_status.required' => 'Không được phép để trống',
         ];
     }
 

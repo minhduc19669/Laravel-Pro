@@ -38,7 +38,7 @@ class SlideController extends Controller
         return \redirect()->route('slide.list');
     }
     public function edit($id){
-          $slide  = Slide::find($id)->get();
+          $slide  = Slide::where('id',$id)->get();
         return view('admin.slide.edit',compact('slide'));
     }
     public function update(ValidateFormUpdateSlide $request,$id){
@@ -63,7 +63,7 @@ class SlideController extends Controller
     }
     public function remove($id){
           Slide::find($id)->delete();
-        Alert()->success('xóa thành công !')->autoClose(1500);
+        Alert()->success('Xóa thành công !')->autoClose(1500);
         return \redirect()->route('slide.list');
 
     }
@@ -71,14 +71,14 @@ class SlideController extends Controller
         DB::beginTransaction();
         Slide::find($id)->update(['slide_status'=>0]);
         DB::commit();
-        Alert()->success('hủy kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Hủy kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('slide.list');
     }
     public function unactive($id){
         DB::beginTransaction();
         Slide::find($id)->update(['slide_status'=>1]);
         DB::commit();
-        Alert()->success('kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('slide.list');
     }
 

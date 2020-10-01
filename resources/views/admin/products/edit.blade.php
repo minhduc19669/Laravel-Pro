@@ -4,8 +4,8 @@
 @foreach($list as $key => $edit)
     <form action="{{\Illuminate\Support\Facades\URL::to('/users/update-product/'.$edit->product_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h2>Sửa sản phẩm</h2>
-
+        <h2>Cập nhật sản phẩm</h2>
+<br>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
@@ -23,7 +23,7 @@
                                 @if($edit->category_id == $cate->id)
                                  <option selected value="{{$cate->id}}">{{$cate->category_name}}</option>
                             @else
-                                    <option s value="{{$cate->id}}">{{$cate->category_name}}</option>
+                                    <option  value="{{$cate->id}}">{{$cate->category_name}}</option>
                                 @endif
                             @endforeach
                         </select>
@@ -83,14 +83,14 @@
                         <div class="form-row col-md-12">
                             <div class="form-group col-md-4">
                                 <label for="modelName">Chi tiết sản phẩm</label>
-                                <input value="{{$edit->product_content}}" type="text" class="form-control" name="product_content" placeholder="Content">
+                                <textarea type="text" class="form-control" name="product_content" placeholder="Chi tiết sản phẩm">{{$edit->product_content}}</textarea>
                                 @if ($errors->has('product_content'))
                                     <p style="color: red">{{ $errors->first('product_content') }}</p>
                                 @endif
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="salePrice">Ghi chú</label>
-                                <input value="{{$edit->product_desc}}" type="text" class="form-control" name="product_desc" placeholder="desc">
+                                <textarea type="text" class="form-control" name="product_desc" placeholder="Chi tiết sản phẩm">{{$edit->product_desc}}</textarea>
                                 @if ($errors->has('product_desc'))
                                     <p style="color: red">{{ $errors->first('product_desc') }}</p>
                                 @endif

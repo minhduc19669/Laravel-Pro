@@ -19,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input value="{{$edit_value->category_desc}}" type="text" class="form-control" name="category_desc" placeholder="Ghi chú">
+                        <textarea type="text" class="form-control" name="category_desc" placeholder="Ghi chú">{{$edit_value->category_desc}}</textarea>
                     </div>
 
                 </div>

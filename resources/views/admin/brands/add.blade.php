@@ -27,7 +27,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">
+                        <textarea type="text" class="form-control" name="brand_desc" placeholder="Ghi chú"></textarea>
                     </div>
                 </div>
                 @if ($errors->has('brand_desc'))
@@ -37,7 +37,6 @@
                     <div class="form-group col-md-4">
                         <label for="modelName">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="brand_status">
-                            <option></option>
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>
