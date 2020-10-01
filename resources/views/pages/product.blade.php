@@ -1,5 +1,6 @@
 
 @extends('layout.layout')
+@section('sidebar')
 @section('content')
 <div
       class="breadcrumb-area pt-95 pb-95 bg-img"

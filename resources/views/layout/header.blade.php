@@ -1,4 +1,4 @@
-    <header class="header-area">
+          <header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
           <div class="row">
@@ -21,14 +21,14 @@
                   </li>
                   <li>
                     <a href="#"
-                      ><img alt="flag" src="assets_page/img/icon-img/en.jpg" />
+                  ><img alt="flag" src="{{asset('assets_page/img/icon-img/en.jpg')}}" />
                       English <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
                           ><img
                             alt="flag"
-                            src="assets_page/img/icon-img/bl.jpg"
+                      src="{{asset('assets_page/img/icon-img/bl.jpg')}}"
                           />Bangla
                         </a>
                       </li>
@@ -36,7 +36,7 @@
                         <a href="#"
                           ><img
                             alt="flag"
-                            src="assets_page/img/icon-img/in.jpg"
+                            src="{{asset('assets_page/img/icon-img/in.jpg')}}"
                           />Arabic</a
                         >
                       </li>
@@ -44,7 +44,7 @@
                         <a href="#"
                           ><img
                             alt="flag"
-                            src="assets_page/img/icon-img/en.jpg"
+                            src="{{asset('assets_page/img/icon-img/en.jpg')}}"
                           />Hindi
                         </a>
                       </li>
@@ -52,7 +52,7 @@
                         <a href="#"
                           ><img
                             alt="flag"
-                            src="assets_page/img/icon-img/sp.jpg"
+                            src="{{asset('assets_page/img/icon-img/sp.jpg')}}"
                           />Spanish</a
                         >
                       </li>
@@ -70,7 +70,7 @@
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-5">
               <div class="logo pt-39">
                 <a href="index.html"
-                  ><img alt="" src="assets_page/img/logo/logo.png"
+                  ><img alt="" src="{{asset('assets_page/img/logo/logo.png')}}"
                 /></a>
               </div>
             </div>
@@ -79,15 +79,7 @@
                 <nav>
                   <ul>
                     <li>
-                      <a href="index.html">HOME</a>
-                      <ul class="submenu">
-                        <li>
-                          <a href="index.html">home version 1</a>
-                        </li>
-                        <li>
-                          <a href="index-2.html">home version 2</a>
-                        </li>
-                      </ul>
+                    <a href="{{route('home')}}">HOME</a>
                     </li>
                     <li class="mega-menu-position">
                       <a href="shop-page.html">Food</a>
@@ -130,7 +122,7 @@
                               <a href="shop-page.html"
                                 ><img
                                   alt=""
-                                  src="assets_page/img/banner/menu-img-4.jpg"
+                                  src="{{asset('assets_page/img/banner/menu-img-4.jpg')}}"
                               /></a>
                             </li>
                           </ul>
@@ -223,7 +215,7 @@
                       <li class="single-shopping-cart">
                         <div class="shopping-cart-img">
                           <a href="#"
-                            ><img alt="" src="assets_page/img/cart/cart-1.jpg"
+                            ><img alt="" src="{{asset('assets_page/img/cart/cart-1.jpg')}}"
                           /></a>
                         </div>
                         <div class="shopping-cart-title">
@@ -238,7 +230,7 @@
                       <li class="single-shopping-cart">
                         <div class="shopping-cart-img">
                           <a href="#"
-                            ><img alt="" src="assets_page/img/cart/cart-2.jpg"
+                            ><img alt="" src="{{asset('assets_page/img/cart/cart-2.jpg')}}"
                           /></a>
                         </div>
                         <div class="shopping-cart-title">
@@ -371,4 +363,3 @@
         </div>
       </div>
     </header>
-
