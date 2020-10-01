@@ -221,7 +221,7 @@
                    @if(Auth::user()->avatar)
                     <img src="{{asset("storage/images/".Auth::user()->avatar)}}" alt="" class="rounded-circle">
                     @else
-                    <img src="https://lh3.googleusercontent.com/proxy/V5nUtAbyab_yqhuEZM0ypjrZdRpcK-k_lh3Z7HQCRZUAAMeT5poS47XKClSPr4JoZOGlFFRVDDFE5hfn4d6rzllbfqOTOGjIs_GfSK8uKs1KioSKRbVsMiZ-9bnJGyJUB9dgdaJg9FBwsftD" alt="" class="rounded-circle">
+                    <img src="https://lh3.googleusercontent.com/proxy/eQgxPvHakrG090tHZIDqD6e38LuM8neVpEjc7ZyTtyki7lWK1XqTpMh-sR4zfI-AhTXY95IbInAD3EYHPemDchGUsc4PD3yw1PFiEdboWg" alt="" class="rounded-circle">
                     @endif
                     <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}
                         </span>
