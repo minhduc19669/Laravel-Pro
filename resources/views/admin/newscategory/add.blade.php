@@ -9,7 +9,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục</label>
-                        <input type="text" class="form-control" name="news_cate_title" placeholder="newscategory title">
+                        <input type="text" class="form-control" name="news_cate_title" placeholder=" Title">
                     </div>
                 </div>
                 @if ($errors->has('news_cate_title'))

@@ -8,7 +8,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên thương hiệu</label>
-                        <input type="text" class="form-control" name="brand_name" placeholder="brand name">
+                        <input type="text" class="form-control" name="brand_name" placeholder="Tên thương hiệu">
                     </div>
                 </div>
                 @if ($errors->has('brand_name'))
@@ -17,7 +17,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Logo</label>
-                        <input type="file" class="form-control" name="brand_image" placeholder="desc">
+                        <input type="file" class="form-control" name="brand_image" placeholder="Ảnh thương hiệu">
                     </div>
                 </div>
                 @if ($errors->has('brand_image'))
@@ -26,7 +26,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="brand_desc" placeholder="desc">
+                        <input type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">
                     </div>
                 </div>
                 @if ($errors->has('brand_desc'))

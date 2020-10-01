@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('', 'LoginController@showFormLogin')->name('login');
+Route::get('admin', 'LoginController@showFormLogin')->name('login');
 Route::post('login', 'LoginController@login')->name('admin.login');
 Route::get('logout','LoginController@logout')->name('admin.logout');
 //login
+
+
+
+
+Route::get('/','HomeController@index');
+
+
+
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
