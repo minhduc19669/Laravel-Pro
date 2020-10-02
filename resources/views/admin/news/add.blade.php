@@ -18,7 +18,7 @@
                         <select name="news_cate" class="form-control">
                             @foreach($news_cate as $key => $cate)
 
-                                <option value="{{$cate->id}}">{{$cate->news_cate_title}}</option>
+                                <option value="{{$cate->id}}">{{$cate->category_news_name}}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('news_cate'))
@@ -46,7 +46,7 @@
                         <div class="form-row col-md-12">
                             <div class="form-group col-md-8">
                                 <label for="modelName">Nội dung</label>
-                                <textarea type="text" class="form-control" name="news_content" placeholder="Nội dung"></textarea>
+                                <textarea id="editor1" type="text" class="form-control" name="news_content" placeholder="Nội dung"></textarea>
                                 @if ($errors->has('news_content'))
                                     <p style="color: red">{{ $errors->first('news_content') }}</p>
                                 @endif
@@ -54,7 +54,7 @@
                             <div class="form-group col-md-8">
                                 <label for="salePrice">Ghi chú</label>
 
-                                <textarea type="text" class="form-control" name="news_desc" placeholder="desc"></textarea>
+                                <textarea id="editor2" type="text" class="form-control" name="news_desc" placeholder="desc"></textarea>
                                 @if ($errors->has('news_desc'))
                                     <p style="color: red">{{ $errors->first('news_desc') }}</p>
                                 @endif
