@@ -117,7 +117,7 @@
                     <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="shop-page.html">Thức ăn</a>
+                      <a href="shop-page.html">Danh mục</a>
                       <ul class="mega-menu">
                         <li>
                           <ul>
@@ -155,8 +155,8 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">PAGES</a>
-                      <ul class="submenu">
+                      <a href="#">Sản phẩm</a>
+                      {{-- <ul class="submenu">
                         <li>
                           <a href="about-us.html">about us</a>
                         </li>
@@ -187,7 +187,7 @@
                         <li>
                           <a href="login-register.html">login / register</a>
                         </li>
-                      </ul>
+                      </ul> --}}
                     </li>
                     <li>
                       <a href="blog-leftsidebar.html">Blog</a>
@@ -288,10 +288,6 @@
                   <ul class="menu-overflow">
                     <li>
                       <a href="#">HOME</a>
-                      <ul>
-                        <li><a href="index.html">home version 1</a></li>
-                        <li><a href="index-2.html">home version 2</a></li>
-                      </ul>
                     </li>
                     <li>
                       <a href="#">pages</a>
@@ -329,7 +325,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Food</a>
+                      <a href="#">Danh mục</a>
                       <ul>
                         <li>
                           <a href="#">Dogs Food</a>

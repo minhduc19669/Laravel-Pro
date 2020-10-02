@@ -11,6 +11,7 @@ class HomeController extends Controller
         return \view('pages.home');
     }
 
-
-
+    public function product(){
+        return \view('pages.blog');
+    }
 }
