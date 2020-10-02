@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', 'LoginController@showFormLogin')->name('login');
-Route::post('login', 'LoginController@login')->name('admin.login');
-Route::get('logout','LoginController@logout')->name('admin.logout');
+Route::get('', 'User\LoginController@showFormLogin')->name('login');
+Route::post('login', 'User\LoginController@login')->name('admin.login');
+Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 //login
-
 
 
 Route::prefix('home')->group(function(){
@@ -32,24 +31,24 @@ Route::get('/product', 'HomeController@product')->name('home.product');
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
-    Route::get('dashboard', 'UserController@dashboard')->name('admin.dashboard');
+    Route::get('dashboard', 'User\UserController@dashboard')->name('admin.dashboard');
         Route::middleware('isAdmin:admin')->group(function(){
-            Route::get('list', 'UserController@index')->name('user.list');
-            Route::get('add', 'UserController@create')->name('user.create');
-            Route::post('store', 'UserController@store')->name('user.store');
-            Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
-            Route::post('update/{id}', 'UserController@update')->name('user.update');
-            Route::post('change', 'UserController@changeRole')->name('user.changeRole');
-            Route::post('upload/{id}', 'UserController@uploadCover')->name('user.upload');
-            Route::get('delete/{id}', 'UserController@delete')->name('user.delete');
+            Route::get('list', 'User\UserController@index')->name('user.list');
+            Route::get('add', 'User\UserController@create')->name('user.create');
+            Route::post('store', 'User\UserController@store')->name('user.store');
+            Route::get('edit/{id}', 'User\UserController@edit')->name('user.edit');
+            Route::post('update/{id}', 'User\UserController@update')->name('user.update');
+            Route::post('change', 'User\UserController@changeRole')->name('user.changeRole');
+            Route::post('upload/{id}', 'User\UserController@uploadCover')->name('user.upload');
+            Route::get('delete/{id}', 'User\UserController@delete')->name('user.delete');
             //Role
             Route::prefix('role')->group(function () {
-                Route::get('list', 'RoleController@index')->name('role.index');
-                Route::get('create', 'RoleController@create')->name('role.create');
-                Route::get('edit/{id}', 'RoleController@edit')->name('role.edit');
-                Route::post('update/{id}', 'RoleController@update')->name('role.update');
-                Route::post('store', 'RoleController@store')->name('role.store');
-                Route::get('delete/{id}', 'RoleController@delete')->name('role.delete');
+                Route::get('list', 'User\RoleController@index')->name('role.index');
+                Route::get('create', 'User\RoleController@create')->name('role.create');
+                Route::get('edit/{id}', 'User\RoleController@edit')->name('role.edit');
+                Route::post('update/{id}', 'User\RoleController@update')->name('role.update');
+                Route::post('store', 'User\RoleController@store')->name('role.store');
+                Route::get('delete/{id}', 'User\RoleController@delete')->name('role.delete');
             });
         });
         //product

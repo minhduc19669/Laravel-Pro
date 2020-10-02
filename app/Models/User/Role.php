@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +15,7 @@ class Role extends Model
     }
 
     public function permissions(){
-        return $this->belongsToMany('App\Permission','role_permission', 'role_id', 'permission_id');
+        return $this->belongsToMany('App\Models\User\Permission','role_permission', 'role_id', 'permission_id');
     }
 
 }
