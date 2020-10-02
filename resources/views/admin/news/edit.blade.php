@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
     @foreach($news as $key => $edit)
-    <form action="{{\Illuminate\Support\Facades\URL::to('/users/update-news'.$edit->news_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{\Illuminate\Support\Facades\URL::to('/users/update-news'.$edit->news_idgi)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Cập nhật tin tức</h2>
         <br>
