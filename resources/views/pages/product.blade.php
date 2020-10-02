@@ -1,21 +1,9 @@
 
 @extends('layout.layout')
-@section('sidebar')
+@section('url','https://bizweb.dktcdn.net/100/047/359/themes/66510/assets/women_banner.png?1543757106135')
+
 @section('content')
-<div
-      class="breadcrumb-area pt-95 pb-95 bg-img"
-style="background-image: url({{asset('assets_page/img/banner/banner-2.jpg')}})"
-    >
-      <div class="container">
-        <div class="breadcrumb-content text-center">
-          <h2>Shop Page</h2>
-          <ul>
-            <li><a href="index.html">home</a></li>
-            <li class="active">Shop Page</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+
     <div class="shop-area pt-100 pb-100 gray-bg">
       <div class="container">
         <div class="row flex-row-reverse">

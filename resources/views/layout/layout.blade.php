@@ -33,7 +33,6 @@
     />
   </head>
   <body>
-    @section('sidebar')
               <header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
@@ -115,14 +114,14 @@
                 <nav>
                   <ul>
                     <li>
-                    <a href="{{route('home')}}">HOME</a>
+                    <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="shop-page.html">Food</a>
+                      <a href="shop-page.html">Thức ăn</a>
                       <ul class="mega-menu">
                         <li>
                           <ul>
-                            <li class="mega-menu-title">Dogs Food</li>
+                            <li class="mega-menu-title">Thức ăn cho chó</li>
                             <li><a href="shop-page.html">Eggs</a></li>
                             <li><a href="shop-page.html">Carrots</a></li>
                             <li><a href="shop-page.html">Salmon fishs</a></li>
@@ -134,22 +133,12 @@
                         </li>
                         <li>
                           <ul>
-                            <li class="mega-menu-title">Cats Food</li>
+                            <li class="mega-menu-title">Thức ăn cho mèo</li>
                             <li><a href="shop-page.html">Meat</a></li>
                             <li><a href="shop-page.html">Fish</a></li>
                             <li><a href="shop-page.html">Eggs</a></li>
                             <li><a href="shop-page.html">Veggies</a></li>
                             <li><a href="shop-page.html">Cheese</a></li>
-                          </ul>
-                        </li>
-                        <li>
-                          <ul>
-                            <li class="mega-menu-title">Fishs Food</li>
-                            <li><a href="shop-page.html">Rice</a></li>
-                            <li><a href="shop-page.html">Veggies</a></li>
-                            <li><a href="shop-page.html">Cheese</a></li>
-                            <li><a href="shop-page.html">wheat bran</a></li>
-                            <li><a href="shop-page.html">Cultivation</a></li>
                           </ul>
                         </li>
                         <li>
@@ -214,8 +203,8 @@
                         </li>
                       </ul>
                     </li>
-                    <li><a href="about-us.html">ABOUT</a></li>
-                    <li><a href="contact.html">contact us</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
                   </ul>
                 </nav>
               </div>
@@ -398,8 +387,18 @@
           </div>
         </div>
       </div>
-    </header>
-    @show
+</header>
+<div class="breadcrumb-area pt-95 pb-95 bg-img" style="background-image:url(@yield('url'));">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h2>@yield('page_name')</h2>
+                    <ul>
+                        <li style="color: white">@yield('note1')</li>
+                        <li style="color: white" class="active">@yield('note2')</li>
+                    </ul>
+                </div>
+            </div>
+</div>
     @yield('content')
     <!-- modal -->
     <div
