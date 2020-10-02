@@ -7,12 +7,10 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     //
-
     public function index(){
         return \view('pages.home');
     }
 
-    public function product(){
-        return \view('pages.product');
-    }
+
+
 }

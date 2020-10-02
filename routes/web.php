@@ -20,10 +20,8 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 
 
 Route::prefix('home')->group(function(){
-
-
-Route::get('/','HomeController@index')->name('home');
-Route::get('/product', 'HomeController@product')->name('home.product');
+Route::get('/', 'User\HomeController@index')->name('home');
+Route::get('/product', 'User\HomeController@product')->name('home.product');
 });
 
 
