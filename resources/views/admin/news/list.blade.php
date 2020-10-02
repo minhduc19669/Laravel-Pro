@@ -13,7 +13,7 @@
                 <th>Ảnh</th>
                 <th>Ghi chú</th>
                 <th>Lượt xem</th>
-                <th>Ngày đăng tin </th>
+                <th>Ngày đăng </th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>
             </tr>
@@ -23,7 +23,7 @@
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$list->news_title}}</td>
-                    <td>{{$list->news_cate_title}}</td>
+                    <td>{{$list->category_news_name}}</td>
                     <th>{{$list->news_content}}</th>
                     <td><img width="50px" src="\news\{{$list->news_image}}"></td>
                     <td>{{$list->news_desc}}</td>

@@ -76,12 +76,11 @@ Route::middleware(['auth'])->group(function (){
         Route::middleware('isAdmin:category')->group(function(){
             Route::get('category', 'CategoryController@list')->name('category.list');
             Route::get('add-category', 'CategoryController@add')->name('category.add');
-            Route::post('save-category', 'CategoryController@save');
+            Route::post('save-category', 'CategoryController@save')->name('category.save');
             Route::get('edit-category/{id}', 'CategoryController@edit')->name('category.edit');
-            Route::post('update-category/{id}', 'CategoryController@update');
-            Route::get('remove-cate/{id}', 'CategoryController@remove');
-            Route::get('active-category/{id}', 'CategoryController@active');
-            Route::get('unactive-category/{id}', 'CategoryController@unactive');
+            Route::post('update-category/{id}', 'CategoryController@update')->name('category.update');
+            Route::get('remove-cate/{id}', 'CategoryController@remove')->name('category.remove');
+
         });
                 //brand
         Route::middleware('isAdmin:category')->group(function () {
@@ -94,21 +93,12 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-brand/{id}', 'BrandController@active');
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
         });
-           //newscategory
-            Route::get('newscategory','NewscategoryController@list')->name('newscategory.list');
-            Route::get('add-newscategory','NewscategoryController@add')->name('newscategory.add');
-            Route::post('save-newscategory','NewscategoryController@save');
-            Route::get('edit-newscategory/{id}','NewscategoryController@edit')->name('newscategory.edit');
-            Route::post('update-newscategory/{id}','NewscategoryController@update');
-            Route::get('remove-newscategory/{id}','NewscategoryController@remove');
-            Route::get('active-newscategory/{id}','NewscategoryController@active');
-            Route::get('unactive-newscategory/{id}','NewscategoryController@unactive');
             //news
             Route::get('news','NewsController@index')->name('news.list');
             Route::get('add-news','NewsController@add')->name('news.add');
             Route::post('save-news','NewsController@save');
             Route::get('edit-news/{id}','NewsController@edit')->name('news.edit');
-            Route::post('update-news/{id}','NewsController@update');
+            Route::post('update-news/{id}','NewsController@update')->name('news.update');
             Route::get('romove-news/{id}','NewsController@remove')->name('news.remove');
             Route::get('active-news/{id}','NewsController@active');
             Route::get('unactive-news/{id}','NewsController@unactive');

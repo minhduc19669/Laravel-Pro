@@ -14,8 +14,9 @@
     <link href="{{asset('assets\css\icons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets\css\app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
     <link href="{{asset('assets\css\style.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
+
 </head>
 <body>
 @include('sweetalert::alert')
@@ -509,17 +510,6 @@
 
                     <li>
                         <a href="javascript: void(0);">
-                            <i class="mdi mdi-book-open-page-variant"></i>
-                            <span> Danh mục tin tức </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href={{route('newscategory.add')}} >Thêm danh mục</a></li>
-                            <li><a href={{route('newscategory.list')}}>Liệt kê danh mục</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0);">
                             <i class="mdi mdi-book-open"></i>
                             <span> Tin tức </span>
                             <span style="margin-right: 30px"
@@ -531,15 +521,10 @@
                             <li><a href={{route('news.list')}}>Liệt kê tin tức</a></li>
                         </ul>
                     </li>
-
-
-
-
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-puzzle-outline"></i>
-                            <span> Danh mục sản phẩm </span>
+                            <span> Danh mục  </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
@@ -727,6 +712,13 @@
             console.log($this.attr('data-key'));
         })
     });
+</script>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace( 'editor2' );
+
 </script>
 </body>
 </html>

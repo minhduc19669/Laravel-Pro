@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
     @foreach($news as $key => $edit)
-    <form action="{{\Illuminate\Support\Facades\URL::to('/users/update-news'.$edit->news_idgi)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('news.update',$edit->news_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Cập nhật tin tức</h2>
         <br>
@@ -19,8 +19,8 @@
                         <label  for="category" >Danh mục tin tức</label>
                         <select name="news_cate" class="form-control">
                             @foreach($news_cate as $key => $cate)
-                                @if($edit->news_cate_id == $cate->id)
-                                    <option selected value="{{$cate->id}}">{{$cate->news_cate_title}}</option>
+                                @if($edit->category_id == $cate->id)
+                                    <option selected value="{{$cate->id}}">{{$cate->category_news_name}}</option>
                                 @else
                                     <option value="{{$cate->id}}">{{$cate->news_cate_title}}</option>
 
@@ -52,7 +52,7 @@
                         <div class="form-row col-md-12">
                             <div class="form-group col-md-8">
                                 <label for="modelName">Nội dung</label>
-                                <textarea type="text" class="form-control" name="news_content" placeholder="Content">{{$edit->news_content}}</textarea>
+                                <textarea id="editor1" type="text" class="form-control" name="news_content" placeholder="Content">{{$edit->news_content}}</textarea>
                                 @if ($errors->has('news_content'))
                                     <p style="color: red">{{ $errors->first('news_content') }}</p>
                                 @endif
@@ -60,7 +60,7 @@
                             <div class="form-group col-md-8">
                                 <label for="salePrice">Ghi chú</label>
 
-                                <textarea type="text" class="form-control" name="news_desc" placeholder="desc">{{$edit->news_desc}}</textarea>
+                                <textarea id="editor2" type="text" class="form-control" name="news_desc" placeholder="desc">{{$edit->news_desc}}</textarea>
                                 @if ($errors->has('news_desc'))
                                     <p style="color: red">{{ $errors->first('news_desc') }}</p>
                                 @endif
