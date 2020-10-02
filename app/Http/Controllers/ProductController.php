@@ -31,8 +31,8 @@ class ProductController extends Controller
 
         if($request){
          $rule =[
-             'product_name' => 'required|min:3',
-             'product_code' => 'required|min:3',
+             'product_name' => 'required',
+             'product_code' => 'required',
              'product_price' =>'required',
              'product_price_sale'=>'required',
              'product_content'=> 'required',
@@ -44,17 +44,17 @@ class ProductController extends Controller
 
          ];
          $msg = [
-            'product_name.required' => 'bạn cần nhập tên vào',
-             'product_code.required' => 'bạn cần nhập mã sản phẩm vào',
-             'product_price.required' => 'bạn cần nhập giá sản phẩm vào',
-             'product_price_sale.required' => 'bạn cần nhập giá khuyến mãi vào',
-             'product_content.required' => 'bạn cần nhập chi tiết sản phẩm vào',
-             'product_desc.required' => 'bạn cần nhập ghi chú sản phẩm vào',
-             'product_image.required' => 'bạn cần nhập ảnh sản phẩm',
-             'product_image.image' => 'bạn cần nhập đúng định dạng ảnh',
-             'product_status.required' => 'bạn cần nhập trạng thái sản phẩm vào',
-             'product_brand.required' => 'bạn cần nhập thương hiệu sản phẩm vào',
-             'product_cate.required' => 'bạn cần nhập danh mục sản phẩm vào',
+            'product_name.required' => 'Không được phép để trống',
+             'product_code.required' => 'Không được phép để trống',
+             'product_price.required' => 'Không được phép để trống',
+             'product_price_sale.required' => 'Không được phép để trống',
+             'product_content.required' => 'Không được phép để trống',
+             'product_desc.required' => 'Không được phép để trống',
+             'product_image.required' => 'Không được phép để trống',
+             'product_image.image' => 'Cần nhập đúng định dạng ảnh',
+             'product_status.required' => 'Không được phép để trống',
+             'product_brand.required' => 'Không được phép để trống',
+             'product_cate.required' => 'Không được phép để trống',
          ];
          $validator = Validator::make($request->all(),$rule,$msg);
          if($validator->fails()){
@@ -103,8 +103,8 @@ class ProductController extends Controller
  public function update(Request $request,$id){
      if($request){
          $rule =[
-             'product_name' => 'required|min:3',
-             'product_code' => 'required|min:3',
+             'product_name' => 'required',
+             'product_code' => 'required',
              'product_price' =>'required',
              'product_price_sale'=>'required',
              'product_content'=> 'required',
@@ -114,15 +114,15 @@ class ProductController extends Controller
              'product_cate' => 'required',
          ];
          $msg = [
-             'product_name.required' => 'bạn cần nhập tên vào',
-             'product_code.required' => 'bạn cần nhập mã sản phẩm vào',
-             'product_price.required' => 'bạn cần nhập giá sản phẩm vào',
-             'product_price_sale.required' => 'bạn cần nhập giá khuyến mãi vào',
-             'product_content.required' => 'bạn cần nhập chi tiết sản phẩm vào',
-             'product_desc.required' => 'bạn cần nhập ghi chú sản phẩm vào',
-             'product_status.required' => 'bạn cần nhập trạng thái sản phẩm vào',
-             'product_brand.required' => 'bạn cần nhập thương hiệu sản phẩm vào',
-             'product_cate.required' => 'bạn cần nhập danh mục sản phẩm vào',
+             'product_name.required' => 'Không được phép để trống',
+             'product_code.required' => 'Không được phép để trống',
+             'product_price.required' => 'Không được phép để trống',
+             'product_price_sale.required' => 'Không được phép để trống',
+             'product_content.required' => 'Không được phép để trống',
+             'product_desc.required' => 'Không được phép để trống',
+             'product_status.required' => 'Không được phép để trống',
+             'product_brand.required' => 'Không được phép để trống',
+             'product_cate.required' => 'Không được phép để trống',
          ];
          $validator = Validator::make($request->all(),$rule,$msg);
          if($validator->fails()){
@@ -163,18 +163,18 @@ class ProductController extends Controller
  }
  public function remove($id){
         DB::table('products')->where('product_id',$id)->delete();
-     Alert()->success('xóa thành công !')->autoClose(1500);
+     Alert()->success('Xóa thành công !')->autoClose(1500);
      return \redirect()->route('product.list');
  }
     public function active($id){
         DB::table('products')->where('product_id',$id)->update(['product_status'=>0]);
-        Alert()->success('hủy kích hoạt thành công !')->autoClose(1500);
+        Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
         return \redirect()->route('product.list');
 
     }
     public function unactive($id){
         DB::table('products')->where('product_id',$id)->update(['product_status'=>1]);
-        Alert()->success('kích hoạt thành công !')->autoClose(1500);
+        Alert()->success('Kích hoạt thành công !')->autoClose(1500);
         return \redirect()->route('product.list');
     }
 

@@ -46,8 +46,7 @@
                         <div class="form-row col-md-12">
                             <div class="form-group col-md-8">
                                 <label for="modelName">Nội dung</label>
-                                <textarea type="text" class="form-control" name="news_content" placeholder="Content">
-                                </textarea>
+                                <textarea type="text" class="form-control" name="news_content" placeholder="Nội dung"></textarea>
                                 @if ($errors->has('news_content'))
                                     <p style="color: red">{{ $errors->first('news_content') }}</p>
                                 @endif
@@ -55,8 +54,7 @@
                             <div class="form-group col-md-8">
                                 <label for="salePrice">Ghi chú</label>
 
-                                <textarea type="text" class="form-control" name="news_desc" placeholder="desc">
-                                </textarea>
+                                <textarea type="text" class="form-control" name="news_desc" placeholder="desc"></textarea>
                                 @if ($errors->has('news_desc'))
                                     <p style="color: red">{{ $errors->first('news_desc') }}</p>
                                 @endif

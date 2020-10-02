@@ -3,7 +3,8 @@
     @foreach($slide as $key => $edit)
     <form action="{{route('slide.update',$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h2>Sửa Slider</h2>
+        <h2>Cập nhật Slider</h2>
+        <br>
         <div class="row">
             <div class="col-md-8">
                 <div class="form-row">
@@ -18,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input value="{{$edit->slide_desc}}" type="text" class="form-control" name="slide_desc" placeholder="desc">
+                        <textarea type="text" class="form-control" name="slide_desc" placeholder="ghi chú">{{$edit->slide_desc}}</textarea>
                     </div>
                 </div>
                 @if ($errors->has('slide_desc'))

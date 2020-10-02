@@ -60,14 +60,14 @@ class NewscategoryController extends Controller
           DB::beginTransaction();
           Newscategory::find($id)->update(['news_cate_status'=>0]);
           DB::commit();
-        Alert()->success('hủy kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Hủy kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('newscategory.list');
     }
     public function unactive($id){
         DB::beginTransaction();
         Newscategory::find($id)->update(['news_cate_status'=>1]);
         DB::commit();
-        Alert()->success('kích hoạt thành công!')->autoClose(1500);
+        Alert()->success('Kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('newscategory.list');
     }
 

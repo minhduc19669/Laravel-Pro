@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <h4 class="header-title">Danh sách đơn hàng</h4>
+    <h4 class="header-title">Đơn hàng</h4>
     <a href="{{route('order.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div class="table-responsive">
         <table class="table mb-0">

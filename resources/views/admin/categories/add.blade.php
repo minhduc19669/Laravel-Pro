@@ -4,6 +4,7 @@
         {{csrf_field()}}
 
         <h2>Thêm danh mục sản phẩm</h2>
+        <br>
         <div class="row">
             <div class="col-md-8">
                 <div class="form-row">
@@ -18,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <input type="text" class="form-control" name="category_desc" placeholder="Ghi chú">
+                        <textarea type="text" class="form-control" name="category_desc" placeholder="Ghi chú"></textarea>
                     </div>
 
                 </div>
@@ -29,7 +30,6 @@
                     <div class="form-group col-md-4">
                         <label for="modelName">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="category_status">
-                            <option></option>
                             <option value="0">Ẩn </option>
                             <option value="1">Hiển thị</option>
                         </select>
@@ -47,14 +47,7 @@
         </div>
 
     </form>
-    <?php
-    $message = Session::get('message');
-    if ($message){
-        echo'<span class="text-alert">',$message,'</span>' ;
-        Session::put('message',null);
-    }
 
-    ?>
 
 
 @endsection
