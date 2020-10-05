@@ -26,7 +26,7 @@
                     <td style="font-size: 10px"  scope="row">{{$key + 1}}</td>
                     <td style="font-size: 10px">{{$product->product_code}}</td>
                     <td style="font-size: 10px">{{$product->product_name}}</td>
-                    <td style="font-size: 10px">{{$product->category_name}}</td>
+                    <td style="font-size: 10px">{{$product->category_product_name}}</td>
                     <td style="font-size: 10px">{{$product->brand_name}}</td>
                     <td style="font-size: 10px;width:200px">{{$product->product_content}}</td>
                     <td style="font-size: 10px">{{$product->product_price}}</td>

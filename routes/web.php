@@ -53,12 +53,12 @@ Route::middleware(['auth'])->group(function (){
         Route::middleware('isAdmin:product')->group(function(){
             Route::get('product', 'ProductController@list')->name('product.list');
             Route::get('add-product', 'ProductController@add')->name('product.add');
-            Route::post('save-product', 'ProductController@save');
+            Route::post('save-product', 'ProductController@save')->name('product.save');
             Route::get('edit-product/{id}', 'ProductController@edit')->name('product.edit');
-            Route::post('update-product/{id}', 'ProductController@update');
-            Route::get('remove-product/{id}', 'ProductController@remove');
-            Route::get('active-product/{id}', 'ProductController@active');
-            Route::get('unactive-product/{id}', 'ProductController@unactive');
+            Route::post('update-product/{id}', 'ProductController@update')->name('product.update');
+            Route::get('remove-product/{id}', 'ProductController@remove')->name('product.remove');
+            Route::get('active-product/{id}', 'ProductController@active')->name('product.active');
+            Route::get('unactive-product/{id}', 'ProductController@unactive')->name('product.active');
         });
 		//Sale-code
 
