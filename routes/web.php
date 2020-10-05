@@ -19,6 +19,7 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 //login
 
 
+
 Route::prefix('home')->group(function(){
 Route::get('/', 'User\HomeController@index')->name('home');
 Route::get('/product', 'User\HomeController@product')->name('home.product');
@@ -29,9 +30,9 @@ Route::post('login', 'User\HomeController@login')->name('home.postlogin');
 Route::post('register', 'User\HomeController@register')->name('home.register');
 Route::middleware(['auth'])->group(function (){
     //user
-    Route::prefix('users')->group(function(){
-    Route::get('dashboard', 'User\UserController@dashboard')->name('admin.dashboard');
-        Route::middleware('isAdmin:admin')->group(function(){
+    Route::prefix('users')->group(function () {
+        Route::get('dashboard', 'User\UserController@dashboard')->name('admin.dashboard');
+        Route::middleware('isAdmin:admin')->group(function () {
             Route::get('list', 'User\UserController@index')->name('user.list');
             Route::get('add', 'User\UserController@create')->name('user.create');
             Route::post('store', 'User\UserController@store')->name('user.store');
@@ -51,7 +52,7 @@ Route::middleware(['auth'])->group(function (){
             });
         });
         //product
-        Route::middleware('isAdmin:product')->group(function(){
+        Route::middleware('isAdmin:product')->group(function () {
             Route::get('product', 'ProductController@list')->name('product.list');
             Route::get('add-product', 'ProductController@add')->name('product.add');
             Route::post('save-product', 'ProductController@save')->name('product.save');
@@ -61,17 +62,17 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-product/{id}', 'ProductController@active')->name('product.active');
             Route::get('unactive-product/{id}', 'ProductController@unactive')->name('product.active');
         });
-		//Sale-code
-		Route::prefix('coupon')->group(function(){
-            Route::get('list','CouponController@index')->name('coupon.list');
-            Route::get('create','CouponController@create')->name('coupon.create');
+        //Sale-code
+        Route::prefix('coupon')->group(function () {
+            Route::get('list', 'CouponController@index')->name('coupon.list');
+            Route::get('create', 'CouponController@create')->name('coupon.create');
             Route::get('edit/{id}', 'CouponController@edit')->name('coupon.edit');
             Route::post('store', 'CouponController@store')->name('coupon.store');
             Route::post('update/{id}', 'CouponController@update')->name('coupon.update');
             Route::get('delete/{id}', 'CouponController@delete')->name('coupon.delete');
-		});
+        });
         //Category
-        Route::middleware('isAdmin:category')->group(function(){
+        Route::middleware('isAdmin:category')->group(function () {
             Route::get('category', 'CategoryController@list')->name('category.list');
             Route::get('add-category', 'CategoryController@add')->name('category.add');
             Route::post('save-category', 'CategoryController@save')->name('category.save');
@@ -80,7 +81,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('remove-cate/{id}', 'CategoryController@remove')->name('category.remove');
 
         });
-                //brand
+        //brand
         Route::middleware('isAdmin:category')->group(function () {
             Route::get('brand', 'BrandController@list')->name('brand.list');
             Route::get('add-brand', 'BrandController@add')->name('brand.add');
@@ -91,6 +92,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('active-brand/{id}', 'BrandController@active');
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
         });
+
             //news
             Route::get('news','NewsController@index')->name('news.list');
             Route::get('add-news','NewsController@add')->name('news.add');

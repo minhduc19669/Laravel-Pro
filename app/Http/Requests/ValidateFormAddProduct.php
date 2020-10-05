@@ -26,14 +26,15 @@ class ValidateFormAddProduct extends FormRequest
         return [
             'product_name' => 'required|min:3',
             'product_code' => 'required|min:3',
-            'product_price' =>'required',
-            'product_price_sale'=>'required|min:0',
-            'product_content'=> 'required|min:8',
-            'product_desc' => 'required|min:5',
-            'product_image' => 'required|image',
+            'product_price' =>'required|numeric|min:1000',
+            'product_price_sale'=>'required|numeric|min:0',
+            'product_content'=> 'required',
+            'product_desc' => 'required',
             'product_status' => 'required',
             'product_brand' => 'required',
             'product_cate' => 'required',
+            'product_image' => 'mimes:jpeg,jpg,png|required',
+
         ];
     }
     public function messages()
@@ -42,14 +43,16 @@ class ValidateFormAddProduct extends FormRequest
             'product_name.required' => 'Không được phép để trống',
             'product_code.required' => 'Không được phép để trống',
             'product_price.required' => 'Không được phép để trống',
+            'product_price.min' => 'Giá trị nhỏ nhất là 1000',
             'product_price_sale.required' => 'Không được phép để trống',
+            'product_price_sale.min' => 'Giá trị nhỏ nhất là 0',
             'product_content.required' => 'Không được phép để trống',
             'product_desc.required' => 'Không được phép để trống',
-            'product_image.required' => 'Không được phép để trống',
-            'product_image.image' => 'Cần nhập đúng định dạng ảnh',
             'product_status.required' => 'Không được phép để trống',
             'product_brand.required' => 'Không được phép để trống',
             'product_cate.required' => 'Không được phép để trống',
+            'product_image.required' => 'Không được phép để trống',
+            'product_image.mimes' => 'Chỉ được phép thêm file jpeg,jpg,png',
         ];
     }
 }

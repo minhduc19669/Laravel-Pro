@@ -70,7 +70,7 @@ class NewsController extends Controller
             $get_image->move('news',$new_image);
             $data['news_image']=$new_image;
             DB::table('news')->where('news_id',$id)->update($data);
-            Alert()->success('sửa  thành công !')->autoClose(1500);
+            Alert()->success('Cập  nhật thành công !')->autoClose(1500);
             return \redirect()->route('news.list');
         }else {
             DB::table('news')->where('news_id',$id)->update($data);

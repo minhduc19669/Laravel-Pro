@@ -31,6 +31,7 @@ class ValidateFormUpdaateNews extends FormRequest
             'news_date' => 'required',
             'news_view' => 'required',
             'news_status' => 'required',
+            'news_image' => 'mimes:jpeg,jpg,png'
         ];
     }
     public function messages()
@@ -43,6 +44,8 @@ class ValidateFormUpdaateNews extends FormRequest
             'news_date.required' => 'Không được phép để trống',
             'news_views.required' => 'Không được phép để trống',
             'news_status.required' => 'Không được phép để trống',
+            'news_image.mimes' => 'Chỉ được phép thêm file jpg,png,jpeg',
+
         ];
     }
 }

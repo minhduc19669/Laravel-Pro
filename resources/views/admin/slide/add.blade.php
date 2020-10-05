@@ -5,7 +5,7 @@
         <h2>Thêm Slider</h2>
         <br>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ảnh</label>
@@ -18,7 +18,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <textarea type="text" class="form-control" name="slide_desc" placeholder="ghi chú"></textarea>
+                        <textarea id="editor1" type="text" class="form-control" name="slide_desc" placeholder="ghi chú"></textarea>
                     </div>
                 </div>
                 @if ($errors->has('slide_desc'))
