@@ -1,4 +1,3 @@
-
 @extends('layout.layout')
 @section('url','https://dietmoitruongan.com/images/b/cho-meo.jpg')
 @section('page_name','Hãy trở thành một phần của chúng tôi')
@@ -32,6 +31,7 @@
                                                         <a href="#">Quên mật khẩu</a>
                                                     </div>
                                                     <button type="submit"><span>Đăng nhập</span></button>
+
                                                 </div>
                                             </form>
                                         </div>
