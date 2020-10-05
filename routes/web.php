@@ -19,13 +19,16 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 //login
 
 
-Route::prefix('home')->group(function() {
-    Route::get('/', 'User\HomeController@index')->name('home');
-    Route::get('/product', 'User\HomeController@product')->name('home.product');
-//customers
 
+Route::prefix('home')->group(function(){
+Route::get('/', 'User\HomeController@index')->name('home');
+Route::get('/product', 'User\HomeController@product')->name('home.product');
+    //home
+Route::get('login', 'User\HomeController@showFormLogin_Register')->name('home.getlogin');
+Route::post('login', 'User\HomeController@login')->name('home.postlogin');
 });
-Route::middleware(['auth'])->group(function () {
+Route::post('register', 'User\HomeController@register')->name('home.register');
+Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function () {
         Route::get('dashboard', 'User\UserController@dashboard')->name('admin.dashboard');
@@ -90,43 +93,42 @@ Route::middleware(['auth'])->group(function () {
             Route::get('unactive-brand/{id}', 'BrandController@unactive');
         });
 
-    //news
-        Route::get('news', 'NewsController@index')->name('news.list');
-        Route::get('add-news', 'NewsController@add')->name('news.add');
-        Route::post('save-news', 'NewsController@save');
-        Route::get('edit-news/{id}', 'NewsController@edit')->name('news.edit');
-        Route::post('update-news/{id}', 'NewsController@update')->name('news.update');
-        Route::get('romove-news/{id}', 'NewsController@remove')->name('news.remove');
-        Route::get('active-news/{id}', 'NewsController@active');
-        Route::get('unactive-news/{id}', 'NewsController@unactive');
-        //slide
-        Route::get('slide', 'SlideController@list')->name('slide.list');
-        Route::get('add-slide', 'SlideController@add')->name('slide.add');
-        Route::post('save-slide', 'SlideController@save')->name('slide.save');
-        Route::get('add-slide', 'SlideController@add')->name('slide.add');
-        Route::get('edit-slide/{id}', 'SlideController@edit')->name('slide.edit');
-        Route::post('update-slide/{id}', 'SlideController@update')->name('slide.update');
-        Route::get('remove-slide/{id}', 'SlideController@remove')->name('slide.remove');
-        Route::get('active-slide/{id}', 'SlideController@active')->name('slide.active');
-        Route::get('unactive-slide/{id}', 'SlideController@unactive')->name('slide.unactive');
-        //order
-        Route::get('order', 'OrderController@list')->name('order.list');
-        Route::get('add-order', 'OrderController@add')->name('order.add');
-        Route::post('save-order', 'OrderController@save')->name('order.save');
-        Route::get('edit-order/{id}', 'OrderController@edit')->name('order.edit');
-        Route::post('update-order/{id}', 'OrderController@update')->name('order.update');
-        Route::get('remove-order/{id}', 'OrderController@remove')->name('order.remove');
-        //custom
-        Route::get('custom', 'CustomController@list')->name('custom.list');
-        Route::get('add-custom', 'CustomController@add')->name('custom.add');
-        Route::post('save-custom', 'CustomController@save')->name('custom.save');
-        Route::get('edit-custom/{id}', 'CustomController@edit')->name('custom.edit');
-        Route::post('update-custom/{id}', 'CustomController@update')->name('custom.update');
-        Route::get('remove-custom/{id}', 'CustomController@remove')->name('custom.remove');
-});
-});
+            //news
+            Route::get('news','NewsController@index')->name('news.list');
+            Route::get('add-news','NewsController@add')->name('news.add');
+            Route::post('save-news','NewsController@save');
+            Route::get('edit-news/{id}','NewsController@edit')->name('news.edit');
+            Route::post('update-news/{id}','NewsController@update')->name('news.update');
+            Route::get('romove-news/{id}','NewsController@remove')->name('news.remove');
+            Route::get('active-news/{id}','NewsController@active');
+            Route::get('unactive-news/{id}','NewsController@unactive');
+            //slide
+            Route::get('slide','SlideController@list')->name('slide.list');
+            Route::get('add-slide','SlideController@add')->name('slide.add');
+            Route::post('save-slide','SlideController@save')->name('slide.save');
+            Route::get('add-slide','SlideController@add')->name('slide.add');
+            Route::get('edit-slide/{id}','SlideController@edit')->name('slide.edit');
+            Route::post('update-slide/{id}','SlideController@update')->name('slide.update');
+            Route::get('remove-slide/{id}','SlideController@remove')->name('slide.remove');
+            Route::get('active-slide/{id}','SlideController@active')->name('slide.active');
+            Route::get('unactive-slide/{id}','SlideController@unactive')->name('slide.unactive');
+             //order
+              Route::get('order','OrderController@list')->name('order.list');
+              Route::get('add-order','OrderController@add')->name('order.add');
+              Route::post('save-order','OrderController@save')->name('order.save');
+              Route::get('edit-order/{id}','OrderController@edit')->name('order.edit');
+              Route::post('update-order/{id}','OrderController@update')->name('order.update');
+              Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
+              //custom
+            Route::get('custom', 'CustomerController@list')->name('custom.list');
+            Route::get('add-custom', 'CustomerController@add')->name('custom.add');
+            Route::post('save-custom', 'CustomerController@save')->name('custom.save');
+            Route::get('edit-custom/{id}', 'CustomerController@edit')->name('custom.edit');
+            Route::post('update-custom/{id}', 'CustomerController@update')->name('custom.update');
+            Route::get('remove-custom/{id}','CustomerController@remove')->name('custom.remove');
 
-
+        });
+    });
 
 
 
