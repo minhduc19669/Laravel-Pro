@@ -19,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <textarea type="text" class="form-control" name="slide_desc" placeholder="ghi chú">{{$edit->slide_desc}}</textarea>
+                        <textarea id="editor1" type="text" class="form-control" name="slide_desc" placeholder="ghi chú">{{$edit->slide_desc}}</textarea>
                     </div>
                 </div>
                 @if ($errors->has('slide_desc'))

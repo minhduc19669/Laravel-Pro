@@ -57,7 +57,7 @@ class SlideController extends Controller
             return \redirect()->route('slide.list');
         }else {
             DB::table('slides')->where('id',$id)->update($data);
-            Alert()->success('sửa thành công !')->autoClose(1500);
+            Alert()->success('Cập nhật thành công !')->autoClose(1500);
             return \redirect()->route('slide.list');
         }
     }

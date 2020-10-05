@@ -5,7 +5,7 @@
         <h2>Thêm thương hiệu</h2>
         <br>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên thương hiệu</label>
@@ -27,7 +27,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <textarea type="text" class="form-control" name="brand_desc" placeholder="Ghi chú"></textarea>
+                        <textarea id="editor1" type="text" class="form-control" name="brand_desc" placeholder="Ghi chú"></textarea>
                     </div>
                 </div>
                 @if ($errors->has('brand_desc'))

@@ -31,7 +31,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
-                        <textarea type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">{{$edit->brand_desc}}</textarea>
+                        <textarea id="editor1" type="text" class="form-control" name="brand_desc" placeholder="Ghi chú">{{$edit->brand_desc}}</textarea>
                     </div>
 
                 </div>

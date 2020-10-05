@@ -24,7 +24,7 @@ class ValidateFormSlide extends FormRequest
     public function rules()
     {
         return [
-            'slide_image' => 'required|image',
+            'slide_image' => 'mimes:jpeg,jpg,png|required',
             'slide_desc'  => 'required',
             'slide_status' => 'required'
         ];
@@ -33,7 +33,7 @@ class ValidateFormSlide extends FormRequest
     {
         return [
           'slide_image.required'  => 'không được để trống ô này',
-            'slide_image.image'   => 'cần nhập đúng định dạng ảnh',
+            'slide_image.mimes'   => 'Chỉ được phép thêm file jpg,png,jpeg',
             'slide_desc.required' => 'Không được để trống ô này',
             'slide_status.required' => 'không được để trống ô này'
         ];

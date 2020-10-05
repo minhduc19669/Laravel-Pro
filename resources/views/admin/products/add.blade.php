@@ -2,7 +2,7 @@
 @section('admin_content')
 
 
-    <form action="{{\Illuminate\Support\Facades\URL::to('/users/save-product')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('product.save')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm sản phẩm</h2>
 <br>

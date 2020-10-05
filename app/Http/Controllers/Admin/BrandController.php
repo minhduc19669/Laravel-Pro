@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateFormAddBrand;
+use App\Http\Requests\ValidateFormUpdateBrand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -15,29 +17,8 @@ public function list(){
 public function add(){
     return view('admin.brands.add');
 }
-public function save(Request $request){
-    if($request){
-        $rule = [
-            'brand_name' => 'required',
-            'brand_image' => 'required|image',
-            'brand_desc' => 'required',
-            'brand_status' => 'required',
-        ];
-        $msg = [
-            'brand_name.required' => 'Không được phép để trống',
-            'brand_image.required' => 'Không được phép để trống',
-            'brand_image.image' => 'Cần nhập đúng định dạng ảnh',
-            'brand_desc.required' => 'Không được phép để trống',
-            'brand_status.required' => 'Không được phép để trống',
-        ];
-        $validator = Validator::make($request->all(),$rule,$msg);
-        if($validator->fails()){
-          echo "<pre>";
-          $dataView['err'] = $validator->errors()->toArray();
-            echo "<pre>";
-            $request->flash();
-          return redirect()->route('brand.add')->withErrors($validator->errors());
-        }else{
+public function save(ValidateFormAddBrand $request){
+
             $data = array();
             $data['brand_name'] = $request->brand_name;
             $data['brand_desc'] = $request->brand_desc;
@@ -57,33 +38,14 @@ public function save(Request $request){
             DB::table('brands')->insert($data);
 
             Alert()->success('Thêm thành công !')->autoClose(1500);
-            return \redirect()->route('brand.list');        }
-    }
+            return \redirect()->route('brand.list');
 }
 public function edit($id){
          $edit_brand = DB::table('brands')->where('id',$id)->orderBy('id','desc')->get();
          return view('admin.brands.edit',['list'=>$edit_brand]);
 }
-    public function update(Request $request,$id){
-        if($request){
-            $rule = [
-                'brand_name' => 'required',
-                'brand_desc' => 'required',
-                'brand_status' => 'required',
-            ];
-            $msg = [
-                'brand_name.required' => 'Không được phép để trống',
-                'brand_desc.required' => 'Không được phép để trống',
-                'brand_status.required' => 'Không được phép để trống',
-            ];
-            $validator = Validator::make($request->all(),$rule,$msg);
-            if($validator->fails()){
-                echo "<pre>";
-                $dataView['err'] = $validator->errors()->toArray();
-                echo "<pre>";
-                $request->flash();
-                return redirect()->route('brand.edit',[$id])->withErrors($validator->errors());
-            }else{
+    public function update(ValidateFormUpdateBrand $request,$id){
+
                 $data = array();
                 $data['brand_name'] = $request->brand_name;
                 $data['brand_desc'] = $request->brand_desc;
@@ -100,13 +62,11 @@ public function edit($id){
                     return \redirect()->route('brand.list');
                 }else{
                     DB::table('brands')->where('id',$id)->update($data);
-                    Alert()->success('Sửa  thành công !')->autoClose(1500);
+                    Alert()->success('Cập nhật thành công !')->autoClose(1500);
                     return \redirect()->route('brand.list');
                 }
             }
-                }
 
-        }
 public function remove($id){
     DB::table('brands')->where('id',$id)->delete();
     Alert()->success('Xóa thành công !')->autoClose(1500);
