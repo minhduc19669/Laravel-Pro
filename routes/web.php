@@ -22,8 +22,7 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
 Route::get('/', 'User\HomeController@index')->name('home');
 Route::get('/product', 'User\HomeController@product')->name('home.product');
-});
-
+//customers
 
 
 Route::middleware(['auth'])->group(function (){
@@ -61,7 +60,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('unactive-product/{id}', 'ProductController@unactive');
         });
 		//Sale-code
-
 		Route::prefix('coupon')->group(function(){
             Route::get('list','CouponController@index')->name('coupon.list');
             Route::get('create','CouponController@create')->name('coupon.create');
@@ -124,8 +122,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('edit-custom/{id}','CustomController@edit')->name('custom.edit');
             Route::post('update-custom/{id}','CustomController@update')->name('custom.update');
             Route::get('remove-custom/{id}','CustomController@remove')->name('custom.remove');
-
-
     });
 });
 

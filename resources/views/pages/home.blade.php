@@ -177,7 +177,7 @@
                   </div>
                 </div>
                 <div class="header-login same-style">
-                  <a href="login-register.html"
+                  <a href="{{route('customer.login')}}"
                     ><i class="fa fa-user-o" aria-hidden="true"></i
                   ></a>
                 </div>
