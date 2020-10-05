@@ -160,7 +160,7 @@
                           <a href="my-account.html">my account</a>
                         </li>
                         <li>
-                          <a href="login-register.html">login / register</a>
+                        <a href="{{route('home.getlogin')}}">login / register</a>
                         </li>
                       </ul>
                     </li>
@@ -201,7 +201,7 @@
                   </div>
                 </div>
                 <div class="header-login same-style">
-                  <a href="login-register.html"
+                  <a href="{{route('home.getlogin')}}"
                     ><i class="fa fa-user-o" aria-hidden="true"></i
                   ></a>
                 </div>
@@ -264,8 +264,7 @@
                     <li>
                       <a href="#">HOME</a>
                       <ul>
-                        <li><a href="index.html">home version 1</a></li>
-                        <li><a href="index-2.html">home version 2</a></li>
+                        <li><a href="{{route('home')}}">home version 1</a></li>
                       </ul>
                     </li>
                     <li>

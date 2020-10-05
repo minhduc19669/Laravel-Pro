@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Custom extends Model
 {
-    protected $table = 'customs';
+    protected $table = 'customers';
     protected $fillable = [
-        'custom_name','custom_email','custom_phone','custom_avatar','custom_address','custom_password'
+        'customer_name', 'customer_email','customer_phone', 'customer_avatar', 'customer_address', 'customer_password'
     ];
 }

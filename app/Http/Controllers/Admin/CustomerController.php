@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Custom;
 use App\Http\Requests\ValidateFormAddCustom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
-class CustomController extends Controller
+use App\Http\Controllers\Controller;
+class CustomerController extends Controller
 {
     public function list()
     {
@@ -56,4 +56,9 @@ class CustomController extends Controller
         Alert()->success('Xóa thành công!')->autoClose(1500);
         return \redirect()->route('custom.list');
     }
+
+
+
+
+
 }

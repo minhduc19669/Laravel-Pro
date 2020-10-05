@@ -27,11 +27,14 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/meanmenu.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
+
+
   <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
               <header class="header-area">
@@ -177,7 +180,7 @@
                   </div>
                 </div>
                 <div class="header-login same-style">
-                  <a href="{{route('customer.login')}}"
+                  <a href="{{route('home.getlogin')}}"
                     ><i class="fa fa-user-o" aria-hidden="true"></i
                   ></a>
                 </div>
