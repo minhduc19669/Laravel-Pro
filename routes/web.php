@@ -22,9 +22,11 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
 Route::get('/', 'User\HomeController@index')->name('home');
 Route::get('/product', 'User\HomeController@product')->name('home.product');
-//customers
-
-
+    //home
+Route::get('login', 'User\HomeController@showFormLogin_Register')->name('home.getlogin');
+Route::post('login', 'User\HomeController@login')->name('home.postlogin');
+});
+Route::post('register', 'User\HomeController@register')->name('home.register');
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){
@@ -116,16 +118,15 @@ Route::middleware(['auth'])->group(function (){
               Route::post('update-order/{id}','OrderController@update')->name('order.update');
               Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
               //custom
-            Route::get('custom','CustomController@list')->name('custom.list');
-            Route::get('add-custom','CustomController@add')->name('custom.add');
-            Route::post('save-custom','CustomController@save')->name('custom.save');
-            Route::get('edit-custom/{id}','CustomController@edit')->name('custom.edit');
-            Route::post('update-custom/{id}','CustomController@update')->name('custom.update');
-            Route::get('remove-custom/{id}','CustomController@remove')->name('custom.remove');
+            Route::get('custom', 'CustomerController@list')->name('custom.list');
+            Route::get('add-custom', 'CustomerController@add')->name('custom.add');
+            Route::post('save-custom', 'CustomerController@save')->name('custom.save');
+            Route::get('edit-custom/{id}', 'CustomerController@edit')->name('custom.edit');
+            Route::post('update-custom/{id}', 'CustomerController@update')->name('custom.update');
+            Route::get('remove-custom/{id}','CustomerController@remove')->name('custom.remove');
+
+        });
     });
-});
-
-
 
 
 
