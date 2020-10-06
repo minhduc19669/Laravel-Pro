@@ -21,15 +21,21 @@ Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
 
 
 Route::prefix('home')->group(function(){
-Route::get('/', 'User\HomeController@index')->name('home');
-Route::get('/product', 'User\HomeController@product')->name('home.product');
+    Route::get('/', 'User\HomeController@index')->name('home');
+    Route::get('/product', 'User\HomeController@product')->name('home.product');
     //home-customer-login
-
-Route::get('login', 'User\HomeController@showFormLogin')->name('home.getlogin');
+    Route::get('login', 'User\HomeController@showFormLogin')->name('home.getlogin');
     Route::get('register', 'User\HomeController@showFormRegister')->name('home.getregister');
-Route::post('login', 'User\HomeController@login')->name('home.postlogin');
+    Route::post('login', 'User\HomeController@login')->name('home.postlogin');
+    Route::post('register', 'User\HomeController@register')->name('home.postregister');
+
+
 });
-Route::post('register', 'User\HomeController@register')->name('home.postregister');
+//social-login
+Route::get('auth/google', 'User\SocialController@redirectToGoogle')->name('google');
+Route::get('auth/google/callback', 'User\SocialController@handleGoogleCallback');
+Route::get('auth/google/logout', 'User\SocialController@logout')->name('google_logout');
+
 
 
 //manage//
