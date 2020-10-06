@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>LOVEPETS - Pet Food eCommerce</title>
+    <title>ĐỨC MINH - Pet Food eCommerce</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -52,28 +52,21 @@
                       @if(Session::get('customer'))
                     <a href="#"
                   >
-
-                    {{Session::get('customer')->customer_name}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    {{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
-                          ><img
-                            alt="flag"
-                      src="{{asset('assets_page/img/icon-img/bl.jpg')}}"
-                          />Bangla
+                          >Tài khoản
                         </a>
                       </li>
                       <li>
                         <a href="#"
-                          ><img
-                            alt="flag"
-                            src="{{asset('assets_page/img/icon-img/in.jpg')}}"
-                          />Arabic</a
+                          >Các địa chỉ</a
                         >
                       </li>
                       <li>
                         <a href="{{route('google_logout')}}"
-                          >Logout
+                          >Đăng xuất
                         </a>
                       </li>
                     </ul>

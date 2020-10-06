@@ -200,11 +200,6 @@
                     </form>
                   </div>
                 </div>
-                <div class="header-login same-style">
-                  <a href="{{route('home.getlogin')}}"
-                    ><i class="fa fa-user-o" aria-hidden="true"></i
-                  ></a>
-                </div>
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
