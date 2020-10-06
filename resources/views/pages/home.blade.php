@@ -54,8 +54,7 @@
                       @if(Session::get('customer'))
                     <a href="#"
                   >
-
-                    {{Session::get('customer')->customer_name}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    {{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"

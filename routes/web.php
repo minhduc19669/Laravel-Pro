@@ -28,7 +28,13 @@ Route::prefix('home')->group(function(){
     Route::get('register', 'User\HomeController@showFormRegister')->name('home.getregister');
     Route::post('login', 'User\HomeController@login')->name('home.postlogin');
     Route::post('register', 'User\HomeController@register')->name('home.postregister');
-
+    //customer
+    Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
+    Route::get('add-customer', 'Admin\CustomerController@add')->name('customer.add');
+    Route::post('save-customer', 'Admin\CustomerController@save')->name('customer.save');
+    Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
+    Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
+    Route::get('remove-customer/{id}', 'Admin\CustomerController@remove')->name('customer.remove');
 
 });
 //social-login
@@ -133,12 +139,7 @@ Route::middleware(['auth'])->group(function (){
               Route::post('update-order/{id}','OrderController@update')->name('order.update');
               Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
               //customer
-            Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
-            Route::get('add-customer', 'Admin\CustomerController@add')->name('customer.add');
-            Route::post('save-customer', 'Admin\CustomerController@save')->name('customer.save');
-            Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
-            Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
-            Route::get('remove-customer/{id}','Admin\CustomerController@remove')->name('customer.remove');
+
 
         });
     });
