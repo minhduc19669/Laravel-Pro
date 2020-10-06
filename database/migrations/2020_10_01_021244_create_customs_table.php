@@ -19,7 +19,7 @@ class CreateCustomsTable extends Migration
             $table->string('customer_address')->nullable();
             $table->integer('customer_phone')->nullable();
             $table->string('customer_avatar')->nullable();
-            $table->string('customer_email');
+            $table->string('customer_email')->nullable()->unique();
             $table->string('customer_password');
             $table->rememberToken();
             $table->timestamps();
