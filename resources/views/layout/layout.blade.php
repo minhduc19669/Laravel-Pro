@@ -50,9 +50,9 @@
                   </li>
                   <li>
                       @if(Session::get('customer'))
-                    <a href="#"
-                  >
-                    {{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+
+                </div>
+                    <a href="#">{{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
@@ -208,11 +208,7 @@
                     </form>
                   </div>
                 </div>
-                <div class="header-login same-style">
-                  <a href="login-register.html"
-                    ><i class="fa fa-user-o" aria-hidden="true"></i
-                  ></a>
-                </div>
+
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

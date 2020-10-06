@@ -35,7 +35,8 @@ class SocialController extends Controller
                     'customer_avatar'=>$user->avatar,
                     'customer_password'=>Hash::make('123456')
                 ]);
-                Session::put('customer_name', $newUser->name);
+                Session::put('customer', ['id'=>$newUser->id,
+                'name'=>$newUser->customer_name]);
                 return redirect()->route('home');
             }
         } catch (Exception $e) {
@@ -44,7 +45,7 @@ class SocialController extends Controller
     }
 
     public function logout(){
-        Session::put('customer_name',\null);
+        Session::put('customer',\null);
         return \redirect()->route('home');
     }
 
