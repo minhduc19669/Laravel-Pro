@@ -8,13 +8,17 @@ use App\Http\Requests\ValidateFormLogin;
 use App\Http\Requests\ValidateFormRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Product;
+use App\Slide;
 use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
     //
     public function index(){
-        return \view('pages.home');
+        $products=Product::limit(8)->orderBy('product_id','desc')->get();
+        $slides=Slide::limit(3)->orderBy('id','desc')->get();
+        return \view('pages.home',\compact('products','slides'));
     }
     public function showFormLogin()
     {

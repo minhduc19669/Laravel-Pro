@@ -43,7 +43,7 @@
                                                 <div style="margin-left:100; ">
                                                     <span style="margin-left: 180px">hoặc đăng nhập bằng</span>
                                                      <button style="border-radius: 5px;width:150px;margin-left:5px; " class="btn btn-block btn-social btn-google">
-                                                     <span class="fa fa-google"></span><a href="{{route('google')}}">Google+</a>
+                                                     <span class="fa fa-google"></span><a style="color: white" href="{{route('google')}}">Google+</a>
   </button><button type="submit" style="border-radius: 5px;width:150px;margin-left:5px;" class="btn btn-block btn-social btn-facebook">
     <span class="fa fa-facebook"></span>Facebook
   </button>
