@@ -126,8 +126,16 @@ Route::middleware(['auth'])->group(function (){
             Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
             Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
             Route::get('remove-customer/{id}','Admin\CustomerController@remove')->name('customer.remove');
+              //shipping
+            Route::get("shipping","ShippingController@list")->name('shipping.list');
+            Route::get("add-shipping","ShippingController@add")->name('shipping.add');
+            Route::post("save-shipping","ShippingController@save")->name('shipping.save');
+            Route::get("edit-shipping/{id}","ShippingController@edit")->name('shipping.edit');
+            Route::post("update-shipping{id}","ShippingController@update")->name('shipping.update');
+            Route::get("remove-shipping/{id}","ShippingController@remove")->name('shipping.remove');
+              //order_detail
 
-        });
+    });
     });
 
 
