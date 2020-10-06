@@ -29,5 +29,15 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'google' => [
+        'client_id' => '237573575690-r1sd8o84csmpccibnt0mrcsnppsh65v7.apps.googleusercontent.com',
+        'client_secret' => 'AlAnXh9FwNY0bnsMVS1KhI1W',
+        'redirect' => 'http://localhost:8000/auth/google/callback'
+    ],
+    // 'facebook' => [
+    //     'client_id'     => '237573575690-r1sd8o84csmpccibnt0mrcsnppsh65v7.apps.googleusercontent.com', //237573575690-r1sd8o84csmpccibnt0mrcsnppsh65v7.apps.googleusercontent.com
+    //     'client_secret' => 'AlAnXh9FwNY0bnsMVS1KhI1W',//AlAnXh9FwNY0bnsMVS1KhI1W
+    //     'redirect'      => 'http://localhost:8000/auth/google/callback',
+    // ],
 
 ];
