@@ -16,17 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'User\LoginController@showFormLogin')->name('login');
 Route::post('login', 'User\LoginController@login')->name('admin.login');
 Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
-//login
+//login-admin
 
 
 Route::prefix('home')->group(function(){
 Route::get('/', 'User\HomeController@index')->name('home');
 Route::get('/product', 'User\HomeController@product')->name('home.product');
-    //home
-Route::get('login', 'User\HomeController@showFormLogin_Register')->name('home.getlogin');
+    //home-customer-login
+
+Route::get('login', 'User\HomeController@showFormLogin')->name('home.getlogin');
+    Route::get('register', 'User\HomeController@showFormRegister')->name('home.getregister');
 Route::post('login', 'User\HomeController@login')->name('home.postlogin');
 });
-Route::post('register', 'User\HomeController@register')->name('home.register');
+Route::post('register', 'User\HomeController@register')->name('home.postregister');
+
+
+//manage//
+
+
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function(){

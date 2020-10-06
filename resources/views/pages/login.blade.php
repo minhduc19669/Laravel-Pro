@@ -13,9 +13,6 @@
                                 <a class="active" data-toggle="tab" href="#lg1">
                                     <h4> Đăng nhập </h4>
                                 </a>
-                                <a data-toggle="tab" href="#lg2">
-                                    <h4> Đăng kí </h4>
-                                </a>
                             </div>
                             <div class="tab-content">
                                 <div id="lg1" class="tab-pane active">
@@ -23,18 +20,13 @@
                                     <div class="login-form-container">
                                         <div class="login-register-form">
                                             @if( Session::get('mess'))
-                    <div class="alert alert-danger" role="alert">
-                        Sai tên đăng nhập hoặc mật khẩu!
-                        <?php
-                        Session::put('mess',null);
-                        ?>
-                    </div>
-                @endif
-                @if( $errors->all())
-                    <div class="alert alert-danger" role="alert">
-                        Lỗi đăng nhập!!!
-                    </div>
-                @endif
+                                        <div class="alert alert-danger" role="alert">
+                                    Sai tên đăng nhập hoặc mật khẩu!
+                                        <?php
+                                    Session::put('mess',null);
+                                    ?>
+                                        </div>
+                                @endif
                                             <form action="{{route('home.postlogin')}}" method="post">
                                                 @csrf
                                                 <input type="text" name="email" placeholder="Email">
@@ -57,48 +49,10 @@
   </button>
                                                 </div>
                                             </form>
+                                        <div style="margin-top: 20px;margin-left: 140px"><i>Chưa có tài khoản, đăng kí ở <a href="{{route('home.getregister')}}" style="color: red">đây</a></i>.</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="lg2" class="tab-pane">
-                                    <div class="login-form-container">
-                                        <div class="login-register-form">
-                                            @if( Session::get('mess'))
-                    <div class="alert alert-danger" role="alert">
-                        Sai tên đăng nhập hoặc mật khẩu!
-                        <?php
-                        Session::put('mess',null);
-                        ?>
-                    </div>
-                @endif
-                @if( $errors->all())
-                    <div class="alert alert-danger" role="alert">
-                        Lỗi đăng nhập!!!
-                    </div>
-                @endif
-                                        <form action="{{route('home.register')}}" method="post">
-                                            @csrf
-                                                <input type="text" name="name" placeholder="Username">
-                                                @if($errors->first('name'))
-                                <p class="text-danger">{{ $errors->first('email') }}</p>
-                            @endif
-                                                <input type="password" name="password" placeholder="Password">
-                                                @if($errors->first('password'))
-                                <p class="text-danger">{{ $errors->first('password') }}</p>
-                            @endif
-                                                <input name="email" placeholder="Email" type="email">
-                                                @if($errors->first('email'))
-                                <p class="text-danger">{{ $errors->first('email') }}</p>
-                            @endif
-                                                <div class="button-box">
-                                                    <button type="submit"><span>Đăng kí</span></button>
-                                                </div>
-
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
