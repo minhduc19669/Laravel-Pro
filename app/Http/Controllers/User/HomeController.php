@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\User;
 
 
-use App\Custom;
+use App\Customer;
 use App\Http\Requests\ValidateFormLogin;
 use App\Http\Requests\ValidateFormRegister;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class HomeController extends Controller
         $email = $request->email;
         $password = \Hash::make($request->password);
 
-        $customer = Custom::where([
+        $customer = Customer::where([
             ['customer_email', '=', $email],
             ['customer_password', '=', $password],
         ])->first();
@@ -46,7 +46,7 @@ class HomeController extends Controller
     public function register(ValidateFormRegister $request)
     {
 
-        $customer = new Custom();
+        $customer = new Customer();
         $customer->customer_name = $request->name;
         $customer->customer_email = $request->email;
         $customer->customer_password = \Hash::make($request->password);

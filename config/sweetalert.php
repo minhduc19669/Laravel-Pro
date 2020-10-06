@@ -101,7 +101,7 @@ return [
     |--------------------------------------------------------------------------
     | Animation
     |--------------------------------------------------------------------------
-    | Custom animation with [Animate.css](https://daneden.github.io/animate.css/)
+    | Customer animation with [Animate.css](https://daneden.github.io/animate.css/)
     | If set to false, modal CSS animation will be use default ones.
     | For specific modal just use the animation() helper method.
     |
@@ -175,7 +175,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Class
+    | Customer Class
     |--------------------------------------------------------------------------
     | A custom CSS class for the modal:
     |

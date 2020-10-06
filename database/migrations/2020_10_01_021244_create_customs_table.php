@@ -13,14 +13,14 @@ class CreateCustomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customs', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('custom_name');
-            $table->string('custom_address')->nullable();
-            $table->integer('custom_phone')->nullable();
-            $table->string('custom_avatar')->nullable();
-            $table->string('custom_email');
-            $table->string('custom_password');
+            $table->string('customer_name');
+            $table->string('customer_address')->nullable();
+            $table->integer('customer_phone')->nullable();
+            $table->string('customer_avatar')->nullable();
+            $table->string('customer_email');
+            $table->string('customer_password');
             $table->rememberToken();
             $table->timestamps();
         });
