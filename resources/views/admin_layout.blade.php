@@ -483,17 +483,6 @@
                                 <li><a href={{route('slide.list')}}>Liệt kê slide</a></li>
                             </ul>
                         </li>
-
-                    <li>
-                        <a href="javascript: void(0);">
-                            <i class="mdi mdi-calendar-month"></i>
-                            <span> Đơn hàng </span>
-                        </a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href={{route('order.list')}}>Quản lí đơn hàng</a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-format-underline"></i>
@@ -568,6 +557,24 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-calendar-month"></i>
+                            <span> Đơn hàng </span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href={{route('order.list')}}>Quản lí đơn hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-apple-keyboard-caps"></i>
+                            <span> Thông tin giao hàng</span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="{{route('shipping.list')}}">Quản lý thông tin giao hàng</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="javascript: void(0);">
                             <i class=" ion ion-logo-android"></i>

@@ -46,7 +46,7 @@ class OrderController extends Controller
                 'order_status' => $request->order_status,
             ]);
         DB::commit();
-        Alert()->success('Sửa  thành công !')->autoClose(1500);
+        Alert()->success('Cập nhật  thành công !')->autoClose(1500);
         return \redirect()->route('order.list');
 
     }

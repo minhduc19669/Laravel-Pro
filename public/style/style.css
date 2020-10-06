@@ -583,3 +583,6 @@ footer {
     clear: both;
 
 }
+.table-responsive {
+    font-size: 14px;
+}
