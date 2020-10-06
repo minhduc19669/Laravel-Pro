@@ -19,21 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/order_detail/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/order_detail/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/shipping/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/shipping/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/shipping/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_30_070252_create_shippings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_30_070252_create_shippings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_30_071137_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_30_071137_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,7 +218,7 @@
       <workItem from="1601878084272" duration="7791000" />
       <workItem from="1601885897140" duration="1343000" />
       <workItem from="1601912310326" duration="1204000" />
-      <workItem from="1601947360103" duration="16431000" />
+      <workItem from="1601947360103" duration="17072000" />
     </task>
     <servers />
   </component>
