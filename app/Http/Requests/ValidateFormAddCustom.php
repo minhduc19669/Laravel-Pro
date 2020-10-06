@@ -24,22 +24,22 @@ class ValidateFormAddCustom extends FormRequest
     public function rules()
     {
         return [
-            'custom_name' => 'required',
-            'custom_email' => 'required|email',
-            'custom_address' => 'required',
-            'custom_phone' => 'required',
-            'custom_password' => 'required',
+            'customer_name' => 'required',
+            'customer_email' => 'required|email',
+            'customer_address' => 'required',
+            'customer_phone' => 'required',
+            'customer_password' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'custom_name.required' => 'không được để trống ô này',
-            'custom_email.required' => 'không được để trống ô này',
-            'custom_email.email' => 'Cần nhập đúng định dạng email',
-            'custom_address.required' => 'không được để trống ô này',
-            'custom_phone.required' => 'không được để trống ô này',
-            'custom_password.required' => 'không được để trống ô này',
+            'customer_name.required' => 'không được để trống ô này',
+            'customer_email.required' => 'không được để trống ô này',
+            'customer_email.email' => 'Cần nhập đúng định dạng email',
+            'customer_address.required' => 'không được để trống ô này',
+            'customer_phone.required' => 'không được để trống ô này',
+            'customer_password.required' => 'không được để trống ô này',
         ];
     }
 }

@@ -126,13 +126,13 @@ Route::middleware(['auth'])->group(function (){
               Route::get('edit-order/{id}','OrderController@edit')->name('order.edit');
               Route::post('update-order/{id}','OrderController@update')->name('order.update');
               Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
-              //custom
-            Route::get('custom', 'CustomerController@list')->name('custom.list');
-            Route::get('add-custom', 'CustomerController@add')->name('custom.add');
-            Route::post('save-custom', 'CustomerController@save')->name('custom.save');
-            Route::get('edit-custom/{id}', 'CustomerController@edit')->name('custom.edit');
-            Route::post('update-custom/{id}', 'CustomerController@update')->name('custom.update');
-            Route::get('remove-custom/{id}','CustomerController@remove')->name('custom.remove');
+              //customer
+            Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
+            Route::get('add-customer', 'Admin\CustomerController@add')->name('customer.add');
+            Route::post('save-customer', 'Admin\CustomerController@save')->name('customer.save');
+            Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
+            Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
+            Route::get('remove-customer/{id}','Admin\CustomerController@remove')->name('customer.remove');
 
         });
     });

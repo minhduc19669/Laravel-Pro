@@ -20,21 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddNews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddNews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSlide.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSlide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdaateNews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdaateNews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateSlide.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateSlide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddCustom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddCustom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sweetalert.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sweetalert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_01_021244_create_customs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_01_021244_create_customs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/form-pickers.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pages/form-pickers.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/sweet-alerts.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pages/sweet-alerts.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/libs/bootstrap-daterangepicker/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-daterangepicker/daterangepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets_page/js/vendor/modernizr-2.8.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets_page/js/vendor/modernizr-2.8.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/custom/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/custom/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/custom/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,9 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
@@ -150,13 +152,11 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
@@ -164,6 +164,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hx5GAoQfii0JpdS0XJ1vfs6zAO" />
@@ -184,10 +185,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/customer" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Models/Admin" />
     </key>
@@ -233,7 +236,10 @@
       <workItem from="1601656345954" duration="4676000" />
       <workItem from="1601690845908" duration="2373000" />
       <workItem from="1601863414774" duration="4092000" />
-      <workItem from="1601878084272" duration="6390000" />
+      <workItem from="1601878084272" duration="7791000" />
+      <workItem from="1601885897140" duration="1343000" />
+      <workItem from="1601912310326" duration="1204000" />
+      <workItem from="1601947360103" duration="1189000" />
     </task>
     <servers />
   </component>
@@ -257,6 +263,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1601230030867" />
+    <state x="170" y="146" width="1006" height="517" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601913201673">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="170" y="146" width="1006" height="517" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1601913201673" />
     <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601522948062">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -269,6 +279,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1601519712578" />
+    <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601948018871">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1601948018871" />
     <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601884421771">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -289,5 +303,9 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1601274505182" />
+    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1601886095313">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1366.741@0.27.1366.741" timestamp="1601886095313" />
   </component>
 </project>
