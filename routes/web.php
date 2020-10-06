@@ -16,18 +16,37 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'User\LoginController@showFormLogin')->name('login');
 Route::post('login', 'User\LoginController@login')->name('admin.login');
 Route::get('logout', 'User\LoginController@logout')->name('admin.logout');
-//login
+//login-admin
 
 
 
 Route::prefix('home')->group(function(){
-Route::get('/', 'User\HomeController@index')->name('home');
-Route::get('/product', 'User\HomeController@product')->name('home.product');
-    //home
-Route::get('login', 'User\HomeController@showFormLogin_Register')->name('home.getlogin');
-Route::post('login', 'User\HomeController@login')->name('home.postlogin');
+    Route::get('/', 'User\HomeController@index')->name('home');
+    Route::get('/product', 'User\HomeController@product')->name('home.product');
+    //home-customer-login
+    Route::get('login', 'User\HomeController@showFormLogin')->name('home.getlogin');
+    Route::get('register', 'User\HomeController@showFormRegister')->name('home.getregister');
+    Route::post('login', 'User\HomeController@login')->name('home.postlogin');
+    Route::post('register', 'User\HomeController@register')->name('home.postregister');
+    //customer
+    Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
+    Route::get('add-customer', 'Admin\CustomerController@add')->name('customer.add');
+    Route::post('save-customer', 'Admin\CustomerController@save')->name('customer.save');
+    Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
+    Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
+    Route::get('remove-customer/{id}', 'Admin\CustomerController@remove')->name('customer.remove');
+
 });
-Route::post('register', 'User\HomeController@register')->name('home.register');
+//social-login
+Route::get('auth/google', 'User\SocialController@redirectToGoogle')->name('google');
+Route::get('auth/google/callback', 'User\SocialController@handleGoogleCallback');
+Route::get('auth/google/logout', 'User\SocialController@logout')->name('google_logout');
+
+
+
+//manage//
+
+
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function () {
@@ -134,6 +153,7 @@ Route::middleware(['auth'])->group(function (){
             Route::post("update-shipping{id}","ShippingController@update")->name('shipping.update');
             Route::get("remove-shipping/{id}","ShippingController@remove")->name('shipping.remove');
               //order_detail
+
 
     });
     });

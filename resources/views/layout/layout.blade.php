@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>LOVEPETS - Pet Food eCommerce</title>
+    <title>ĐỨC MINH - Pet Food eCommerce</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -47,53 +47,34 @@
             <div class="col-lg-8 col-md-8 col-12">
               <div class="account-curr-lang-wrap f-right">
                 <ul>
-                  <li class="top-hover">
-                    <a href="#">$Doller (US) <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                    <ul>
-                      <li><a href="#">Taka (BDT)</a></li>
-                      <li><a href="#">Riyal (SAR)</a></li>
-                      <li><a href="#">Rupee (INR)</a></li>
-                      <li><a href="#">Dirham (AED)</a></li>
-                    </ul>
                   </li>
                   <li>
+                      @if(Session::get('customer'))
                     <a href="#"
-                  ><img alt="flag" src="{{asset('assets_page/img/icon-img/en.jpg')}}" />
-                      English <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                  >
+                    {{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
-                          ><img
-                            alt="flag"
-                      src="{{asset('assets_page/img/icon-img/bl.jpg')}}"
-                          />Bangla
+                          >Tài khoản
                         </a>
                       </li>
                       <li>
                         <a href="#"
-                          ><img
-                            alt="flag"
-                            src="{{asset('assets_page/img/icon-img/in.jpg')}}"
-                          />Arabic</a
+                          >Các địa chỉ</a
                         >
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            alt="flag"
-                            src="{{asset('assets_page/img/icon-img/en.jpg')}}"
-                          />Hindi
+                        <a href="{{route('google_logout')}}"
+                          >Đăng xuất
                         </a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            alt="flag"
-                            src="{{asset('assets_page/img/icon-img/sp.jpg')}}"
-                          />Spanish</a
-                        >
                       </li>
                     </ul>
+                    @else
+                  <a href="{{route('home.getlogin')}}"
+                  >
+                    Đăng nhập/Đăng kí</a>
+                    @endif
                   </li>
                 </ul>
               </div>

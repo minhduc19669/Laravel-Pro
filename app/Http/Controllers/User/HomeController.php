@@ -16,9 +16,13 @@ class HomeController extends Controller
     public function index(){
         return \view('pages.home');
     }
-    public function showFormLogin_Register()
+    public function showFormLogin()
     {
-        return \view('pages.login_register');
+        return \view('pages.login');
+    }
+    public function showFormRegister()
+    {
+        return \view('pages.register');
     }
 
     public function login(ValidateFormLogin $request)
