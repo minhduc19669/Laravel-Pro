@@ -35,13 +35,15 @@ Route::prefix('home')->group(function(){
     Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
     Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
     Route::get('remove-customer/{id}', 'Admin\CustomerController@remove')->name('customer.remove');
-
 });
 //social-login
 Route::get('auth/google', 'User\SocialController@redirectToGoogle')->name('google');
 Route::get('auth/google/callback', 'User\SocialController@handleGoogleCallback');
 Route::get('auth/google/logout', 'User\SocialController@logout')->name('google_logout');
 
+//cart
+
+Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
 
 
 //manage//

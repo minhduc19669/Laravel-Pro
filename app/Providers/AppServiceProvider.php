@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Coupon;
 use Illuminate\Support\ServiceProvider;
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Schema;
 
 
@@ -38,9 +38,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 
-        view()->composer('admin_layout', function ($view) {
-            $coupon_total = Coupon::all();
-            $count=\count($coupon_total);
+        view()->composer('pages.home', function ($view) {
+            $count=Cart::count();
             $view->with(['count'=>$count]);
         });
     }

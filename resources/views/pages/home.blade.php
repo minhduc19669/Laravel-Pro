@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>ĐỨC MINH - Pet Food eCommerce</title>
+    <title>Pet Food eCommerce</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -172,7 +172,7 @@
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span class="count-style">02</span>
+                  <span class="count-style" id="countcart">{{$count}}</span>
                   </button>
                   <div class="shopping-cart-content">
                     <ul>
@@ -396,7 +396,7 @@
 
         <div class="row">
             @foreach ($products as $product)
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+          <div id="product" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
             <div class="product-wrapper mb-10">
               <div class="product-img" style="width: 230px;height: 190px;">
                 <a href="#">
@@ -411,7 +411,7 @@
                   >
                     <i class="ti-plus"></i>
                   </a>
-                  <a title="Add To Cart" href="#">
+                <a id="addtocart" buy-id="{{$product->product_id}}" title="Add To Cart" >
                     <i class="ti-shopping-cart"></i>
                   </a>
                 </div>
@@ -1007,18 +1007,9 @@
         </div>
       </div>
     </footer>
-    <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value + "$"; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider.oninput = function () {
-        output.innerHTML = this.value + "$";
-      };
-    </script>
 
     <!-- all js here -->
+
     <script src="{{asset('assets_page/js/vendor/jquery-1.12.0.min.js')}}"></script>
     <script src="{{asset('assets_page/js/popper.js')}}"></script>
     <script src="{{asset('assets_page/js/bootstrap.min.js')}}"></script>
@@ -1029,7 +1020,27 @@
     <script src="{{asset('assets_page/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets_page/js/plugins.js')}}"></script>
     <script src="{{asset('assets_page/js/main.js')}}"></script>
-  </body>
+
+
+    <script>
+        $(document).ready(function($){
+            let listProduct=$("#product #addtocart");
+            listProduct.on('click',function(){
+                var id=$(this).attr('buy-id');
+                $.ajax({
+                url:'http://localhost:8000/addcart/'+id,
+                dataType:'json',
+                success:function(result){
+                    let count = result.countCart;
+                    console.log(count);
+                    $("#countcart").html(""+count);
+                }
+            })
+            });
+
+        });
+    </script>
+</body>
 </html>
 
 
