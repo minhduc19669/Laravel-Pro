@@ -2,7 +2,7 @@
 @extends('admin_layout')
 @section('admin_content')
     @foreach($list as $key => $edit)
-    <form action="{{\Illuminate\Support\Facades\URL::to('users/update-brand/'.$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('brand.update',$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
         <h2>Cập nhật thương hiệu</h2>

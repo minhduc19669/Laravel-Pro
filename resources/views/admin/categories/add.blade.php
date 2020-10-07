@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <form action="{{\Illuminate\Support\Facades\URL::to('users/save-category')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('category.save')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
         <h2>Thêm danh mục sản phẩm</h2>
@@ -16,15 +16,7 @@
                 @if ($errors->has('category_product_name'))
                     <p style="color: red">{{ $errors->first('category_product_name') }}</p>
                 @endif
-                <div class="form-row">
-                    <div class="form-group col-md-8">
-                        <label for="modelName">Tên danh mục tin tức</label>
-                        <input type="text" class="form-control" name="category_news_name" placeholder="Tên danh mục tin tức">
-                    </div>
-                </div>
-                @if ($errors->has('category_news_name'))
-                    <p style="color: red">{{ $errors->first('category_news_name') }}</p>
-                @endif
+
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Chú thích danh mục sản phẩm</label>
@@ -35,16 +27,6 @@
                 @if ($errors->has('category_product_desc'))
                     <p style="color: red">{{ $errors->first('category_product_desc') }}</p>
                 @endif
-                <div class="form-row">
-                    <div class="form-group col-md-8">
-                        <label for="price">Chú thích danh mục tin tức</label>
-                        <textarea  name="category_news_desc" id="editor2" rows="10" cols="80"></textarea>
-                    </div>
-                </div>
-                @if ($errors->has('category_news_desc'))
-                    <p style="color: red">{{ $errors->first('category_news_desc') }}</p>
-                @endif
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
             <div class="col-md-4">

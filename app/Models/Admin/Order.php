@@ -8,6 +8,6 @@ class Order extends Model
 {
     protected $table = "orders";
     protected $fillable = [
-      'user_id'  ,'shipping_id' ,'order_total','order_status'
+      'user_id'  ,'shipping_id' ,'order_total','order_status','created_at','updated_at'
     ];
 }

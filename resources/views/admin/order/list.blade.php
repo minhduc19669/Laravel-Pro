@@ -7,9 +7,10 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên khách hàng</th>
-                <th>Tổng gía tiền</th>
-                <th>Trạng thái</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá sản phẩm</th>
+                <th>Số lượng sản phẩm</th>
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>

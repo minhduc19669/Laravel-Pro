@@ -30,9 +30,9 @@
                     <td>{{$list->news_view}}</td>
                     <td>{{$list->news_date}}</td>
                     @if($list->news_status==0)
-                        <td><a href={{\Illuminate\Support\Facades\URL::to('users/unactive-news/'.$list->news_id)}}><i style="color: red" class="fas fa-smile-wink"></i></a></td>
+                        <td><a href={{route('news.un-active',$list->news_id)}}><i style="color: red" class="fas fa-smile-wink"></i></a></td>
                     @else
-                        <td><a href={{\Illuminate\Support\Facades\URL::to('users/active-news/'.$list->news_id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
+                        <td><a href={{route('news.active',$list->news_id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
                     @endif
                     <td><a href={{route('news.edit',$list->news_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{route('news.remove',$list->news_id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>

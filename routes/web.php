@@ -73,13 +73,13 @@ Route::middleware(['auth'])->group(function (){
         //product
         Route::middleware('isAdmin:product')->group(function () {
             Route::get('product', 'ProductController@list')->name('product.list');
-            Route::get('add-product', 'ProductController@add')->name('product.add');
-            Route::post('save-product', 'ProductController@save')->name('product.save');
-            Route::get('edit-product/{id}', 'ProductController@edit')->name('product.edit');
-            Route::post('update-product/{id}', 'ProductController@update')->name('product.update');
-            Route::get('remove-product/{id}', 'ProductController@remove')->name('product.remove');
-            Route::get('active-product/{id}', 'ProductController@active')->name('product.active');
-            Route::get('unactive-product/{id}', 'ProductController@unactive')->name('product.active');
+            Route::get('product/add', 'ProductController@add')->name('product.add');
+            Route::post('product/save', 'ProductController@save')->name('product.save');
+            Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
+            Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
+            Route::get('product/remove/{id}', 'ProductController@remove')->name('product.remove');
+            Route::get('product/active{id}', 'ProductController@active')->name('product.active');
+            Route::get('product/un-active/{id}', 'ProductController@unactive')->name('product.un-active');
         });
         //Sale-code
         Route::prefix('coupon')->group(function () {
@@ -92,69 +92,73 @@ Route::middleware(['auth'])->group(function (){
         });
         //Category
         Route::middleware('isAdmin:category')->group(function () {
-            Route::get('category', 'CategoryController@list')->name('category.list');
-            Route::get('add-category', 'CategoryController@add')->name('category.add');
-            Route::post('save-category', 'CategoryController@save')->name('category.save');
-            Route::get('edit-category/{id}', 'CategoryController@edit')->name('category.edit');
-            Route::post('update-category/{id}', 'CategoryController@update')->name('category.update');
-            Route::get('remove-cate/{id}', 'CategoryController@remove')->name('category.remove');
-
+            //product
+            Route::get('category/product', 'CategoryController@list')->name('category.list');
+            Route::get('category/product/add', 'CategoryController@add')->name('category.add');
+            Route::post('category/product/save', 'CategoryController@save')->name('category.save');
+            Route::get('category/product/edit/{id}', 'CategoryController@edit')->name('category.edit');
+            Route::post('category/product/update/{id}', 'CategoryController@update')->name('category.update');
+            Route::get('category/product/remove/{id}', 'CategoryController@remove')->name('category.remove');
+            //news
+            Route::get('category/news', 'CategoryController@list_news')->name('category.list-news');
+            Route::get('category/news/add', 'CategoryController@add_news')->name('category.add-news');
+            Route::post('category/news/save', 'CategoryController@save_news')->name('category.save-news');
+            Route::get('category/news/edit/{id}', 'CategoryController@edit_news')->name('category.edit-news');
+            Route::post('category/news/update/{id}', 'CategoryController@update_news')->name('category.update-news');
+            Route::get('category/news/remove/{id}', 'CategoryController@remove_news')->name('category.remove-news');
         });
         //brand
         Route::middleware('isAdmin:category')->group(function () {
             Route::get('brand', 'BrandController@list')->name('brand.list');
-            Route::get('add-brand', 'BrandController@add')->name('brand.add');
-            Route::post('save-brand', 'BrandController@save');
-            Route::get('edit-brand/{id}', 'BrandController@edit')->name('brand.edit');
-            Route::post('update-brand/{id}', 'BrandController@update');
-            Route::get('remove-brand/{id}', 'BrandController@remove');
-            Route::get('active-brand/{id}', 'BrandController@active');
-            Route::get('unactive-brand/{id}', 'BrandController@unactive');
+            Route::get('brand/add', 'BrandController@add')->name('brand.add');
+            Route::post('brand/save', 'BrandController@save')->name('brand.save');
+            Route::get('brand/edit/{id}', 'BrandController@edit')->name('brand.edit');
+            Route::post('brand/update/{id}', 'BrandController@update')->name('brand.update');
+            Route::get('brand/remove/{id}', 'BrandController@remove')->name('brand.remove');
+            Route::get('brand/active/{id}', 'BrandController@active')->name('brand.active');
+            Route::get('brand/un-active/{id}', 'BrandController@unactive')->name('brand.un-active');
         });
 
             //news
             Route::get('news','NewsController@index')->name('news.list');
-            Route::get('add-news','NewsController@add')->name('news.add');
-            Route::post('save-news','NewsController@save');
-            Route::get('edit-news/{id}','NewsController@edit')->name('news.edit');
-            Route::post('update-news/{id}','NewsController@update')->name('news.update');
-            Route::get('romove-news/{id}','NewsController@remove')->name('news.remove');
-            Route::get('active-news/{id}','NewsController@active');
-            Route::get('unactive-news/{id}','NewsController@unactive');
+            Route::get('news/add','NewsController@add')->name('news.add');
+            Route::post('news/save','NewsController@save')->name('news.save');
+            Route::get('news/edit/{id}','NewsController@edit')->name('news.edit');
+            Route::post('news/update/{id}','NewsController@update')->name('news.update');
+            Route::get('news/remove/{id}','NewsController@remove')->name('news.remove');
+            Route::get('news/active/{id}','NewsController@active')->name('news.active');
+            Route::get('news/un-active/{id}','NewsController@unactive')->name('news.un-active');
             //slide
             Route::get('slide','SlideController@list')->name('slide.list');
-            Route::get('add-slide','SlideController@add')->name('slide.add');
-            Route::post('save-slide','SlideController@save')->name('slide.save');
-            Route::get('add-slide','SlideController@add')->name('slide.add');
-            Route::get('edit-slide/{id}','SlideController@edit')->name('slide.edit');
-            Route::post('update-slide/{id}','SlideController@update')->name('slide.update');
-            Route::get('remove-slide/{id}','SlideController@remove')->name('slide.remove');
-            Route::get('active-slide/{id}','SlideController@active')->name('slide.active');
-            Route::get('unactive-slide/{id}','SlideController@unactive')->name('slide.unactive');
+            Route::get('slide/add','SlideController@add')->name('slide.add');
+            Route::post('slide/save','SlideController@save')->name('slide.save');
+            Route::get('slide/add','SlideController@add')->name('slide.add');
+            Route::get('slide/edit/{id}','SlideController@edit')->name('slide.edit');
+            Route::post('slide/update/{id}','SlideController@update')->name('slide.update');
+            Route::get('slide/remove/{id}','SlideController@remove')->name('slide.remove');
+            Route::get('slide/active/{id}','SlideController@active')->name('slide.active');
+            Route::get('slide/un-active/{id}','SlideController@unactive')->name('slide.unactive');
              //order
               Route::get('order','OrderController@list')->name('order.list');
-              Route::get('add-order','OrderController@add')->name('order.add');
-              Route::post('save-order','OrderController@save')->name('order.save');
-              Route::get('edit-order/{id}','OrderController@edit')->name('order.edit');
-              Route::post('update-order/{id}','OrderController@update')->name('order.update');
-              Route::get('remove-order/{id}','OrderController@remove')->name('order.remove');
+              Route::get('order/add','OrderController@add')->name('order.add');
+              Route::post('order/save','OrderController@save')->name('order.save');
+              Route::get('order/edit/{id}','OrderController@edit')->name('order.edit');
+              Route::post('order/update/{id}','OrderController@update')->name('order.update');
+              Route::get('order/remove/{id}','OrderController@remove')->name('order.remove');
               //customer
             Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
-            Route::get('add-customer', 'Admin\CustomerController@add')->name('customer.add');
-            Route::post('save-customer', 'Admin\CustomerController@save')->name('customer.save');
-            Route::get('edit-customer/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
-            Route::post('update-customer/{id}', 'Admin\CustomerController@update')->name('customer.update');
-            Route::get('remove-customer/{id}','Admin\CustomerController@remove')->name('customer.remove');
+            Route::get('customer/add', 'Admin\CustomerController@add')->name('customer.add');
+            Route::post('customer/save', 'Admin\CustomerController@save')->name('customer.save');
+            Route::get('customer/edit/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
+            Route::post('customer/update/{id}', 'Admin\CustomerController@update')->name('customer.update');
+            Route::get('customer/remove{id}','Admin\CustomerController@remove')->name('customer.remove');
               //shipping
             Route::get("shipping","ShippingController@list")->name('shipping.list');
-            Route::get("add-shipping","ShippingController@add")->name('shipping.add');
-            Route::post("save-shipping","ShippingController@save")->name('shipping.save');
-            Route::get("edit-shipping/{id}","ShippingController@edit")->name('shipping.edit');
-            Route::post("update-shipping{id}","ShippingController@update")->name('shipping.update');
-            Route::get("remove-shipping/{id}","ShippingController@remove")->name('shipping.remove');
-              //order_detail
-
-
+            Route::get("shipping/add","ShippingController@add")->name('shipping.add');
+            Route::post("shipping/save","ShippingController@save")->name('shipping.save');
+            Route::get("shipping/edit/{id}","ShippingController@edit")->name('shipping.edit');
+            Route::post("shipping/update/{id}","ShippingController@update")->name('shipping.update');
+            Route::get("shipping/remove/{id}","ShippingController@remove")->name('shipping.remove');
     });
     });
 

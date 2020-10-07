@@ -19,7 +19,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="" />
+    <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderdetailController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Orderdetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Orderdetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order_detail/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/add-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order_detail/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order_detail/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/list-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/shipping/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/shipping/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +172,8 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hx5GAoQfii0JpdS0XJ1vfs6zAO" />
@@ -218,7 +248,9 @@
       <workItem from="1601878084272" duration="7791000" />
       <workItem from="1601885897140" duration="1343000" />
       <workItem from="1601912310326" duration="1204000" />
-      <workItem from="1601947360103" duration="17072000" />
+      <workItem from="1601947360103" duration="25643000" />
+      <workItem from="1601997226944" duration="3068000" />
+      <workItem from="1602034738731" duration="13438000" />
     </task>
     <servers />
   </component>
@@ -254,18 +286,18 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="359" y="239" width="638" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1366.741@0.27.1366.741" timestamp="1601347410449" />
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1601965715149">
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1602040410429">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1601965715149" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1602040410429" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601948018871">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1601948018871" />
-    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601951157681">
+    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601978685748">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1601951157681" />
+    <state x="464" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1601978685748" />
     <state x="100" y="127" width="1166" height="541" key="dock-window-1" timestamp="1601533403122">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -274,17 +306,17 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
-    <state x="347" y="174" key="run.anything.popup" timestamp="1601956261821">
+    <state x="347" y="174" key="run.anything.popup" timestamp="1602041975866">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1601956261821" />
+    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1602041975866" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1601274505182">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1601274505182" />
-    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1601886095313">
+    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602040230371">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1366.741@0.27.1366.741" timestamp="1601886095313" />
+    <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1366.741@0.27.1366.741" timestamp="1602040230371" />
   </component>
 </project>

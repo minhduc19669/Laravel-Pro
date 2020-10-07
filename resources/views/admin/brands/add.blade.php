@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <form action="{{\Illuminate\Support\Facades\URL::to('users/save-brand')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('brand.save')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm thương hiệu</h2>
         <br>
