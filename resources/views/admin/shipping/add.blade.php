@@ -3,7 +3,7 @@
 
         <form action="{{route('shipping.save')}}" method="post" enctype="multipart/form-data" class="mx-5" >
             {{csrf_field()}}
-            <h2>Cập nhật thông tin giao hàng</h2>
+            <h2>Thêm mới</h2>
             <br>
             <div class="row" >
                 <div class="col-md-12">

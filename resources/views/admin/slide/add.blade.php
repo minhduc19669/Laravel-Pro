@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <form action="{{\Illuminate\Support\Facades\URL::to('users/save-slide')}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('slide.save')}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
         <h2>Thêm Slider</h2>
         <br>

@@ -513,12 +513,12 @@
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-puzzle-outline"></i>
-                            <span> Danh mục  </span>
+                            <span> Danh mục   </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="{{route('category.add')}}">Thêm danh mục</a></li>
-                            <li><a href={{route('category.list')}}>Liệt kê danh mục</a></li>
+                            <li><a href="{{route('category.list')}}">Danh mục sản phẩm</a></li>
+                            <li><a href={{route('category.list-news')}}>Danh mục tin tức</a></li>
                         </ul>
                     </li>
 

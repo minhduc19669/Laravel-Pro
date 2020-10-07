@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidateFormOrder;
 use App\Order;
+use App\Orderdetail;
+use App\Shipping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,10 +13,9 @@ class OrderController extends Controller
 {
     public function list(){
          $order = DB::table('orders')
-             ->join('users','users.id','=','orders.order_id')
-             ->join('shippings','shippings.id','=','order_id')
+             ->join('shippings','shippings.id','=','orders.order_id')
              ->get();
-        return view('admin.order.list',['order'=>$order]);
+        return view('admin.order.list',compact('order'));
     }
     public function add(){
       $shipping = DB::table('shippings')->get();
@@ -33,9 +34,14 @@ class OrderController extends Controller
 
     }
     public function edit($id){
-        $shipping = DB::table('shippings')->get();
-        $order = Order::where('order_id',$id)->get();
-   return view('admin.order.edit',compact('shipping','order'));
+        $order = DB::table('orders')
+            ->join('shippings','shippings.id','=','orders.order_id')
+            ->where('orders.order_id',$id)->get();
+        $order_detail = DB::table('orders_details')
+               ->join('orders','orders.order_id','=','orders_details.id')
+              ->where('orders.order_id',$id)->get();
+
+   return view('admin.order.edit',compact('order','order_detail'));
 
     }
     public function update(ValidateFormOrder $request,$id){
