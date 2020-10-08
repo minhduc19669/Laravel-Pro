@@ -42,8 +42,12 @@ Route::get('auth/google/callback', 'User\SocialController@handleGoogleCallback')
 Route::get('auth/google/logout', 'User\SocialController@logout')->name('google_logout');
 
 //cart
+Route::prefix('cart')->group(function(){
+    Route::get('add/{id}', 'CartController@addCart');
+    Route::get('quick-view/{id}','CartController@quick_view_product');
+    Route::get('delete/{id}', 'CartController@delete');
+});
 
-Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
 
 
 //manage//
