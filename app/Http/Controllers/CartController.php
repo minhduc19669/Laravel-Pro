@@ -30,9 +30,26 @@ class CartController extends Controller
                 'options' => ['image' => $product->product_image]
             ]);
         }
+        $content=Cart::content();
+        $leng=\count($content);
         $count=[
-            'countCart'=>Cart::count()
+            'countCart'=>Cart::count(),
+            'contentCart'=>Cart::content(),
+            'length'=>$leng
         ];
         return response()->json($count);
     }
+
+    public function quick_view_product($id){
+        $product=Product::findOrFail($id);
+        return \response()->json($product);
+    }
+
+    public function delete($id){
+        Cart::remove($id);
+        $data=Cart::content();
+        return \response()->json($data);
+    }
+
+
 }

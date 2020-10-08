@@ -168,48 +168,34 @@
                     </form>
                   </div>
                 </div>
-
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                   <span class="count-style" id="countcart">{{$count}}</span>
                   </button>
-                  <div class="shopping-cart-content">
-                    <ul>
-                      <li class="single-shopping-cart">
+                  <div class="shopping-cart-content" style="width:500px;">
+                    <ul id="cart">
+                        @foreach ($data as $item)
+                    <li class="single-shopping-cart">
                         <div class="shopping-cart-img">
-                          <a href="#"
-                            ><img alt="" src="{{asset('assets_page/img/cart/cart-1.jpg')}}"
-                          /></a>
+                        <a href="#">
+                            <img alt="" src="{{asset('product/'.$item->options['image'])}}"/>
+                        </a>
                         </div>
-                        <div class="shopping-cart-title">
-                          <h4><a href="#">Dog Calcium Food </a></h4>
-                          <h6>Qty: 02</h6>
-                          <span>$260.00</span>
+                        <div  class="shopping-cart-title">
+                        <h4><a href="#">{{$item->name}}</a></h4>
+                        <h6>Số lượng: {{$item->qty}}</h6>
+                        <span>Giá: {{number_format($item->price)}} VNĐ</span>
                         </div>
-                        <div class="shopping-cart-delete">
-                          <a href="#"><i class="ti-close"></i></a>
+                        <div id="productcart" class="shopping-cart-delete" style="">
+                        <a style="cursor: pointer;" id="deleteitem" item-id="{{$item->rowId}}"><i class="ti-close"></i></a>
                         </div>
-                      </li>
-                      <li class="single-shopping-cart">
-                        <div class="shopping-cart-img">
-                          <a href="#"
-                            ><img alt="" src="{{asset('assets_page/img/cart/cart-2.jpg')}}"
-                          /></a>
-                        </div>
-                        <div class="shopping-cart-title">
-                          <h4><a href="#">Dog Calcium Food</a></h4>
-                          <h6>Qty: 02</h6>
-                          <span>$260.00</span>
-                        </div>
-                        <div class="shopping-cart-delete">
-                          <a href="#"><i class="ti-close"></i></a>
-                        </div>
-                      </li>
+                    </li>
+                        @endforeach
                     </ul>
                     <div class="shopping-cart-total">
-                      <h4>Shipping : <span>$20.00</span></h4>
-                      <h4>Total : <span class="shop-total">$260.00</span></h4>
+                      <h4>Phí vận chuyển : <span>$20.00</span></h4>
+                    <h4>Tổng tiền : <span class="shop-total">{{$total}} VNĐ</span></h4>
                     </div>
                     <div class="shopping-cart-btn">
                       <a href="cart.html">view cart</a>
@@ -403,15 +389,15 @@
                 <img src="{{asset('product/'.$product->product_image)}}" alt="" />
                 </a>
                 <div class="product-action">
-                  <a
+                <a id="viewproduct" view-id="{{$product->product_id}}"
                     title="Quick View"
                     data-toggle="modal"
                     data-target="#exampleModal"
-                    href="#"
+                    style="cursor: pointer;"
                   >
                     <i class="ti-plus"></i>
                   </a>
-                <a id="addtocart" buy-id="{{$product->product_id}}" title="Add To Cart" >
+                <a style="cursor: pointer;" id="addtocart" buy-id="{{$product->product_id}}" title="Add To Cart" >
                     <i class="ti-shopping-cart"></i>
                   </a>
                 </div>
@@ -701,23 +687,21 @@
             </div>
             <div class="qwick-view-right">
               <div class="qwick-view-content">
-                <h3>Dog Calcium Food</h3>
+                <h3 id="product-name"></h3>
                 <div class="product-price">
-                  <span>$19.00 </span>
+                  <span id="product-price"></span>
                 </div>
                 <div class="product-rating">
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adip elit, sed do amt
-                  tempor incididun ut labore et dolore magna aliqua. Ut enim ad
-                  mi , quis nostrud veniam exercitation .
+                <span style="padding-bottom:1px;">Tình trạng :<span style="color: red; " id="product-desc"></span></span>
+                <p id="product-content">
                 </p>
-                <div class="quick-view-select">
+                {{-- <div class="quick-view-select">
                   <div class="select-option-part">
                     <label>Size*</label>
                     <select class="select">
@@ -739,7 +723,7 @@
                       <option value="">yellow</option>
                     </select>
                   </div>
-                </div>
+                </div> --}}
                 <div class="quickview-plus-minus">
                   <div class="cart-plus-minus">
                     <input
@@ -750,10 +734,10 @@
                     />
                   </div>
                   <div class="quickview-btn-cart">
-                    <a class="btn-style" href="#">add to cart</a>
+                    <a class="btn-style" id="addtocart1" style="cursor: pointer;">Add to cart</a>
                   </div>
                   <div class="quickview-btn-wishlist">
-                    <a class="btn-hover" href="#"><i class="ti-heart"></i></a>
+                    <a class="btn-hover" style="cursor: pointer;"><i class="ti-heart"></i></a>
                   </div>
                 </div>
               </div>
@@ -763,7 +747,7 @@
       </div>
     </div>
     <!-- modal -->
-    <div
+    {{-- <div
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -862,7 +846,7 @@
                     />
                   </div>
                   <div class="quickview-btn-cart">
-                    <a class="btn-style" href="#">add to cart</a>
+                    <a class="btn-style" id="addtocart" href="#">add to cart</a>
                   </div>
                   <div class="quickview-btn-wishlist">
                     <a class="btn-hover" href="#"><i class="ti-heart"></i></a>
@@ -873,7 +857,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
         <footer class="footer-area">
       <div class="footer-top pt-80 pb-50 gray-bg-2">
         <div class="container">
@@ -1020,24 +1004,98 @@
     <script src="{{asset('assets_page/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets_page/js/plugins.js')}}"></script>
     <script src="{{asset('assets_page/js/main.js')}}"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         $(document).ready(function($){
             let listProduct=$("#product #addtocart");
-            listProduct.on('click',function(){
-                var id=$(this).attr('buy-id');
-                $.ajax({
-                url:'http://localhost:8000/addcart/'+id,
-                dataType:'json',
-                success:function(result){
-                    let count = result.countCart;
-                    console.log(count);
-                    $("#countcart").html(""+count);
-                }
-            })
-            });
+                listProduct.on('click',function(){
+                    var id=$(this).attr('buy-id');
+                    $.ajax({
+                    url:'http://laravel-training.local/cart/add/'+id,
+                    dataType:'json',
+                    success:function(result){
+                        let count = result.countCart;
+                        var i=result.length;
+                        let data=result.contentCart;
+                        let element="";
+                        $.each(data,function(key,value){
 
+                        element+= '<li class="single-shopping-cart">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
+                        });
+                        $('#cart').html(element)
+                        $("#countcart").html(""+count);
+
+                        }
+                    });
+                    Swal.fire({
+                        title: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
+                        icon:'success',
+                        width: 600,
+                        padding: '3em',
+                        background: '#fff url(/images/trees.png)',
+                        backdrop: `
+                            rgba(0,0,123,0.4)
+                            url("/images/nyan-cat.gif")
+                            left top
+                            no-repeat
+                        `
+                    });
+                });
+            let product=$("#addtocart1");
+                product.on('click',function(){
+                    var id=$("#addtocart1").val();
+                    $.ajax({
+                    url:'http://laravel-training.local/cart/add/'+id,
+                    dataType:'json',
+                    success:function(result){
+                        let count = result.countCart;
+
+                        $("#countcart").html(""+count);
+                        }
+                    })
+                });
+
+            $("#productcart #deleteitem").on('click',function(){
+                var rowId=$(this).attr('item-id');
+                console.log(rowId);
+                $.ajax({
+                    url:'http://laravel-training.local/cart/delete/'+rowId,
+                    dataType:'json',
+                    success:function(result){
+                        console.log(result);
+                        let count = result.countCart;
+                        let data=result.contentCart;
+                        let element="";
+                        $.each(data,function(key,value){
+                        element+= '<li class="single-shopping-cart">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
+                        });
+                        $('#cart').html(element);
+                        $("#countcart").html(count);
+                    }
+                })
+            })
+        });
+       });
+     });
+            let listquickview=$('#product #viewproduct');
+            listquickview.on('click',function(){
+                var view_id=$(this).attr('view-id');
+                $.ajax({
+                    url:'http://laravel-training.local/cart/quick-view/'+view_id,
+                    dataType:'json',
+                    success:function(result){
+                        document.getElementById('addtocart1').value=view_id;
+                        let product_name=result.product_name;
+                        let product_price=result.product_price;
+                        let product_desc=result.product_desc;
+                        let product_content=result.product_content;
+                        $("#product-name").html(product_name);
+                        $("#product-price").html(product_price);
+                        $("#product-content").html(product_content);
+                        $("#product-desc").html(product_desc);
+                    }
+                })
+            })
         });
     </script>
 </body>
