@@ -46,6 +46,10 @@ Route::prefix('cart')->group(function(){
     Route::get('add/{id}', 'CartController@addCart');
     Route::get('quick-view/{id}','CartController@quick_view_product');
     Route::get('delete/{id}', 'CartController@delete');
+    Route::get('view','CartController@index')->name('cart.view');
+    Route::get('update/{id}/{qty}','CartController@update')->name('cart.update');
+    Route::get('delete-all', 'CartController@delete_all_cart')->name('delete-all');
+    Route::get('checkout','CartController@checkout')->name('cart.checkout');
 });
 
 

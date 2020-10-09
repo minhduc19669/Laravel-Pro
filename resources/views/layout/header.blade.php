@@ -205,46 +205,33 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span class="count-style">02</span>
                   </button>
-                  <div class="shopping-cart-content">
-                    <ul>
-                      <li class="single-shopping-cart">
+                  <div class="shopping-cart-content" style="width:500px;">
+                    <ul id="cart">
+                        @foreach ($data as $item)
+                    <li class="single-shopping-cart" id="item_id_{{$item->rowId}}">
                         <div class="shopping-cart-img">
-                          <a href="#"
-                            ><img alt="" src="{{asset('assets_page/img/cart/cart-1.jpg')}}"
-                          /></a>
+                        <a href="#">
+                            <img alt="" src="{{asset('product/'.$item->options['image'])}}"/>
+                        </a>
                         </div>
-                        <div class="shopping-cart-title">
-                          <h4><a href="#">Dog Calcium Food </a></h4>
-                          <h6>Qty: 02</h6>
-                          <span>$260.00</span>
+                        <div  class="shopping-cart-title">
+                        <h4><a href="#">{{$item->name}}</a></h4>
+                        <h6>Số lượng: {{$item->qty}}</h6>
+                        <span>Giá: {{number_format($item->price)}} VNĐ</span>
                         </div>
-                        <div class="shopping-cart-delete">
-                          <a href="#"><i class="ti-close"></i></a>
+                        <div id="productcart" class="shopping-cart-delete" style="">
+                        <a style="cursor: pointer;" id="deleteitem" item-id="{{$item->rowId}}"><i class="ti-close"></i></a>
                         </div>
-                      </li>
-                      <li class="single-shopping-cart">
-                        <div class="shopping-cart-img">
-                          <a href="#"
-                            ><img alt="" src="{{asset('assets_page/img/cart/cart-2.jpg')}}"
-                          /></a>
-                        </div>
-                        <div class="shopping-cart-title">
-                          <h4><a href="#">Dog Calcium Food</a></h4>
-                          <h6>Qty: 02</h6>
-                          <span>$260.00</span>
-                        </div>
-                        <div class="shopping-cart-delete">
-                          <a href="#"><i class="ti-close"></i></a>
-                        </div>
-                      </li>
+                    </li>
+                        @endforeach
                     </ul>
                     <div class="shopping-cart-total">
-                      <h4>Shipping : <span>$20.00</span></h4>
-                      <h4>Total : <span class="shop-total">$260.00</span></h4>
+                      <h4>Phí vận chuyển : <span>$20.00</span></h4>
+                    <h4>Tổng tiền : <span class="shop-total" id="total" >{{$total}} VNĐ</span></h4>
                     </div>
                     <div class="shopping-cart-btn">
-                      <a href="cart.html">view cart</a>
-                      <a href="checkout.html">checkout</a>
+                    <a href="{{route('cart.view')}}">Xem giỏ hàng</a>
+                    <a href="{{route('cart.checkout')}}">Thanh toán</a>
                     </div>
                   </div>
                 </div>

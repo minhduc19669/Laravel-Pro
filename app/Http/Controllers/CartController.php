@@ -30,12 +30,10 @@ class CartController extends Controller
                 'options' => ['image' => $product->product_image]
             ]);
         }
-        $content=Cart::content();
-        $leng=\count($content);
         $count=[
             'countCart'=>Cart::count(),
             'contentCart'=>Cart::content(),
-            'length'=>$leng
+            'total'=>Cart::total()
         ];
         return response()->json($count);
     }
@@ -47,8 +45,34 @@ class CartController extends Controller
 
     public function delete($id){
         Cart::remove($id);
+        $count = [
+            'countCart' => Cart::count(),
+            'contentCart' => Cart::content(),
+        ];
+        return \response()->json($count);
+    }
+
+    public function delete_all_cart(){
+        Cart::destroy();
+        return \back();
+    }
+
+    public function index(){
         $data=Cart::content();
-        return \response()->json($data);
+        return \view('pages.cart')->with(['data'=>$data]);
+    }
+
+    public function update($id,$qty){
+        Cart::update($id, $qty);
+        $data = [
+            'totalPriceCart' => Cart::get($id),
+            'total'=>Cart::total()
+        ];
+        return response()->json($data);
+    }
+
+    public function checkout(){
+        return \view('pages.checkout');
     }
 
 
