@@ -28,8 +28,6 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
-
-
   <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <link
       rel="stylesheet"
@@ -176,7 +174,7 @@
                   <div class="shopping-cart-content" style="width:500px;">
                     <ul id="cart">
                         @foreach ($data as $item)
-                    <li class="single-shopping-cart">
+                    <li class="single-shopping-cart" id="item_id_{{$item->rowId}}">
                         <div class="shopping-cart-img">
                         <a href="#">
                             <img alt="" src="{{asset('product/'.$item->options['image'])}}"/>
@@ -195,11 +193,11 @@
                     </ul>
                     <div class="shopping-cart-total">
                       <h4>Phí vận chuyển : <span>$20.00</span></h4>
-                    <h4>Tổng tiền : <span class="shop-total">{{$total}} VNĐ</span></h4>
+                    <h4>Tổng tiền : <span class="shop-total" id="total" >{{$total}} VNĐ</span></h4>
                     </div>
                     <div class="shopping-cart-btn">
-                      <a href="cart.html">view cart</a>
-                      <a href="checkout.html">checkout</a>
+                    <a href="{{route('cart.view')}}">Xem giỏ hàng</a>
+                    <a href="{{route('cart.checkout')}}">Thanh toán</a>
                     </div>
                   </div>
                 </div>
@@ -1006,6 +1004,8 @@
     <script src="{{asset('assets_page/js/main.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
+
+        ///addtocart
         $(document).ready(function($){
             let listProduct=$("#product #addtocart");
                 listProduct.on('click',function(){
@@ -1015,23 +1015,19 @@
                     dataType:'json',
                     success:function(result){
                         let count = result.countCart;
-                        var i=result.length;
                         let data=result.contentCart;
                         let element="";
                         $.each(data,function(key,value){
-
-                        element+= '<li class="single-shopping-cart">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
+                        element+= '<li class="single-shopping-cart" id="'+'item_id_'+value.rowId+ '">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
                         });
-                        $('#cart').html(element)
+                        $('#cart').html(element);
                         $("#countcart").html(""+count);
-
+                        $("#total").html(result.total+" VNĐ")
                         }
                     });
                     Swal.fire({
                         title: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
                         icon:'success',
-                        width: 600,
-                        padding: '3em',
                         background: '#fff url(/images/trees.png)',
                         backdrop: `
                             rgba(0,0,123,0.4)
@@ -1041,6 +1037,8 @@
                         `
                     });
                 });
+
+                ////add in qickview-modal
             let product=$("#addtocart1");
                 product.on('click',function(){
                     var id=$("#addtocart1").val();
@@ -1049,34 +1047,33 @@
                     dataType:'json',
                     success:function(result){
                         let count = result.countCart;
-
+                        let data=result.contentCart;
+                        let element="";
+                        $.each(data,function(key,value){
+                        element+= '<li class="single-shopping-cart" id="'+'item_id_' + value.rowId + '">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
+                        });
+                        $('#cart').html(element);
                         $("#countcart").html(""+count);
+                        $("#total").html(result.total+" VNĐ")
                         }
                     })
                 });
 
-            $("#productcart #deleteitem").on('click',function(){
+                ///delete
+            $("body").on('click','#deleteitem',function(){
                 var rowId=$(this).attr('item-id');
                 console.log(rowId);
                 $.ajax({
                     url:'http://laravel-training.local/cart/delete/'+rowId,
                     dataType:'json',
-                    success:function(result){
-                        console.log(result);
-                        let count = result.countCart;
-                        let data=result.contentCart;
-                        let element="";
-                        $.each(data,function(key,value){
-                        element+= '<li class="single-shopping-cart">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
-                        });
-                        $('#cart').html(element);
-                        $("#countcart").html(count);
+                    success:function(data){
+                        $("#item_id_"+rowId).remove();
+                        let count=data.countCart;
+                        $("#countcart").html(""+count);
                     }
                 })
-            })
-        });
-       });
-     });
+            });
+            /////quick-view
             let listquickview=$('#product #viewproduct');
             listquickview.on('click',function(){
                 var view_id=$(this).attr('view-id');

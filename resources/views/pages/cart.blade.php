@@ -11,57 +11,31 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Image</th>
-                                            <th>Product Name</th>
-                                            <th>Until Price</th>
-                                            <th>Qty</th>
-                                            <th>Subtotal</th>
+
+                                            <th>Ảnh sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Đơn giá</th>
+                                            <th>Số lượng</th>
+                                            <th>Tổng tiền</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($data as $key => $item)
                                         <tr>
                                             <td class="product-thumbnail">
-                                                <a href="#"><img src="assets/img/cart/cart-3.jpg" alt=""></a>
+                                            <a href="#"><img src="{{asset('product/'.$item->options['image'])}}" alt=""></a>
                                             </td>
-                                            <td class="product-name"><a href="#">Dry Dog Food</a></td>
-                                            <td class="product-price-cart"><span class="amount">$110.00</span></td>
-                                            <td class="product-quantity">
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
-                                                </div>
+                                        <td><a href="#">{{$item->name}}</a></td>
+                                        <td style="width: 70px;" ><span style="margin-left: 20px" class="amount">{{number_format($item->price)}} đ</span></td>
+                                            <td>
+                                                <input row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
+
                                             </td>
-                                            <td class="product-subtotal">$110.00</td>
+                                        <td><span id="price-item{{$item->rowId}}" style="margin-left: 40px;">{{number_format($item->price*$item->qty)}} đ</span></td>
                                             <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="assets/img/cart/cart-4.jpg" alt=""></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Cat Buffalo Food</a></td>
-                                            <td class="product-price-cart"><span class="amount">$150.00</span></td>
-                                            <td class="product-quantity">
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal">$150.00</td>
-                                            <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="assets/img/cart/cart-5.jpg" alt=""></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Legacy Dog Food</a></td>
-                                            <td class="product-price-cart"><span class="amount">$170.00</span></td>
-                                            <td class="product-quantity">
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal">$170.00</td>
-                                            <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -73,7 +47,7 @@
                                             <button>Update Shopping Cart</button>
                                         </div>
                                         <div class="cart-clear">
-                                            <a href="#">Clear Shopping Cart</a>
+                                        <a onclick="return confirm('Bạn có chắc chắn không?') "style="cursor: pointer;" href="{{route('delete-all')}}">Xóa giỏ hàng</a>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +109,7 @@
                             </div>
                             <div class="col-lg-4 col-md-12">
                                 <div class="grand-totall">
-                                    <span>Subtotal:   $155.00</span>
-                                    <h5>Grand Total:   $353.00</h5>
+                                    <h5 id="grand-total">Tổng tiền : {{$total}} đ</h5>
                                     <a href="#">Proceed To Checkout</a>
                                     <p>Checkout with Multiple Addresses</p>
                                 </div>
@@ -146,4 +119,6 @@
                 </div>
             </div>
         </div>
+
+
 @endsection
