@@ -24,8 +24,8 @@ class ValidateFormAddProduct extends FormRequest
     public function rules()
     {
         return [
-            'product_name' => 'required|min:3',
-            'product_code' => 'required|min:3',
+            'product_name' => 'required|unique:products,product_name|min:3',
+            'product_code' => 'required|unique:products,product_code|min:3',
             'product_price' =>'required|numeric|min:1000',
             'product_price_sale'=>'required|numeric|min:0',
             'product_content'=> 'required',
@@ -40,6 +40,8 @@ class ValidateFormAddProduct extends FormRequest
     public function messages()
     {
         return[
+            'product_code.unique'    => 'Mã sản phẩm đã tồn tại',
+            'product_name.unique'    => 'Tên sản phẩm đã tồn tại',
             'product_name.required' => 'Không được phép để trống',
             'product_code.required' => 'Không được phép để trống',
             'product_price.required' => 'Không được phép để trống',

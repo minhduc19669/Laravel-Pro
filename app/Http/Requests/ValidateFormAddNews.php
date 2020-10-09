@@ -24,7 +24,7 @@ class ValidateFormAddNews extends FormRequest
     public function rules()
     {
         return [
-            'news_title' => 'required|min:3',
+            'news_title' => 'required|unique:news,news_title|min:3',
             'news_cate' => 'required',
             'news_content' => 'required|min:8',
             'news_desc' => 'required|min:5',
@@ -37,6 +37,7 @@ class ValidateFormAddNews extends FormRequest
     public function messages()
     {
         return [
+            'news_title.unique'  => 'Tiêu đề đã được sử dụng',
             'news_title.required' => 'Không được phép để trống ',
             'news_title.min' => 'Phải nhập ít nhất 3 kí tự',
             'news_cate.required' => 'Không được phép để trống',

@@ -24,7 +24,8 @@ class ValidateFormNews_category extends FormRequest
     public function rules()
     {
         return [
-            'category_news_name' => 'required|min:3',
+            'cate_news_id' => 'required|unique:categories,cate_news_id|numeric|min:1|max:200',
+            'category_news_name' => 'required|unique:categories,category_news_name|min:3',
             'category_news_desc' => 'required|min:5',
         ];
     }
@@ -32,7 +33,12 @@ class ValidateFormNews_category extends FormRequest
     public function messages()
     {
         return [
-
+            'category_news_name.unique' => 'Tên danh mục đã tồn tại',
+            'cate_news_id.required' => 'Không được phép để trống' ,
+            'cate_news_id.unique' => 'ID đã tồn tại' ,
+            'cate_news_id.numeric' => 'Mã sản phẩm phải là số' ,
+            'cate_news_id.min' => 'Số nhỏ nhất phải là 1' ,
+            'cate_news_id.max' => 'Số lớn nhất phải là 200' ,
             'category_news_name.required' => 'Không được phép để trống',
             'category_news_name.min' => 'Phải nhập ít nhất 3 kí tự',
             'category_news_desc.required' => 'Không được phép để trống',

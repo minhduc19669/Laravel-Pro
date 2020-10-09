@@ -14,12 +14,12 @@ class NewsController extends Controller
 {
     public function index(){
         $news = DB::table('news')
-            ->join('categories','categories.id','=','news.category_id')
+            ->join('categories','categories.cate_news_id','=','news.category_id')
             ->get();
         return view('admin.news.list',['news'=>$news]);
     }
     public function add(){
-        $news_cate = Category::all();
+        $news_cate = Category::where('cate_news_id','!=',null)->get();
        return view('admin.news.add',compact('news_cate'));
     }
     public function save(ValidateFormAddNews $request){
@@ -49,7 +49,7 @@ class NewsController extends Controller
 
     }
     public function edit($id){
-        $news_cate = Category::all();
+        $news_cate = Category::where('cate_news_id','!=',null)->get();
         $news  = News::where('news_id',$id)->get();
         return view('admin.news.edit',compact('news_cate','news'));
     }

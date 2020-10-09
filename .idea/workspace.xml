@@ -20,33 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Laravel-Pro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Orderdetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Orderdetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_19_172822_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_172822_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddBrand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddBrand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddNews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddNews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormNews_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormNews_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSubcategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSubcategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_20_061059_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_061059_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_29_015225_create_news_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets_page/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets_page/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style/fontawesome/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/fontawesome/metadata/icons.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/add-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/list-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/list-news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +165,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/bumbummen99/shoppingcart" />
+      <path value="$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hx5GAoQfii0JpdS0XJ1vfs6zAO" />
@@ -256,6 +249,8 @@
       <workItem from="1602121177867" duration="10053000" />
       <workItem from="1602138701254" duration="11386000" />
       <workItem from="1602169382104" duration="5114000" />
+      <workItem from="1602207358387" duration="14933000" />
+      <workItem from="1602234561276" duration="3547000" />
     </task>
     <servers />
   </component>
