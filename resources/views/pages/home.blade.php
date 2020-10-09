@@ -1070,6 +1070,7 @@
                         $("#item_id_"+rowId).remove();
                         let count=data.countCart;
                         $("#countcart").html(""+count);
+                        $("#total").html(result.total+" VNĐ")
                     }
                 })
             });
