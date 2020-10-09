@@ -9,7 +9,7 @@
                 <th>#</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá sản phẩm</th>
-                <th>Số lượng sản phẩm</th>
+                <th>Trạng thái</th>
                 <th>Hành động</th>
             </tr>
             </thead>

@@ -38,17 +38,15 @@ class OrderController extends Controller
             ->join('shippings','shippings.id','=','orders.order_id')
             ->where('orders.order_id',$id)->get();
         $order_detail = DB::table('orders_details')
-               ->join('orders','orders.order_id','=','orders_details.id')
-              ->where('orders.order_id',$id)->get();
+               ->join('orders','orders.order_id','=','orders_details.order_id')
+              ->where('orders_details.order_id',$id)->get();
 
    return view('admin.order.edit',compact('order','order_detail'));
 
     }
-    public function update(ValidateFormOrder $request,$id){
+    public function update(Request $request,$id){
         DB::beginTransaction();
             Order::where('order_id',$id)->update([
-                'shipping_id' => $request->shipping_order,
-                'order_total' => $request->order_total,
                 'order_status' => $request->order_status,
             ]);
         DB::commit();

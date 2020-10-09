@@ -519,6 +519,7 @@
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('category.list')}}">Danh mục sản phẩm</a></li>
                             <li><a href={{route('category.list-news')}}>Danh mục tin tức</a></li>
+                            <li><a href="{{route('subcategory.list')}}">Danh mục sản phẩm con</a></li>
                         </ul>
                     </li>
 
@@ -533,17 +534,6 @@
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
                         </ul>
                     </li>
-                    <li>
-                                <a href="javascript: void(0);">
-                                    <i class="mdi mdi-file-document-box-check-outline"></i>
-                                <span class="badge badge-warning badge-pill float-right">{{$count}}</span>
-                                    <span> Mã giảm giá </span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="{{route('coupon.create')}}">Quản lí mã giảm giá</a></li>
-                                <li><a href="{{route('coupon.list')}}">Danh sách mã giảm giá</a></li>
-                                </ul>
-                            </li>
 
                     <li>
                         <a href="javascript: void(0);">

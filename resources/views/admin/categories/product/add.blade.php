@@ -9,6 +9,15 @@
             <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-8">
+                        <label for="modelName">ID</label>
+                        <input type="number" min="1" class="form-control" name="cate_pro_id" placeholder="Id danh mục sản phẩm">
+                    </div>
+                </div>
+                @if ($errors->has('cate_pro_id'))
+                    <p style="color: red">{{ $errors->first('cate_pro_id') }}</p>
+                @endif
+                <div class="form-row">
+                    <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục sản phẩm</label>
                         <input type="text" class="form-control" name="category_product_name" placeholder="Tên danh mục sản phẩm">
                     </div>
@@ -16,6 +25,7 @@
                 @if ($errors->has('category_product_name'))
                     <p style="color: red">{{ $errors->first('category_product_name') }}</p>
                 @endif
+
 
                 <div class="form-row">
                     <div class="form-group col-md-8">

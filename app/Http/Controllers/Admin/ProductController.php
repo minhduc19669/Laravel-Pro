@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function list(){
         $query = DB::table('products')
-            ->join('categories','categories.id','=','products.category_id')
+            ->join('categories','categories.cate_pro_id','=','products.category_id')
             ->join('brands','brands.id','=','products.brand_id')
             ->orderBy('products.product_id', 'asc')->get();
         return view('admin.products.list', ['list' => $query]);
@@ -48,8 +48,8 @@ class ProductController extends Controller
              $get_image->move('product',$new_image);
              $data['product_image']=$new_image;
              DB::table('products')->insert($data);
-             Session::put('message', 'thêm sản phẩm thành thành công');
-             return  Redirect::to('users/product');
+             Alert()->success('Thêm thành công !')->autoClose(1500);
+             return \redirect()->route('product.list');
          }
          $data['product_image'] = '';
          DB::table('products')->insert($data);
@@ -58,7 +58,7 @@ class ProductController extends Controller
     }
  public function edit($id){
 
-     $cate_product = DB::table('categories')->orderBy('id','desc')->get();
+     $cate_product = DB::table('categories')->orderBy('cate_pro_id','desc')->get();
      $brand_product = DB::table('brands')->orderBy('id','desc')->get();
         $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
         return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product);

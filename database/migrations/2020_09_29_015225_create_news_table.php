@@ -17,7 +17,7 @@ class CreateNewsTable extends Migration
             $table->id('news_id');
             $table->string('news_title');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('cate_news_id')->on('categories');
             $table->longText('news_content');
             $table->string('news_image');
             $table->longText('news_desc');
