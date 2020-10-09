@@ -4,7 +4,7 @@
     <form action="{{route('category.update',$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
-        <h2>Thêm danh mục sản phẩm</h2>
+        <h2>Cập nhật danh mục sản phẩm</h2>
         <br>
         <div class="row">
             <div class="col-md-12">

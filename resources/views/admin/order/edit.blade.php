@@ -4,24 +4,19 @@
     <br>
     <div class="table-responsive">
         @foreach($order as $key => $list )
-            <p> Tên khách hàng  :  {{$list->shipping_name_receive}} </p>
-            <p>  Địa chỉ        : {{$list->shipping_address_receive}}</p>
-            <p>  Ngày đặt hàng  :   {{$list->created_at}}  </p>
-            <p>  Số điện thoại : {{$list->shipping_phone_receive}}</p>
-            <p>  Tổng giá tiền : {{$list->order_total}}         </p>
+            <p> <b>Tên khách hàng</b>  :  {{$list->shipping_name_receive}} </p>
+            <p>  <b>Địa chỉ</b>      : {{$list->shipping_address_receive}}</p>
+            <p>  <b>Ngày đặt hàng</b>  :   {{$list->created_at}}  </p>
+            <p>  <b>Số điện thoại</b> : {{$list->shipping_phone_receive}}</p>
+            <p>  <b>Tổng giá tiền</b> : {{$list->order_total}}         </p>
 
-        @endforeach
         <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên khách hàng</th>
-                <th>Địa chỉ</th>
-                <th>Ngày đặt hàng</th>
-                <th>Email</th>
-                <th>Tổng gía tiền</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
+                <th>Tên sản phẩm</th>
+                <th>Gía sản phẩm</th>
+                <th>Số lượng</th>
             </tr>
             </thead>
             <tbody>
@@ -29,34 +24,47 @@
 
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
-                    <td></td>
-                    <td>{{$list->product_id}}</td>
-                    <td>{{$list->created_at}}</td>
-                    <td>{{$list->shipping_email}}</td>
-                    <td>{{$list->order_total}}</td>
-                    @if($list->order_status==0)
-                        <td>Chưa giao</td>
-                    @elseif($list->order_status==1)
-                        <td>Đang giao</td>
-                    @elseif($list->order_status==2)
-                        <td>Giao thành công</td>
-                    @else
-                        <td>Hủy đơn hàng</td>
-                    @endif
-                    <td><a style="margin-right: 10px" href={{route('order.edit',$list->order_id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href="{{route('order.remove',$list->order_id)}}"><i class=" ion ion-md-close"></i></a></td>
+                    <td>{{$list->product_name}}</td>
+                    <td>{{$list->product_price}}</td>
+                    <td>{{$list->product_quantity}}</td>
                 </tr>
+
             @endforeach
             </tbody>
         </table>
-            <div class="form-group col-md-4">
-                <label for="modelName">Trạng thái</label>
-                <select class="custom-select" id="inputGroupSelect01" name="order_status">
-                    <option value="0">Chưa giao </option>
+                <div class="form-group col-md-8">
+                    <br>
+                <label class="" for="modelName">Trạng thái</label>
+                    <br>
+                    <form  action="{{route('order.update',$list->order_id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                <select class="custom-select col-md-4" id="inputGroupSelect01" name="order_status">
+                        @if($list->order_status == 0)
+                    <option selected value="0">Chưa giao </option>
                     <option value="1">Đang giao</option>
                     <option value="2">Đã giao</option>
                     <option value="3">Hủy đơn hàng</option>
+                    @elseif($list->order_status == 1)
+                        <option  value="0">Chưa giao </option>
+                        <option selected value="1">Đang giao</option>
+                        <option value="2">Đã giao</option>
+                        <option value="3">Hủy đơn hàng</option>
+                    @elseif($list->order_status == 2)
+                        <option  value="0">Chưa giao </option>
+                        <option  value="1">Đang giao</option>
+                        <option selected value="2">Đã giao</option>
+                        <option value="3">Hủy đơn hàng</option>
+                    @else
+                        <option  value="0">Chưa giao </option>
+                        <option  value="1">Đang giao</option>
+                        <option  value="2">Đã giao</option>
+                        <option selected value="3">Hủy đơn hàng</option>
+                    @endif
                 </select>
+                    <button type="submit" class="btn-danger col-md-3/2">Submit</button>
+                    </form>
+                </div>
+        @endforeach
 
-            </div>
     </div>
 @endsection

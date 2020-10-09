@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Id</th>
                 <th>Tên danh mục tin tức</th>
                 <th>Chú thích tin tức</th>
                 <th>Hành động</th>
@@ -14,13 +15,15 @@
             </thead>
             <tbody>
             @foreach($list as $key => $category )
-
+                      @if($category->category_news_name != 'null')
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
+                    <td>{{$category->cate_news_id}}</td>
                     <td>{{$category->category_news_name}}</td>
                     <td>{{$category->category_news_desc}}</td>
-                    <td><a style="margin-right: 10px" href={{route('category.edit-news',$category->id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('Bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('category.remove-news',$category->id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a style="margin-right: 10px" href={{route('category.edit-news',$category->cate_news_id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('Bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('category.remove-news',$category->cate_news_id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
+                      @endif
             @endforeach
             </tbody>
         </table>

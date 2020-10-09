@@ -12267,7 +12267,7 @@ product-hunt:
   changes:
     - '4.5'
     - 5.0.0
-  label: Product Hunt
+  label: product Hunt
   search:
     terms: []
   styles:

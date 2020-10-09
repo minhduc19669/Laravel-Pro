@@ -20,10 +20,10 @@
                         <label  for="category" >Danh mục sản phẩm </label>
                         <select name="product_cate" class="form-control">
                             @foreach($cate_product as $key =>$cate)
-                                @if($edit->category_id == $cate->id)
-                                    <option selected value="{{$cate->id}}">{{$cate->category_product_name}}</option>
+                                @if($edit->category_id == $cate->cate_pro_id)
+                                    <option selected value="{{$cate->cate_pro_id}}">{{$cate->category_product_name}}</option>
                                 @else
-                                    <option  value="{{$cate->id}}">{{$cate->category_product_name}}</option>
+                                    <option  value="{{$cate->cate_pro_id}}">{{$cate->category_product_name}}</option>
                                 @endif
                             @endforeach
                         </select>

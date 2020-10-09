@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Id</th>
                 <th>Tên danh mục sản phẩm</th>
                 <th>Chú thích sản phẩm</th>
                 <th>Hành động</th>
@@ -17,9 +18,10 @@
 
                 <tr>
                     <th scope="row">{{$key + 1}}</th>
+                    <td>{{$category->cate_pro_id}}</td>
                     <td>{{$category->category_product_name}}</td>
                     <td>{{$category->category_product_desc}}</td>
-                    <td><a style="margin-right: 10px" href={{route('category.edit',$category->id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('Bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('category.remove',$category->id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a style="margin-right: 10px" href={{route('category.edit',$category->cate_pro_id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('Bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('category.remove',$category->cate_pro_id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

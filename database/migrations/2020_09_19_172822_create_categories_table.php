@@ -15,10 +15,16 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('category_product_name');
-            $table->string('category_news_name');
-            $table->string('category_product_desc');
-            $table->string('category_news_desc');
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->unsignedBigInteger('cate_pro_id')->unique()->nullable();
+            $table->unsignedBigInteger('cate_news_id')->unique()->nullable();
+            $table->unsignedBigInteger('sub_id')->unique()->nullable();
+            $table->string('category_product_name')->unique()->nullable();
+            $table->string('category_news_name')->unique()->nullable();
+            $table->string('category_sub_product_name')->unique()->nullable();
+            $table->string('category_sub_product_desc')->nullable();
+            $table->string('category_product_desc')->nullable();
+            $table->string('category_news_desc')->nullable();
             $table->timestamps();
         });
     }

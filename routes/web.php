@@ -106,6 +106,13 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/news/edit/{id}', 'CategoryController@edit_news')->name('category.edit-news');
             Route::post('category/news/update/{id}', 'CategoryController@update_news')->name('category.update-news');
             Route::get('category/news/remove/{id}', 'CategoryController@remove_news')->name('category.remove-news');
+            //subcategory
+            Route::get('category/subcategory', 'CategoryController@list_sub')->name('subcategory.list');
+            Route::get('category/subcategory/add', 'CategoryController@add_sub')->name('subcategory.add');
+            Route::post('category/subcategory/save', 'CategoryController@save_sub')->name('subcategory.save');
+            Route::get('category/subcategory/edit/{id}', 'CategoryController@edit_sub')->name('subcategory.edit');
+            Route::post('category/subcategory/update/{id}', 'CategoryController@update_sub')->name('subcategory.update');
+            Route::get('category/subcategory/remove/{id}', 'CategoryController@remove_sub')->name('subcategory.remove');
         });
         //brand
         Route::middleware('isAdmin:category')->group(function () {
