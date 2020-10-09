@@ -9,35 +9,37 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ProductController extends Controller
 {
     //
-
-
     public function list(){
-        $query = DB::table('products')
-            ->join('categories','categories.cate_pro_id','=','products.category_id')
+        $list = DB::table('products')
+            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
             ->join('brands','brands.id','=','products.brand_id')
             ->orderBy('products.product_id', 'asc')->get();
-        return view('admin.products.list', ['list' => $query]);
+        return view('admin.products.list', compact('cate_sub','list'));
     }
 
 
     public function add(){
-    $cate_product = DB::table('categories')->orderBy('id','desc')->get();
-    $brand_product = DB::table('brands')->orderBy('id','desc')->get();
-    return view('admin.products.add')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
+        $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
+        $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
+        $brand_product = DB::table('brands')->orderBy('id','desc')->get();
+    return view('admin.products.add',compact('brand_product','cate_product','cate_sub'));
 
 }
     public function save(ValidateFormAddProduct $request ){
          $data = array();
-         $data['category_id'] = $request->product_cate;
-         $data['brand_id'] = $request->product_brand;
+         $data['cate_pro_id'] = $request->product_cate;
+        $data['sub_id'] = $request->cate_sub;
+        $data['brand_id'] = $request->product_brand;
          $data['product_name'] = $request->product_name;
          $data['product_code'] = $request->product_code;
          $data['product_price'] = $request->product_price;
          $data['product_price_sale'] = $request->product_price_sale;
-         $data['product_content'] = $request->product_content;
+         $data['product_content'] = ($request->product_content);
          $data['product_desc'] = $request->product_desc;
          $data['product_status'] = $request->product_status;
          $get_image = $request->file('product_image');

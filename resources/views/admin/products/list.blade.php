@@ -10,6 +10,7 @@
                 <th>Mã </th>
                 <th>Tên</th>
                 <th>Danh mục</th>
+                <th>Danh mục con</th>
                 <th>Thương hiệu</th>
                 <th>Chi tiết</th>
                 <th>Giá </th>
@@ -27,6 +28,7 @@
                     <td style="font-size: 10px">{{$product->product_code}}</td>
                     <td style="font-size: 10px">{{$product->product_name}}</td>
                     <td style="font-size: 10px">{{$product->category_product_name}}</td>
+                    <td style="font-size: 10px">{{$product->category_sub_product_name}}</td>
                     <td style="font-size: 10px">{{$product->brand_name}}</td>
                     <td style="font-size: 10px;width:200px">{{$product->product_content}}</td>
                     <td style="font-size: 10px">{{$product->product_price}}</td>
@@ -38,7 +40,7 @@
                     @else
                         <td><a href={{route('product.active',$product->product_id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
                     @endif
-                    <td><a href={{route('product.edit',$product->product_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{\Illuminate\Support\Facades\URL::to('users/remove-product/'.$product->product_id)}}><i class=" ion ion-md-close"></i></a></td>
+                    <td><a href={{route('product.edit',$product->product_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{route('product.remove',$product->product_id)}}><i class=" ion ion-md-close"></i></a></td>
                 </tr>
             @endforeach
             </tbody>

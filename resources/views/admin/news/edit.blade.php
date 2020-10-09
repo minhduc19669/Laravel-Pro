@@ -19,10 +19,10 @@
                         <label  for="category" >Danh mục tin tức</label>
                         <select name="news_cate" class="form-control">
                             @foreach($news_cate as $key => $cate)
-                                @if($edit->category_id == $cate->id)
-                                    <option selected value="{{$cate->id}}">{{$cate->category_news_name}}</option>
+                                @if($edit->category_id == $cate->cate_news_id)
+                                    <option selected value="{{$cate->cate_news_id}}">{{$cate->category_news_name}}</option>
                                 @else
-                                    <option value="{{$cate->id}}">{{$cate->news_cate_title}}</option>
+                                    <option value="{{$cate->cate_news_id}}">{{$cate->news_cate_title}}</option>
 
                                 @endif
                             @endforeach

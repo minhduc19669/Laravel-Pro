@@ -17,8 +17,7 @@
                         <label  for="category" >Danh mục tin tức</label>
                         <select name="news_cate" class="form-control">
                             @foreach($news_cate as $key => $cate)
-
-                                <option value="{{$cate->id}}">{{$cate->category_news_name}}</option>
+                                <option value="{{$cate->cate_news_id}}">{{$cate->category_news_name}}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('news_cate'))

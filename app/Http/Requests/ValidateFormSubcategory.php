@@ -24,13 +24,21 @@ class ValidateFormSubcategory extends FormRequest
     public function rules()
     {
         return [
-            'category_sub_product_name' => 'required|min:3',
+            'sub_id' => 'required|unique:categories,sub_id|numeric|min:1|max:200',
+            'category_sub_product_name' => 'required|unique:categories,category_sub_product_name|min:3',
             'category_sub_product_desc' => 'required|min:5',
         ];
     }
     public function messages()
     {
         return [
+
+            'category_sub_product_name.unique' => 'Tên danh mục đã tồn tại',
+            'sub_id.required' => 'Không được phép để trống' ,
+            'sub_id.unique' => 'ID đã tồn tại' ,
+            'sub_id.numeric' => 'Mã sản phẩm phải là số' ,
+            'sub_id.min' => 'Số nhỏ nhất phải là 1' ,
+            'sub_id.max' => 'Số lớn nhất phải là 200' ,
             'category_sub_product_name.required' => 'Không được phép để trống',
             'category_sub_product_name.min' => 'Phải nhập ít nhất 3 kí tự',
             'category_sub_product_desc.required' => 'Không được phép để trống',

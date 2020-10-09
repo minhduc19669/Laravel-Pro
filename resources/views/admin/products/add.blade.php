@@ -54,6 +54,30 @@
                 </div>
                     <div class="form-row col-md-12">
                         <div class="form-group col-md-5">
+                            <label for="quantity">Trạng thái</label>
+                            <select class="custom-select" id="inputGroupSelect01" name="product_status">
+                                <option value="0">Ẩn </option>
+                                <option value="1">Hiển thị</option>
+                            </select>
+                            @if ($errors->has('product_status'))
+                                <p style="color: red">{{ $errors->first('product_status') }}</p>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label  for="category" >Danh mục sản phẩm con</label>
+                            <select name="cate_sub" class="form-control">
+                                @foreach($cate_sub as $key => $cate)
+                                    <option value="{{$cate->sub_id}}">{{$cate->category_sub_product_name}}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('cate_sub'))
+                                <p style="color: red">{{ $errors->first('cate_sub') }}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-5">
                             <label for="price">Giá sản phẩm</label>
                             <input type="number" class="form-control" min="1000" name="product_price" placeholder="Giá sản phẩm">
 
@@ -71,7 +95,6 @@
                             @endif
                         </div>
                     </div>
-
                 <div class="form-row">
                 <div class="form-row col-md-12">
                     <div class="form-group col-md-5">
@@ -95,16 +118,6 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="form-group col-md">
-                        <label for="quantity">Trạng thái</label>
-                        <select class="custom-select" id="inputGroupSelect01" name="product_status">
-                            <option value="0">Ẩn </option>
-                            <option value="1">Hiển thị</option>
-                        </select>
-                        @if ($errors->has('product_status'))
-                            <p style="color: red">{{ $errors->first('product_status') }}</p>
-                        @endif
-                    </div>
-                    <div class="form-group col-md">
                         <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
                         <br>
                         <input type="file" class="form-control-file" name="product_image" >
@@ -112,6 +125,7 @@
                             <p style="color: red">{{ $errors->first('product_image') }}</p>
                         @endif
                     </div>
+
 
 
                 </div>
