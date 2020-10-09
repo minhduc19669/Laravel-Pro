@@ -37,11 +37,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        view()->composer(['pages.home','pages.cart'], function ($view) {
+        view()->composer(['pages.home','pages.cart','layout.layout'], function ($view) {
 
             $count=Cart::count();
             $data=Cart::content();
-            $total = Cart::total();
+            $total = Cart::priceTotal();
             $view->with(['count'=>$count,'data'=>$data,'total'=>$total]);
         });
     }

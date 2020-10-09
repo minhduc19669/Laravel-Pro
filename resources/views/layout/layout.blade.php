@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>ĐỨC MINH - Pet Food eCommerce</title>
+    <title>Pet Food eCommerce</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
   </head>
   <body>
-              <header class="header-area">
+    <header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
           <div class="row">
@@ -138,7 +138,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Sản phẩm</a>
+                    <a href="{{route('page.index')}}">Sản phẩm</a>
                       {{-- <ul class="submenu">
                         <li>
                           <a href="about-us.html">about us</a>
@@ -201,14 +201,14 @@
                   </button>
                   <div class="search-content">
                     <form action="#">
-                      <input type="text" placeholder="Search" />
+                      <input type="text" placeholder="Bạn muốn tìm gì ?" />
                       <button>
                         <i class="icon-magnifier s-open"></i>
                       </button>
                     </form>
                   </div>
                 </div>
-                @if(Request::url()!='http://laravel-training.local/cart/view')
+
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -217,7 +217,7 @@
                   <div class="shopping-cart-content" style="width:500px;">
                     <ul id="cart">
                         @foreach ($data as $item)
-                    <li class="single-shopping-cart">
+                    <li class="single-shopping-cart" id="item_id_{{$item->rowId}}">
                         <div class="shopping-cart-img">
                         <a href="#">
                             <img alt="" src="{{asset('product/'.$item->options['image'])}}"/>
@@ -244,7 +244,7 @@
                     </div>
                   </div>
                 </div>
-                @endif
+
               </div>
             </div>
             <div

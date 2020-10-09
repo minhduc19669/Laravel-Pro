@@ -51,12 +51,20 @@ Route::prefix('cart')->group(function(){
     Route::get('delete-all', 'CartController@delete_all_cart')->name('delete-all');
     Route::get('checkout','CartController@checkout')->name('cart.checkout');
 });
+//page
+Route::prefix('page')->group(function(){
+    Route::get('', 'PageController@index')->name('page.index');
+});
 
 
 
-//manage//
 
 
+
+
+
+
+//manager//
 Route::middleware(['auth'])->group(function (){
     //user
     Route::prefix('users')->group(function () {

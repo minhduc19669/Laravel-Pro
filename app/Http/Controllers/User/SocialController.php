@@ -22,7 +22,6 @@ class SocialController extends Controller
             $user = Socialite::driver('google')->user();
             $finduser = Customer::where('google_id', $user->id)->first();
             if ($finduser) {
-
                 Session::put('customer',['id'=>$finduser->id,
                 'name'=>$finduser->customer_name
                 ]);
