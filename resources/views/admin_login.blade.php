@@ -12,7 +12,7 @@
 @include('sweetalert::alert')
 <header>
     <div class="container">
-        <h1 align="center">ADMIN LOGIN </h1>
+        <h1 text-align="center">ADMIN LOGIN </h1>
     </div>
 </header>
 <!--endheader-->

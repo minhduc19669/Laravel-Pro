@@ -50,6 +50,8 @@ Route::prefix('cart')->group(function(){
     Route::get('update/{id}/{qty}','CartController@update')->name('cart.update');
     Route::get('delete-all', 'CartController@delete_all_cart')->name('delete-all');
     Route::get('checkout','CartController@checkout')->name('cart.checkout');
+    Route::get('shipping','CheckoutController@shipping')->name('cart.shipping');
+    Route::post('order', 'CheckoutController@confirm_order')->name('cart.infoorder');
 });
 //page
 Route::prefix('page')->group(function(){

@@ -1,153 +1,125 @@
+
 @extends('layout.layout')
 @section('url','https://images-na.ssl-images-amazon.com/images/I/71GiSOhBeEL.jpg')
 @section('content')
-
-<div class="checkout-area pt-95 pb-70">
+<form action="{{route('cart.infoorder')}}" method="POST">
+    @csrf
+        <div class="checkout-area pt-95 pb-70">
             <div class="container">
-                <h3 class="page-title">checkout</h3>
+                <h3 class="page-title">Thanh toán</h3>
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="checkout-wrapper">
                             <div id="faq" class="panel-group">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-1">Checkout method</a></h5>
+                                        <h5 class="panel-title"><span>*</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-2">Thông tin người gửi</a></h5>
                                     </div>
-                                    <div id="payment-1" class="panel-collapse collapse show">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="checkout-register">
-                                                        <h5 class="checkout-sub-title">great an account</h5>
-                                                        <p>Please enter your email address to create an account</p>
-                                                        <form>
-                                                            <label> Email Address </label>
-                                                            <input type="email" name="email">
-                                                            <button class="checkout-btn" type="submit">Great An Account</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="checkout-login">
-                                                        <h5 class="checkout-sub-title">login</h5>
-                                                        <form>
-                                                            <div class="login-form">
-                                                                <label> Email Address </label>
-                                                                <input type="email" name="email">
-                                                            </div>
-                                                            <div class="login-form">
-                                                                <label> Password </label>
-                                                                <input type="email" name="email">
-                                                            </div>
-                                                        </form>
-                                                        <div class="login-forget">
-                                                            <button class="checkout-btn" type="submit">Login</button>
-                                                            <a href="#">Forgot your password?</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-2">billing information</a></h5>
-                                    </div>
-                                    <div id="payment-2" class="panel-collapse collapse">
+                                    <div id="payment-2" class="panel-collapse collapse show">
                                         <div class="panel-body">
                                             <div class="billing-information-wrapper">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>First Name</label>
-                                                            <input type="text">
+                                                            <label>Họ và tên(*)</label>
+                                                            <input autofocus name="name" id="textBox1" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Last Name</label>
-                                                            <input type="text">
+                                                            <label>Email</label>
+                                                            <input name="email" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Company</label>
-                                                            <input type="text">
+                                                            <label>Số điện thoại</label>
+                                                            <input name="phone" id="textBox2" type="text">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
-                                                            <label>Email Address</label>
-                                                            <input type="email">
-                                                        </div>
-                                                    </div>
+
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
-                                                            <label>Address</label>
-                                                            <input type="text">
+                                                            <label>Địa chỉ</label>
+                                                            <input name="address" id="textBox3" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>city</label>
-                                                            <input type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
-                                                            <label>State/Province</label>
-                                                            <input type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
-                                                            <label>Zip/Postal Code</label>
-                                                            <input type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-select card-mrg">
-                                                            <label>Country</label>
-                                                            <select>
-                                                                <option value="1">United State</option>
-                                                                <option value="2">Azerbaijan</option>
-                                                                <option value="3">Bahamas</option>
-                                                                <option value="4">Bahrain</option>
-                                                                <option value="5">Bangladesh</option>
-                                                                <option value="6">Barbados</option>
+                                                            <label>Chọn tỉnh/thành
+                                                                    phố:</label>
+                                                            <select class="form-control city-up" name="city" id="city">
+                                                            <option value="">Tỉnh/Thành Phố</option>
+                                                            <option value=""></option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Telephone</label>
-                                                            <input type="text">
+                                                        <label>Chọn quận
+                                                                huyện:</label>
+                                                            <select class="form-control city-up" name="district" id="district">
+                                                            <option value="">Quận/huyện</option>
+                                                            <option value=""> </option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title"><span>*</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-3">Thông tin giao hàng</a></h5>
+                                    </div>
+                                    <div id="payment-3" class="panel-collapse collapse ">
+                                        <div class="panel-body">
+                                            <div class="billing-information-wrapper">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="billing-info">
+                                                            <label>Họ và tên</label>
+                                                            <input autofocus name="name_receive" id="textBox10" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Fax</label>
-                                                            <input type="text">
+                                                            <label>Số điện thoại</label>
+                                                            <input name="phone_receive" id="textBox6" type="text">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="billing-info">
+                                                            <label>Địa chỉ</label>
+                                                            <input name="address_receive" id="textBox7" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="billing-info">
+                                                            <label>Chọn Tỉnh/thành phố</label>
+                                                            <select class="form-control city-up" name="district" id="district">
+                                                            <option value="">Tỉnh/thành phố</option>
+                                                            <option value=""> </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="billing-info">
+                                                        <label>Chọn Quận/huyện</label>
+                                                            <select class="form-control city-up" name="district" id="district">
+                                                            <option value="">Quận/huyện</option>
+                                                            <option value=""> </option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="ship-wrapper">
                                                     <div class="single-ship">
-                                                        <input type="radio" name="address" value="address" checked="">
-                                                        <label>Ship to this address</label>
-                                                    </div>
-                                                    <div class="single-ship">
-                                                        <input type="radio" name="address" value="dadress">
-                                                        <label>Ship to different address</label>
-                                                    </div>
-                                                </div>
-                                                <div class="billing-back-btn">
-                                                    <div class="billing-back">
-                                                        <a href="#"><i class="ti-arrow-up"></i> back</a>
-                                                    </div>
-                                                    <div class="billing-btn">
-                                                        <button type="submit">Get a Quote</button>
+                                                        <input id="click_check" type="checkbox" >
+                                                        <label>Giao hàng tới cùng địa chỉ trên</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,84 +128,44 @@
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>3</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-3">shipping information</a></h5>
-                                    </div>
-                                    <div id="payment-3" class="panel-collapse collapse ">
-                                        <div class="panel-body">
-                                            <div class="shipping-information-wrapper">
-                                                <div class="shipping-info-2">
-                                                    <span> Address will go here. </span>
-                                                    <span>T: 012 345 678 </span>
-                                                </div>
-                                                <div class="edit-address">
-                                                    <a href="#">Edit Address</a>
-                                                </div>
-                                                <div class="billing-select">
-                                                    <select class="email s-email s-wid">
-                                                        <option>Select Your Address</option>
-                                                        <option>Add New Address</option>
-                                                        <option>Boot Experts, Bangladesh</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ship-wrapper">
-                                                    <div class="single-ship">
-                                                        <input type="checkbox" checked="" value="address" name="address">
-                                                        <label>Use Billing Address</label>
-                                                    </div>
-                                                </div>
-                                                <div class="billing-back-btn">
-                                                    <div class="billing-back">
-                                                        <a href="#"><i class="ti-arrow-up"></i> back</a>
-                                                    </div>
-                                                    <div class="billing-btn">
-                                                        <button type="submit">Continue</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title"><span>4</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-4">Shipping method</a></h5>
+                                        <h5 class="panel-title"><span>*</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-4">Hình thức vận chuyển</a></h5>
                                     </div>
                                     <div id="payment-4" class="panel-collapse collapse ">
                                         <div class="panel-body">
                                             <div class="shipping-method-wrapper">
                                                 <div class="shipping-method">
-                                                    <p>Flat Rate</p>
-                                                    <p>Fixed $40.00</p>
+                                                    <p>Giao hàng tận nhà</p>
                                                 </div>
-                                                <div class="billing-back-btn">
+                                                {{-- <div class="billing-back-btn">
                                                     <div class="billing-back">
                                                         <a href="#"><i class="ti-arrow-up"></i> back</a>
                                                     </div>
                                                     <div class="billing-btn">
                                                         <button type="submit">Continue</button>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>5</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-5">payment information</a></h5>
+                                        <h5 class="panel-title"><span>*</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-5">Hình thức thanh toán</a></h5>
                                     </div>
                                     <div id="payment-5" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="payment-info-wrapper">
                                                 <div class="ship-wrapper">
                                                     <div class="single-ship">
-                                                        <input type="radio" checked="" value="address" name="address">
-                                                        <label>Check / Money order </label>
+                                                        <input type="radio" checked="" value="address">
+                                                        <label>Thanh toán khi nhận hàng</label>
                                                     </div>
                                                     <div class="single-ship">
-                                                        <input type="radio" value="dadress" name="address">
-                                                        <label>Credit Card (saved) </label>
+                                                        <input type="radio" value="address" >
+                                                        <label>Chuyển khoản </label>
                                                     </div>
                                                 </div>
-                                                <div class="payment-info">
+                                                {{-- <div class="payment-info">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="billing-info">
@@ -317,14 +249,14 @@
                                                     <div class="billing-btn">
                                                         <button type="submit">Continue</button>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>6</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-6">Order Review</a></h5>
+                                        <h5 class="panel-title"><span>*</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-6">Đơn hàng</a></h5>
                                     </div>
                                     <div id="payment-6" class="panel-collapse collapse">
                                         <div class="panel-body">
@@ -334,126 +266,59 @@
                                                         <table class="table">
                                                             <thead>
                                                                 <tr>
-                                                                    <th class="width-1">Product Name</th>
-                                                                    <th class="width-2">Price</th>
-                                                                    <th class="width-3">Qty</th>
-                                                                    <th class="width-4">Subtotal</th>
+                                                                    <th class="width-1">Sản phẩm</th>
+                                                                    <th class="width-2">Đơn giá</th>
+                                                                    <th class="width-3">Số lượng</th>
+                                                                    <th class="width-4">Tổng tiền</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @foreach($data as $item)
                                                                 <tr>
                                                                     <td>
                                                                         <div class="o-pro-dec">
-                                                                            <p>Fusce aliquam</p>
+                                                                            <img style="margin-left: 185px" src="{{asset('product/'.$item->options['image'])}}" alt="" width="100px";height="100px">
+                                                                        <p>{{$item->name}}</p>
+
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-price">
-                                                                            <p>$236.00</p>
+                                                                        <p>{{number_format($item->price)}}đ</p>
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-qty">
-                                                                            <p>2</p>
+                                                                        <p>{{$item->qty}}</p>
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-subtotal">
-                                                                            <p>$236.00</p>
+                                                                        <p>{{number_format($item->qty*$item->price)}}đ</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Primis in faucibus</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$265.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>3</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$265.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Etiam gravida</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$363.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>2</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$363.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Quisque in arcu</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$328.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>2</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$328.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
+                                                                @endforeach
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
-                                                                    <td colspan="3">Subtotal </td>
-                                                                    <td colspan="1">$4,001.00</td>
+                                                                    <td colspan="3">Tổng tiền </td>
+                                                                <td colspan="1">{{$total}}đ</td>
                                                                 </tr>
-                                                                <tr class="tr-f">
+                                                                {{-- <tr class="tr-f">
                                                                     <td colspan="3">Shipping & Handling (Flat Rate - Fixed</td>
                                                                     <td colspan="1">$45.00</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td colspan="3">Grand Total</td>
                                                                     <td colspan="1">$4,722.00</td>
-                                                                </tr>
+                                                                </tr> --}}
                                                             </tfoot>
                                                         </table>
                                                     </div>
                                                     <div class="billing-back-btn">
-                                                        <span>
-                                                            Forgot an Item?
-                                                            <a href="#"> Edit Your Cart.</a>
-
-                                                        </span>
                                                         <div class="billing-btn">
-                                                            <button type="submit">Continue</button>
+                                                            <button type="submit">Hoàn tất đơn hàng</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -464,21 +329,5 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="checkout-progress">
-                            <h4>Checkout Progress</h4>
-                            <ul>
-                                <li><i class="fa fa-eyedropper" aria-hidden="true"></i>Billing Address</li>
-                                <li><i class="fa fa-eyedropper" aria-hidden="true"></i>Shipping Address</li>
-                                <li><i class="fa fa-eyedropper" aria-hidden="true"></i>Shipping Method</li>
-                                <li><i class="fa fa-eyedropper" aria-hidden="true"></i>Payment Method</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+                    </form>
 @endsection

@@ -29,13 +29,16 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
   <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
   <body>
-              <header class="header-area">
+    @include('sweetalert::alert')
+<header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
           <div class="row">
@@ -52,7 +55,7 @@
                       @if(Session::get('customer'))
                     <a href="#"
                   >
-                    {{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    {{Session::get('customer')->customer_name}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
