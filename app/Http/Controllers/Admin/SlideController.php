@@ -19,6 +19,7 @@ class SlideController extends Controller
     }
     public function save(ValidateFormSlide $request){
         $data = array();
+        $data['slide_title'] = $request->slide_title;
         $data['slide_desc'] = $request->slide_desc;
         $data['slide_status'] = $request->slide_status;
         $get_image = $request->file('slide_image');
@@ -43,6 +44,7 @@ class SlideController extends Controller
     }
     public function update(ValidateFormUpdateSlide $request,$id){
         $data = array();
+        $data['slide_title'] = $request->slide_title;
         $data['slide_desc'] = $request->slide_desc;
         $data['slide_status'] = $request->slide_status;
         $get_image = $request->file('slide_image');

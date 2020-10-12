@@ -10,15 +10,20 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Sunra\PhpSimple\HtmlDomParser;
+use function simplehtmldom_1_5\str_get_html;
 
 class ProductController extends Controller
 {
     //
     public function list(){
         $list = DB::table('products')
-            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+            ->join('categories', function ($join) {
+                $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
+            })
+//            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
             ->join('brands','brands.id','=','products.brand_id')
-            ->orderBy('products.product_id', 'asc')->get();
+            ->orderBy('products.product_id', 'asc')
+            ->get();
         return view('admin.products.list', compact('cate_sub','list'));
     }
 
@@ -39,7 +44,7 @@ class ProductController extends Controller
          $data['product_code'] = $request->product_code;
          $data['product_price'] = $request->product_price;
          $data['product_price_sale'] = $request->product_price_sale;
-         $data['product_content'] = ($request->product_content);
+         $data['product_content'] = $request->product_content;
          $data['product_desc'] = $request->product_desc;
          $data['product_status'] = $request->product_status;
          $get_image = $request->file('product_image');
@@ -60,14 +65,16 @@ class ProductController extends Controller
     }
  public function edit($id){
 
-     $cate_product = DB::table('categories')->orderBy('cate_pro_id','desc')->get();
+     $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
+     $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
      $brand_product = DB::table('brands')->orderBy('id','desc')->get();
-        $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
-        return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product);
+     $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
+        return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('cate_sub',$cate_sub);
  }
  public function update(ValidateFormUpdateProduct $request,$id){
              $data = array();
-             $data['category_id'] = $request->product_cate;
+             $data['cate_pro_id'] = $request->product_cate;
+             $data['sub_id'] = $request->cate_sub;
              $data['brand_id'] = $request->product_brand;
              $data['product_name'] = $request->product_name;
              $data['product_code'] = $request->product_code;

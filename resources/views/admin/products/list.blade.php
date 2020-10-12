@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+    @parent
     <h4 class="header-title">Danh sách sản phẩm</h4>
     <a href="{{route('product.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div class="table-responsive">
@@ -7,6 +8,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Id</th>
                 <th>Mã </th>
                 <th>Tên</th>
                 <th>Danh mục</th>
@@ -25,6 +27,7 @@
             @foreach($list as $key => $product )
                 <tr>
                     <td style="font-size: 10px"  scope="row">{{$key + 1}}</td>
+                    <td style="font-size: 10px">{{$product->product_id}}</td>
                     <td style="font-size: 10px">{{$product->product_code}}</td>
                     <td style="font-size: 10px">{{$product->product_name}}</td>
                     <td style="font-size: 10px">{{$product->category_product_name}}</td>

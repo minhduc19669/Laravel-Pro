@@ -25,6 +25,7 @@ class ValidateFormUpdateSlide extends FormRequest
     {
         return [
             'slide_image' => 'mimes:jpeg,jpg,png',
+            'slide_title'  => 'required',
             'slide_desc'  => 'required',
             'slide_status' => 'required'
         ];
@@ -32,7 +33,7 @@ class ValidateFormUpdateSlide extends FormRequest
     public function messages()
     {
         return [
-
+            'slide_title.required' => 'Không được để trống ô này',
             'slide_desc.required' => 'Không được để trống ô này',
             'slide_status.required' => 'không được để trống ô này',
             'slide_image.mimes'   => 'Chỉ được phép thêm file jpg,png,jpeg',
