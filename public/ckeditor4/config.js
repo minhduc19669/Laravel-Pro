@@ -39,6 +39,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.autoParagraph = false;
 
 
+
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 };

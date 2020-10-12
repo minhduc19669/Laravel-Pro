@@ -17,6 +17,15 @@
                 @endif
                 <div class="form-row">
                     <div class="form-group col-md-8">
+                        <label for="price">Tiêu đề</label>
+                        <textarea  type="text" class="form-control" name="slide_title" placeholder="Tiêu đề"></textarea>
+                    </div>
+                </div>
+                @if ($errors->has('slide_title'))
+                    <p style="color: red">{{ $errors->first('slide_title') }}</p>
+                @endif
+                <div class="form-row">
+                    <div class="form-group col-md-8">
                         <label for="price">Ghi chú</label>
                         <textarea id="editor1" type="text" class="form-control" name="slide_desc" placeholder="ghi chú"></textarea>
                     </div>
