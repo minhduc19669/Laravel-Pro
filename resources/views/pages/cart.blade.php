@@ -43,9 +43,13 @@
                                 <div class="col-lg-12">
                                     <div class="cart-shiping-update-wrapper">
                                         <div class="cart-shiping-update">
-                                            <a href="#">Continue Shopping</a>
-                                            <button>Update Shopping Cart</button>
+                                            <a style="cursor: pointer;" onclick="goBack()">Continue Shopping</a>
                                         </div>
+                                        <script>
+                                            function goBack() {
+                                            window.history.back();
+                                            }
+                                            </script>
                                         <div class="cart-clear">
                                         <a onclick="return confirm('Bạn có chắc chắn không?') "style="cursor: pointer;" href="{{route('delete-all')}}">Xóa giỏ hàng</a>
                                         </div>
@@ -54,7 +58,7 @@
                             </div>
                         </form>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
+                            {{-- <div class="col-lg-4 col-md-6">
                                 <div class="cart-tax">
                                     <h4 class="cart-bottom-title">Estimate Shipping And Tax</h4>
                                     <div class="tax-wrapper">
@@ -94,8 +98,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
+                            </div> --}}
+                            {{-- <div class="col-lg-4 col-md-6">
                                 <div class="discount-code-wrapper">
                                     <h4 class="cart-bottom-title">DISCOUNT CODES</h4>
                                     <div class="discount-code">
@@ -106,11 +110,11 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-4 col-md-12">
                                 <div class="grand-totall">
                                     <h5 id="grand-total">Tổng tiền : {{$total}} đ</h5>
-                                    <a href="#">Proceed To Checkout</a>
+                                <a href="{{route('cart.checkout')}}">Proceed To Checkout</a>
                                     <p>Checkout with Multiple Addresses</p>
                                 </div>
                             </div>

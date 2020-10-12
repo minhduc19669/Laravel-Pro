@@ -26,8 +26,9 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/meanmenu.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
-  <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
-  <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
+    <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -35,13 +36,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
   </head>
   <body>
-    <header class="header-area">
+    @include('sweetalert::alert')
+<header class="header-area">
       <div class="header-top theme-bg">
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-12">
               <div class="welcome-area">
-                <p>Default welcome msg!</p>
+                <p>Chợ của thú cưng!</p>
               </div>
             </div>
             <div class="col-lg-8 col-md-8 col-12">
@@ -50,9 +52,9 @@
                   </li>
                   <li>
                       @if(Session::get('customer'))
-
-                </div>
-                    <a href="#">{{Session::get('customer')['name']}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <a href="#"
+                  >
+                    {{Session::get('customer')->customer_name}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
                         <a href="#"
@@ -87,7 +89,7 @@
           <div class="row">
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-5">
               <div class="logo pt-39">
-              <a href="{{route('home')}}"
+                <a href="index.html"
                   ><img alt="" src="{{asset('assets_page/img/logo/logo.png')}}"
                 /></a>
               </div>
@@ -104,7 +106,7 @@
                       <ul class="mega-menu">
                         <li>
                           <ul>
-                            <li class="mega-menu-title">Thức ăn cho chó</li>
+                            <li class="mega-menu-title">Dogs Food</li>
                             <li><a href="shop-page.html">Eggs</a></li>
                             <li><a href="shop-page.html">Carrots</a></li>
                             <li><a href="shop-page.html">Salmon fishs</a></li>
@@ -116,7 +118,7 @@
                         </li>
                         <li>
                           <ul>
-                            <li class="mega-menu-title">Thức ăn cho mèo</li>
+                            <li class="mega-menu-title">Cats Food</li>
                             <li><a href="shop-page.html">Meat</a></li>
                             <li><a href="shop-page.html">Fish</a></li>
                             <li><a href="shop-page.html">Eggs</a></li>
@@ -124,6 +126,7 @@
                             <li><a href="shop-page.html">Cheese</a></li>
                           </ul>
                         </li>
+
                         <li>
                           <ul>
                             <li>
@@ -138,56 +141,13 @@
                       </ul>
                     </li>
                     <li>
-                    <a href="{{route('page.index')}}">Sản phẩm</a>
-                      {{-- <ul class="submenu">
-                        <li>
-                          <a href="about-us.html">about us</a>
-                        </li>
-                        <li>
-                          <a href="shop-page.html">shop page</a>
-                        </li>
-                        <li>
-                          <a href="shop-list.html">shop list</a>
-                        </li>
-                        <li>
-                          <a href="product-details.html">product details</a>
-                        </li>
-                        <li>
-                          <a href="cart.html">cart page</a>
-                        </li>
-                        <li>
-                          <a href="checkout.html">checkout</a>
-                        </li>
-                        <li>
-                          <a href="wishlist.html">wishlist</a>
-                        </li>
-                        <li>
-                          <a href="contact.html">contact us</a>
-                        </li>
-                        <li>
-                          <a href="my-account.html">my account</a>
-                        </li>
-                        <li>
-                          <a href="login-register.html">login / register</a>
-                        </li>
-                      </ul> --}}
+                      <a href="#">Sản phẩm</a>
                     </li>
                     <li>
                       <a href="blog-leftsidebar.html">Blog</a>
-                      <ul class="submenu">
-                        <li>
-                          <a href="blog.html">blog page</a>
-                        </li>
-                        <li>
-                          <a href="blog-leftsidebar.html">blog left sidebar</a>
-                        </li>
-                        <li>
-                          <a href="blog-details.html">blog details</a>
-                        </li>
-                      </ul>
                     </li>
-                    <li><a href="about-us.html">ABOUT US</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT US</a></li>
                   </ul>
                 </nav>
               </div>
@@ -201,14 +161,13 @@
                   </button>
                   <div class="search-content">
                     <form action="#">
-                      <input type="text" placeholder="Bạn muốn tìm gì ?" />
+                      <input type="text" placeholder="Search" />
                       <button>
                         <i class="icon-magnifier s-open"></i>
                       </button>
                     </form>
                   </div>
                 </div>
-
                 <div class="header-cart same-style">
                   <button class="icon-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -240,11 +199,10 @@
                     </div>
                     <div class="shopping-cart-btn">
                     <a href="{{route('cart.view')}}">Xem giỏ hàng</a>
-                      <a href="checkout.html">Checkout</a>
+                    <a href="{{route('cart.checkout')}}">Thanh toán</a>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
             <div
@@ -254,7 +212,8 @@
                 <nav id="mobile-menu-active">
                   <ul class="menu-overflow">
                     <li>
-                      <a href="#">HOME</a>
+                      <a href="#">Trang chủ</a>
+
                     </li>
                     <li>
                       <a href="#">pages</a>
@@ -292,7 +251,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Danh mục</a>
+                      <a href="#">Food</a>
                       <ul>
                         <li>
                           <a href="#">Dogs Food</a>
@@ -654,9 +613,17 @@
             });
 </script>
     <script>
-
         ///addtocart
         $(document).ready(function($){
+            ///duplicate-address
+            $('#click_check').on('click',function(){
+                document.getElementById('textBox10').value=document.getElementById('textBox1').value;
+                document.getElementById('textBox6').value=document.getElementById('textBox2').value;
+                document.getElementById('textBox7').value=document.getElementById('textBox3').value;
+                // $('.textBox3').on('change', function() {
+                // $('.textBox7').val($(this).val());
+                // });
+            })
             let listProduct=$("#product #addtocart");
                 listProduct.on('click',function(){
                     var id=$(this).attr('buy-id');

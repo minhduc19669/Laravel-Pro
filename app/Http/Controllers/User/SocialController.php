@@ -22,9 +22,7 @@ class SocialController extends Controller
             $user = Socialite::driver('google')->user();
             $finduser = Customer::where('google_id', $user->id)->first();
             if ($finduser) {
-                Session::put('customer',['id'=>$finduser->id,
-                'name'=>$finduser->customer_name
-                ]);
+                Session::put('customer',$finduser);
                 return \redirect()->route('home');
             } else {
                 $newUser = Customer::create([
@@ -34,8 +32,7 @@ class SocialController extends Controller
                     'customer_avatar'=>$user->avatar,
                     'customer_password'=>Hash::make('123456')
                 ]);
-                Session::put('customer', ['id'=>$newUser->id,
-                'name'=>$newUser->customer_name]);
+                Session::put('customer', $newUser);
                 return redirect()->route('home');
             }
         } catch (Exception $e) {

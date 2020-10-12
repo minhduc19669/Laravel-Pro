@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use App\Slide;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -32,22 +33,19 @@ class HomeController extends Controller
     public function login(ValidateFormLogin $request)
     {
         $email = $request->email;
-        $password = \Hash::make($request->password);
-
-        $customer = Customer::where([
-            ['customer_email', '=', $email],
-            ['customer_password', '=', $password],
-        ])->first();
+        $password = md5($request->password);
+        $customer = Customer::where('customer_email', '=', $email)->where('customer_password','=',$password)->first();
         if ($customer) {
             $login = $customer->count();
             if ($login > 0) {
-                Session::put('user', $customer);
+                Session::put('customer', $customer);
                 Alert()->success('Đăng nhập thành công !')->autoClose(1500);
+
                 return redirect()->route('home');
             }
         } else {
             Session::put('mess', 'Sai tên đăng nhập hoặc mật khẩu!');
-            return redirect()->route('login');
+            return redirect()->route('home.getlogin');
         }
 
     }
@@ -57,10 +55,14 @@ class HomeController extends Controller
         $customer = new Customer();
         $customer->customer_name = $request->name;
         $customer->customer_email = $request->email;
-        $customer->customer_password = \Hash::make($request->password);
+        $customer->customer_password = md5($request->password);
         $customer->save();
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
-        return redirect()->route('login');
+        return redirect()->route('home.getlogin');
+    }
+    public function logout(){
+        Session::put('customer', \null);
+        return back();
     }
 
 
