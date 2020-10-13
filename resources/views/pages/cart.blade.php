@@ -24,15 +24,15 @@
                                         @foreach($data as $key => $item)
                                         <tr>
                                             <td class="product-thumbnail">
-                                            <a href="#"><img src="{{asset('product/'.$item->options['image'])}}" alt=""></a>
+                                            <a href="#"><img width="150px" height="130px" src="{{asset('product/'.$item->options['image'])}}" alt=""></a>
                                             </td>
-                                        <td><a href="#">{{$item->name}}</a></td>
-                                        <td style="width: 70px;" ><span style="margin-left: 20px" class="amount">{{number_format($item->price)}} đ</span></td>
+                                            <td><a href="#">{{$item->name}}</a></td>
+                                            <td style="width: 90px;" ><span style="margin-left: 35px" class="amount">{{number_format($item->price)}} <u>đ</u></span></td>
                                             <td>
                                                 <input row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
 
                                             </td>
-                                        <td><span id="price-item{{$item->rowId}}" style="margin-left: 40px;">{{number_format($item->price*$item->qty)}} đ</span></td>
+                                        <td><span id="price-item{{$item->rowId}}" style="margin-left: 40px;">{{number_format($item->price*$item->qty)}} <u>đ</u></span></td>
                                             <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
                                         </tr>
                                         @endforeach
@@ -113,7 +113,7 @@
                             </div> --}}
                             <div class="col-lg-4 col-md-12">
                                 <div class="grand-totall">
-                                    <h5 id="grand-total">Tổng tiền : {{$total}} đ</h5>
+                                    <h5 id="grand-total">Tổng tiền : {{$total}} <u>đ</u></h5>
                                 <a href="{{route('cart.checkout')}}">Proceed To Checkout</a>
                                     <p>Checkout with Multiple Addresses</p>
                                 </div>

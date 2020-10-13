@@ -49,8 +49,10 @@
                                                             <label>Chọn tỉnh/thành
                                                                     phố:</label>
                                                             <select class="form-control city-up" name="city" id="city">
-                                                            <option value="">Tỉnh/Thành Phố</option>
-                                                            <option value=""></option>
+                                                            <option value="">--Tỉnh/Thành Phố--</option>
+                                                            @foreach($cities as $city)
+                                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                                            @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
@@ -59,8 +61,8 @@
                                                         <label>Chọn quận
                                                                 huyện:</label>
                                                             <select class="form-control city-up" name="district" id="district">
-                                                            <option value="">Quận/huyện</option>
-                                                            <option value=""> </option>
+                                                            <option value="">--Quận/huyện--</option>
+                                                            <option value=""></option>
                                                             </select>
 
                                                         </div>
@@ -100,17 +102,20 @@
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Chọn Tỉnh/thành phố</label>
-                                                            <select class="form-control city-up" name="district" id="district">
-                                                            <option value="">Tỉnh/thành phố</option>
-                                                            <option value=""> </option>
+                                                            <select class="form-control city-up" name="city_receive" id="district">
+                                                            <option value="">--Tỉnh/thành phố--</option>
+                                                            @foreach ($cities as $city)
+                                                            <option value="{{$city->id}}">{{$city->name}} </option>
+                                                            @endforeach
+
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                         <label>Chọn Quận/huyện</label>
-                                                            <select class="form-control city-up" name="district" id="district">
-                                                            <option value="">Quận/huyện</option>
+                                                            <select class="form-control city-up" name="district_receive" id="district">
+                                                            <option value="">--Quận/huyện--</option>
                                                             <option value=""> </option>
                                                             </select>
                                                         </div>
@@ -157,11 +162,11 @@
                                             <div class="payment-info-wrapper">
                                                 <div class="ship-wrapper">
                                                     <div class="single-ship">
-                                                        <input type="radio" checked="" value="address">
+                                                        <input name="cod" class="radio-check" type="radio" value="1">
                                                         <label>Thanh toán khi nhận hàng</label>
                                                     </div>
                                                     <div class="single-ship">
-                                                        <input type="radio" value="address" >
+                                                        <input name="bank" class="radio-check" type="radio" value="2" >
                                                         <label>Chuyển khoản </label>
                                                     </div>
                                                 </div>

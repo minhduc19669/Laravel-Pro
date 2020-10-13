@@ -52,6 +52,8 @@ Route::prefix('cart')->group(function(){
     Route::get('checkout','CartController@checkout')->name('cart.checkout');
     Route::get('shipping','CheckoutController@shipping')->name('cart.shipping');
     Route::post('order', 'CheckoutController@confirm_order')->name('cart.infoorder');
+    Route::get('district/{id}', 'DistrictController@showDistrictInCity');
+    // Route::get('info', 'CheckoutController@alert_checkout')->name('cart.info_order');
 });
 //page
 Route::prefix('page')->group(function(){
