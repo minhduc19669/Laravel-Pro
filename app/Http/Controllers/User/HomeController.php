@@ -8,9 +8,12 @@ use App\Http\Requests\ValidateFormLogin;
 use App\Http\Requests\ValidateFormRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Wellcome;
+use App\Mail\WellcomeEmail;
 use App\Product;
 use App\Slide;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
@@ -56,6 +59,9 @@ class HomeController extends Controller
         $customer->customer_email = $request->email;
         $customer->customer_password = md5($request->password);
         $customer->save();
+        $mail=$request->email;
+        Mail::to($mail)->send(new WellcomeEmail());
+
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
         return redirect()->route('home.getlogin');
     }

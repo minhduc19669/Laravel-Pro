@@ -142,7 +142,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Sản phẩm</a>
+                    <a href="">Sản phẩm</a>
                     </li>
                     <li>
                       <a href="blog-leftsidebar.html">Blog</a>
