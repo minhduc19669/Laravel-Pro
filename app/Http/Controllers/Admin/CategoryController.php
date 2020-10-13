@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ValidateFormCategory;
 use App\Http\Requests\ValidateFormNews_category;
 use App\Http\Requests\ValidateFormSubcategory;
+use App\Http\Requests\ValidateFormUpdateCategory;
+use App\Http\Requests\ValidateUpdateNewscategory;
+use App\Http\Requests\ValidateUpdateSubcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -34,9 +37,10 @@ class CategoryController extends Controller{
                    $edit = DB::table('categories')->where('cate_pro_id',$id)->get();
                    return view('admin.categories.product.edit',['category'=>$edit]);
                 }
-                public function update(ValidateFormCategory $request,$id){
+                public function update(ValidateFormUpdateCategory $request,$id){
 
                     $data = array();
+                    $data['cate_pro_id'] = $request->cate_pro_id;
                     $data['category_product_name'] = $request->category_product_name;
                     $data['category_product_desc'] = $request->category_product_desc;
                           DB::table('categories')->where('cate_pro_id',$id)->update($data);
@@ -75,9 +79,9 @@ class CategoryController extends Controller{
 
                     return view('admin.categories.news.edit-news',['category'=>$edit]);
                 }
-                public function update_news(ValidateFormNews_category $request,$id){
-
+                public function update_news(ValidateUpdateNewscategory $request,$id){
                     $data = array();
+                    $data['cate_news_id'] = $request->cate_news_id;
                     $data['category_news_name'] = $request->category_news_name;
                     $data['category_news_desc'] = $request->category_news_desc;
                     DB::table('categories')->where('cate_news_id',$id)->update($data);
@@ -93,9 +97,9 @@ class CategoryController extends Controller{
                 //sub-category
 
                 public function list_sub(){
-                    $query = DB::table('categories')->where('sub_id','!=',null)
-                        ->orderBy('id','asc');
-                    $bang = $query->get();
+                    $query = Category::where('sub_id','!=',null)
+                        ->orderBy('sub_id','asc');
+                    $bang = $query->with('categories')->get();
                     return view('admin.categories.subcategory.list',['list'=>$bang]);
                 }
                 public function add_sub(){
@@ -122,7 +126,7 @@ class CategoryController extends Controller{
                         ->where('sub_id',$id)->get();
                     return view('admin.categories.subcategory.edit',compact('cate_pro','category'));
                 }
-                public function update_sub(ValidateFormSubcategory $request,$id){
+                public function update_sub(ValidateUpdateSubcategory $request,$id){
 
                     $data = array();
                     $data['sub_id'] = $request->sub_id;

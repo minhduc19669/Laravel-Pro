@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 
+use App\Category;
 use App\Customer;
 use App\Http\Requests\ValidateFormLogin;
 use App\Http\Requests\ValidateFormRegister;
@@ -18,7 +19,11 @@ class HomeController extends Controller
     public function index(){
         $products=Product::limit(8)->orderBy('product_id','desc')->get();
         $slides=Slide::limit(3)->orderBy('id','desc')->get();
-        return \view('pages.home',\compact('products','slides'));
+        $category =Category::where('cate_pro_id','!=','null')
+            ->select('cate_pro_id','category_product_name','sub_id','category_sub_product_name')
+            ->with('SubCategories')->get();
+        return \view('pages.home',\compact('products','slides','category'));
+
     }
     public function showFormLogin()
     {

@@ -3,7 +3,7 @@
     @foreach($category as $key => $edit)
     <form action="{{route('subcategory.update',$edit->sub_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
-        <h2>Thêm danh mục sản phẩm con</h2>
+        <h2>Cập nhật danh mục sản phẩm con</h2>
         <br>
         <div class="row">
             <div class="col-md-12">

@@ -84,6 +84,62 @@ class SlideController extends Controller
         return \redirect()->route('slide.list');
     }
 
+public function search(){
+        return view('admin.slide.search');
+}
+    public function action(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('slides')
+                    ->orWhere('slide_title', 'like', '%'.$query.'%')
+                    ->orWhere('slide_desc', 'like', '%'.$query.'%')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('slides')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $row)
+                {
+                    $output .= '
+        <tr>
+        <td>'.$row->id.'</td>
+         <td><img src=" \slide\ '.$row->slide_image.' " alt=""></td>
+         <td>'.$row->slide_title.'</td>
+         <td>'.$row->slide_desc.'</td>
+         <td>'.$row->slide_status.'</td>
+        </tr>
+        ';
+                }
+            }
+            else
+            {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+
 
 
 }

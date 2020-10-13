@@ -1,13 +1,21 @@
 @extends('admin_layout')
 @section('admin_content')
     @foreach($category as $key => $edit)
-        <form action="{{route('category.update-news',$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+        <form action="{{route('category.update-news',$edit->cate_news_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
             {{csrf_field()}}
-
-            <h2>Thêm danh mục sản phẩm</h2>
+            <h2>Cập  nhật danh mục tin tức</h2>
             <br>
             <div class="row">
                 <div class="col-md-12">
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="modelName">ID</label>
+                            <input value="{{$edit->cate_news_id}}" type="number" min="1" class="form-control" name="cate_news_id" placeholder="Id danh mục tin tức">
+                        </div>
+                    </div>
+                    @if ($errors->has('cate_news_id'))
+                        <p style="color: red">{{ $errors->first('cate_news_id') }}</p>
+                    @endif
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="modelName">Tên danh mục tin tức</label>
@@ -26,12 +34,9 @@
                     @if ($errors->has('category_news_desc'))
                         <p style="color: red">{{ $errors->first('category_news_desc') }}</p>
                     @endif
-
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <div class="col-md-4">
-                    <img class="img-fluid img-thumbnail" id="imgPreview" src="">
-                </div>
+
             </div>
 
         </form>
