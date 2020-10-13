@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\User;
-use App\Models\User\Permission;
-use App\Models\User\Role;
+namespace App\Http\Controllers;
+use App\Permission;
+use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 use Laravel\Socialite\Facades\Socialite;
 use App\Customer;
 use App\Http\Controllers\Controller;
