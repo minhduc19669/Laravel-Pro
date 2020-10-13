@@ -66,7 +66,6 @@ class HomeController extends Controller
         $customer->save();
         $mail=$request->email;
         Mail::to($mail)->send(new WellcomeEmail());
-
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
         return redirect()->route('home.getlogin');
     }
