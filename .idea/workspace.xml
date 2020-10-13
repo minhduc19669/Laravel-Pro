@@ -20,21 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/slide/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSlide.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSlide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateSlide.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateSlide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_30_022053_create_slides_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_30_022053_create_slides_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ckeditor4/ckeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ckeditor4/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4/dist/config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ckeditor4/dist/config.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,11 +188,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/node_modules" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories/news" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories/product" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories" />
-      <recent name="$PROJECT_DIR$/app/Models/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,7 +251,8 @@
       <workItem from="1602299597820" duration="5229000" />
       <workItem from="1602348900829" duration="768000" />
       <workItem from="1602429298678" duration="504000" />
-      <workItem from="1602466722285" duration="9020000" />
+      <workItem from="1602466722285" duration="21489000" />
+      <workItem from="1602552819119" duration="25569000" />
     </task>
     <servers />
   </component>
@@ -288,10 +288,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="359" y="239" width="638" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1366.741@0.27.1366.741" timestamp="1601347410449" />
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1602059180620">
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1602477067403">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1602059180620" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1602477067403" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601948018871">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -308,10 +308,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
-    <state x="347" y="174" key="run.anything.popup" timestamp="1602056203888">
+    <state x="347" y="174" key="run.anything.popup" timestamp="1602581202053">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1602056203888" />
+    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1602581202053" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602122495484">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

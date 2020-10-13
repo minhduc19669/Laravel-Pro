@@ -3,6 +3,7 @@
 @section('admin_content')
     <h4 class="header-title">Slide</h4>
     <a href="{{route('slide.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
+    <input width="50px" type="text" name="search" id="search" class="form-control" placeholder="Tìm kiếm" />
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>
@@ -13,28 +14,37 @@
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>
-
             </tr>
             </thead>
             <tbody>
-            @foreach($slide as $key => $list )
-                <tr>
-                    <th scope="row">{{$key + 1}}</th>
-                    <td><img width="50px" src="\slide\{{$list->slide_image}}"></td>
-                    <td>{{$list->slide_title}}</td>
-                    <td>{{$list->slide_desc}}</td>
-                    @if($list->slide_status==0)
-                        <td><a href={{route('slide.unactive',$list->id)}}><i style="color: #ff0000" class="fas fa-smile-wink"></i></a></td>
-                    @else
-                        <td><a href={{route('slide.active',$list->id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
 
-                    @endif
-                    <td><a style="margin-right: 10px" href={{route('slide.edit',$list->id)}}    ><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" style="margin-left: 10px" href={{route('slide.remove',$list->id)}}><i class=" ion ion-md-close"></i></a></td>
-                </tr>
-            @endforeach
             </tbody>
         </table>
     </div>
+    <script>
+        $(document).ready(function(){
+            fetch_customer_data();
+            function fetch_customer_data(query = '')
+            {
+                $.ajax({
+                    url:"{{ route('slide.action') }}",
+                    method:'GET',
+                    data:{query:query},
+                    dataType:'json',
+                    success:function(data)
+                    {
+                        $('tbody').html(data.table_data);
+                        $('#total_records').text(data.total_data);
+                    }
+                })
+            }
+
+            $(document).on('keyup', '#search', function(){
+                var query = $(this).val();
+                fetch_customer_data(query);
+            });
+        });
+    </script>
 @endsection
 
 

@@ -167,7 +167,11 @@ Route::middleware(['auth'])->group(function (){
             Route::get('slide/remove/{id}','SlideController@remove')->name('slide.remove');
             Route::get('slide/active/{id}','SlideController@active')->name('slide.active');
             Route::get('slide/un-active/{id}','SlideController@unactive')->name('slide.unactive');
-             //order
+
+            Route::get('slide/search/','SlideController@search')->name('slide.search');
+            Route::get('slide/search/action','SlideController@action')->name('slide.action');
+
+        //order
               Route::get('order','OrderController@list')->name('order.list');
               Route::get('order/add','OrderController@add')->name('order.add');
               Route::post('order/save','OrderController@save')->name('order.save');
