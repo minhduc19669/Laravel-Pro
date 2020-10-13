@@ -40,7 +40,6 @@ class HomeController extends Controller
             if ($login > 0) {
                 Session::put('customer', $customer);
                 Alert()->success('Đăng nhập thành công !')->autoClose(1500);
-
                 return redirect()->route('home');
             }
         } else {

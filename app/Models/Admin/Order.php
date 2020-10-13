@@ -8,9 +8,9 @@ class Order extends Model
 {
     protected $table = "orders";
     protected $fillable = [
-      'user_id'  ,'shipping_id' ,'order_total','order_status','created_at','updated_at'];
+      'user_id'  ,'shipping_id' ,'order_code','order_status','created_at','updated_at','order_id'];
     public function order_detail(){
 
-        return $this->belongsTo('App\Admin\Orderdetail');
+        return $this->belongsTo('App\Orderdetail');
     }
 }

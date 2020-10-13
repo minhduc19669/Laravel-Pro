@@ -11,7 +11,7 @@ class Orderdetail extends Model
 
     public function Order(){
 
-        return $this->hasOne('App\Admin\Order','order_id');
+        return $this->hasOne('App\Order','order_id');
     }
 
 }

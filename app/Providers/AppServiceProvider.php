@@ -42,7 +42,6 @@ class AppServiceProvider extends ServiceProvider
             $count=Cart::count();
             $data=Cart::content();
             $total = Cart::priceTotal();
-
             $view->with(['count'=>$count,'data'=>$data,'total'=>$total]);
         });
     }

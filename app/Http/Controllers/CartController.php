@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\City;
+use App\District;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Product;
@@ -72,11 +75,9 @@ class CartController extends Controller
     }
 
     public function checkout(){
-        return \view('pages.checkout');
+        $cities=City::all();
+        return \view('pages.checkout',\compact('cities'));
     }
-
-
-
 
 
 }
