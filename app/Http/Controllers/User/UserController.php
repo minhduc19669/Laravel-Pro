@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\ValidateFormAddUser;
 use App\Http\Requests\ValidateFormUpdateUser;
-use App\Models\User\Role;
-use App\Models\User\RoleUser;
+use App\Role;
+use App\RoleUser;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
