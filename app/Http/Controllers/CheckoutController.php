@@ -6,6 +6,8 @@ use App\City;
 use App\Customer;
 use App\District;
 use App\Http\Requests\ValidationFormCheckout;
+use App\Jobs\ConfirmOrder;
+use App\Mail\OrderShipped;
 use App\Mail\WellcomeEmail;
 use App\Order;
 use App\Orderdetail;
@@ -67,7 +69,7 @@ class CheckoutController extends Controller
             $id=Session::get('customer')->id;
             $customer=Customer::find($id);
             $mail=$customer->customer_email;
-            Mail::to($mail)->send(new WellcomeEmail());
+            \dispatch(new ConfirmOrder($mail))->onQueue('emails-order')->delay(\now()->addMinutes(1));;
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }else{
@@ -93,7 +95,7 @@ class CheckoutController extends Controller
                 $order_detail->save();
             }
             $email=$request->email;
-            Mail::to($email)->send(new WellcomeEmail());
+            \dispatch(new ConfirmOrder($email))->onQueue('emails-order')->delay(\now()->addMinutes(1));
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }
