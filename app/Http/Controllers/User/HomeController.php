@@ -9,6 +9,7 @@ use App\Http\Requests\ValidateFormLogin;
 use App\Http\Requests\ValidateFormRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\WellcomeRegis;
 use App\Mail\Wellcome;
 use App\Mail\WellcomeEmail;
 use App\Product;
@@ -21,7 +22,13 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        return \view('pages.home');
+        $products=Product::limit(8)->orderBy('product_id','desc')->get();
+        $slides=Slide::limit(3)->orderBy('id','desc')->get();
+        $category =Category::where('cate_pro_id','!=','null')
+            ->select('cate_pro_id','category_product_name','sub_id','category_sub_product_name')
+            ->with('SubCategories')->get();
+        return \view('pages.home',\compact('products','slides','category'));
+
     }
     public function showFormLogin()
     {
@@ -59,7 +66,7 @@ class HomeController extends Controller
         $customer->customer_password = md5($request->password);
         $customer->save();
         $mail=$request->email;
-        Mail::to($mail)->send(new WellcomeEmail());
+        \dispatch(new WellcomeRegis($mail));
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
         return redirect()->route('home.getlogin');
     }

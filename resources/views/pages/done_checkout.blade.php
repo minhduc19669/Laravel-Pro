@@ -11,7 +11,7 @@
                         <br>
                         Mã đơn hàng của quý khách là {{$checkout_code}}.
                         <br>
-                        Thông tin xác nhận sẽ được gửi qua email và được nhân viên tư vấn của chúng tôi liên lạc để xác nhận!
+                        Thông tin sẽ được gửi qua email và được nhân viên tư vấn của chúng tôi liên lạc để xác nhận!
                         <br>
                         Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của chúng tôi !
                         <br>

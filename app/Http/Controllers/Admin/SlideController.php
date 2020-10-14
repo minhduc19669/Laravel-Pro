@@ -84,9 +84,9 @@ class SlideController extends Controller
         return \redirect()->route('slide.list');
     }
 
-public function search(){
-        return view('admin.slide.search');
-}
+    public function search(){
+            return view('admin.slide.search');
+    }
     public function action(Request $request)
     {
         if($request->ajax())
