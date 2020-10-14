@@ -103,15 +103,15 @@
                     <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="shop-page.html">Danh mục</a>
+                      <a href="#">Danh mục</a>
                       <ul class="mega-menu">
-                          @foreach($category as $key => $cate)
+                            @foreach($category as $key => $cate)
                         <li>
                           <ul>
-                            <li class="mega-menu-title">{{$cate->category_product_name}}</li>
-                              @foreach($cate -> Subcategories as $cate)
-                            <li><a href="shop-page.html">{{$cate->category_sub_product_name}}</a></li>
-                                  @endforeach
+                                <li class="mega-menu-title">{{$cate->category_product_name}}</li>
+                                 @foreach($cate -> Subcategories as $cate)
+                                <li><a href="shop-page.html">{{$cate->category_sub_product_name}}</a></li>
+                                @endforeach
                           </ul>
                         </li>
 {{--                        <li>--}}
@@ -141,7 +141,7 @@
                       </ul>
                     </li>
                     <li>
-                    <a href="">Sản phẩm</a>
+                    <a href="{{route('home.allProduct')}}">Sản phẩm</a>
                     </li>
                     <li>
                       <a href="blog-leftsidebar.html">Blog</a>
@@ -325,7 +325,7 @@
                 Standard Food & Vitamins <br />For all Pets
               </h1>
               <div class="slider-btn">
-                <a class="animated" href="product-details.html">SHOP NOW</a>
+              <a class="animated" href="{{route('home.allProduct')}}">SHOP NOW</a>
               </div>
             </div>
           </div>
@@ -343,7 +343,7 @@
                 Standard Food & Vitamins <br />For all Pets
               </h1>
               <div class="slider-btn">
-                <a class="animated" href="product-details.html">SHOP NOW</a>
+                <a class="animated" href="{{route('home.allProduct')}}">SHOP NOW</a>
               </div>
             </div>
           </div>
@@ -378,8 +378,6 @@
         <div class="section-title text-center mb-55">
           <h4><i>Sản Phẩm Mới Nhất</i></h4>
         </div>
-
-
         <div class="row">
             @foreach ($products as $product)
           <div id="product" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
@@ -526,7 +524,7 @@
                 <div data-countdown="2019/10/01"></div>
               </div>
               <div class="discount-btn mt-35">
-                <a class="btn-style" href="#">SHOP NOW</a>
+                <a class="btn-style" href="{{route('home.allProduct')}}">SHOP NOW</a>
               </div>
             </div>
           </div>
@@ -1072,7 +1070,7 @@
                         $("#item_id_"+rowId).remove();
                         let count=data.countCart;
                         $("#countcart").html(""+count);
-                        $("#total").html(result.total+" VNĐ")
+                        $("#total").html(data.total+" VNĐ")
                     }
                 })
             });

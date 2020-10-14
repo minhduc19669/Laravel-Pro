@@ -36,7 +36,7 @@ class CartController extends Controller
         $count=[
             'countCart'=>Cart::count(),
             'contentCart'=>Cart::content(),
-            'total'=>Cart::total()
+            'total'=>Cart::priceTotal()
         ];
         return response()->json($count);
     }
@@ -51,6 +51,7 @@ class CartController extends Controller
         $count = [
             'countCart' => Cart::count(),
             'contentCart' => Cart::content(),
+            'total'=>Cart::priceTotal()
         ];
         return \response()->json($count);
     }
@@ -69,7 +70,7 @@ class CartController extends Controller
         Cart::update($id, $qty);
         $data = [
             'totalPriceCart' => Cart::get($id),
-            'total'=>Cart::total()
+            'total'=>Cart::priceTotal()
         ];
         return response()->json($data);
     }

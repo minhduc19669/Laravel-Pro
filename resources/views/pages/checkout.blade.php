@@ -22,33 +22,47 @@
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Họ và tên(*)</label>
-                                                            <input autofocus name="name" id="textBox1" type="text">
+                                                            <input required autofocus name="name" id="textBox1" type="text">
+                                                            @if($errors->first('name'))
+                                                                <p class="text-danger">{{ $errors->first('name') }}</p>
+                                                            @endif
                                                         </div>
                                                     </div>
+                                                    @if(!Session::get('customer'))
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Email</label>
-                                                            <input name="email" type="text">
+                                                            <input required name="email" type="email">
                                                         </div>
+                                                        @if($errors->first('email'))
+                        <p class="text-danger">{{ $errors->first('email') }}</p>
+                    @endif
                                                     </div>
+                                                    @endif
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Số điện thoại</label>
-                                                            <input name="phone" id="textBox2" type="text">
+                                                            <input required name="phone" id="textBox2" type="text">
                                                         </div>
+                                                        @if($errors->first('phone'))
+                        <p class="text-danger">{{ $errors->first('phone') }}</p>
+                    @endif
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
                                                             <label>Địa chỉ</label>
-                                                            <input name="address" id="textBox3" type="text">
+                                                            <input required name="address" id="textBox3" type="text">
                                                         </div>
+                                                        @if($errors->first('address'))
+                        <p class="text-danger">{{ $errors->first('address') }}</p>
+                    @endif
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Chọn tỉnh/thành
                                                                     phố:</label>
-                                                            <select class="form-control city-up" name="city" id="city">
+                                                            <select required class="form-control city-up" name="city" id="city">
                                                             <option value="">--Tỉnh/Thành Phố--</option>
                                                             @foreach($cities as $city)
                                                             <option value="{{$city->id}}">{{$city->name}}</option>
@@ -60,7 +74,7 @@
                                                         <div class="billing-info">
                                                         <label>Chọn quận
                                                                 huyện:</label>
-                                                            <select class="form-control city-up" name="district" id="district">
+                                                            <select required class="form-control city-up" name="district" id="district">
                                                             <option value="">--Quận/huyện--</option>
                                                             <option value=""></option>
                                                             </select>
@@ -83,26 +97,37 @@
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Họ và tên</label>
-                                                            <input autofocus name="name_receive" id="textBox10" type="text">
+                                                            <input autofocus  name="name_receive" id="textBox10" required type="text">
+                                                            @if($errors->first('name_receive'))
+                        <p class="text-danger">{{ $errors->first('name_receive') }}</p>
+                    @endif
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Số điện thoại</label>
-                                                            <input name="phone_receive" id="textBox6" type="text">
+                                                            <input required name="phone_receive" id="textBox6" type="text">
+
                                                         </div>
+                                                                                                                    @if($errors->first('phone_receive'))
+                        <p class="text-danger">{{ $errors->first('phone_receive') }}</p>
+                    @endif
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
                                                             <label>Địa chỉ</label>
-                                                            <input name="address_receive" id="textBox7" type="text">
+                                                            <input required name="address_receive" id="textBox7" type="text">
+
                                                         </div>
+                                                        @if($errors->first('address_receive'))
+                        <p class="text-danger">{{ $errors->first('address_receive') }}</p>
+                    @endif
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Chọn Tỉnh/thành phố</label>
-                                                            <select class="form-control city-up" name="city_receive" id="district">
+                                                            <select required class="form-control city-up" name="city_receive" id="district">
                                                             <option value="">--Tỉnh/thành phố--</option>
                                                             @foreach ($cities as $city)
                                                             <option value="{{$city->id}}">{{$city->name}} </option>
@@ -114,7 +139,7 @@
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                         <label>Chọn Quận/huyện</label>
-                                                            <select class="form-control city-up" name="district_receive" id="district">
+                                                            <select required class="form-control city-up" name="district_receive" id="district">
                                                             <option value="">--Quận/huyện--</option>
                                                             <option value=""> </option>
                                                             </select>

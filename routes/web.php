@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', 'LoginController@showFormLogin')->name('login');
+Route::get('admin', 'LoginController@showFormLogin')->name('login');
 Route::post('login', 'LoginController@login')->name('admin.login');
 Route::get('logout', 'LoginController@logout')->name('admin.logout');
 //login-admin
@@ -35,6 +35,10 @@ Route::prefix('home')->group(function(){
     Route::get('edit-customer/{id}', 'CustomerController@edit')->name('customer.edit');
     Route::post('update-customer/{id}', 'CustomerController@update')->name('customer.update');
     Route::get('remove-customer/{id}', 'CustomerController@remove')->name('customer.remove');
+    //product
+    Route::get('product', 'PageController@allProduct')->name('home.allProduct');
+    Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
+
 });
 //social-login
 Route::get('auth/google', 'SocialController@redirectToGoogle')->name('google');
