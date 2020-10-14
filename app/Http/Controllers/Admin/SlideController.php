@@ -55,7 +55,7 @@ class SlideController extends Controller
             $get_image->move('slide',$new_image);
             $data['slide_image']=$new_image;
             DB::table('slides')->where('id',$id)->update($data);
-            Alert()->success('sửa thành công !')->autoClose(1500);
+            Alert()->success('cập nhật thành công !')->autoClose(1500);
             return \redirect()->route('slide.list');
         }else {
             DB::table('slides')->where('id',$id)->update($data);
@@ -63,11 +63,11 @@ class SlideController extends Controller
             return \redirect()->route('slide.list');
         }
     }
-    public function remove($id){
-          Slide::find($id)->delete();
+    public function remove($id)
+    {
+        Slide::find($id)->delete();
         Alert()->success('Xóa thành công !')->autoClose(1500);
         return \redirect()->route('slide.list');
-
     }
     public function active($id){
         DB::beginTransaction();
@@ -110,15 +110,26 @@ public function search(){
             $total_row = $data->count();
             if($total_row > 0)
             {
-                foreach($data as $row)
+                foreach($data as $key => $row)
                 {
                     $output .= '
         <tr>
-        <td>'.$row->id.'</td>
-         <td><img src=" \slide\ '.$row->slide_image.' " alt=""></td>
+        <td>'.++$key.'</td>
+         <td><img width="50px" src=" /slide/'.$row->slide_image.' " alt=""></td>
          <td>'.$row->slide_title.'</td>
          <td>'.$row->slide_desc.'</td>
-         <td>'.$row->slide_status.'</td>
+         ';
+           if ($row->slide_status == 0) {
+               $output .= '
+         <td><button  class="btn btn-danger"> Ẩn </button></td>
+';
+           }else{
+               $output .= '
+         <td><button class="btn btn-primary">Hiện</button></td>
+';
+           }
+           $output .= '
+         <td><a href='.route('slide.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <a onclick="return confirm(bạn có thật sự muốn xóa không?)" href='.route('slide.remove',$row->id).'><button value="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button></a> </td>
         </tr>
         ';
                 }
