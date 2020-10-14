@@ -44,6 +44,8 @@
                 fetch_customer_data(query);
             });
         });
+
+
     </script>
 @endsection
 
