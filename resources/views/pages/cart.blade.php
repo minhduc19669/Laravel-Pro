@@ -43,13 +43,8 @@
                                 <div class="col-lg-12">
                                     <div class="cart-shiping-update-wrapper">
                                         <div class="cart-shiping-update">
-                                            <a style="cursor: pointer;" onclick="goBack()">Continue Shopping</a>
+                                        <a href="{{route('home.allProduct')}}">Continue Shopping</a>
                                         </div>
-                                        <script>
-                                            function goBack() {
-                                            window.history.back();
-                                            }
-                                            </script>
                                         <div class="cart-clear">
                                         <a onclick="return confirm('Bạn có chắc chắn không?') "style="cursor: pointer;" href="{{route('delete-all')}}">Xóa giỏ hàng</a>
                                         </div>

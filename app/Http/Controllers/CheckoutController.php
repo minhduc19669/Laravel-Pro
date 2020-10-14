@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Customer;
 use App\District;
+use App\Http\Requests\ValidationFormCheckout;
+use App\Mail\WellcomeEmail;
 use App\Order;
 use App\Orderdetail;
 use App\Shipping;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
     //
 
-    public function confirm_order(Request $request){
+    public function confirm_order(ValidationFormCheckout $request){
 
         $ship=new Shipping();
         $shipping_city=City::find($request->city);
@@ -60,6 +64,10 @@ class CheckoutController extends Controller
                 ]);
                 $order_detail->save();
             }
+            $id=Session::get('customer')->id;
+            $customer=Customer::find($id);
+            $mail=$customer->customer_email;
+            Mail::to($mail)->send(new WellcomeEmail());
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }else{
@@ -84,6 +92,8 @@ class CheckoutController extends Controller
                 ]);
                 $order_detail->save();
             }
+            $email=$request->email;
+            Mail::to($email)->send(new WellcomeEmail());
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }

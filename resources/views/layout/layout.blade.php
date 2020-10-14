@@ -104,29 +104,26 @@
                     </li>
                     <li class="mega-menu-position">
                       <a href="shop-page.html">Danh mục</a>
-                      <ul class="mega-menu">
+                                            <ul class="mega-menu">
+                            @foreach($category as $key => $cate)
                         <li>
                           <ul>
-                            <li class="mega-menu-title">Dogs Food</li>
-                            <li><a href="shop-page.html">Eggs</a></li>
-                            <li><a href="shop-page.html">Carrots</a></li>
-                            <li><a href="shop-page.html">Salmon fishs</a></li>
-                            <li><a href="shop-page.html">Peanut Butter</a></li>
-                            <li>
-                              <a href="shop-page.html">Grapes & Raisins</a>
-                            </li>
+                                <li class="mega-menu-title">{{$cate->category_product_name}}</li>
+                                 @foreach($cate -> Subcategories as $cate)
+                                <li><a href="shop-page.html">{{$cate->category_sub_product_name}}</a></li>
+                                @endforeach
                           </ul>
                         </li>
-                        <li>
-                          <ul>
-                            <li class="mega-menu-title">Cats Food</li>
-                            <li><a href="shop-page.html">Meat</a></li>
-                            <li><a href="shop-page.html">Fish</a></li>
-                            <li><a href="shop-page.html">Eggs</a></li>
-                            <li><a href="shop-page.html">Veggies</a></li>
-                            <li><a href="shop-page.html">Cheese</a></li>
-                          </ul>
-                        </li>
+{{--                        <li>--}}
+{{--                          <ul>--}}
+{{--                            <li class="mega-menu-title">Cats Food</li>--}}
+{{--                            <li><a href="shop-page.html">Meat</a></li>--}}
+{{--                            <li><a href="shop-page.html">Fish</a></li>--}}
+{{--                            <li><a href="shop-page.html">Eggs</a></li>--}}
+{{--                            <li><a href="shop-page.html">Veggies</a></li>--}}
+{{--                            <li><a href="shop-page.html">Cheese</a></li>--}}
+{{--                          </ul>--}}
+{{--                        </li>--}}
 
                         <li>
                           <ul>
@@ -139,10 +136,12 @@
                             </li>
                           </ul>
                         </li>
+
+                              @endforeach
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Sản phẩm</a>
+                    <a href="{{route('home.allProduct')}}">Sản phẩm</a>
                     </li>
                     <li>
                       <a href="blog-leftsidebar.html">Blog</a>

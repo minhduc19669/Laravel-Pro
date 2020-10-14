@@ -10,8 +10,11 @@ class ProductService {
         $this->productRepo=$productRepo;
 
     }
-    public function getAll(){
-        return $this->productRepo->getAll();
+    public function get($total){
+        return $this->productRepo->get($total);
+    }
+    public function productDetail($id){
+        return $this->productRepo->productDetail($id);
     }
 
 

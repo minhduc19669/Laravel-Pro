@@ -9,8 +9,11 @@ class ProductRepo{
             $this->product=$product;
 
         }
-        public function getAll(){
-            return $this->product->all();
+        public function get($total){
+            return $this->product->limit($total)->orderBy('product_id','desc')->get();
+        }
+        public function productDetail($id){
+            return $this->product->findOrFail($id);
         }
 
 
