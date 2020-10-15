@@ -114,16 +114,6 @@
                                 @endforeach
                           </ul>
                         </li>
-{{--                        <li>--}}
-{{--                          <ul>--}}
-{{--                            <li class="mega-menu-title">Cats Food</li>--}}
-{{--                            <li><a href="shop-page.html">Meat</a></li>--}}
-{{--                            <li><a href="shop-page.html">Fish</a></li>--}}
-{{--                            <li><a href="shop-page.html">Eggs</a></li>--}}
-{{--                            <li><a href="shop-page.html">Veggies</a></li>--}}
-{{--                            <li><a href="shop-page.html">Cheese</a></li>--}}
-{{--                          </ul>--}}
-{{--                        </li>--}}
 
                         <li>
                           <ul>
