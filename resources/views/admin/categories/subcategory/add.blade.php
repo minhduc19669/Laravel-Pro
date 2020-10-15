@@ -28,7 +28,7 @@
                 @endif
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="modelName" >Tên danh mục sản phẩm  </label>
+                        <label for="modelName" >Tên danh mục sản phẩm con </label>
                         <select class="form-control" name="cate_product" id="">
                             @foreach($cate_product as $key => $cate_pro)
                             <option value="{{$cate_pro->cate_pro_id}}">{{$cate_pro->category_product_name}}</option>
@@ -38,13 +38,13 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="price">Chú thích danh mục sản phẩm</label>
+                        <label for="price">Chú thích danh mục sản phẩm con</label>
                         <textarea  name="category_sub_product_desc" id="editor1" rows="10" cols="80"></textarea>
                     </div>
 
                 </div>
-                @if ($errors->has('category_product_desc'))
-                    <p style="color: red">{{ $errors->first('category_product_desc') }}</p>
+                @if ($errors->has('category_sub_product_desc'))
+                    <p style="color: red">{{ $errors->first('category_sub_product_desc') }}</p>
                 @endif
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
