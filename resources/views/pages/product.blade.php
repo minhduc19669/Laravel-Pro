@@ -40,13 +40,13 @@
                 <div class="row">
                     @foreach ($products as $item)
                         <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
-                    <div class="product-wrapper mb-10">
+                    <div id="product5" class="product-wrapper mb-10">
                       <div class="product-img">
                         <a href="{{route('product.details',$item->product_id)}}">
                         <img width="100px" height="230px" src="{{asset('product/'.$item->product_image)}}" alt="" />
                         </a>
                         <div class="product-action">
-                          <a
+                          <a id="viewproduct" view-id="{{$item->product_id}}"
                             title="Quick View"
                             data-toggle="modal"
                             data-target="#exampleModal"
@@ -54,7 +54,7 @@
                           >
                             <i class="ti-plus"></i>
                           </a>
-                          <a title="Add To Cart" href="#">
+                          <a id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
                             <i class="ti-shopping-cart"></i>
                           </a>
                         </div>
@@ -212,11 +212,10 @@
                   </ul>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
+
 @endsection
