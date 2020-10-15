@@ -8,6 +8,7 @@ use App\Product;
 use App\Slide;
 use Illuminate\Support\ServiceProvider;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Schema;
 
 
@@ -51,5 +52,7 @@ class AppServiceProvider extends ServiceProvider
             $total = Cart::priceTotal();
             $view->with(['count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category]);
         });
+
+
     }
 }
