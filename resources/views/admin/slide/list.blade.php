@@ -44,7 +44,44 @@
                 fetch_customer_data(query);
             });
         });
+        $(document).on('click', '#delete', function() {
+            var id = $(this).data('id');
+            console.log(id);
+            if (confirm('bạn có muốn xóa không?')) {
+                    $.ajax({
+                        url: 'slide/remove/'+id,
+                        method: 'get',
+                        dataType: 'json',
+                        type: 'delete',
+                        data: {
+                            "id": id,
+                        },
+                        success: function (data) {
+                            $('#item_'+id).remove();
+                        }
+                    })
+            }
+        });
+        $(document).on('click', '#unactive', function() {
+            var id = $(this).data('id');
+            var slide_status =$(this).data('slide_status')
+            var query = $(this).val();
+            console.log(id);
+                $.ajax({
+                    url: 'slide/un-active/'+id,
+                    method: 'get',
+                    dataType: 'json',
+                    type: 'unactive',
+                    data: {
+                        "id": id,
+                        'slide_status': slide_status,
+                    },
+                    success: function (data) {
+                    }
 
+                })
+
+        });
 
     </script>
 @endsection

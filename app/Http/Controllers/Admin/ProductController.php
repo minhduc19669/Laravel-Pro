@@ -115,5 +115,89 @@ class ProductController extends Controller
         Alert()->success('Kích hoạt thành công !')->autoClose(1500);
         return \redirect()->route('product.list');
     }
+    public function action(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('products')
+                    ->orWhere('product_name', 'like', '%'.$query.'%')
+                    ->orWhere('product_code', 'like', '%'.$query.'%')
+                    ->orderBy('product_id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('slide')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+        <tr id=item_'.$row->product_id.'>
+        <td>'.++$key.'</td>
+        <td>'.$row->product_id.'</td>
+        <td>'.$row->product_code.'</td>
+         <td>'.$row->product_name.'</td>
+         <td>'.$row->product_id.'</td>
+         <td>'.$row->product_id.'</td>
+         <td>'.$row->product_id.'</td>
+         <td>'.$row->product_content.'</td>
+         <td>'.$row->product_price.'</td>
+         <td>'.$row->product_price_sale.'</td>
+         <td><img width="50px" src=" /product/'.$row->product_image.' " alt=""></td>
+         <td>'.$row->product_desc.'</td>
+         ';
+                    if ($row->product_status == 0) {
+                        $output .= '
+         <td><a href='.route('product.un-active',$row->id).'><button id="unactive" data-id="'.$row->id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+';
+                    }else{
+                        $output .= '
+         <td><a href='.route('product.active',$row->id).'><button class="btn btn-primary">Hiện</button></a></td>
+';
+                    }
+                    $output .= '
+         <td><a href='.route('product.edit',$row->product_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->product_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+        </tr>
+        ';
+                }
+            }
+            else
+            {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

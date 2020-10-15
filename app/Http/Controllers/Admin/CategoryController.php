@@ -49,10 +49,66 @@ class CategoryController extends Controller{
                 }
 
                 public function remove($id){
-                    DB::table('categories')->where('cate_pro_id',$id)->delete();
-                    Alert()->success('Xóa thành công !')->autoClose(1500);
-                    return \redirect()->route('category.list');
+                    $cate_pro = DB::table('categories')->where('cate_pro_id',$id)->delete();
+                    return response()->json($cate_pro);
+
                 }
+
+
+    public function action_pro(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('categories')
+                    ->orWhere('cate_pro_id', 'like', '%'.$query.'%')
+                    ->orWhere('category_product_name', 'like', '%'.$query.'%')
+                    ->orWhere('category_product_desc', 'like', '%'.$query.'%')
+                    ->orderBy('cate_pro_id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('categories')
+                    ->orderBy('cate_pro_id', 'desc')
+                    ->where('cate_pro_id','!=',null)
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+                    <tr id=item_'.$row->cate_pro_id.'>
+                    <td>'.++$key.'</td>
+                     <td>'.$row->cate_pro_id.'</td>
+                     <td>'.$row->category_product_name.' </td>
+                     <td>'.$row->category_product_desc.'</td>
+                     <td><a href='.route('category.edit',$row->cate_pro_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->cate_pro_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    ';}
+            }
+            else
+            {
+                $output = '
+                   <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                   </tr>
+                   ';}
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+
+
 
         //news
 
@@ -89,12 +145,67 @@ class CategoryController extends Controller{
                     return \redirect()->route('category.list-news');
                 }
                 public function remove_news($id){
-                    DB::table('categories')->where('cate_news_id',$id)->delete();
-                    Alert()->success('Xóa thành công !')->autoClose(1500);
-                    return \redirect()->route('category.list-news');
+                    $cate_news =  DB::table('categories')->where('cate_news_id',$id)->delete();
+                    return response()->json($cate_news);
                 }
 
-                //sub-category
+                public function action_news(Request $request)
+                {
+                    if($request->ajax())
+                    {
+                        $output = '';
+                        $query = $request->get('query');
+                        if($query != '')
+                        {
+                            $data = DB::table('categories')
+                                ->orWhere('cate_news_id', 'like', '%'.$query.'%')
+                                ->orWhere('category_news_name', 'like', '%'.$query.'%')
+                                ->orWhere('category_news_desc', 'like', '%'.$query.'%')
+                                ->orderBy('cate_news_id', 'desc')
+                                ->get();
+                        }
+                        else
+                        {
+                            $data = DB::table('categories')
+                                ->orderBy('cate_news_id', 'desc')
+                                ->where('cate_news_id','!=',null)
+                                ->get();
+                        }
+                        $total_row = $data->count();
+                        if($total_row > 0)
+                        {
+                            foreach($data as $key => $row)
+                            {
+                                $output .= '
+                    <tr id=item_'.$row->cate_news_id.'>
+                    <td>'.++$key.'</td>
+                     <td>'.$row->cate_news_id.'</td>
+                     <td>'.$row->category_news_name.' </td>
+                     <td>'.$row->category_news_desc.'</td>
+                     <td><a href='.route('category.edit-news',$row->cate_news_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->cate_news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    ';}
+                        }
+                        else
+                        {
+                            $output = '
+                   <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                   </tr>
+                   ';}
+                        $data = array(
+                            'table_data'  => $output,
+                            'total_data'  => $total_row
+                        );
+
+                        echo json_encode($data);
+                    }
+                }
+
+
+
+
+    //sub-category
 
                 public function list_sub(){
                     $query = Category::where('sub_id','!=',null)
@@ -103,7 +214,7 @@ class CategoryController extends Controller{
                     return view('admin.categories.subcategory.list',['list'=>$bang]);
                 }
                 public function add_sub(){
-                    $cate_product = Category::all();
+                    $cate_product = Category::where('cate_pro_id','!=',null)->get();
                     return view('admin.categories.subcategory.add',compact('cate_product'));
                 }
 
@@ -139,9 +250,61 @@ class CategoryController extends Controller{
                 }
 
                 public function remove_sub($id){
-                    DB::table('categories')->where('sub_id',$id)->delete();
-                    Alert()->success('Xóa thành công !')->autoClose(1500);
-                    return \redirect()->route('subcategory.list');
+                     $cate_sub =   DB::table('categories')->where('sub_id',$id)->delete();
+                    return response()->json($cate_sub);
+    }
+    public function action_sub(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('categories')
+                    ->orWhere('sub_id', 'like', '%'.$query.'%')
+                    ->orWhere('category_sub_product_name', 'like', '%'.$query.'%')
+                    ->orWhere('category_sub_product_desc', 'like', '%'.$query.'%')
+                    ->orderBy('sub_id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('categories')
+                    ->orderBy('sub_id', 'desc')
+                    ->where('sub_id','!=',null)
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+                    <tr id=item_'.$row->sub_id.'>
+                    <td>'.++$key.'</td>
+                     <td>'.$row->sub_id.'</td>
+                     <td>'.$row->category_sub_product_name.' </td>
+                      <td>'.$row->parent_id.'</td>
+                     <td>'.$row->category_sub_product_desc.'</td>
+                     <td><a href='.route('subcategory.edit',$row->sub_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->sub_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    ';}
+            }
+            else
+            {
+                $output = '
+                   <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                   </tr>
+                   ';}
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
     }
 
 }

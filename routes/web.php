@@ -106,6 +106,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('product/remove/{id}', 'ProductController@remove')->name('product.remove');
             Route::get('product/active{id}', 'ProductController@active')->name('product.active');
             Route::get('product/un-active/{id}', 'ProductController@unactive')->name('product.un-active');
+            Route::get('product/search','ProductController@action')->name('product.search');
+
         });
         //Sale-code
         Route::prefix('coupon')->group(function () {
@@ -125,6 +127,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/product/edit/{id}', 'CategoryController@edit')->name('category.edit');
             Route::post('category/product/update/{id}', 'CategoryController@update')->name('category.update');
             Route::get('category/product/remove/{id}', 'CategoryController@remove')->name('category.remove');
+            Route::get('slide/search/search_pro','CategoryController@action_pro')->name('category.search_pro');
             //news
             Route::get('category/news', 'CategoryController@list_news')->name('category.list-news');
             Route::get('category/news/add', 'CategoryController@add_news')->name('category.add-news');
@@ -132,6 +135,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/news/edit/{id}', 'CategoryController@edit_news')->name('category.edit-news');
             Route::post('category/news/update/{id}', 'CategoryController@update_news')->name('category.update-news');
             Route::get('category/news/remove/{id}', 'CategoryController@remove_news')->name('category.remove-news');
+            Route::get('slide/search/search_news','CategoryController@action_news')->name('category.search_news');
             //subcategory
             Route::get('category/subcategory', 'CategoryController@list_sub')->name('subcategory.list');
             Route::get('category/subcategory/add', 'CategoryController@add_sub')->name('subcategory.add');
@@ -139,6 +143,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/subcategory/edit/{id}', 'CategoryController@edit_sub')->name('subcategory.edit');
             Route::post('category/subcategory/update/{id}', 'CategoryController@update_sub')->name('subcategory.update');
             Route::get('category/subcategory/remove/{id}', 'CategoryController@remove_sub')->name('subcategory.remove');
+            Route::get('slide/search/search_sub','CategoryController@action_sub')->name('category.search_sub');
         });
         //brand
         Route::middleware('isAdmin:category')->group(function () {

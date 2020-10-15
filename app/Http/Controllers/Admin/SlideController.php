@@ -65,9 +65,8 @@ class SlideController extends Controller
     }
     public function remove($id)
     {
-        Slide::find($id)->delete();
-        Alert()->success('Xóa thành công !')->autoClose(1500);
-        return \redirect()->route('slide.list');
+        $slide =Slide::find($id)->delete();
+        return response()->json($slide);
     }
     public function active($id){
         DB::beginTransaction();
@@ -78,11 +77,11 @@ class SlideController extends Controller
     }
     public function unactive($id){
         DB::beginTransaction();
-        Slide::find($id)->update(['slide_status'=>1]);
+        $slide = Slide::find($id)->update(['slide_status'=>1]);
         DB::commit();
         Alert()->success('Kích hoạt thành công!')->autoClose(1500);
-        return \redirect()->route('slide.list');
-    }
+        Alert()->success(' Kích hoạt thành công!')->autoClose(1500);
+        return \redirect()->route('slide.list');    }
 
     public function search(){
             return view('admin.slide.search');
@@ -113,7 +112,7 @@ class SlideController extends Controller
                 foreach($data as $key => $row)
                 {
                     $output .= '
-        <tr>
+        <tr id=item_'.$row->id.'>
         <td>'.++$key.'</td>
          <td><img width="50px" src=" /slide/'.$row->slide_image.' " alt=""></td>
          <td>'.$row->slide_title.'</td>
@@ -121,15 +120,15 @@ class SlideController extends Controller
          ';
            if ($row->slide_status == 0) {
                $output .= '
-         <td><button  class="btn btn-danger"> Ẩn </button></td>
+         <td><a href='.route('slide.unactive',$row->id).'><button id="unactive" data-id="'.$row->id.'"  class="btn btn-danger"> Ẩn </button></a></td>
 ';
            }else{
                $output .= '
-         <td><button class="btn btn-primary">Hiện</button></td>
+         <td><a href='.route('slide.active',$row->id).'><button class="btn btn-primary">Hiện</button></a></td>
 ';
            }
            $output .= '
-         <td><a href='.route('slide.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <a onclick="return confirm(bạn có thật sự muốn xóa không?)" href='.route('slide.remove',$row->id).'><button value="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button></a> </td>
+         <td><a href='.route('slide.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
                 }
