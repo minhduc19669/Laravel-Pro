@@ -18,9 +18,13 @@ class OrderShipped extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $data;
+    private $customer_name;
+    public function __construct($data,$customer_name)
     {
         //
+        $this->data= $data;
+        $this->customer_name=$customer_name;
 
     }
 
@@ -31,6 +35,8 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.orders.shipped');
+        return $this->markdown('emails.orders.shipped',['data'=>$this->data,
+        'name'=>$this->customer_name
+        ]);
     }
 }

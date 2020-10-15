@@ -20,11 +20,13 @@ class ConfirmOrder implements ShouldQueue
      * @return void
      */
     private $email;
-    public function __construct($email)
+    private $data;
+    private $customer_name;
+    public function __construct($email,$data, $customer_name)
     {
         $this->email=$email;
-
-        //
+        $this->data=$data;
+        $this->customer_name=$customer_name;
 
     }
 
@@ -36,6 +38,7 @@ class ConfirmOrder implements ShouldQueue
     public function handle()
     {
         //
-        Mail::to($this->email)->send(new OrderShipped());
+        Mail::to($this->email)->send(new OrderShipped($this->data,$this->customer_name));
+
     }
 }

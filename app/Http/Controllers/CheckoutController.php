@@ -14,6 +14,7 @@ use App\Orderdetail;
 use App\Shipping;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -68,8 +69,9 @@ class CheckoutController extends Controller
             }
             $id=Session::get('customer')->id;
             $customer=Customer::find($id);
-            $mail=$customer->customer_email;
-            \dispatch(new ConfirmOrder($mail))->onQueue('emails-order')->delay(\now()->addMinutes(1));;
+            $email=$customer->customer_email;
+            $name=$request->name;
+			dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }else{
@@ -95,7 +97,9 @@ class CheckoutController extends Controller
                 $order_detail->save();
             }
             $email=$request->email;
-            \dispatch(new ConfirmOrder($email))->onQueue('emails-order')->delay(\now()->addMinutes(1));
+            $data=$checkout_code;
+            $name=$request->name;
+            dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }
