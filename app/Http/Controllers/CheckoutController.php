@@ -51,6 +51,7 @@ class CheckoutController extends Controller
                 'shipping_id'=>$ship->id,
                 'order_code'=>$checkout_code,
                 'order_status'=>1,
+                'order_total'=>Cart::priceTotal(),
                 'created_at'=>now(),
             ]);
             $order->save();
@@ -80,6 +81,7 @@ class CheckoutController extends Controller
                 'shipping_id' => $ship->id,
                 'order_code' => $checkout_code,
                 'order_status' => 1,
+                'order_total' => Cart::priceTotal(),
                 'created_at' => now(),
             ]);
             $order->save();
