@@ -9,12 +9,19 @@ class Product extends Model
     //
     protected $table = 'products';
     protected $fillable = ['product_id',
-        'product_name','product_code','product_desc','product_image','product_content','product_price','product_price_sale','product_status','category_id','brand_id'
+        'product_name','product_code','product_desc','product_image','product_content','product_price','product_price_sale','product_status','cate_pro_id','brand_id','sub_id'
         ];
-    public function category(){
-        return $this->belongsTo('App\Category');
-    }
     protected $primaryKey='product_id';
+
+    public function categories(){
+        return $this->hasMany('App\Category','cate_pro_id','product_id');
+    }
+    public function subcategories(){
+        return $this->belongsTo('App\Category','sub_id','product_id');
+    }
+    public function brands(){
+        return $this->hasMany('App\brands','brand_id','product_id');
+    }
 
 
 

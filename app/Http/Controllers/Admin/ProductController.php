@@ -100,9 +100,8 @@ class ProductController extends Controller
              }
  }
  public function remove($id){
-        DB::table('products')->where('product_id',$id)->delete();
-     Alert()->success('Xóa thành công !')->autoClose(1500);
-     return \redirect()->route('product.list');
+       $product =   DB::table('products')->where('product_id',$id)->delete();
+     return response()->json($product);
  }
     public function active($id){
         DB::table('products')->where('product_id',$id)->update(['product_status'=>0]);
@@ -131,8 +130,10 @@ class ProductController extends Controller
             }
             else
             {
-                $data = DB::table('slide')
-                    ->orderBy('id', 'desc')
+                $data = Product::with('subcategories')
+                    ->join('brands','brands.id','=','products.brand_id')
+                    ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+                    ->orderBy('product_id', 'desc')
                     ->get();
             }
             $total_row = $data->count();
@@ -143,25 +144,31 @@ class ProductController extends Controller
                     $output .= '
         <tr id=item_'.$row->product_id.'>
         <td>'.++$key.'</td>
-        <td>'.$row->product_id.'</td>
-        <td>'.$row->product_code.'</td>
-         <td>'.$row->product_name.'</td>
-         <td>'.$row->product_id.'</td>
-         <td>'.$row->product_id.'</td>
-         <td>'.$row->product_id.'</td>
-         <td>'.$row->product_content.'</td>
-         <td>'.$row->product_price.'</td>
-         <td>'.$row->product_price_sale.'</td>
-         <td><img width="50px" src=" /product/'.$row->product_image.' " alt=""></td>
+        <td style="font-size: 12px">'.$row->product_id.'</td>
+        <td style="font-size: 12px">'.$row->product_code.'</td>
+        <td style="font-size: 12px">'.$row->product_name.'</td>
+         <td style="font-size: 12px">'.$row->category_product_name.'</td>
+        ';
+                    foreach ($row->subcategories as $Subcategory) {
+                        $output .= '
+                        <td style="font-size: 12px">' . $Subcategory->category_sub_product_name . '</td>
+                    ';
+                    }
+                    $output .= '
+         <td style="font-size: 12px">'.$row->brand_name.'</td>
+         <td style="font-size: 12px">'.$row->product_content.'</td>
+         <td style="font-size: 12px">'.$row->product_price.'</td>
+         <td style="font-size: 12px">'.$row->product_price_sale.'</td>
+         <td ><img width="50px" src=" /product/'.$row->product_image.' " alt=""></td>
          <td>'.$row->product_desc.'</td>
          ';
                     if ($row->product_status == 0) {
                         $output .= '
-         <td><a href='.route('product.un-active',$row->id).'><button id="unactive" data-id="'.$row->id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+         <td><a href='.route('product.un-active',$row->product_id).'><button id="unactive" data-id="'.$row->product_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
 ';
                     }else{
                         $output .= '
-         <td><a href='.route('product.active',$row->id).'><button class="btn btn-primary">Hiện</button></a></td>
+         <td><a href='.route('product.active',$row->product_id).'><button class="btn btn-primary">Hiện</button></a></td>
 ';
                     }
                     $output .= '
