@@ -298,7 +298,7 @@
         </div>
       </div>
 </header>
-<div class="breadcrumb-area pt-95 pb-95 bg-img" style="background-image:url(@yield('url'));">
+<div class="breadcrumb-area pt-95 pb-95 bg-img" style=";background-image:url(@yield('url'));">
             <div class="container">
                 <div class="breadcrumb-content text-center">
                     <h2>@yield('page_name')</h2>
@@ -612,6 +612,31 @@ let listProduct2=$("#product5 #addtocart5");
                         `
                     });
                 });
+
+    </script>
+    <script>
+        $(document).ready(function(){
+                let product=$("#addtocart1");
+                product.on('click',function(){
+                    var id = $("#addtocart1").attr('add-id');
+                    $.ajax({
+                    url:'http://laravel-training.local/cart/add/'+id,
+                    dataType:'json',
+                    success:function(result){
+                        let count = result.countCart;
+                        let data=result.contentCart;
+                        let element="";
+                        $.each(data,function(key,value){
+                        element+= '<li class="single-shopping-cart" id="'+'item_id_' + value.rowId + '">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'../../../product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
+                        });
+                        $('#cart').html(element);
+                        $("#countcart").html(""+count);
+                        $("#total").html(result.total + " VNĐ");
+                        }
+
+                    })
+                });
+        });
     </script>
 </body>
 </html>

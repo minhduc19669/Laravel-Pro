@@ -187,12 +187,12 @@
                                             <div class="payment-info-wrapper">
                                                 <div class="ship-wrapper">
                                                     <div class="single-ship">
-                                                        <input name="cod" class="radio-check" type="radio" value="1">
+                                                        <input  name="cod" class="radio-check" type="radio" value="1" checked>
                                                         <label>Thanh toán khi nhận hàng</label>
                                                     </div>
                                                     <div class="single-ship">
-                                                        <input name="bank" class="radio-check" type="radio" value="2" >
-                                                        <label>Chuyển khoản </label>
+                                                        <input  name="bank" class="radio-check" type="radio" value="2" >
+                                                        <label>Chuyển khoản qua InternetBanking</label>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="payment-info">

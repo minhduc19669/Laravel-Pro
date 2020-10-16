@@ -23,26 +23,47 @@ class CheckoutController extends Controller
     //
 
     public function confirm_order(ValidationFormCheckout $request){
-
         $ship=new Shipping();
         $shipping_city=City::find($request->city);
         $shipping_district=District::find($request->district);
         $shipping_city_receive=City::find($request->city_receive);
         $shipping_district_receive=District::find($request->district_receive);
-        $ship->fill([
-            'shipping_name'=>$request->name,
-            'shipping_phone'=>$request->phone,
-            'shipping_address'=>$request->address,
-            'shipping_city'=>$shipping_city->name,
-            'shipping_district'=>$shipping_district->name,
-            'shipping_email'=>$request->email,
-            'shipping_name_receive'=>$request->name_receive,
-            'shipping_phone_receive'=>$request->phone_receive,
-            'shipping_address_receive'=>$request->address_receive,
-            'shipping_city_receive'=>$shipping_city_receive->name,
-            'shipping_district_receive'=>$shipping_district_receive->name
-        ]);
-        $ship->save();
+        $cod=$request->cod;
+        $bank=$request->bank;
+        if($cod!=\null){
+                $ship->fill([
+                            'shipping_name'=>$request->name,
+                            'shipping_phone'=>$request->phone,
+                            'shipping_address'=>$request->address,
+                            'shipping_city'=>$shipping_city->name,
+                            'shipping_district'=>$shipping_district->name,
+                            'shipping_email'=>$request->email,
+                            'shipping_name_receive'=>$request->name_receive,
+                            'shipping_phone_receive'=>$request->phone_receive,
+                            'shipping_address_receive'=>$request->address_receive,
+                            'shipping_city_receive'=>$shipping_city_receive->name,
+                            'shipping_district_receive'=>$shipping_district_receive->name,
+                            'shipping_payment'=>$cod
+                        ]);
+                $ship->save();
+        }else{
+                $ship->fill([
+                    'shipping_name' => $request->name,
+                    'shipping_phone' => $request->phone,
+                    'shipping_address' => $request->address,
+                    'shipping_city' => $shipping_city->name,
+                    'shipping_district' => $shipping_district->name,
+                    'shipping_email' => $request->email,
+                    'shipping_name_receive' => $request->name_receive,
+                    'shipping_phone_receive' => $request->phone_receive,
+                    'shipping_address_receive' => $request->address_receive,
+                    'shipping_city_receive' => $shipping_city_receive->name,
+                    'shipping_district_receive' => $shipping_district_receive->name,
+                    'shipping_payment' => $bank
+                ]);
+                $ship->save();
+        }
+
         $order=new Order();
         $checkout_code = substr(md5(microtime()), rand(0, 26), 5);
         if(Session::get('customer')){
