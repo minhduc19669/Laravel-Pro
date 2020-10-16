@@ -8,19 +8,19 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Id</th>
-                <th>Mã </th>
-                <th>Tên</th>
-                <th>Danh mục</th>
-                <th>Danh mục con</th>
-                <th>Thương hiệu</th>
-                <th>Chi tiết</th>
-                <th>Giá </th>
-                <th>Giá khuyến mãi </th>
-                <th>Ảnh </th>
-                <th>Ghi chú</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Brand</th>
+                <th>Content</th>
+                <th>Price </th>
+                <th>Sale </th>
+                <th>Image </th>
+                <th>Desc</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -55,12 +55,12 @@
             console.log(id);
             if (confirm('bạn có muốn xóa không?')) {
                 $.ajax({
-                    url: 'slide/remove/'+id,
+                    url: 'product/remove/'+id,
                     method: 'get',
                     dataType: 'json',
                     type: 'delete',
                     data: {
-                        "id": id,
+                        "product_id": id,
                     },
                     success: function (data) {
                         $('#item_'+id).remove();
@@ -68,26 +68,26 @@
                 })
             }
         });
-        $(document).on('click', '#unactive', function() {
-            var id = $(this).data('id');
-            var slide_status =$(this).data('slide_status')
-            var query = $(this).val();
-            console.log(id);
-            $.ajax({
-                url: 'slide/un-active/'+id,
-                method: 'get',
-                dataType: 'json',
-                type: 'unactive',
-                data: {
-                    "id": id,
-                    'slide_status': slide_status,
-                },
-                success: function (data) {
-                }
-
-            })
-
-        });
+        // $(document).on('click', '#unactive', function() {
+        //     var id = $(this).data('id');
+        //     var slide_status =$(this).data('slide_status')
+        //     var query = $(this).val();
+        //     console.log(id);
+        //     $.ajax({
+        //         url: 'slide/un-active/'+id,
+        //         method: 'get',
+        //         dataType: 'json',
+        //         type: 'unactive',
+        //         data: {
+        //             "id": id,
+        //             'slide_status': slide_status,
+        //         },
+        //         success: function (data) {
+        //         }
+        //
+        //     })
+        //
+        // });
 
     </script>
 @endsection
