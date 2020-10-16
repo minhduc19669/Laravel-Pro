@@ -109,8 +109,8 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="grand-totall">
                                     <h5 id="grand-total">Tổng tiền : {{$total}} <u>đ</u></h5>
-                                <a href="{{route('cart.checkout')}}">Proceed To Checkout</a>
-                                    <p>Checkout with Multiple Addresses</p>
+                                <a href="{{route('cart.checkout')}}">Tiếp tục thanh toán</a>
+
                                 </div>
                             </div>
                         </div>

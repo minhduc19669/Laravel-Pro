@@ -111,27 +111,8 @@ $(document).ready(function ($) {
       background: '#fff url(/images/trees.png)',
       backdrop: "\n                            rgba(0,0,123,0.4)\n                            url(\"/images/nyan-cat.gif\")\n                            left top\n                            no-repeat\n                        "
     });
-  }); ////add in qickview-modal
-
-  var product = $("#addtocart1");
-  product.on('click', function () {
-    var id = $("#addtocart1").val();
-    $.ajax({
-      url: 'http://laravel-training.local/cart/add/' + id,
-      dataType: 'json',
-      success: function success(result) {
-        var count = result.countCart;
-        var data = result.contentCart;
-        var element = "";
-        $.each(data, function (key, value) {
-          element += '<li class="single-shopping-cart" id="' + 'item_id_' + value.rowId + '">' + '<div class="shopping-cart-img">' + '<a href="#" >' + '<img src="' + 'product' + '/' + value.options.image + '" />' + '</a>' + '</div>' + '<div class="shopping-cart-title">' + '<h4>' + '<a href="">' + value.name + '</a>' + '</h4>' + '<h6>Số lượng: ' + value.qty + '</h6>' + '<span>Giá: ' + value.price + '</span>' + '</div>' + '<div id="productcart" class="shopping-cart-delete" style="">' + '<a style="cursor: pointer;" id="deleteitem" item-id="' + value.rowId + '">' + '<i class="ti-close">' + '</i>' + '</a>' + '</div>' + '</li>';
-        });
-        $('#cart').html(element);
-        $("#countcart").html("" + count);
-        $("#total").html(result.total + " VNĐ");
-      }
-    });
-  }); ///delete
+  }); ////addproduct in qickview-modal
+  ///delete
 
   $("body").on('click', '#deleteitem', function () {
     var rowId = $(this).attr('item-id');
@@ -154,7 +135,6 @@ $(document).ready(function ($) {
       url: 'http://laravel-training.local/cart/quick-view/' + view_id,
       dataType: 'json',
       success: function success(result) {
-        document.getElementById('addtocart1').value = view_id;
         var product_name = result.product_name;
         var product_price = result.product_price;
         var product_desc = result.product_desc;

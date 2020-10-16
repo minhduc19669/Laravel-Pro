@@ -1,7 +1,7 @@
 @extends('layout.layout')
+@section('url','https://www.petcity.vn/media/banner/banner_839ab468.png')
 @section('content')
-
-
+<h3 class="animated" style=" text-align: center; margin-top: 20px">❄️ ❄️ ❄️ ❄️ ❄️ Merry Xmas ❄️ ❄️ ❄️ ❄️ ❄️ </h3>
     <div class="slider-area">
       <div class="slider-active owl-dot-style owl-carousel">
         <div
@@ -415,19 +415,8 @@
                   </div>
                 </div> --}}
                 <div class="quickview-plus-minus">
-                  <div class="cart-plus-minus">
-                    <input
-                      type="text"
-                      value="2"
-                      name="qtybutton"
-                      class="cart-plus-minus-box"
-                    />
-                  </div>
                   <div class="quickview-btn-cart">
-                    <a class="btn-style" id="addtocart1" style="cursor: pointer;">Add to cart</a>
-                  </div>
-                  <div class="quickview-btn-wishlist">
-                    <a class="btn-hover" style="cursor: pointer;"><i class="ti-heart"></i></a>
+                    <p id="addtocart1"></p>
                   </div>
                 </div>
               </div>

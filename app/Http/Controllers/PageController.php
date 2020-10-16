@@ -17,6 +17,7 @@ class PageController extends Controller
         return \view('pages.product',\compact('products'));
     }
     public function productDetail($id){
+
         $product=$this->productServ->productDetail($id);
         return \view('pages.product_details',\compact('product'));
     }

@@ -61,7 +61,8 @@ Route::prefix('cart')->group(function(){
 });
 //page
 Route::prefix('page')->group(function(){
-    Route::get('', 'PageController@index')->name('page.index');
+    Route::get('product', 'PageController@allProduct')->name('page.index');
+    Route::get('product/details/{id}', 'PageController@productDetail')->name('page.detail_product');
 });
 
 
