@@ -80,11 +80,9 @@ class NewsController extends Controller
     }
 public function remove($id){
           DB::beginTransaction();
-          News::where('news_id',$id)->delete();
+          $news = News::where('news_id',$id)->delete();
           DB::commit();
-    Alert()->success('Xóa thành công !')->autoClose(1500);
-
-    return \redirect()->route('news.list');
+    return response()->json($news);
 }
     public function active($id){
         DB::beginTransaction();
@@ -99,6 +97,76 @@ public function remove($id){
         DB::commit();
         Alert()->success('Kích hoạt thành công!')->autoClose(1500);
         return \redirect()->route('news.list');
+    }
+    public function action(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('news')
+                    ->join('categories','categories.cate_news_id','=','news.category_id')
+                    ->orWhere('news_title', 'like', '%'.$query.'%')
+                    ->orWhere('news_desc', 'like', '%'.$query.'%')
+                    ->orderBy('news.news_id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('news')
+                    ->join('categories','categories.cate_news_id','=','news.category_id')
+                    ->orderBy('news.news_id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+        <tr id=item_'.$row->news_id.'>
+        <td>'.++$key.'</td>
+        <td>'.$row->news_title.'</td>
+        <td>'.$row->category_news_name.'</td>
+        <td>'.$row->news_content.'</td>
+        <td><img width="50px" src=" /news/'.$row->news_image.' " alt=""></td>
+        <td>'.$row->news_desc.'</td>
+        <td>'.$row->news_view.'</td>
+        <td>'.$row->news_date.'</td>
+         ';
+                    if ($row->news_status == 0) {
+                        $output .= '
+         <td><a href='.route('news.un-active',$row->news_id).'><button id="unactive" data-id="'.$row->news_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+';
+                    }else{
+                        $output .= '
+         <td><a href='.route('news.active',$row->news_id).'><button class="btn btn-primary">Hiện</button></a></td>
+';
+                    }
+                    $output .= '
+         <td><a href='.route('news.edit',$row->news_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>
+         <button id="delete"  data-id="'.$row->news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+        </tr>
+        ';
+                }
+            }
+            else
+            {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
     }
 
 
