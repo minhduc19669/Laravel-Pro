@@ -28,7 +28,7 @@
 
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content">
-                            <h2>Dog Calcium Food</h2>
+                        <h2>{{$product->product_name}}</h2>
                             <div class="product-rating">
                                 <i class="ti-star theme-color"></i>
                                 <i class="ti-star theme-color"></i>
@@ -38,8 +38,8 @@
                                 <span> ( 01 Customer Review )</span>
                             </div>
                             <div class="product-price">
-                                <span class="new">$20.00 </span>
-                                <span class="old">$50.00</span>
+                                <span class="new">{{$product->product_price-$product->product_price_sale}} </span>
+                            <span class="old">{{$product->product_price}}</span>
                             </div>
                             <div class="in-stock">
                                 <span><i class="ion-android-checkbox-outline"></i> In Stock</span>
@@ -87,29 +87,16 @@
                 <div class="description-review-wrapper gray-bg pt-40">
                     <div class="description-review-topbar nav text-center">
                         <a class="active" data-toggle="tab" href="#des-details1">DESCRIPTION</a>
-                        <a data-toggle="tab" href="#des-details2">MORE INFORMATION</a>
+                        {{-- <a data-toggle="tab" href="#des-details2">MORE INFORMATION</a> --}}
                         <a data-toggle="tab" href="#des-details3">REVIEWS (2)</a>
                     </div>
                     <div class="tab-content description-review-bottom">
                         <div id="des-details1" class="tab-pane active">
                             <div class="product-description-wrapper">
-                                <p>This stewpot is part of the Scanpan Classic cookware range, which boasts GreenTek non-stick coating which is 100% PFOA free, meaning it's safer for your family and the environment. The heavy-duty, pressure-cast aluminum body has an extra-thick base for quick, even heating and it is compatible with all cooking surfaces (excluding induction). The extraordinarily hard exterior surface is a combination of ceramic and titanium nonstick cooking surface which is impossible to scrape away, even with metal utensils. Patented spring-lock handle stays cool during normal stove top use and the stewpot is also oven safe from up to 260°C. It's also dishwasher safe for easy cleanup. </p>
-                                <p>Scanpan is designed and manufactured in Denmark and offers a lifetime warranty.</p>
-                                <ul>
-                                    <li>Key Features:</li>
-                                    <li>Heavy duty, pressure cast aluminium with extra thick base for quick heat up</li>
-                                    <li>Ceramic titanium surface with PFOA-free GreenTek non-stick coating</li>
-                                    <li>Fat-free frying, metal utensils safe</li>
-                                    <li>Suitable for all stove tops, except induction</li>
-                                    <li>Guaranteed not to warp</li>
-                                    <li>Fast and even heat distribution</li>
-                                    <li>Ovenproof up to 260°C</li>
-                                    <li>Dishwasher safe - but not recommended</li>
-                                    <li>Designed and manufactured in Denmark</li>
-                                </ul>
+                                {{$product->product_desc}}
                             </div>
                         </div>
-                        <div id="des-details2" class="tab-pane">
+                        {{-- <div id="des-details2" class="tab-pane">
                             <div class="product-anotherinfo-wrapper">
                                 <ul>
                                     <li><span>name:</span> Scanpan Classic Covered</li>
@@ -119,7 +106,7 @@
                                     <li><span>Brand:</span> Nike, Religion, Diesel, Monki </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                         <div id="des-details3" class="tab-pane">
                             <div class="rattings-wrapper">
                                 <div class="sin-rattings">

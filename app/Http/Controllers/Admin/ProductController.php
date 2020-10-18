@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Category;
 use App\Http\Requests\ValidateFormAddProduct;
 use App\Http\Requests\ValidateFormUpdateProduct;
 use App\Product;
@@ -17,14 +19,14 @@ class ProductController extends Controller
     //
     public function list(){
         $list = DB::table('products')
-            ->join('categories', function ($join) {
-                $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
-            })
-//            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-            ->join('brands','brands.id','=','products.brand_id')
+        ->join('categories', function ($join) {
+            $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
+        })
+            //            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+            ->join('brands', 'brands.id', '=', 'products.brand_id')
             ->orderBy('products.product_id', 'asc')
             ->get();
-        return view('admin.products.list', compact('cate_sub','list'));
+        return view('admin.products.list', compact('cate_sub', 'list'));
     }
 
 
