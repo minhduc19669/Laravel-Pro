@@ -14,6 +14,8 @@ class Category extends Model
     public function sub_products()
     {
         return $this->hasMany('App\Product','sub_id');
+
+       
 	}
 
 
