@@ -60,4 +60,78 @@ class OrderController extends Controller
         DB::commit();
         Alert()->success('Xóa  thành công !')->autoClose(1500);
         return \redirect()->route('order.list');    }
+
+    public function action(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('orders')
+                    ->join('shippings','shippings.id','=','orders.shipping_id')
+                    ->orWhere('order_code', 'like', '%'.$query.'%')
+                    ->orWhere('shipping_name', 'like', '%'.$query.'%')
+                    ->orderBy('orders.order_id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('orders')
+                    ->join('shippings','shippings.id','=','orders.shipping_id')
+                    ->orderBy('orders.order_id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+                    <tr id=item_'.$row->order_id.'>
+                    <td>'.++$key.'</td>
+                     <td>'.$row->order_code.'</td>
+                     <td>'.$row->shipping_name.' </td>
+                      <td>'.$row->order_total.'</td>
+                      ';
+                    if($row->order_status == 0) {
+                        $output .= '
+                     <td>Chưa giao</td>
+                     ';
+                    }elseif ($row->order_status == 1){
+                        $output .= '
+                     <td>Đang giao</td>
+                     ';
+                    }elseif ($row->order_status == 2){
+                        $output .= '
+                     <td>Đã giao</td>
+                     ';
+                    }else{
+                        $output .= '
+                     <td>Hủy đơn hàng</td>
+                     ';
+                    }
+
+                $output .= '
+                     <td><a href='.route('order.edit',$row->order_id).'><button class="btn  btn-dark" type="submit">Chi tiết</button></a>  <button id="delete"  data-id="'.$row->order_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    ';}
+            }
+            else
+            {
+                $output = '
+                   <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                   </tr>
+                   ';}
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+
 }

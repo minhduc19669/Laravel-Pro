@@ -232,6 +232,7 @@ class CategoryController extends Controller{
                 {
                     $cate_pro = DB::table('categories')
                         ->select('category_product_name','category_product_desc','cate_pro_id')
+                        ->where('cate_pro_id','!=',null)
                         ->get();
                     $category = DB::table('categories')
                         ->where('sub_id',$id)->get();

@@ -22,9 +22,9 @@ class CreateShippingsTable extends Migration
             $table->string('shipping_name_receive');
             $table->integer('shipping_phone_receive');
             $table->string('shipping_address_receive');
-            $table->integer('shipping_information');
-            $table->string('shipping_node');
-            $table->integer('shipping_payment');
+            $table->integer('shipping_information')->nullable();
+            $table->string('shipping_node')->nullable();
+            $table->integer('shipping_payment')->nullable();
             $table->timestamps();
         });
     }
