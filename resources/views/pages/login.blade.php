@@ -35,7 +35,7 @@
                                                     <div class="login-toggle-btn">
                                                         <input type="checkbox">
                                                         <label>Remember me</label>
-                                                        <a href="#">Quên mật khẩu</a>
+                                                    <a href="{{route('forgot_password')}}"><i><u>Quên mật khẩu</u></i> </a>
                                                     </div>
                                                     <button type="submit"><span>Đăng nhập</span></button>
 

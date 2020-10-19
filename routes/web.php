@@ -24,10 +24,19 @@ Route::prefix('home')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/product', 'HomeController@product')->name('home.product');
     //home-customer-login
+
+
     Route::get('login', 'HomeController@showFormLogin')->name('home.getlogin');
     Route::get('register', 'HomeController@showFormRegister')->name('home.getregister');
     Route::post('login', 'HomeController@login')->name('home.postlogin');
     Route::post('register', 'HomeController@register')->name('home.postregister');
+    Route::get('forgot/password', 'ForgotPasswordController@index')->name('forgot_password');
+    Route::post('forgot/password', 'ForgotPasswordController@sendCodeResetPassword')->name('check.email');
+    Route::get('sent/mail','ForgotPasswordController@alert')->name('email.alert');
+    Route::get('reset/password/{email}/{code}','ForgotPasswordController@reset_password');
+    Route::post('save/password', 'ForgotPasswordController@save_change_password_reset')->name('save.password');
+
+
     //customer
     Route::get('customer', 'CustomerController@list')->name('customer.list');
     Route::get('add-customer', 'CustomerController@add')->name('customer.add');
