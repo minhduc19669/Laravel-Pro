@@ -65,11 +65,11 @@
                             <label for="quantity">Trạng thái</label>
                             <select class="custom-select" id="inputGroupSelect01" name="product_status">
                                 @if($edit->product_status == 0)
-                                <option selected value="0">Ẩn </option>
-                                <option value="1">Hiển thị</option>
+                                <option selected value="0">Hết hàng </option>
+                                <option value="1">Còn hàng</option>
                                 @else
-                                    <option  value="0">Ẩn </option>
-                                    <option value="1">Hiển thị</option>
+                                    <option  value="0">Hết hàng </option>
+                                    <option selected value="1">Còn hàng</option>
                                 @endif
                             </select>
                             @if ($errors->has('product_status'))

@@ -125,8 +125,7 @@ class ProductController extends Controller
             $query = $request->get('query');
             if($query != '')
             {
-                $data = Product::with('subcategories')
-                    ->join('brands','brands.id','=','products.brand_id')
+                $data = Product::join('brands','brands.id','=','products.brand_id')
                     ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
                     ->orWhere('product_name', 'like', '%'.$query.'%')
                     ->orWhere('product_code', 'like', '%'.$query.'%')
@@ -135,8 +134,7 @@ class ProductController extends Controller
             }
             else
             {
-                $data = Product::with('subcategories')
-                    ->join('brands','brands.id','=','products.brand_id')
+                $data = Product::join('brands','brands.id','=','products.brand_id')
                     ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
                     ->orderBy('products.product_id', 'desc')
                     ->get();
@@ -147,37 +145,29 @@ class ProductController extends Controller
                 foreach($data as $key => $row)
                 {
                     $output .= '
-        <tr id=item_'.$row->product_id.'>
-        <td>'.++$key.'</td>
-        <td style="font-size: 12px">'.$row->product_id.'</td>
-        <td style="font-size: 12px">'.$row->product_code.'</td>
+        <tr role="row" class="odd" id=item_'.$row->product_id.'>
+        <td class="" tabindex="0">'.++$key.'</td>
+        <td class="sorting_1" style="font-size: 12px">'.$row->product_code.'</td>
         <td style="font-size: 12px">'.$row->product_name.'</td>
          <td style="font-size: 12px">'.$row->category_product_name.'</td>
-        ';
-                    foreach ($row->subcategories as $Subcategory) {
-                        $output .= '
-                        <td style="font-size: 12px">' . $Subcategory->category_sub_product_name . '</td>
-                    ';
-                    }
-                    $output .= '
          <td style="font-size: 12px">'.$row->brand_name.'</td>
-         <td style="font-size: 12px">'.$row->product_content.'</td>
          <td style="font-size: 12px">'.$row->product_price.'</td>
          <td style="font-size: 12px">'.$row->product_price_sale.'</td>
          <td ><img width="50px" src=" /product/'.$row->product_image.' " alt=""></td>
-         <td>'.$row->product_desc.'</td>
+           <td style="font-size: 12px">'.$row->product_content.'</td>
+
          ';
                     if ($row->product_status == 0) {
                         $output .= '
-         <td><a href='.route('product.un-active',$row->product_id).'><button id="unactive" data-id="'.$row->product_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+                     <td>Hết hàng</td>
 ';
                     }else{
                         $output .= '
-         <td><a href='.route('product.active',$row->product_id).'><button class="btn btn-primary">Hiện</button></a></td>
+                    <td>Còn hàng</td>
 ';
                     }
                     $output .= '
-         <td><a href='.route('product.edit',$row->product_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->product_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+         <td><a href='.route('product.edit',$row->product_id).'><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>  <button style="font-size: 12px" id="delete"  data-id="'.$row->product_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
                 }

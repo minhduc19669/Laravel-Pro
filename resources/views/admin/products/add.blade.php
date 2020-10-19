@@ -54,8 +54,8 @@
                         <div class="form-group col-md-5">
                             <label for="quantity">Trạng thái</label>
                             <select class="custom-select" id="inputGroupSelect01" name="product_status">
-                                <option value="0">Ẩn </option>
-                                <option value="1">Hiển thị</option>
+                                <option value="1">Còn hàng</option>
+                                <option value="0">Hết hàng </option>
                             </select>
                             @if ($errors->has('product_status'))
                                 <p style="color: red">{{ $errors->first('product_status') }}</p>

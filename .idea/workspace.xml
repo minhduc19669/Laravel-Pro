@@ -22,245 +22,27 @@
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_30_070252_create_shippings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_30_070252_create_shippings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_30_071137_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_30_071137_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/6b9f527550ee3946af368a7d492938f9_tn47.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/6b9f527550ee3946af368a7d492938f9_tn76.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Cat_Eye-logo-665B2BC398-seeklogo62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Cat_Eye-logo-665B2BC398-seeklogo78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo77.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Royal-Canin-Logo95.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Screenshot from 2020-09-25 16-15-3525.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Screenshot from 2020-09-25 16-15-3548.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/Screenshot from 2020-09-25 16-15-3594.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/debug54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/download65.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/download96.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/earthborn-tag59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-1153.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-1158.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-1163.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-1194.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-1196.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575416.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575424.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575430.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575436.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575439.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_0537057544.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_0537057545.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575465.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575466.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-may-tinh-meo-de-thuong_05370575474.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/hinh-nen-meo-de-thuong-3270.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/images (1)25.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/images (1)33.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/morando8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/brand/tellme49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/1809_Screenshot_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/1809_Screenshot_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/250_3214_ao_sat_nach_hoat_hinh_0_66.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/250_3252_ao_ni_bi_ngo_petcity_176.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu76.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/2612_1200143.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/2812_145.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/2812_1490.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/cau-truc-thu-muc-laravel56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/cau-truc-thu-muc-laravel67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/controller9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/csrf_one27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/database64.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/database84.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/debug12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/debug27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1165.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1169.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1181.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1182.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1188.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-1189.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-meo-de-thuong_05370575417.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/hinh-nen-may-tinh-meo-de-thuong_05370575473.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/news/manh78.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3252_ao_ni_bi_ngo_petcity_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu46.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3493_eco5a_thuc_an_cho_cho_con_thit_cuu79.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3557_chihuahua21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_3557_chihuahua6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4075_2b2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4222_13593.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4237_up_pet99.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4305_68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4314_ava36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4314_ava53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4314_ava90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4317_ava79.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4317_ava82.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4327_propac19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4327_propac39.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4327_propac64.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/250_4372_ava33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/3507_bo-3-banh-xuong-cho-trung-pedigree-dentastix-98g-1513177333-53411912-e4f5630b5f6918f4269546cebfb47de0-zoom46.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/4125_d3bc23177efe82ae79fcefcc0e3ea02640.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-17 16-29-521.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-17 16-29-5250.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-23 11-43-4252.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-3220.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-3226.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-323.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-3245.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-3265.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-12-3284.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-3544.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-3549.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-358.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-3589.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-3591.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-09-25 16-15-3597.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-10-05 09-47-2741.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/Screenshot from 2020-10-05 10-34-2491.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/database16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/database91.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/debug21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1111.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1113.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1133.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1154.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1163.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-117.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-118.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1183.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-1188.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575429.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575433.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575435.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575452.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575488.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575493.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-may-tinh-meo-de-thuong_05370575497.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/hinh-nen-meo-de-thuong-3299.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh28.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh43.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh57.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh71.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh89.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/manh99.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/product-889.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/xóa ứng dụng13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product/xóa ứng dụng93" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/1586578379_banner-dochoithucung56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/1600404526_cover9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/250_4314_ava57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/250_4317_ava57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3211.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3212.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3222.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3229.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3232.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3235.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3238.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3248.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3263.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3264.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3265.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3271.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3275.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3278.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3279.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3280.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-329.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3290.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3297.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-12-3299.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3510.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3513.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3514.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3517.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3518.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3521.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3523.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3527.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3529.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3530.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3531.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3533.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-354.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3540.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3543.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3550.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3552.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3556.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3557.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3559.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3561.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3563.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3565.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3567.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3568.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3571.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3572.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3574.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3575.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3579.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-358.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3580.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3581.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3582.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3583.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3590.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3591.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3593.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-09-25 16-15-3598.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2712.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2716.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2720.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2724.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2726.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2740.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2752.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2765.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2766.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2768.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2770.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2774.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-278.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2792.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2796.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 09-47-2798.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 10-34-2419.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 10-34-2449.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 10-34-2472.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/Screenshot from 2020-10-05 10-34-2486.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/anh-meo-de-thuong-05074.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/banner_839ab46866.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/cau-truc-thu-muc-laravel69.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/cau-truc-thu-muc-laravel71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/controller55.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/debih145.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/download1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/download45.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-anh-chu-meo-long-xam-xinh-dep_11224765731.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-nen-may-tinh-1148.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-nen-may-tinh-1152.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-nen-may-tinh-meo-de-thuong_05370575444.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-nen-may-tinh-meo-de-thuong_0537057548.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/hinh-nen-meo-de-thuong-3263.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slide/manh44.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShippingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShippingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/list-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/list-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/shipping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/shipping/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/product_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product_details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -496,6 +278,7 @@
       <workItem from="1602812121509" duration="20628000" />
       <workItem from="1602924018954" duration="2179000" />
       <workItem from="1603015451018" duration="1210000" />
+      <workItem from="1603071449536" duration="20261000" />
     </task>
     <servers />
   </component>

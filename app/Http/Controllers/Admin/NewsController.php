@@ -127,27 +127,26 @@ public function remove($id){
                 {
                     $output .= '
         <tr id=item_'.$row->news_id.'>
-        <td>'.++$key.'</td>
-        <td>'.$row->news_title.'</td>
-        <td>'.$row->category_news_name.'</td>
-        <td>'.$row->news_content.'</td>
-        <td><img width="50px" src=" /news/'.$row->news_image.' " alt=""></td>
-        <td>'.$row->news_desc.'</td>
-        <td>'.$row->news_view.'</td>
-        <td>'.$row->news_date.'</td>
+        <td style="font-size: 12px">'.++$key.'</td>
+        <td style="font-size: 12px">'.$row->news_title.'</td>
+        <td style="font-size: 12px">'.$row->category_news_name.'</td>
+        <td style="font-size: 12px">'.$row->news_content.'</td>
+        <td style="font-size: 12px"><img width="50px" src=" /news/'.$row->news_image.' " alt=""></td>
+         <td style="font-size: 12px">'.$row->news_desc.'</td>
+        <td style="font-size: 12px">'.$row->news_date.'</td>
          ';
                     if ($row->news_status == 0) {
                         $output .= '
-         <td><a href='.route('news.un-active',$row->news_id).'><button id="unactive" data-id="'.$row->news_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+         <td><a href='.route('news.un-active',$row->news_id).'><button style="font-size: 12px" id="unactive" data-id="'.$row->news_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
 ';
                     }else{
                         $output .= '
-         <td><a href='.route('news.active',$row->news_id).'><button class="btn btn-primary">Hiện</button></a></td>
+         <td><a href='.route('news.active',$row->news_id).'><button style="font-size: 12px" class="btn btn-primary">Hiện</button></a></td>
 ';
                     }
                     $output .= '
-         <td><a href='.route('news.edit',$row->news_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>
-         <button id="delete"  data-id="'.$row->news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+         <td><a href='.route('news.edit',$row->news_id).'><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>
+         <button style="font-size: 12px" id="delete"  data-id="'.$row->news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
                 }

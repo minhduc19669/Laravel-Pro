@@ -17,7 +17,7 @@ class Product extends Model
         return $this->hasMany('App\Category','cate_pro_id','product_id');
     }
     public function subcategories(){
-        return $this->hasMany('App\Category','sub_id','product_id');
+        return $this->belongsTo('App\Category','sub_id','product_id');
     }
     public function brands(){
         return $this->hasMany('App\brands','brand_id','product_id');

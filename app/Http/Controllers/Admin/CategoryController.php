@@ -286,7 +286,6 @@ class CategoryController extends Controller{
                     <td>'.++$key.'</td>
                      <td>'.$row->sub_id.'</td>
                      <td>'.$row->category_sub_product_name.' </td>
-                      <td>'.$row->parent_id.'</td>
                      <td>'.$row->category_sub_product_desc.'</td>
                      <td><a href='.route('subcategory.edit',$row->sub_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->sub_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
                     </tr>

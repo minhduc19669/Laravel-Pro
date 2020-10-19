@@ -194,7 +194,7 @@ Route::middleware(['auth'])->group(function (){
               Route::get('order/search','OrderController@action')->name('order.search');
 
         //customer
-            Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
+            Route::get('customer', 'CustomerController@list')->name('customer.list');
             Route::get('customer/add', 'Admin\CustomerController@add')->name('customer.add');
             Route::post('customer/save', 'Admin\CustomerController@save')->name('customer.save');
             Route::get('customer/edit/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
@@ -207,6 +207,9 @@ Route::middleware(['auth'])->group(function (){
             Route::get("shipping/edit/{id}","ShippingController@edit")->name('shipping.edit');
             Route::post("shipping/update/{id}","ShippingController@update")->name('shipping.update');
             Route::get("shipping/remove/{id}","ShippingController@remove")->name('shipping.remove');
+            Route::get('shipping/search/action','ShippingController@action')->name('shipping.search');
+             Route::get('shipping/search/action_1','ShippingController@action_1')->name('shipping.search_1');
+
     });
     });
 
