@@ -191,7 +191,9 @@ Route::middleware(['auth'])->group(function (){
               Route::get('order/edit/{id}','OrderController@edit')->name('order.edit');
               Route::post('order/update/{id}','OrderController@update')->name('order.update');
               Route::get('order/remove/{id}','OrderController@remove')->name('order.remove');
-              //customer
+              Route::get('order/search','OrderController@action')->name('order.search');
+
+        //customer
             Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
             Route::get('customer/add', 'Admin\CustomerController@add')->name('customer.add');
             Route::post('customer/save', 'Admin\CustomerController@save')->name('customer.save');
