@@ -14,7 +14,7 @@ class AddColumnOrderTotalOnOrderTable extends Migration
     public function up()
     {
         Schema::table('orders',function(Blueprint $table){
-            $table->bigInteger('order_total')->after('order_code');
+            $table->string('order_total')->after('order_code');
         });
         //
     }
