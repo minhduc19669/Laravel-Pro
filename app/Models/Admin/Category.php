@@ -11,10 +11,11 @@ class Category extends Model
     ];
     protected $primaryKey = 'cate_pro_id';
 
-    public function products()
+    public function sub_products()
     {
-        return $this->hasMany('App\Product');
-    }
+        return $this->hasMany('App\Product','sub_id');
+	}
+
 
     public function categories()
     {
@@ -23,7 +24,7 @@ class Category extends Model
 
     public function SubCategories()
     {
-        return $this->hasMany(Category::class, 'parent_id','cate_pro_id');
+        return $this->hasMany(Category::class, 'parent_id');
 
     }
 }

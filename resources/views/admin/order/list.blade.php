@@ -2,24 +2,37 @@
 @section('admin_content')
     <h4 class="header-title">Đơn hàng</h4>
     <a href="{{route('order.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
-    <input width="50px" type="text" name="search" id="search" class="form-control" placeholder="Tìm kiếm" />
-
-    <div class="table-responsive">
-        <table class="table mb-0">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Mã đơn hàng</th>
-                <th>Tên khách hàng</th>
-                <th>Tổng giá tiền</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+    <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+        <div class="row"><div class="col-sm-12 col-md-6">
+                <div class="dataTables_length" id="datatable_length">
+                    <label>Show
+                        <select name="datatable_length" aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm">
+                            <option value="10">10</option><option value="25">25</option>
+                            <option value="50">50</option><option value="100">100</option>
+                        </select> entries</label></div></div><div class="col-sm-12 col-md-6">
+                <div id="datatable_filter" class="dataTables_filter">
+                    <label>Search:
+                        <input name="search" id="search" type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                    <thead  class="col-sm-12">
+                    <tr role="row">
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 10px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">#</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Position: activate to sort column ascending">Mã đơn hàng</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Tên khách hàng</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Age: activate to sort column ascending">Tổng giá tiền </th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 110px;" aria-label="Salary: activate to sort column ascending">Trạng thái</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="action: activate to sort column ascending">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table></div></div>
     <script>
         $(document).ready(function(){
             fetch_customer_data();

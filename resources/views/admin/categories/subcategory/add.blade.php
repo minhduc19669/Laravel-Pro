@@ -10,8 +10,8 @@
                 <div class="form-row">
 
                 <div class="form-group col-md-8">
-                    <label for="modelName">ID</label>
-                    <input type="number" min="1" class="form-control" name="sub_id" placeholder="Id danh mục tin tức">
+                    <label for="modelName">Mã</label>
+                    <input type="number" min="1" class="form-control" name="sub_id" placeholder="Mã danh mục">
                 </div>
             </div>
             @if ($errors->has('sub_id'))

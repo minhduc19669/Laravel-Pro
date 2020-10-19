@@ -64,4 +64,115 @@ DB::commit();
         Alert()->success('Xóa  thành công !')->autoClose(1500);
         return \redirect()->route('shipping.list');
     }
+    public function action(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('shippings')
+                    ->orWhere('shipping_name', 'like', '%'.$query.'%')
+                    ->orWhere('shipping_email', 'like', '%'.$query.'%')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('shippings')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+        <tr id=item_'.$row->id.'>
+        <td>'.++$key.'</td>
+        <td>'.$row->shipping_name.'</td>
+        <td>'.$row->shipping_phone.'</td>
+        <td>'.$row->shipping_address.'</td>
+        <td>'.$row->shipping_city.'</td>
+        <td>'.$row->shipping_district.'</td>
+        <td>'.$row->shipping_email.'</td>
+         <td><a href='.route('shipping.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+        </tr>
+        ';
+                }
+            }
+            else
+            {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+    public function action_1(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = DB::table('shippings')
+                    ->orWhere('shipping_name_receive', 'like', '%'.$query.'%')
+                    ->orWhere('shipping_email_receive', 'like', '%'.$query.'%')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            else
+            {
+                $data = DB::table('shippings')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $key => $row)
+                {
+                    $output .= '
+        <tr id=item_'.$row->id.'>
+        <td>'.++$key.'</td>
+        <td>'.$row->shipping_name_receive.'</td>
+        <td>'.$row->shipping_phone_receive.'</td>
+        <td>'.$row->shipping_address_receive.'</td>
+        <td>'.$row->shipping_city_receive.'</td>
+        <td>'.$row->shipping_district_receive.'</td>
+         <td><a href='.route('shipping.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a><button id="delete"  data-id="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+        </tr>
+        ';
+                }
+            }
+            else
+            {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">No Data Found</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
+
+
 }
