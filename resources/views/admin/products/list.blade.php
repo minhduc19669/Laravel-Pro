@@ -44,7 +44,6 @@
                     }
                 })
             }
-
             $(document).on('keyup', '#search', function(){
                 var query = $(this).val();
                 fetch_customer_data(query);
@@ -88,6 +87,5 @@
         //     })
         //
         // });
-
     </script>
 @endsection

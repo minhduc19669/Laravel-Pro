@@ -14,7 +14,8 @@ class Category extends Model
     public function products()
     {
         return $this->hasMany('App\Product');
-    }
+	}
+
 
     public function categories()
     {
@@ -23,7 +24,7 @@ class Category extends Model
 
     public function SubCategories()
     {
-        return $this->hasMany(Category::class, 'parent_id','cate_pro_id');
+        return $this->hasMany(Category::class, 'parent_id');
 
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Category;
 use App\Http\Requests\ValidateFormAddProduct;
 use App\Http\Requests\ValidateFormUpdateProduct;
 use App\Product;
@@ -16,6 +18,7 @@ class ProductController extends Controller
 {
     //
     public function list(){
+
 //        $list = DB::table('products')
 //            ->join('categories', function ($join) {
 //                $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
