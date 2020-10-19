@@ -1,6 +1,0 @@
-dpkg --list                           hiển thị tất cả các ứng dụng trong ubuntu
-sudo apt-get remove package_name       xóa ứng dụng
-sudo apt-get --purge remove package_name  xóa vĩnh viễn ứng dụng
-sudo apt-get autoremove            dọn dẹp các ứng dụng còn sót lại
-nano /var/log/apache2/error.log
-

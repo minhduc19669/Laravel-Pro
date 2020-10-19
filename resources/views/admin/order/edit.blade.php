@@ -61,7 +61,7 @@
                         <option selected value="3">Hủy đơn hàng</option>
                     @endif
                 </select>
-                    <button type="submit" class="btn-danger col-md-3/2">Submit</button>
+                    <button type="submit" class="btn btn-danger col-md-3/2">Submit</button>
                     </form>
                 </div>
         @endforeach

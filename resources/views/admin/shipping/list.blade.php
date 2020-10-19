@@ -7,11 +7,11 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên người gửi</th>
+                <th>Người gửi</th>
                 <th>Số điện thoại người gửi</th>
                 <th>Địa chỉ người gửi</th>
                 <th>Email người gửi</th>
-                <th>Tên người nhận</th>
+                <th>Người nhận</th>
                 <th>Số điện thoại người nhận</th>
                 <th>Địa chỉ người nhận</th>
                 <th>Thông tin giao hàng</th>

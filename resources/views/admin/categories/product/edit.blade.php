@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
     @foreach($category as $key => $edit)
-    <form action="{{route('category.update',$edit->id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
+    <form action="{{route('category.update',$edit->cate_pro_id)}}" method="post" enctype="multipart/form-data" class="mx-5" >
         {{csrf_field()}}
 
         <h2>Cập nhật danh mục sản phẩm</h2>
