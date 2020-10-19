@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnOrderTotalOnOrderTable extends Migration
+class AddColumnCodeAndTimeCodeToCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class AddColumnOrderTotalOnOrderTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders',function(Blueprint $table){
-            $table->string('order_total')->after('order_code');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->string('code')->nullable()->index();
+            $table->timestamp('time_code')->nullable();
         });
-        //
     }
+
     /**
      * Reverse the migrations.
      *
@@ -25,9 +26,8 @@ class AddColumnOrderTotalOnOrderTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('order_total');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->dropColumn('code', 'time_code');
         });
     }
 }

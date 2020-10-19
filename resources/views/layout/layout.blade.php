@@ -67,6 +67,11 @@
                           >Các địa chỉ</a
                         >
                       </li>
+                                            <li>
+                        <a href="#"
+                          >Đổi mật khẩu</a
+                        >
+                      </li>
                       <li>
                         <a href="{{route('google_logout')}}"
                           >Đăng xuất

@@ -2,13 +2,12 @@
 
 namespace App\Mail;
 
-use App\Customer;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class WellcomeEmail extends Mailable
+class ResetPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,9 +16,11 @@ class WellcomeEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $url;
+    public function __construct($url)
     {
         //
+        $this->url=$url;
     }
 
     /**
@@ -29,7 +30,6 @@ class WellcomeEmail extends Mailable
      */
     public function build()
     {
-
-        return $this->markdown('emails.wellcome');
+        return $this->markdown('emails.reset.password',['url'=>$this->url]);
     }
 }
