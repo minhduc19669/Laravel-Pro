@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id('order_id');
-            $table->unsignedBigInteger('shipping_id');
+            $table->unsignedBigInteger('shipping_id')->nullable();
             $table->foreign('shipping_id')->references('id')->on('shippings');
             $table->string('order_code');
             $table->integer('order_status');

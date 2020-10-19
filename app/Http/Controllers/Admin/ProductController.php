@@ -18,37 +18,38 @@ class ProductController extends Controller
 {
     //
     public function list(){
-        $list = DB::table('products')
-        ->join('categories', function ($join) {
-            $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
-        })
-            //            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-            ->join('brands', 'brands.id', '=', 'products.brand_id')
-            ->orderBy('products.product_id', 'asc')
-            ->get();
-        return view('admin.products.list', compact('cate_sub', 'list'));
+
+//        $list = DB::table('products')
+//            ->join('categories', function ($join) {
+//                $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
+//            })
+////            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+//            ->join('brands','brands.id','=','products.brand_id')
+//            ->orderBy('products.product_id', 'asc')
+//            ->get();
+        return view('admin.products.list');
     }
 
 
     public function add(){
-        $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
-        $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
-        $brand_product = DB::table('brands')->orderBy('id','desc')->get();
-    return view('admin.products.add',compact('brand_product','cate_product','cate_sub'));
+            $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
+            $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
+            $brand_product = DB::table('brands')->orderBy('id','desc')->get();
+            return view('admin.products.add',compact('brand_product','cate_product','cate_sub'));
 
 }
     public function save(ValidateFormAddProduct $request ){
-         $data = array();
-         $data['cate_pro_id'] = $request->product_cate;
-        $data['sub_id'] = $request->cate_sub;
-        $data['brand_id'] = $request->product_brand;
-         $data['product_name'] = $request->product_name;
-         $data['product_code'] = $request->product_code;
-         $data['product_price'] = $request->product_price;
-         $data['product_price_sale'] = $request->product_price_sale;
-         $data['product_content'] = $request->product_content;
-         $data['product_desc'] = $request->product_desc;
-         $data['product_status'] = $request->product_status;
+             $data = array();
+             $data['cate_pro_id'] = $request->product_cate;
+             $data['sub_id'] = $request->cate_sub;
+             $data['brand_id'] = $request->product_brand;
+             $data['product_name'] = $request->product_name;
+             $data['product_code'] = $request->product_code;
+             $data['product_price'] = $request->product_price;
+             $data['product_price_sale'] = $request->product_price_sale;
+             $data['product_content'] = $request->product_content;
+             $data['product_desc'] = $request->product_desc;
+             $data['product_status'] = $request->product_status;
          $get_image = $request->file('product_image');
          if ($get_image){
              $get_name_image = $get_image ->getClientOriginalName();
@@ -60,19 +61,19 @@ class ProductController extends Controller
              Alert()->success('Thêm thành công !')->autoClose(1500);
              return \redirect()->route('product.list');
          }
-         $data['product_image'] = '';
-         DB::table('products')->insert($data);
+             $data['product_image'] = '';
+             DB::table('products')->insert($data);
              Alert()->success('Thêm thành công !')->autoClose(1500);
              return \redirect()->route('product.list');
     }
  public function edit($id){
 
-     $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
-     $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
-     $brand_product = DB::table('brands')->orderBy('id','desc')->get();
-     $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
-        return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('cate_sub',$cate_sub);
- }
+             $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
+             $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
+             $brand_product = DB::table('brands')->orderBy('id','desc')->get();
+             $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
+             return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('cate_sub',$cate_sub);
+         }
  public function update(ValidateFormUpdateProduct $request,$id){
              $data = array();
              $data['cate_pro_id'] = $request->product_cate;
@@ -102,19 +103,19 @@ class ProductController extends Controller
              }
  }
  public function remove($id){
-       $product =   DB::table('products')->where('product_id',$id)->delete();
-     return response()->json($product);
+             $product =   DB::table('products')->where('product_id',$id)->delete();
+             return response()->json($product);
  }
     public function active($id){
-        DB::table('products')->where('product_id',$id)->update(['product_status'=>0]);
-        Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
-        return \redirect()->route('product.list');
+            DB::table('products')->where('product_id',$id)->update(['product_status'=>0]);
+            Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
+            return \redirect()->route('product.list');
 
     }
     public function unactive($id){
-        DB::table('products')->where('product_id',$id)->update(['product_status'=>1]);
-        Alert()->success('Kích hoạt thành công !')->autoClose(1500);
-        return \redirect()->route('product.list');
+            DB::table('products')->where('product_id',$id)->update(['product_status'=>1]);
+            Alert()->success('Kích hoạt thành công !')->autoClose(1500);
+            return \redirect()->route('product.list');
     }
     public function action(Request $request)
     {
@@ -124,10 +125,12 @@ class ProductController extends Controller
             $query = $request->get('query');
             if($query != '')
             {
-                $data = DB::table('products')
+                $data = Product::with('subcategories')
+                    ->join('brands','brands.id','=','products.brand_id')
+                    ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
                     ->orWhere('product_name', 'like', '%'.$query.'%')
                     ->orWhere('product_code', 'like', '%'.$query.'%')
-                    ->orderBy('product_id', 'desc')
+                    ->orderBy('products.product_id', 'desc')
                     ->get();
             }
             else
@@ -135,7 +138,7 @@ class ProductController extends Controller
                 $data = Product::with('subcategories')
                     ->join('brands','brands.id','=','products.brand_id')
                     ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-                    ->orderBy('product_id', 'desc')
+                    ->orderBy('products.product_id', 'desc')
                     ->get();
             }
             $total_row = $data->count();

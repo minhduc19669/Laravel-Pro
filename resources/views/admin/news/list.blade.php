@@ -2,42 +2,88 @@
 @section('admin_content')
     <h4 class="header-title">Danh sách tin tức</h4>
     <a href="{{route('news.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
+    <input width="50px" type="text" name="search" id="search" class="form-control" placeholder="Tìm kiếm" />
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tiêu đề</th>
-                <th>Danh mục</th>
-                <th>Nội dung</th>
-                <th>Ảnh</th>
-                <th>Ghi chú</th>
-                <th>Lượt xem</th>
-                <th>Ngày đăng </th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>Desc</th>
+                <th>Views</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($news as $key => $list )
-                <tr>
-                    <th scope="row">{{$key + 1}}</th>
-                    <td>{{$list->news_title}}</td>
-                    <td>{{$list->category_news_name}}</td>
-                    <th>{{$list->news_content}}</th>
-                    <td><img width="50px" src="\news\{{$list->news_image}}"></td>
-                    <td>{{$list->news_desc}}</td>
-                    <td>{{$list->news_view}}</td>
-                    <td>{{$list->news_date}}</td>
-                    @if($list->news_status==0)
-                        <td><a href={{route('news.un-active',$list->news_id)}}><i style="color: red" class="fas fa-smile-wink"></i></a></td>
-                    @else
-                        <td><a href={{route('news.active',$list->news_id)}}><i style="color: blue" class="fas fa-smile-wink"></i></a></td>
-                    @endif
-                    <td><a href={{route('news.edit',$list->news_id)}}><i class=" ion ion-md-color-filter"></i></a>|<a onclick="return confirm('bạn có thật sự muốn xóa không?')" href={{route('news.remove',$list->news_id)}}><i class=" ion ion-md-close"></i></a></td>
-                </tr>
-            @endforeach
             </tbody>
         </table>
     </div>
+    <script>
+        $(document).ready(function(){
+            fetch_customer_data();
+            function fetch_customer_data(query = '')
+            {
+                $.ajax({
+                    url:"{{ route('news.search') }}",
+                    method:'GET',
+                    data:{query:query},
+                    dataType:'json',
+                    success:function(data)
+                    {
+                        $('tbody').html(data.table_data);
+                        $('#total_records').text(data.total_data);
+                    }
+                })
+            }
+
+            $(document).on('keyup', '#search', function(){
+                var query = $(this).val();
+                fetch_customer_data(query);
+            });
+        });
+        $(document).on('click', '#delete', function() {
+            var id = $(this).data('id');
+            console.log(id);
+            if (confirm('bạn có muốn xóa không?')) {
+                $.ajax({
+                    url: 'news/remove/'+id,
+                    method: 'get',
+                    dataType: 'json',
+                    type: 'delete',
+                    data: {
+                        "news_id": id,
+                    },
+                    success: function (data) {
+                        $('#item_'+id).remove();
+                    }
+                })
+            }
+        });
+        $(document).on('click', '#unactive', function() {
+            var id = $(this).data('id');
+            var slide_status =$(this).data('slide_status')
+            var query = $(this).val();
+            console.log(id);
+            $.ajax({
+                url: 'slide/un-active/'+id,
+                method: 'get',
+                dataType: 'json',
+                type: 'unactive',
+                data: {
+                    "id": id,
+                    'slide_status': slide_status,
+                },
+                success: function (data) {
+                }
+
+            })
+
+        });
+
+    </script>
 @endsection

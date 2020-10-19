@@ -156,6 +156,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('brand/remove/{id}', 'BrandController@remove')->name('brand.remove');
             Route::get('brand/active/{id}', 'BrandController@active')->name('brand.active');
             Route::get('brand/un-active/{id}', 'BrandController@unactive')->name('brand.un-active');
+            Route::get('brand/search','BrandController@action')->name('brand.search');
+
         });
 
             //news
@@ -167,7 +169,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('news/remove/{id}','NewsController@remove')->name('news.remove');
             Route::get('news/active/{id}','NewsController@active')->name('news.active');
             Route::get('news/un-active/{id}','NewsController@unactive')->name('news.un-active');
-            //slide
+            Route::get('news/search','NewsController@action')->name('news.search');
+        //slide
             Route::get('slide','SlideController@list')->name('slide.list');
             Route::get('slide/add','SlideController@add')->name('slide.add');
             Route::post('slide/save','SlideController@save')->name('slide.save');
@@ -188,7 +191,9 @@ Route::middleware(['auth'])->group(function (){
               Route::get('order/edit/{id}','OrderController@edit')->name('order.edit');
               Route::post('order/update/{id}','OrderController@update')->name('order.update');
               Route::get('order/remove/{id}','OrderController@remove')->name('order.remove');
-              //customer
+              Route::get('order/search','OrderController@action')->name('order.search');
+
+        //customer
             Route::get('customer', 'Admin\CustomerController@list')->name('customer.list');
             Route::get('customer/add', 'Admin\CustomerController@add')->name('customer.add');
             Route::post('customer/save', 'Admin\CustomerController@save')->name('customer.save');
