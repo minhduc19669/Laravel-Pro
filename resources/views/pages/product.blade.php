@@ -43,7 +43,7 @@
                     <div id="product5" class="product-wrapper mb-10">
                       <div class="product-img">
                         <a href="{{route('product.details',$item->product_id)}}">
-                        <img width="100px" height="230px" src="{{asset('product/'.$item->product_image)}}" alt="" />
+                        <img width="100px" height="230px" src="{{asset('storage/'.$item->product_image)}}" alt=""/>
                         </a>
                         <div class="product-action">
                           <a id="viewproduct" view-id="{{$item->product_id}}"

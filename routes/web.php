@@ -48,6 +48,13 @@ Route::prefix('home')->group(function(){
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
 
+
+
+    //blog
+    Route::get('blog', 'PageController@showBlog')->name('page.blog');
+    Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogdetails');
+
+
 });
 //social-login
 Route::get('auth/google', 'SocialController@redirectToGoogle')->name('google');
