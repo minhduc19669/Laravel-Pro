@@ -63,6 +63,9 @@ Route::prefix('cart')->group(function(){
 Route::prefix('page')->group(function(){
     Route::get('product', 'PageController@allProduct')->name('page.index');
     Route::get('product/details/{id}', 'PageController@productDetail')->name('page.detail_product');
+    Route::get('product/category/{id}','PageController@productCategory')->name('page.product_category');
+    Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
+    Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
 });
 
 
@@ -195,11 +198,11 @@ Route::middleware(['auth'])->group(function (){
 
         //customer
             Route::get('customer', 'CustomerController@list')->name('customer.list');
-            Route::get('customer/add', 'Admin\CustomerController@add')->name('customer.add');
-            Route::post('customer/save', 'Admin\CustomerController@save')->name('customer.save');
-            Route::get('customer/edit/{id}', 'Admin\CustomerController@edit')->name('customer.edit');
-            Route::post('customer/update/{id}', 'Admin\CustomerController@update')->name('customer.update');
-            Route::get('customer/remove{id}','Admin\CustomerController@remove')->name('customer.remove');
+            Route::get('customer/add', 'CustomerController@add')->name('customer.add');
+            Route::post('customer/save', 'CustomerController@save')->name('customer.save');
+            Route::get('customer/edit/{id}', 'CustomerController@edit')->name('customer.edit');
+            Route::post('customer/update/{id}', 'CustomerController@update')->name('customer.update');
+            Route::get('customer/remove{id}','CustomerController@remove')->name('customer.remove');
               //shipping
             Route::get("shipping","ShippingController@list")->name('shipping.list');
             Route::get("shipping/add","ShippingController@add")->name('shipping.add');

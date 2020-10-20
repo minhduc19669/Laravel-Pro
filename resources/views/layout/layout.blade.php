@@ -108,9 +108,9 @@
                             @foreach($category as $key => $cate)
                         <li>
                           <ul>
-                                <li class="mega-menu-title">{{$cate->category_product_name}}</li>
+                                <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
                                  @foreach($cate -> Subcategories as $cate)
-                                <li><a href="shop-page.html">{{$cate->category_sub_product_name}}</a></li>
+                                <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
                                 @endforeach
                           </ul>
                         </li>
@@ -441,16 +441,16 @@
                   <div class="social-icon">
                     <ul>
                       <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></i></a>
+                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></i></a>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></i></a>
+                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                       </li>
                     </ul>
                   </div>
