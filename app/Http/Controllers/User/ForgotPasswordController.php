@@ -31,7 +31,8 @@ class ForgotPasswordController extends Controller
             Alert()->error('Có lỗi xảy ra','Email không tồn tại!!!');
             return \back();
         }
-        $code = md5($request->email);
+        $code = md5(Carbon::now().$request->email);
+        \dd($code);
         $customer->code=$code;
         $customer->time_code=Carbon::now();
         $customer->save();

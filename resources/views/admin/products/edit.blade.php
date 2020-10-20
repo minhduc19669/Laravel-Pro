@@ -142,19 +142,17 @@
                                     <p style="color: red">{{ $errors->first('product_image') }}</p>
                                 @endif
                             </div>
-
-
-
                         </div>
-
-
-
                     </div>
-
                 </div>
             </div>
             <div class="col-md">
-                <img class="img-fluid img-thumbnail" id="imgPreview" src="\product\{{$edit->product_image}}">
+                @foreach ($images as $item)
+                @foreach ($item->images as $value)
+                    <img width="200px" height="200px" class="img-fluid img-thumbnail" id="imgPreview" src="{{asset("storage/".$value->image)}}">
+                @endforeach
+
+                @endforeach
             </div>
         </div>
         </div>

@@ -118,7 +118,7 @@
                     <div class="form-group col-md">
                         <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
                         <br>
-                        <input value="{{old('product_image')}}" type="file" class="form-control-file" name="product_image" >
+                        <input multiple value="{{old('product_image')}}" type="file" class="form-control-file" name="product_image[]" id="imageUpload" >
                         @if ($errors->has('product_image'))
                             <p style="color: red">{{ $errors->first('product_image') }}</p>
                         @endif
@@ -127,11 +127,16 @@
                 </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <img class="img-fluid img-thumbnail" id="imgPreview" src="">
+            <div id="imgPreview" class="col-md-4">
+                <img class="img-fluid img-thumbnail" src="">
             </div>
         </div>
         </div>
     </form>
+    <script>
+        $(document).ready(function(){
+
+        })
+    </script>
 @endsection
 

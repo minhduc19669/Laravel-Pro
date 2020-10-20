@@ -78,12 +78,12 @@ class NewsController extends Controller
             return \redirect()->route('news.list');
         }
     }
-public function remove($id){
-          DB::beginTransaction();
-          $news = News::where('news_id',$id)->delete();
-          DB::commit();
-    return response()->json($news);
-}
+    public function remove($id){
+                DB::beginTransaction();
+                $news = News::where('news_id',$id)->delete();
+                DB::commit();
+            return response()->json($news);
+        }
     public function active($id){
         DB::beginTransaction();
         News::where('news_id',$id)->update(['news_status'=>0]);

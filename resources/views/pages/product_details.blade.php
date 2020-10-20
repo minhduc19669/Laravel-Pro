@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-img">
-                        <img src="{{asset('product/'.$product->product_image)}}" alt=""/>
+                        <img src="{{asset('storage/'.$product->product_image)}}" alt=""/>
                             {{-- <div id="gallery" class="mt-12 product-dec-slider owl-carousel">
                                 <a data-image="{{asset('assets_page/img/product-details/l1.jpg')}}" data-zoom-image="{{asset('assets_page/img/product-details/bl1.jpg')}}">
                                     <img src="{{asset('assets_page/img/product-details/s1.jpg')}}" alt="">
