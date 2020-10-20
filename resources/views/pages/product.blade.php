@@ -165,50 +165,27 @@
                 </div>
                 <div><p id="demo">$</p></div>
               </div>
+                @foreach($category as $key => $category)
               <div class="shop-widget mt-50">
-                <h4 class="shop-sidebar-title">Danh mục sản phẩm cho chó</h4>
+                <h4 class="shop-sidebar-title">{{$category->category_product_name}}</h4>
                 <div class="shop-list-style mt-20">
                   <ul>
-                    <li><a href="#">Canned Food</a></li>
-                    <li><a href="#">Dry Food</a></li>
-                    <li><a href="#">Food Pouches</a></li>
-                    <li><a href="#">Food Toppers</a></li>
-                    <li><a href="#">Fresh Food</a></li>
-                    <li><a href="#">Frozen Food</a></li>
+                      @foreach($category->SubCategories as $subcategory)
+                    <li><a href="{{route('page.product_subcategory',$subcategory->sub_id)}}">{{$subcategory->category_sub_product_name}}</a></li>
+                      @endforeach
                   </ul>
                 </div>
               </div>
-                <div class="shop-widget mt-50">
-                <h4 class="shop-sidebar-title">Danh mục sản phẩm cho mèo</h4>
-                <div class="shop-list-style mt-20">
-                  <ul>
-                    <li>
-                      <a href="#">Bone Development <span>18</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Digestive Care <span>22</span></a>
-                    </li>
-                    <li>
-                      <a href="#">General Health <span>19</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Hip & Joint <span>41</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Immune System <span>22</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+
+
+                @endforeach
               <div class="shop-widget mt-50">
                 <h4 class="shop-sidebar-title">Top Thương Hiệu</h4>
                 <div class="shop-list-style mt-20">
                   <ul>
-                    <li><a href="#">Authority</a></li>
-                    <li><a href="#">AvoDerm Natural</a></li>
-                    <li><a href="#">Bil-Jac</a></li>
-                    <li><a href="#">Blue Buffalo</a></li>
-                    <li><a href="#">Castor & Pollux</a></li>
+                      @foreach($brand as $key => $brand)
+                    <li><a href="{{route('page.product_brand',$brand->id)}}">{{$brand->brand_name}}</a></li>
+                      @endforeach
                   </ul>
                 </div>
               </div>

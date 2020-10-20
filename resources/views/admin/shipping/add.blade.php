@@ -73,13 +73,6 @@
                                         <p style="color: red">{{ $errors->first('shipping_email') }}</p>
                                     @endif
                                     <br>
-                                    <label for="quantity">Thông tin giao hàng</label>
-                                    <select class="custom-select" id="inputGroupSelect01" name="shipping_information">
-                                            <option selected value="0"> Giao hàng tới khác địa chỉ </option>
-                                            <option value="1">Giao hàng tới cùng địa chỉ</option>
-                                    </select>
-                                    <br>
-                                    <br>
                                     <label for="quantity">Phương thức thanh toán</label>
                                     <select class="custom-select" id="inputGroupSelect01" name="shipping_payment">
                                             <option selected value="1"> Thanh toán khi nhận hàng </option>
