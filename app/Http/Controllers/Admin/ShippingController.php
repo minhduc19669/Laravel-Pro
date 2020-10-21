@@ -129,7 +129,7 @@ DB::commit();
             {
                 $data = DB::table('shippings')
                     ->orWhere('shipping_name_receive', 'like', '%'.$query.'%')
-                    ->orWhere('shipping_email_receive', 'like', '%'.$query.'%')
+                    ->orWhere('shipping_address_receive', 'like', '%'.$query.'%')
                     ->orderBy('id', 'desc')
                     ->get();
             }
