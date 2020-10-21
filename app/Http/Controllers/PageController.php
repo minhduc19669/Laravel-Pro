@@ -60,9 +60,5 @@ class PageController extends Controller
         return \view('pages.product',\compact('products','category','brand'));
     }
 
-    //blog
-    public function blogDetail($id){
-        $news = News::where('news_id',$id)->get();
-        return view('pages.blog_detail',compact('news'));
-    }
+
 }
