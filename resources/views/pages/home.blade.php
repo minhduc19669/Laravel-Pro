@@ -253,7 +253,7 @@
             <div class="blog-wrapper mb-30 gray-bg">
               <div class="blog-img hover-effect">
                 <a href="blog-details.html"
-                  ><img height="200px" alt="" src="\news\{{$news->news_image}}"
+                  ><img alt="" src="\news\{{$news->news_image}}"
                 /></a>
               </div>
               <div class="blog-content">
@@ -264,7 +264,7 @@
                   </ul>
                 </div>
                 <h4>
-                  <a href="{{route('page.detail_blog',$news->news_id)}}"
+                  <a href="{{route('page.blogDetails',$news->news_id)}}"
                     >{{$news->news_title}}</a
                   >
                 </h4>

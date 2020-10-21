@@ -23,6 +23,8 @@ Route::get('logout', 'LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/product', 'HomeController@product')->name('home.product');
+    Route::get('layout','HomeController@showLayout');
+
     //home-customer-login
 
 
@@ -52,7 +54,8 @@ Route::prefix('home')->group(function(){
 
     //blog
     Route::get('blog', 'PageController@showBlog')->name('page.blog');
-    Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogdetails');
+    Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogDetails');
+    Route::get('blog/category/{id}','PageController@blogCategory')->name('page.blogCategory');
 
 
 });
@@ -85,12 +88,7 @@ Route::prefix('page')->group(function(){
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
 
 });
-Route::prefix('blog')->group(function (){
-//blog
-    Route::get('blog/details/{id}','BlogController@blogDetail')->name('page.detail_blog');
 
-
-});
 
 
 

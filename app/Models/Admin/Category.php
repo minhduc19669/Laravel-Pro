@@ -15,9 +15,10 @@ class Category extends Model
     {
         return $this->hasMany('App\Product','sub_id');
 
-       
 	}
-
+  public function news(){
+        return $this->hasMany('App\News','cate_news_id');
+  }
 
     public function categories()
     {
