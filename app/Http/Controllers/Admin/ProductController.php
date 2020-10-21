@@ -51,48 +51,44 @@ class ProductController extends Controller
              $product->product_content = $request->product_content;
              $product->product_desc = $request->product_desc;
              $product->product_status = $request->product_status;
-         $get_image = $request->hasFile('product_image');
-         if ($get_image){
-            $allowedfileExtension = ['jpg', 'png', 'jpeg'];
-            $files=$request->file('product_image');
-            $exe_flg=\true;
-            foreach($files as $file){
-                $extension = $file->getClientOriginalExtension();
-                $check=in_array($extension,$allowedfileExtension);
-                if(!$check){
-                    $exe_flg=\false;
-                    break;
+
+            $get_image = $request->hasFile('product_image');
+            if ($get_image) {
+                $allowedfileExtension = ['jpg', 'png', 'jpeg'];
+                $files = $request->file('product_image');
+                $exe_flg = \true;
+                foreach ($files as $file) {
+                    $extension = $file->getClientOriginalExtension();
+                    $check = in_array($extension, $allowedfileExtension);
+                    if (!$check) {
+                        $exe_flg = \false;
+                        break;
+                    }
                 }
-            }
-            if($exe_flg){
+                if ($exe_flg) {
 
-                $product->save();
-                foreach($request->product_image as $image){
-                    $filename=$image->store('product','public');
-
-                    $image=new Image();
-                    $image->image=$filename;
-                    $image->product_id=$product->product_id;
-                    $image->save();
-                }
-                $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
-
-                foreach($avatar as $value){
-                    $product->product_image=$value->image;
                     $product->save();
-                }
+                    foreach ($request->product_image as $image) {
+                        $filename = $image->store('product', 'public');
 
+                        $image = new Image();
+                        $image->image = $filename;
+                        $image->product_id = $product->product_id;
+                        $image->save();
+                    }
+                    $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
+
+                    foreach ($avatar as $value) {
+                        $product->product_image = $value->image;
+                        $product->save();
+                    }
+                }
+                Alert()->success('Cập nhập thành công !')->autoClose(1500);
+                return \redirect()->route('product.list');
             }
-            Alert()->success('Thêm thành công !')->autoClose(1500);
-            return \redirect()->route('product.list');
-         }
-             $data['product_image'] = '';
-             DB::table('products')->insert($data);
-             Alert()->success('Thêm thành công !')->autoClose(1500);
-             return \redirect()->route('product.list');
     }
  public function edit($id){
-            $images=Product::all();
+            $images=Product::find($id)->images;
              $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
              $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
              $brand_product = DB::table('brands')->orderBy('id','desc')->get();
@@ -100,42 +96,77 @@ class ProductController extends Controller
              return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('cate_sub',$cate_sub)->with('images',$images);
          }
  public function update(ValidateFormUpdateProduct $request,$id){
-             $data = array();
-             $data['cate_pro_id'] = $request->product_cate;
-             $data['sub_id'] = $request->cate_sub;
-             $data['brand_id'] = $request->product_brand;
-             $data['product_name'] = $request->product_name;
-             $data['product_code'] = $request->product_code;
-             $data['product_price'] = $request->product_price;
-             $data['product_price_sale'] = $request->product_price_sale;
-             $data['product_content'] = $request->product_content;
-             $data['product_desc'] = $request->product_desc;
-             $data['product_status'] = $request->product_status;
-             $get_image = $request->file('product_image');
-             if ($get_image){
-                 $get_name_image = $get_image ->getClientOriginalName();
-                 $name_image = current(explode('.',$get_name_image));
-                 $new_image =  $name_image . rand(0,99) . '.' .$get_image->getClientOriginalExtension();
-                 $get_image->move('product',$new_image);
-                 $data['product_image']=$new_image;
-                 DB::table('products')->where('product_id',$id)->update($data);
-                 Alert()->success('Cập nhật thành công !')->autoClose(1500);
-                 return \redirect()->route('product.list');
-             }else {
-                 DB::table('products')->where('product_id',$id)->update($data);
-                 Alert()->success('Cập nhật thành công !')->autoClose(1500);
-                 return \redirect()->route('product.list');
-             }
+        $product = Product::find($id);
+        $product->cate_pro_id = $request->product_cate;
+        $product->sub_id = $request->cate_sub;
+        $product->brand_id = $request->product_brand;
+        $product->product_name = $request->product_name;
+        $product->product_code = $request->product_code;
+        $product->product_price = $request->product_price;
+        $product->product_price_sale = $request->product_price_sale;
+        $product->product_content = $request->product_content;
+        $product->product_desc = $request->product_desc;
+        $product->product_status = $request->product_status;
+        if($request->hasFile('product_image')){
+            $this->validate(
+                $request,
+                [
+                    //Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
+                    'product_image' => 'mimes:jpg,jpeg,png,gif|max:2048',
+                ],
+                [
+                    //Tùy chỉnh hiển thị thông báo không thõa điều kiện
+                    'product_image.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
+                    'product_image.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
+                ]
+            );
+            $get_image = $request->hasFile('product_image');
+            if ($get_image) {
+                $allowedfileExtension = ['jpg', 'png', 'jpeg'];
+                $files = $request->file('product_image');
+                $exe_flg = \true;
+                foreach ($files as $file) {
+                    $extension = $file->getClientOriginalExtension();
+                    $check = in_array($extension, $allowedfileExtension);
+                    if (!$check) {
+                        $exe_flg = \false;
+                        break;
+                    }
+                }
+                if ($exe_flg) {
+
+                    $product->save();
+                    foreach ($request->product_image as $image) {
+                        $filename = $image->store('product', 'public');
+
+                        $image = new Image();
+                        $image->image = $filename;
+                        $image->product_id = $product->product_id;
+                        $image->save();
+                    }
+                    $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
+
+                    foreach ($avatar as $value) {
+                        $product->product_image = $value->image;
+                        $product->save();
+                    }
+                }
+                Alert()->success('Cập nhập thành công !')->autoClose(1500);
+                return \redirect()->route('product.list');
+            }
+        }
+
+
  }
  public function remove($id){
-             $product =   DB::table('products')->where('product_id',$id)->delete();
+            $image=Image::where('product_id',$id)->delete();
+            $product =   DB::table('products')->where('product_id',$id)->delete();
              return response()->json($product);
  }
     public function active($id){
             DB::table('products')->where('product_id',$id)->update(['product_status'=>0]);
             Alert()->success('Hủy kích hoạt thành công !')->autoClose(1500);
             return \redirect()->route('product.list');
-
     }
     public function unactive($id){
             DB::table('products')->where('product_id',$id)->update(['product_status'=>1]);

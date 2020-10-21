@@ -15,6 +15,10 @@ class ProductRepo{
         public function productDetail($id){
             return $this->product->findOrFail($id);
         }
+        public function getImageOfProduct($id){
+            $images=$this->product->find($id)->images;
+            return $images;
+        }
 
 
 

@@ -438,8 +438,7 @@
                     </a>
                   </div>
                   <p>
-                    Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod
-                    tempor incididunt ut labore et dolore
+                    PetFood là trang mua sắm trực tuyến của cộng đồng yêu thú cưng, nhằm tri ân cộng đồng với những ưu đãi tốt nhất.
                   </p>
                   <div class="social-icon">
                     <ul>
@@ -551,7 +550,7 @@
           <div class="row">
             <div class="col-12">
               <div class="copyright text-center">
-                <p>Copyright © <a href="#">Marten.</a> All Right Reserved.</p>
+                <p>Copyright © All Right Reserved.</p>
               </div>
             </div>
           </div>
