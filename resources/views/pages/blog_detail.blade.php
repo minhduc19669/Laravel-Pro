@@ -5,28 +5,25 @@
 <div class="shop-area pt-100 pb-100">
             <div class="container">
                 <div class="row flex-row-reverse">
+                    @foreach($news as $key => $news)
                     <div class="col-lg-9 col-md-8">
                         <div class="blog-details-wrapper res-mrg-top">
                             <div class="single-blog-wrapper">
                                 <div class="blog-img mb-30">
-                                    <img src="assets/img/blog/blog-details.jpg" alt="">
+                                    <img src="\news\{{$news->news_image}}" alt="">
                                 </div>
                                 <div class="blog-details-content">
-                                    <h2>new shop collection our shop</h2>
+                                    <h2>{{$news->news_title}}</h2>
                                     <div class="blog-meta">
                                         <ul>
-                                            <li>May - 14.09.2018 </li>
+                                            <li>{{$news->news_date}} </li>
                                             <li>
                                                 <a href="#"> 02 Comments</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhendit in voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum.</p>
-                                <blockquote class="importent-title">
-                                    <h4>Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt labo dolor magna aliqua. Ut enim ad minim veniam quis nostrud.</h4>
-                                </blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehendrit.</p>
+                               {{$news->news_content}}
                                 <div class="dec-img-wrapper">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
@@ -115,6 +112,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
                     <div class="col-lg-3 col-md-4">
                         <div class="shop-sidebar blog-mrg">
                             <div class="shop-widget">

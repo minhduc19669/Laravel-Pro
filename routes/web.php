@@ -77,11 +77,14 @@ Route::prefix('cart')->group(function(){
 });
 //page
 Route::prefix('page')->group(function(){
+    //product
     Route::get('product', 'PageController@allProduct')->name('page.index');
     Route::get('product/details/{id}', 'PageController@productDetail')->name('page.detail_product');
     Route::get('product/category/{id}','PageController@productCategory')->name('page.product_category');
     Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
+   //blog
+    Route::get('blog/details/{id}','PageController@blogDetail')->name('page.detail_blog');
 });
 
 
@@ -219,7 +222,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('customer/edit/{id}', 'CustomerController@edit')->name('customer.edit');
             Route::post('customer/update/{id}', 'CustomerController@update')->name('customer.update');
             Route::get('customer/remove{id}','CustomerController@remove')->name('customer.remove');
-              //shipping
+            Route::get('customer/search','CustomerController@action')->name('customer.search');
+        //shipping
             Route::get("shipping","ShippingController@list")->name('shipping.list');
             Route::get("shipping/add","ShippingController@add")->name('shipping.add');
             Route::post("shipping/save","ShippingController@save")->name('shipping.save');

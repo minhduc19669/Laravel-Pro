@@ -19,9 +19,9 @@ class CreateCategoriesTable extends Migration
             $table->unsignedBigInteger('cate_pro_id')->unique()->nullable();
             $table->unsignedBigInteger('cate_news_id')->unique()->nullable();
             $table->unsignedBigInteger('sub_id')->unique()->nullable();
-            $table->string('category_product_name')->unique()->nullable();
-            $table->string('category_news_name')->unique()->nullable();
-            $table->string('category_sub_product_name')->unique()->nullable();
+            $table->string('category_product_name')->nullable();
+            $table->string('category_news_name')->nullable();
+            $table->string('category_sub_product_name')->nullable();
             $table->string('category_sub_product_desc')->nullable();
             $table->string('category_product_desc')->nullable();
             $table->string('category_news_desc')->nullable();
