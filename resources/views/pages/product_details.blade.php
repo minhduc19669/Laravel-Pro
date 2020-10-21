@@ -1,34 +1,25 @@
 @extends('layout.layout')
 @section('url','https://petnhatrang.com/wp-content/themes/petshop/images/background-banner.jpg')
 @section('content')
-        <div class="shop-area pt-95 pb-100">
+<div class="shop-area pt-95 pb-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-img">
-                        <img src="{{asset('storage/'.$product->product_image)}}" alt=""/>
-                            {{-- <div id="gallery" class="mt-12 product-dec-slider owl-carousel">
-                                <a data-image="{{asset('assets_page/img/product-details/l1.jpg')}}" data-zoom-image="{{asset('assets_page/img/product-details/bl1.jpg')}}">
-                                    <img src="{{asset('assets_page/img/product-details/s1.jpg')}}" alt="">
-                                </a>
-                                <a data-image="{{asset('assets_page/img/product-details/l2.jpg')}}" data-zoom-image="{{asset('')}}assets_page/img/product-details/bl2.jpg">
-                                    <img src="{{asset('assets_page/img/product-details/s2.jpg')}}" alt="">
-                                </a>
-                                <a data-image="{{asset('assets_page/img/product-details/l3.jpg')}}" data-zoom-image="{{asset('')}}assets_page/img/product-details/bl3.jpg">
-                                    <img src="{{asset('assets_page/img/product-details/s3.jpg')}}" alt="">
-                                </a>
-                                <a data-image="{{asset('assets_page/img/product-details/l4.jpg')}}" data-zoom-image="{{asset('assets_page/img/product-details/bl4.jpg')}}">
-                                    <img src="{{asset('assets_page/img/product-details/s4.jpg')}}" alt="">
-                                </a>
-                            <a data-image="{{asset('assets_page/img/product-details/l3.jpg')}}" data-zoom-image="{{asset('assets_page/img/product-details/bl3.jpg')}}"> --}}
-                                {{-- <img src="{{asset('assets_page/img/product-details/s3.jpg')}}" alt="">
-                                </a> --}}
+                        <img  src="{{asset('storage/'.$product->product_image)}}" alt="zoom"/>
+                            <div id="gallery" class="mt-12 product-dec-slider owl-carousel">
+                                @foreach ($images as $item)
+
+                                    <img src="{{asset('storage/'.$item->image)}}" alt="">
+
+                                @endforeach
+
+                            </div>
                         </div>
                     </div>
-
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content">
-                        <h2>{{$product->product_name}}</h2>
+                            <h2>Dog Calcium Food</h2>
                             <div class="product-rating">
                                 <i class="ti-star theme-color"></i>
                                 <i class="ti-star theme-color"></i>
@@ -38,8 +29,8 @@
                                 <span> ( 01 Customer Review )</span>
                             </div>
                             <div class="product-price">
-                                <span class="new">{{$product->product_price-$product->product_price_sale}} </span>
-                            <span class="old">{{$product->product_price}}</span>
+                                <span class="new">$20.00 </span>
+                                <span class="old">$50.00</span>
                             </div>
                             <div class="in-stock">
                                 <span><i class="ion-android-checkbox-outline"></i> In Stock</span>
@@ -48,7 +39,15 @@
                                 <span>SKU#: MS04</span>
                             </div>
                             <p>Founded in 1989, Jack & Jones is a Danish brand that offers cool, relaxed designs that express a strong visual style through their diffusion lines, Jack & Jones intelligence and Jack & Jones vintage.</p>
-
+                            <div class="product-details-style shorting-style mt-30">
+                                <label>color:</label>
+                                <select>
+                                    <option value=""> Choose an option</option>
+                                    <option value=""> orange</option>
+                                    <option value=""> pink</option>
+                                    <option value=""> yellow</option>
+                                </select>
+                            </div>
                             <div class="quality-wrapper mt-30 product-quantity">
                                 <label>Qty:</label>
                                 <div class="cart-plus-minus">
@@ -57,7 +56,7 @@
                             </div>
                             <div class="product-list-action">
                                 <div class="product-list-action-left">
-                                <a id="addtocart1" style="cursor: pointer;color:white" add-id="{{$product->product_id}}" class="addtocart-btn" title="Add to cart">
+                                    <a class="addtocart-btn" href="#" title="Add to cart">
                                         <i class="ion-bag"></i>
                                         Add to cart
                                     </a>

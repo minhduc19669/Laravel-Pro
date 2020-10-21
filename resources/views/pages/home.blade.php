@@ -18,7 +18,8 @@
             </div>
           </div>
         </div>
-        <div class="single-slider pt-215 pb-228 bg-img" style="background-image: url(assets_page/img/slider/slider-3.jpg)">
+        <div class="single-slider pt-215 pb-228 bg-img"
+        style="background-image: url(assets_page/img/slider/slider-3.jpg)">
           <div class="container">
             <div class="slider-content slider-content-white slider-animated-2 text-center">
               <h3 class="animated">We keep pets for pleasure.</h3>

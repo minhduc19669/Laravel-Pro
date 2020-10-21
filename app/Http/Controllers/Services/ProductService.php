@@ -16,6 +16,10 @@ class ProductService {
     public function productDetail($id){
         return $this->productRepo->productDetail($id);
     }
+    public function getImageProduct($id){
+        $images= $this->productRepo->getImageOfProduct($id);
+        return $images;
+    }
 
 
 }

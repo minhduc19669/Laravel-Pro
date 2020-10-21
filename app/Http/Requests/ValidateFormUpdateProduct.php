@@ -33,7 +33,6 @@ class ValidateFormUpdateProduct extends FormRequest
             'product_status' => 'required',
             'product_brand' => 'required',
             'product_cate' => 'required',
-            'product_image' => 'mimes:jpeg,jpg,png'
         ];
     }
     public function messages()
@@ -50,8 +49,6 @@ class ValidateFormUpdateProduct extends FormRequest
             'product_status.required' => 'Không được phép để trống',
             'product_brand.required' => 'Không được phép để trống',
             'product_cate.required' => 'Không được phép để trống',
-            'product_image.mimes' => 'Chỉ được phép thêm file jpeg ,jpg , png',
-            'product_image.image' => 'cần nhập đúng định dạng file ảnh'
         ];
     }
 }
