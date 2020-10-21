@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Services\ProductService;
 use App\News;
 use App\Product;
+
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -26,6 +27,17 @@ class PageController extends Controller
         $product=$this->productServ->productDetail($id);
         return \view('pages.product_details',\compact('product'));
     }
+
+    public function showBlog(){
+        $news= News::all();
+        return \view('pages.blog',\compact('news'));
+    }
+    public function blogDetails($id){
+        $news=News::find($id);
+        return \view('pages.blog_detail',\compact('news'));
+    }
+
+
     public function  productCategory($id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();

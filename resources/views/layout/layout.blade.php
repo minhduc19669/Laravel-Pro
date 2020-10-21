@@ -64,7 +64,7 @@
                       </li>
                       <li>
                         <a href="#"
-                          >Các địa chỉ</a
+                          >Yêu thích</a
                         >
                       </li>
                                             <li>
@@ -95,7 +95,7 @@
           <div class="row">
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-5">
               <div class="logo pt-39">
-                <a href="index.html"
+              <a href="{{route('home')}}"
                   ><img alt="" src="{{asset('assets_page/img/logo/logo.png')}}"
                 /></a>
               </div>
@@ -119,7 +119,6 @@
                                 @endforeach
                           </ul>
                         </li>
-
                         <li>
                           <ul>
                             <li>
@@ -131,7 +130,6 @@
                             </li>
                           </ul>
                         </li>
-
                               @endforeach
                       </ul>
                     </li>
@@ -139,7 +137,7 @@
                     <a href="{{route('home.allProduct')}}">Sản phẩm</a>
                     </li>
                     <li>
-                      <a href="blog-leftsidebar.html">Blog</a>
+                    <a href="{{route('page.blog')}}">Blog</a>
                     </li>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">CONTACT US</a></li>

@@ -33,7 +33,7 @@ class ValidateFormAddProduct extends FormRequest
             'product_status' => 'required',
             'product_brand' => 'required',
             'product_cate' => 'required',
-            'product_image' => 'mimes:jpeg,jpg,png|required',
+            'product_image' => 'required|max:10240',
 
         ];
     }
@@ -54,7 +54,7 @@ class ValidateFormAddProduct extends FormRequest
             'product_brand.required' => 'Không được phép để trống',
             'product_cate.required' => 'Không được phép để trống',
             'product_image.required' => 'Không được phép để trống',
-            'product_image.mimes' => 'Chỉ được phép thêm file jpeg,jpg,png',
+            'product_image.max' => 'Dung lượng ảnh tối đa là 10Mb',
         ];
     }
 }

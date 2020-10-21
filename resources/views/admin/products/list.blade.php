@@ -50,6 +50,7 @@
                     dataType:'json',
                     success:function(data)
                     {
+                        console.log(data.table_data);
                         $('tbody').html(data.table_data);
                         $('#total_records').text(data.total_data);
                     }

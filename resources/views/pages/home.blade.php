@@ -4,14 +4,10 @@
 <h3 class="animated" style=" text-align: center; margin-top: 20px">❄️ ❄️ ❄️ ❄️ ❄️ Merry Xmas ❄️ ❄️ ❄️ ❄️ ❄️ </h3>
     <div class="slider-area">
       <div class="slider-active owl-dot-style owl-carousel">
-        <div
-          class="single-slider pt-215 pb-228 bg-img"
-          style="background-image: url(assets_page/img/slider/slider-2.jpg)"
-        >
+        <div class="single-slider pt-215 pb-228 bg-img"
+          style="background-image: url(assets_page/img/slider/slider-2.jpg)">
           <div class="container">
-            <div
-              class="slider-content slider-content-white slider-animated-2 text-center"
-            >
+            <div class="slider-content slider-content-white slider-animated-2 text-center">
               <h3 class="animated">We keep pets for pleasure.</h3>
               <h1 class="animated">
                 Standard Food & Vitamins <br />For all Pets
@@ -22,14 +18,9 @@
             </div>
           </div>
         </div>
-        <div
-          class="single-slider pt-215 pb-228 bg-img"
-          style="background-image: url(assets_page/img/slider/slider-3.jpg)"
-        >
+        <div class="single-slider pt-215 pb-228 bg-img" style="background-image: url(assets_page/img/slider/slider-3.jpg)">
           <div class="container">
-            <div
-              class="slider-content slider-content-white slider-animated-2 text-center"
-            >
+            <div class="slider-content slider-content-white slider-animated-2 text-center">
               <h3 class="animated">We keep pets for pleasure.</h3>
               <h1 class="animated">
                 Standard Food & Vitamins <br />For all Pets
@@ -76,7 +67,7 @@
             <div class="product-wrapper mb-10">
               <div class="product-img" style="width: 230px;height: 190px;">
                 <a href="#">
-                <img src="{{asset('product/'.$product->product_image)}}" alt="" />
+                <img src="{{asset('storage/'.$product->product_image)}}" alt="" />
                 </a>
                 <div class="product-action">
                 <a id="viewproduct" view-id="{{$product->product_id}}"
@@ -183,7 +174,7 @@
     </div>
     <div
       class="deal-area bg-img deal-style-white pt-95 pb-100 bg-img"
-      style="background-image: url(assets_page/img/banner/banner-2.jpg)"
+      style="background-image: url(assets_page/img/banner/banner-0.jpg)"
     >
       <div class="container">
         <div class="section-title section-title-white text-center mb-50">
