@@ -307,7 +307,7 @@
                                                                 <tr>
                                                                     <td>
                                                                         <div class="o-pro-dec">
-                                                                            <img style="margin-left: 185px" src="{{asset('product/'.$item->options['image'])}}" alt="" width="100px";height="100px">
+                                                                            <img style="margin-left: 185px" src="{{asset('storage/'.$item->options['image'])}}" alt="" width="100px";height="100px">
                                                                         <p>{{$item->name}}</p>
 
                                                                         </div>

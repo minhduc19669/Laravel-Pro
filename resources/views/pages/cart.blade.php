@@ -24,7 +24,7 @@
                                         @foreach($data as $key => $item)
                                         <tr>
                                             <td class="product-thumbnail">
-                                            <a href="#"><img width="150px" height="130px" src="{{asset('product/'.$item->options['image'])}}" alt=""></a>
+                                            <a href="#"><img width="150px" height="130px" src="{{asset('storage/'.$item->options['image'])}}" alt=""></a>
                                             </td>
                                             <td><a href="#">{{$item->name}}</a></td>
                                             <td style="width: 90px;" ><span style="margin-left: 35px" class="amount">{{number_format($item->price)}} <u>đ</u></span></td>
