@@ -83,8 +83,13 @@ Route::prefix('page')->group(function(){
     Route::get('product/category/{id}','PageController@productCategory')->name('page.product_category');
     Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
-   //blog
-    Route::get('blog/details/{id}','PageController@blogDetail')->name('page.detail_blog');
+
+});
+Route::prefix('blog')->group(function (){
+//blog
+    Route::get('blog/details/{id}','BlogController@blogDetail')->name('page.detail_blog');
+
+
 });
 
 
