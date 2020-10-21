@@ -25,10 +25,12 @@ class PageController extends Controller
         return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function productDetail($id){
-        $category_news =Category::all();
         $product=$this->productServ->productDetail($id);
-        return \view('pages.product_details',\compact('product','category_news'));
+        $images=$this->productServ->getImageProduct($id);
+        return \view('pages.product_details',\compact('product','images'));
     }
+
+
     public function  productCategory($id){
         $category_news =Category::all();
         $brand = Brand::all();
@@ -73,6 +75,10 @@ class PageController extends Controller
             ->whereNotIn('news.news_id',[$id])
              ->get();
         return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
+    }
+    public function blogCategory($id){
+
+        return view('pages.blogCategory');
     }
 
 }

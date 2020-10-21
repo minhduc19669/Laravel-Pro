@@ -23,7 +23,6 @@ Route::get('logout', 'LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/product', 'HomeController@product')->name('home.product');
-    Route::get('layout','HomeController@showLayout');
 
     //home-customer-login
 
@@ -49,8 +48,6 @@ Route::prefix('home')->group(function(){
     //product
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
-
-
 
     //blog
     Route::get('blog', 'PageController@showBlog')->name('page.blog');

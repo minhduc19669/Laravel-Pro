@@ -18,7 +18,8 @@
             </div>
           </div>
         </div>
-        <div class="single-slider pt-215 pb-228 bg-img" style="background-image: url(assets_page/img/slider/slider-3.jpg)">
+        <div class="single-slider pt-215 pb-228 bg-img"
+        style="background-image: url(assets_page/img/slider/slider-3.jpg)">
           <div class="container">
             <div class="slider-content slider-content-white slider-animated-2 text-center">
               <h3 class="animated">We keep pets for pleasure.</h3>
@@ -98,9 +99,7 @@
             </div>
           </div>
           @endforeach
-
         </div>
-
       </div>
     </div>
     <div class="testimonial-area pt-90 pb-70">
@@ -374,212 +373,6 @@
         </div>
       </div>
     </div>
-    <!-- modal -->
-    {{-- <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-      >
-        <span class="ti-close" aria-hidden="true"></span>
-      </button>
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="qwick-view-left">
-              <div class="quick-view-learg-img">
-                <div class="quick-view-tab-content tab-content">
-                  <div
-                    class="tab-pane active show fade"
-                    id="modal1"
-                    role="tabpanel"
-                  >
-                    <img src="{{asset('assets_page/img/quick-view/l1.jpg')}}" alt="" />
-                  </div>
-                  <div class="tab-pane fade" id="modal2" role="tabpanel">
-                    <img src="{{asset('assets_page/img/quick-view/l2.jpg')}}" alt="" />
-                  </div>
-                  <div class="tab-pane fade" id="modal3" role="tabpanel">
-                    <img src="{{asset('assets_page/img/quick-view/l3.jpg')}}" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="quick-view-list nav" role="tablist">
-                <a class="active" href="#modal1" data-toggle="tab">
-                  <img src="{{asset('assets_page/img/quick-view/s1.jpg')}}" alt="" />
-                </a>
-                <a href="#modal2" data-toggle="tab" role="tab">
-                  <img src="{{asset('assets_page/img/quick-view/s2.jpg')}}" alt="" />
-                </a>
-                <a href="#modal3" data-toggle="tab" role="tab">
-                  <img src="{{asset('assets_page/img/quick-view/s3.jpg')}}" alt="" />
-                </a>
-              </div>
-            </div>
-            <div class="qwick-view-right">
-              <div class="qwick-view-content">
-                <h3>Dog Calcium Food</h3>
-                <div class="product-price">
-                  <span>$19.00 </span>
-                </div>
-                <div class="product-rating">
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                  <i class="ion-star theme-color"></i>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adip elit, sed do amt
-                  tempor incididun ut labore et dolore magna aliqua. Ut enim ad
-                  mi , quis nostrud veniam exercitation .
-                </p>
-                <div class="quick-view-select">
-                  <div class="select-option-part">
-                    <label>Size*</label>
-                    <select class="select">
-                      <option value="">- Please Select -</option>
-                      <option value="">XS</option>
-                      <option value="">S</option>
-                      <option value="">M</option>
-                      <option value="">L</option>
-                      <option value="">XL</option>
-                      <option value="">XXL</option>
-                    </select>
-                  </div>
-                  <div class="select-option-part">
-                    <label>Color*</label>
-                    <select class="select">
-                      <option value="">- Please Select -</option>
-                      <option value="">orange</option>
-                      <option value="">pink</option>
-                      <option value="">yellow</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="quickview-plus-minus">
-                  <div class="cart-plus-minus">
-                    <input
-                      type="text"
-                      value="2"
-                      name="qtybutton"
-                      class="cart-plus-minus-box"
-                    />
-                  </div>
-                  <div class="quickview-btn-cart">
-                    <a class="btn-style" id="addtocart" href="#">add to cart</a>
-                  </div>
-                  <div class="quickview-btn-wishlist">
-                    <a class="btn-hover" href="#"><i class="ti-heart"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> --}}
-    <!-- all js here -->
-    {{-- <script>
-        ///addtocart
-        $(document).ready(function($){
-            let listProduct=$("#product #addtocart");
-                listProduct.on('click',function(){
-                    var id=$(this).attr('buy-id');
-                    $.ajax({
-                    url:'http://laravel-training.local/cart/add/'+id,
-                    dataType:'json',
-                    success:function(result){
-                        let count = result.countCart;
-                        let data=result.contentCart;
-                        let element="";
-                        $.each(data,function(key,value){
-                        element+= '<li class="single-shopping-cart" id="'+'item_id_'+value.rowId+ '">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
-                        });
-                        $('#cart').html(element);
-                        $("#countcart").html(""+count);
-                        $("#total").html(result.total+" VNĐ")
-                        }
-                    });
-                    Swal.fire({
-                        title: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
-                        icon:'success',
-                        background: '#fff url(/images/trees.png)',
-                        backdrop: `
-                            rgba(0,0,123,0.4)
-                            url("/images/nyan-cat.gif")
-                            left top
-                            no-repeat
-                        `
-                    });
-                });
 
-                ////add in qickview-modal
-            let product=$("#addtocart1");
-                product.on('click',function(){
-                    var id=$("#addtocart1").val();
-                    $.ajax({
-                    url:'http://laravel-training.local/cart/add/'+id,
-                    dataType:'json',
-                    success:function(result){
-                        let count = result.countCart;
-                        let data=result.contentCart;
-                        let element="";
-                        $.each(data,function(key,value){
-                        element+= '<li class="single-shopping-cart" id="'+'item_id_' + value.rowId + '">'+'<div class="shopping-cart-img">' +'<a href="#" >'+'<img src="' +'product'+'/'+ value.options.image + '" />'+'</a>'+'</div>'+'<div class="shopping-cart-title">'+'<h4>'+'<a href="">'+value.name+'</a>'+'</h4>'+'<h6>Số lượng: '+value.qty+'</h6>'+'<span>Giá: '+value.price+'</span>'+'</div>'+'<div id="productcart" class="shopping-cart-delete" style="">'+'<a style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">'+'<i class="ti-close">'+'</i>'+'</a>'+'</div>'+'</li>';
-                        });
-                        $('#cart').html(element);
-                        $("#countcart").html(""+count);
-                        $("#total").html(result.total+" VNĐ")
-                        }
-                    })
-                });
-
-                ///delete
-            $("body").on('click','#deleteitem',function(){
-                var rowId=$(this).attr('item-id');
-                console.log(rowId);
-                $.ajax({
-                    url:'http://laravel-training.local/cart/delete/'+rowId,
-                    dataType:'json',
-                    success:function(data){
-                        $("#item_id_"+rowId).remove();
-                        let count=data.countCart;
-                        $("#countcart").html(""+count);
-                        $("#total").html(data.total+" VNĐ")
-                    }
-                })
-            });
-            /////quick-view
-            let listquickview=$('#product #viewproduct');
-            listquickview.on('click',function(){
-                var view_id=$(this).attr('view-id');
-                $.ajax({
-                    url:'http://laravel-training.local/cart/quick-view/'+view_id,
-                    dataType:'json',
-                    success:function(result){
-                        document.getElementById('addtocart1').value=view_id;
-                        let product_name=result.product_name;
-                        let product_price=result.product_price;
-                        let product_desc=result.product_desc;
-                        let product_content=result.product_content;
-                        $("#product-name").html(product_name);
-                        $("#product-price").html(product_price);
-                        $("#product-content").html(product_content);
-                        $("#product-desc").html(product_desc);
-                    }
-                })
-            })
-        });
-    </script> --}}
 @endsection
-
-
     <!-- all js here -->

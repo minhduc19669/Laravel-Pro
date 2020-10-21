@@ -54,7 +54,7 @@
                           >
                             <i class="ti-plus"></i>
                           </a>
-                          <a id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
+                          <a style="cursor: pointer;" id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
                             <i class="ti-shopping-cart"></i>
                           </a>
                         </div>
