@@ -25,9 +25,14 @@ class PageController extends Controller
         return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function productDetail($id){
-        $category_news =Category::all();
+       
         $product=$this->productServ->productDetail($id);
-        return \view('pages.product_details',\compact('product','category_news'));
+
+        $images=$this->productServ->getImageProduct($id);
+        return \view('pages.product_details',\compact('product','images'));
+    }
+
+ 
     }
     public function  productCategory($id){
         $category_news =Category::all();

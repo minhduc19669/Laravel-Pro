@@ -79,25 +79,6 @@
                 })
             }
         });
-        // $(document).on('click', '#unactive', function() {
-        //     var id = $(this).data('id');
-        //     var slide_status =$(this).data('slide_status')
-        //     var query = $(this).val();
-        //     console.log(id);
-        //     $.ajax({
-        //         url: 'slide/un-active/'+id,
-        //         method: 'get',
-        //         dataType: 'json',
-        //         type: 'unactive',
-        //         data: {
-        //             "id": id,
-        //             'slide_status': slide_status,
-        //         },
-        //         success: function (data) {
-        //         }
-        //
-        //     })
-        //
-        // });
+
     </script>
 @endsection
