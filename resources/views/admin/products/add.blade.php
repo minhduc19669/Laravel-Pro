@@ -98,14 +98,14 @@
                 <div class="form-row col-md-12">
                     <div class="form-group col-md-5">
                         <label for="modelName">Chi tiết sản phẩm</label>
-                        <textarea value="{{old('product_content')}}" va id="editor1" type="text" class="form-control" name="product_content" placeholder="Chi tiết sản phẩm"></textarea>
+                        <textarea value="{{old('product_content')}}" va id="editor1" type="text" class="form-control" name="product_content" placeholder="Chi tiết sản phẩm">{{old('product_content')}}</textarea>
                         @if ($errors->has('product_content'))
                             <p style="color: red">{{ $errors->first('product_content') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md-5">
                         <label for="salePrice">Ghi chú</label>
-                        <textarea value="{{old('product_desc')}}" id="editor2" type="text" class="form-control" name="product_desc" placeholder="Ghi chú"></textarea>
+                        <textarea value="{{old('product_desc')}}" id="editor2" type="text" class="form-control" name="product_desc" placeholder="Ghi chú">{{old('product_desc')}}</textarea>
                         @if ($errors->has('product_desc'))
                             <p style="color: red">{{ $errors->first('product_desc') }}</p>
                         @endif
