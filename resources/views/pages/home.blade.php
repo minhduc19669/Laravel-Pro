@@ -67,7 +67,7 @@
           <div id="product" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
             <div class="product-wrapper mb-10">
               <div class="product-img" style="width: 230px;height: 190px;">
-                <a href="#">
+              <a href="{{route('product.details',$product->product_id)}}">
                 <img src="{{asset('storage/'.$product->product_image)}}" alt="" />
                 </a>
                 <div class="product-action">

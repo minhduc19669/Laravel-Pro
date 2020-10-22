@@ -26,7 +26,8 @@ class PageController extends Controller
     public function productDetail($id){
         $product=$this->productServ->productDetail($id);
         $images=$this->productServ->getImageProduct($id);
-        return \view('pages.product_details',\compact('product','images'));
+        $productRelated=$this->productServ->getProductRelatedTo($id);
+        return \view('pages.product_details',\compact('product','images', 'productRelated','image'));
     }
 
     public function showBlog(){

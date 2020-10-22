@@ -39,7 +39,7 @@
               <div class="product-view product-grid">
                 <div class="row">
                     @foreach ($products as $item)
-                        <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
+                <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
                     <div id="product5" class="product-wrapper mb-10">
                       <div class="product-img">
                         <a href="{{route('product.details',$item->product_id)}}">
