@@ -6,15 +6,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-img">
-                        <img  src="{{asset('storage/'.$product->product_image)}}" alt="zoom"/>
-                            <div id="gallery" class="mt-12 product-dec-slider owl-carousel">
-                                @foreach ($images as $item)
+                        <img width="200px" height="500px"  src="{{asset('storage/'.$product->product_image)}}" alt=""/>
+<div class="mt-12 product-dec-slider owl-carousel">
+                        @foreach ($images as $item)
 
-                                    <img src="{{asset('storage/'.$item->image)}}" alt="">
+                                    <img width="100px" height="150px" src="{{asset('storage/'.$item->image)}}" alt="">
 
-                                @endforeach
-
-                            </div>
+                        @endforeach</div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -186,7 +184,7 @@
                 </div>
             </div>
         </div>
-        <div class="related-product-area pt-95 pb-80 gray-bg">
+ <div class="related-product-area pt-95 pb-80 gray-bg">
             <div class="container">
                 <div class="section-title text-center mb-55">
                     <h4>Most Populer</h4>
@@ -354,7 +352,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
 
 

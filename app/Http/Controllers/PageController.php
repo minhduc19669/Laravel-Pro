@@ -33,7 +33,8 @@ class PageController extends Controller
 
 >>>>>>> 04e73f592c04cf68996a2577b66ae0a4bcab6c43
         $images=$this->productServ->getImageProduct($id);
-        return \view('pages.product_details',\compact('product','images'));
+        $productRelated=$this->productServ->getProductRelatedTo($id);
+        return \view('pages.product_details',\compact('product','images', 'productRelated','image'));
     }
 
 <<<<<<< HEAD
