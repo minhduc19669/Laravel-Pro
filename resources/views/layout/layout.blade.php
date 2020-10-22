@@ -111,9 +111,7 @@
                       <a href="#">Danh mục</a>
                                             <ul class="mega-menu">
                                                 @foreach($category as $key => $cate)
-
                                                 <li>
-
                             <ul>
                               <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
                                  @foreach($cate -> Subcategories as $cate)

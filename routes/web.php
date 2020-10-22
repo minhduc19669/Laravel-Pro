@@ -87,11 +87,6 @@ Route::prefix('page')->group(function(){
 });
 
 
-
-
-
-
-
 //manager//
 Route::middleware(['auth'])->group(function (){
     //user

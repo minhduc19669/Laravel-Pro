@@ -145,7 +145,7 @@ DB::commit();
                 foreach($data as $key => $row)
                 {
                     $output .= '
-        <tr id=item_'.$row->id.'>
+        <tr id="item_'.$row->id.'">
         <td>'.++$key.'</td>
         <td>'.$row->shipping_name_receive.'</td>
         <td>'.$row->shipping_phone_receive.'</td>

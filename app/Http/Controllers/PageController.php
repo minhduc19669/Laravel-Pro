@@ -6,7 +6,6 @@ use App\Category;
 use App\Http\Services\ProductService;
 use App\News;
 use App\Product;
-
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,45 +17,30 @@ class PageController extends Controller
     }
 //product
     public function allProduct(){
-        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $products= $this->productServ->get(10);
-        return \view('pages.product',\compact('products','category','brand','category_news'));
+        return \view('pages.product',\compact('products','category','brand'));
     }
     public function productDetail($id){
-<<<<<<< HEAD
-        $product=$this->productServ->productDetail($id);
-=======
-       
-        $product=$this->productServ->productDetail($id);
 
->>>>>>> 04e73f592c04cf68996a2577b66ae0a4bcab6c43
+        $product=$this->productServ->productDetail($id);
         $images=$this->productServ->getImageProduct($id);
         return \view('pages.product_details',\compact('product','images'));
     }
-
-<<<<<<< HEAD
-
-=======
- 
-    }
->>>>>>> 04e73f592c04cf68996a2577b66ae0a4bcab6c43
     public function  productCategory($id){
-        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('cate_pro_id',$id)->first();
         $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->get();
-        return \view('pages.product',\compact('products','category','brand','category_news'));
+        return \view('pages.product',\compact('products','category','brand'));
     }
     public function  productSubcategory($id){
-        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('sub_id',$id)->first();
         $products = Product::where('sub_id',$cate_pro->sub_id)->get();
-        return \view('pages.product',\compact('products','category','brand','category_news'));
+        return \view('pages.product',\compact('products','category','brand'));
     }
     public function  productBrand($id){
         $category_news =Category::all();
