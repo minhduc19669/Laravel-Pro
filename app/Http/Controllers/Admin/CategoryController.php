@@ -107,9 +107,6 @@ class CategoryController extends Controller{
             echo json_encode($data);
         }
     }
-
-
-
         //news
 
                 public function list_news(){

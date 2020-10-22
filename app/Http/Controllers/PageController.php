@@ -30,7 +30,6 @@ class PageController extends Controller
         $productRelated=$this->productServ->getProductRelatedTo($id);
         return \view('pages.product_details',\compact('product','images', 'productRelated','image'));
     }
-
     public function  productCategory($id){
         $category_news =Category::all();
         $brand = Brand::all();
