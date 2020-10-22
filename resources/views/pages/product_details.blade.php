@@ -191,10 +191,11 @@
                     <h2>Related Products</h2>
                 </div>
                 <div class="related-product-active owl-carousel">
-                    <div class="product-wrapper">
+                    @foreach ($productRelated as $item)
+                        <div class="product-wrapper">
                         <div class="product-img">
                             <a href="product-details.html">
-                                <img src="assets/img/product/product-4.jpg" alt="">
+                            <img src="{{asset('storage/'.$item->product_image)}}" alt="">
                             </a>
                             <div class="product-action">
                                 <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
@@ -218,6 +219,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
                 </div>
             </div>
     </div>
