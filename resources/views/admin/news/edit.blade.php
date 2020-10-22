@@ -22,7 +22,7 @@
                                 @if($edit->category_id == $cate->cate_news_id)
                                     <option selected value="{{$cate->cate_news_id}}">{{$cate->category_news_name}}</option>
                                 @else
-                                    <option value="{{$cate->cate_news_id}}">{{$cate->news_cate_title}}</option>
+                                    <option value="{{$cate->cate_news_id}}">{{$cate->category_news_name}}</option>
 
                                 @endif
                             @endforeach

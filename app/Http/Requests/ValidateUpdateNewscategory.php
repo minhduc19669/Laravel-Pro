@@ -24,7 +24,6 @@ class ValidateUpdateNewscategory extends FormRequest
     public function rules()
     {
         return [
-            'cate_news_id' => 'required|numeric|min:1|max:200',
             'category_news_name' => 'required|min:3',
             'category_news_desc' => 'required|min:5',
         ];

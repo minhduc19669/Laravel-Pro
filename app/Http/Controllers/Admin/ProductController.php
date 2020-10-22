@@ -40,12 +40,13 @@ class ProductController extends Controller
 
 }
     public function save(ValidateFormAddProduct $request ){
+        $product_code =substr(md5(microtime()),rand(0,26),5) ;
              $product = new Product();
              $product->cate_pro_id = $request->product_cate;
              $product->sub_id = $request->cate_sub;
              $product->brand_id = $request->product_brand;
              $product->product_name = $request->product_name;
-             $product->product_code = $request->product_code;
+             $product->product_code = $product_code;
              $product->product_price = $request->product_price;
              $product->product_price_sale = $request->product_price_sale;
              $product->product_content = $request->product_content;
@@ -53,6 +54,7 @@ class ProductController extends Controller
              $product->product_status = $request->product_status;
 
             $get_image = $request->hasFile('product_image');
+
             if ($get_image) {
                 $allowedfileExtension = ['jpg', 'png', 'jpeg'];
                 $files = $request->file('product_image');
@@ -66,7 +68,6 @@ class ProductController extends Controller
                     }
                 }
                 if ($exe_flg) {
-
                     $product->save();
                     foreach ($request->product_image as $image) {
                         $filename = $image->store('product', 'public');
@@ -77,13 +78,12 @@ class ProductController extends Controller
                         $image->save();
                     }
                     $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
-
                     foreach ($avatar as $value) {
                         $product->product_image = $value->image;
                         $product->save();
                     }
                 }
-                Alert()->success('Cập nhập thành công !')->autoClose(1500);
+                Alert()->success('Thêm  thành công !')->autoClose(1500);
                 return \redirect()->route('product.list');
             }
     }

@@ -147,7 +147,7 @@
                                 <li>
                                     <ul>
                                         @foreach($category_news as $cate => $value)
-                                            <li><a href="">{{$value->category_news_name}}</a></li>
+                                            <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>

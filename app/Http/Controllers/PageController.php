@@ -25,15 +25,23 @@ class PageController extends Controller
         return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function productDetail($id){
+<<<<<<< HEAD
+        $product=$this->productServ->productDetail($id);
+=======
        
         $product=$this->productServ->productDetail($id);
 
+>>>>>>> 04e73f592c04cf68996a2577b66ae0a4bcab6c43
         $images=$this->productServ->getImageProduct($id);
         return \view('pages.product_details',\compact('product','images'));
     }
 
+<<<<<<< HEAD
+
+=======
  
     }
+>>>>>>> 04e73f592c04cf68996a2577b66ae0a4bcab6c43
     public function  productCategory($id){
         $category_news =Category::all();
         $brand = Brand::all();
@@ -78,6 +86,11 @@ class PageController extends Controller
             ->whereNotIn('news.news_id',[$id])
              ->get();
         return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
+    }
+    public function blogCategory($id){
+           $category = Category::where('cate_news_id',$id)->first();
+           $news = News::where('category_id',$category->cate_news_id)->get();
+        return view('pages.blogCategory',compact('news'));
     }
 
 }

@@ -10,12 +10,6 @@
             <div class="col-md-12">
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="modelName">ID</label>
-                        <input value="{{$edit->cate_pro_id}}" type="number" min="1" class="form-control" name="cate_pro_id" placeholder="Id danh mục sản phẩm">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục sản phẩm</label>
                         <input value="{{$edit->category_product_name}}" type="text" class="form-control" name="category_product_name" placeholder="Tên danh mục sản phẩm">
                     </div>

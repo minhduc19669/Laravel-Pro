@@ -21,15 +21,29 @@
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormAddProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormNews_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormNews_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSubcategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormSubcategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateFormUpdateCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateUpdateNewscategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateUpdateNewscategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidateUpdateSubcategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ValidateUpdateSubcategory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/blog_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/blog_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,11 +204,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models/Admin" />
       <recent name="$PROJECT_DIR$/node_modules" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories/news" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories/product" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/categories" />
     </key>
   </component>
   <component name="RunManager">
@@ -264,6 +278,9 @@
       <workItem from="1603071449536" duration="20842000" />
       <workItem from="1603157046211" duration="25649000" />
       <workItem from="1603244017625" duration="6606000" />
+      <workItem from="1603276410805" duration="224000" />
+      <workItem from="1603296671099" duration="3175000" />
+      <workItem from="1603329958821" duration="8665000" />
     </task>
     <servers />
   </component>
@@ -299,10 +316,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="359" y="239" width="638" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1366.741@0.27.1366.741" timestamp="1601347410449" />
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1603179053563">
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1603299816372">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1603179053563" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1603299816372" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601948018871">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

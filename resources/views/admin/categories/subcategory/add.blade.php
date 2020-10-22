@@ -8,16 +8,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
-
-                <div class="form-group col-md-8">
-                    <label for="modelName">Mã</label>
-                    <input type="number" min="1" class="form-control" name="sub_id" placeholder="Mã danh mục">
-                </div>
-            </div>
-            @if ($errors->has('sub_id'))
-                <p style="color: red">{{ $errors->first('sub_id') }}</p>
-            @endif
-                <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục sản phẩm con </label>
                         <input type="text" class="form-control" name="category_sub_product_name" placeholder="Tên danh mục ">

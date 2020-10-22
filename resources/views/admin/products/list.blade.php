@@ -24,7 +24,7 @@
                     <tr role="row">
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 10px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">#</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 50px;" aria-label="Position: activate to sort column ascending">Mã</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="Office: activate to sort column ascending">Tên</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 80px;" aria-label="Office: activate to sort column ascending">Tên</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 80px;" aria-label="Age: activate to sort column ascending">Danh mục</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 80px;" aria-label="Age: activate to sort column ascending">Thương hiệu</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 80px;" aria-label="Start date: activate to sort column ascending">Gía</th>
@@ -32,7 +32,7 @@
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="Salary: activate to sort column ascending">Ảnh</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Salary: activate to sort column ascending">Chi tiết</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 110px;" aria-label="Salary: activate to sort column ascending">Trạng thái</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 210px;" aria-label="action: activate to sort column ascending">Action</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 220px;" aria-label="action: activate to sort column ascending">Action</th>
                     </tr>
                     </thead>
                     <tbody>

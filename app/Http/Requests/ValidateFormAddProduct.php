@@ -25,7 +25,6 @@ class ValidateFormAddProduct extends FormRequest
     {
         return [
             'product_name' => 'required|unique:products,product_name|min:3',
-            'product_code' => 'required|unique:products,product_code|min:3',
             'product_price' =>'required|numeric|min:1000',
             'product_price_sale'=>'required|numeric|min:0',
             'product_content'=> 'required',
