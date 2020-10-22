@@ -71,7 +71,7 @@ class CheckoutController extends Controller
                 'customer_id'=>Session::get('customer')->id,
                 'shipping_id'=>$ship->id,
                 'order_code'=>$checkout_code,
-                'order_status'=>1,
+                'order_status'=>0,
                 'order_total'=>Cart::priceTotal(),
                 'created_at'=>now(),
             ]);
@@ -101,7 +101,7 @@ class CheckoutController extends Controller
                 'customer_id' => \null,
                 'shipping_id' => $ship->id,
                 'order_code' => $checkout_code,
-                'order_status' => 1,
+                'order_status' => 0,
                 'order_total' => Cart::priceTotal(),
                 'created_at' => now(),
             ]);

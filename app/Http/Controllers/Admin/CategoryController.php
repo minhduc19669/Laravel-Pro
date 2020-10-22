@@ -106,7 +106,6 @@ class CategoryController extends Controller{
         }
     }
         //news
-
                 public function list_news(){
                     $query = DB::table('categories')->where('cate_news_id','!=',null)->orderBy('id','asc');
                     $bang = $query->get();
