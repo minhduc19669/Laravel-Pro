@@ -10,7 +10,7 @@
                         <div class="col-lg-6 col-md-6">
                         <div class="blog-wrapper mb-30 gray-bg">
                             <div class="blog-img hover-effect">
-                            <a href="{{route('page.blogdetails',$item->news_id)}}"><img alt="" src="{{asset('news/'.$item->news_image)}}"></a>
+                            <a href="{{route('page.blogDetails',$item->news_id)}}"><img alt="" src="{{asset('news/'.$item->news_image)}}"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -19,7 +19,7 @@
                                         <li>Sep 14, 2018</li>
                                     </ul>
                                 </div>
-                                <h4><a href="blog-details.html">Lorem ipsum dolor amet cons adipisicing elit</a></h4>
+                                <h4><a href="{{route('page.blogDetails',$item->news_id)}}">Lorem ipsum dolor amet cons adipisicing elit</a></h4>
                             </div>
                         </div>
                     </div>

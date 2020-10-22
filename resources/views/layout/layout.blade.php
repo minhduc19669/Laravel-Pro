@@ -108,18 +108,23 @@
                     <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="shop-page.html">Danh mục</a>
+                      <a href="#">Danh mục</a>
                                             <ul class="mega-menu">
-                            @foreach($category as $key => $cate)
-                        <li>
-                          <ul>
-                                <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
+                                                @foreach($category as $key => $cate)
+
+                                                <li>
+
+                            <ul>
+                              <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
                                  @foreach($cate -> Subcategories as $cate)
                                 <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
                                 @endforeach
+
                           </ul>
+
                         </li>
-                        <li>
+                                                @endforeach
+                                                <li>
                           <ul>
                             <li>
                               <a href="shop-page.html"
@@ -130,15 +135,36 @@
                             </li>
                           </ul>
                         </li>
-                              @endforeach
                       </ul>
                     </li>
                     <li>
                     <a href="{{route('home.allProduct')}}">Sản phẩm</a>
                     </li>
-                    <li>
+
+                    <li class="mega-menu-position">
                     <a href="{{route('page.blog')}}">Blog</a>
+                        <ul class="mega-menu">
+                                <li>
+                                    <ul>
+                                        @foreach($category_news as $cate => $value)
+                                            <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('page.blog')}}"
+                                        ><img
+                                                alt=""
+                                                src="{{asset('assets_page/img/banner/dd.png')}}"
+                                            /></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
+
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">CONTACT US</a></li>
                   </ul>

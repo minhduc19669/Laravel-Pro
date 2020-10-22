@@ -24,7 +24,6 @@ class ValidateFormUpdateCategory extends FormRequest
     public function rules()
     {
         return [
-            'cate_pro_id' => 'required|numeric|min:1|max:200',
             'category_product_name' => 'required|min:3',
             'category_product_desc' => 'required|min:5',
         ];

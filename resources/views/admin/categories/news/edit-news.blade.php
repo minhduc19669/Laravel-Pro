@@ -9,15 +9,6 @@
                 <div class="col-md-12">
                     <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="modelName">ID</label>
-                            <input value="{{$edit->cate_news_id}}" type="number" min="1" class="form-control" name="cate_news_id" placeholder="Id danh mục tin tức">
-                        </div>
-                    </div>
-                    @if ($errors->has('cate_news_id'))
-                        <p style="color: red">{{ $errors->first('cate_news_id') }}</p>
-                    @endif
-                    <div class="form-row">
-                        <div class="form-group col-md-8">
                             <label for="modelName">Tên danh mục tin tức</label>
                             <input value="{{$edit->category_news_name}}" type="text" class="form-control" name="category_news_name" placeholder="Tên danh mục tin tức">
                         </div>

@@ -24,7 +24,6 @@ class ValidateFormSubcategory extends FormRequest
     public function rules()
     {
         return [
-            'sub_id' => 'required|unique:categories,sub_id|numeric|min:1|max:200',
             'category_sub_product_name' => 'required',
             'category_sub_product_desc' => 'required|min:5',
         ];

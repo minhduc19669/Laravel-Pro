@@ -50,7 +50,8 @@ class AppServiceProvider extends ServiceProvider
             $count=Cart::count();
             $data=Cart::content();
             $total = Cart::priceTotal();
-            $view->with(['count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category]);
+            $category_news =Category::where('cate_news_id', '!=', 'null')->get();
+            $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category]);
         });
 
 
