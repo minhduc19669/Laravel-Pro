@@ -29,7 +29,6 @@ class PageController extends Controller
         $productRelated=$this->productServ->getProductRelatedTo($id);
         return \view('pages.product_details',\compact('product','images', 'productRelated','image'));
     }
-
     public function  productCategory($id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
