@@ -29,7 +29,8 @@ class HomeController extends Controller
         $category =Category::where('cate_pro_id','!=','null')
             ->select('cate_pro_id','category_product_name','sub_id','category_sub_product_name')
             ->with('SubCategories')->get();
-        return \view('pages.home',\compact('products','slides','category','news'));
+        $category_news =Category::all();
+        return \view('pages.home',\compact('products','slides','category','news','category_news'));
 
     }
     public function showFormLogin()
@@ -76,6 +77,7 @@ class HomeController extends Controller
         Session::put('customer', \null);
         return back();
     }
+
 
 
 

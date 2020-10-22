@@ -38,7 +38,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhendit in voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum.</p>
                                 <div class="blog-dec-tags-social">
                                     <div class="blog-dec-tags">
                                         <ul>
@@ -127,96 +126,71 @@
                                     </form>
                                 </div>
                             </div>
+                            @foreach($category as $key => $category)
+                                <div class="shop-widget mt-50">
+                                    <h4 class="shop-sidebar-title">{{$category->category_product_name}}</h4>
+                                    <div class="shop-list-style mt-20">
+                                        <ul>
+                                            @foreach($category->SubCategories as $subcategory)
+                                                <li><a href="{{route('page.product_subcategory',$subcategory->sub_id)}}">{{$subcategory->category_sub_product_name}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            @endforeach
                             <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Food Category </h4>
-                                 <div class="shop-list-style mt-20">
+                                <h4 class="shop-sidebar-title">Top Thương Hiệu</h4>
+                                <div class="shop-list-style mt-20">
                                     <ul>
-                                        <li><a href="#">Canned Food</a></li>
-                                        <li><a href="#">Dry Food</a></li>
-                                        <li><a href="#">Food Pouches</a></li>
-                                        <li><a href="#">Food Toppers</a></li>
-                                        <li><a href="#">Fresh Food</a></li>
-                                        <li><a href="#">Frozen Food</a></li>
+                                        @foreach($brand as $key => $brand)
+                                            <li><a href="{{route('page.product_brand',$brand->id)}}">{{$brand->brand_name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
+{{--                            <div class="shop-widget mt-50">--}}
+{{--                                <h4 class="shop-sidebar-title">Tags </h4>--}}
+{{--                                 <div class="shop-list-style mt-20">--}}
+{{--                                    <ul>--}}
+{{--                                        <li><a href="#">Food </a></li>--}}
+{{--                                        <li><a href="#">Fish </a></li>--}}
+{{--                                        <li><a href="#">Dog </a></li>--}}
+{{--                                        <li><a href="#">Cat  </a></li>--}}
+{{--                                        <li><a href="#">Pet </a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Top Brands </h4>
+                                <h4 class="shop-sidebar-title">Danh mục tin tức</h4>
                                  <div class="shop-list-style mt-20">
                                     <ul>
-                                        <li><a href="#">Authority</a></li>
-                                        <li><a href="#">AvoDerm Natural</a></li>
-                                        <li><a href="#">Bil-Jac</a></li>
-                                        <li><a href="#">Blue Buffalo</a></li>
-                                        <li><a href="#">Castor & Pollux</a></li>
+                                        @foreach($cate_news as $key => $category)
+                                        <li><a href="#">{{$category->category_news_name}}</a></li>
+                                        @endforeach
+
                                     </ul>
                                 </div>
                             </div>
+
+                            @foreach($related as $key => $item)
                             <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Tags </h4>
-                                 <div class="shop-list-style mt-20">
-                                    <ul>
-                                        <li><a href="#">Food </a></li>
-                                        <li><a href="#">Fish </a></li>
-                                        <li><a href="#">Dog </a></li>
-                                        <li><a href="#">Cat  </a></li>
-                                        <li><a href="#">Pet </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Health Consideration </h4>
-                                 <div class="shop-list-style mt-20">
-                                    <ul>
-                                        <li><a href="#">Bone Development <span>18</span></a></li>
-                                        <li><a href="#">Digestive Care <span>22</span></a></li>
-                                        <li><a href="#">General Health <span>19</span></a></li>
-                                        <li><a href="#">Hip & Joint  <span>41</span></a></li>
-                                        <li><a href="#">Immune System  <span>22</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Nutritional Option </h4>
-                                 <div class="shop-list-style mt-20">
-                                    <ul>
-                                        <li><a href="#">Grain Free  <span>18</span></a></li>
-                                        <li><a href="#">Natural <span>22</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="shop-widget mt-50">
-                                <h4 class="shop-sidebar-title">Recent Post</h4>
+                                <h4 class="shop-sidebar-title">Tin tức liên quan</h4>
                                 <div class="recent-post-wrapper mt-25">
                                     <div class="single-recent-post mb-20">
                                         <div class="recent-post-img">
-                                            <a href="#"><img src="assets/img/blog/blog-s1.jpg" alt=""></a>
+                                            <a href="#"><img src="\news\{{$item->news_image}}" alt=""></a>
                                         </div>
                                         <div class="recent-post-content">
-                                            <h4><a href="#">My Dog, Aren</a></h4>
-                                            <span>April 19, 2018 </span>
-                                        </div>
-                                    </div>
-                                    <div class="single-recent-post mb-20">
-                                        <div class="recent-post-img">
-                                            <a href="#"><img src="assets/img/blog/blog-s2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-post-content">
-                                            <h4><a href="#">My Dog, Tomy</a></h4>
-                                            <span>April 19, 2018 </span>
-                                        </div>
-                                    </div>
-                                    <div class="single-recent-post mb-20">
-                                        <div class="recent-post-img">
-                                            <a href="#"><img src="assets/img/blog/blog-s3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-post-content">
-                                            <h4><a href="#">My Dog, Suju</a></h4>
-                                            <span>April 19, 2018 </span>
+                                            <h4><a href="{{route('page.blogDetails',$item->news_id)}}">{{$item->news_title}}</a></h4>
+                                            <span>{{$item->news_date}} </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            @endforeach
                         </div>
                     </div>
                 </div>

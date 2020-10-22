@@ -16,50 +16,68 @@ class PageController extends Controller
     {
         $this->productServ=$productServ;
     }
-
+//product
     public function allProduct(){
+        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $products= $this->productServ->get(10);
-        return \view('pages.product',\compact('products','category','brand'));
+        return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function productDetail($id){
+       
         $product=$this->productServ->productDetail($id);
+
         $images=$this->productServ->getImageProduct($id);
         return \view('pages.product_details',\compact('product','images'));
     }
 
-    public function showBlog(){
-        $news= News::all();
-        return \view('pages.blog',\compact('news'));
+ 
     }
-    public function blogDetails($id){
-        $news=News::find($id);
-        return \view('pages.blog_detail',\compact('news'));
-    }
-
-
     public function  productCategory($id){
+        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('cate_pro_id',$id)->first();
         $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function  productSubcategory($id){
+        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('sub_id',$id)->first();
         $products = Product::where('sub_id',$cate_pro->sub_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        return \view('pages.product',\compact('products','category','brand','category_news'));
     }
     public function  productBrand($id){
+        $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Brand::where('id',$id)->first();
         $products = Product::where('brand_id',$cate_pro->id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        return \view('pages.product',\compact('products','category','brand','category_news'));
     }
-
+//blog
+    public function showBlog(){
+        $category_news =Category::all();
+        $news= News::all();
+        return \view('pages.blog',\compact('news','category_news'));
+    }
+    public function blogDetails($id){
+        $category_news =Category::all();
+        $brand = Brand::all();
+        $category = Category::with('SubCategories')->get();
+        $cate_news = Category::all();
+        $news = News::where('news_id',$id)->get();
+        foreach ($news as $value){
+            $cate_news_id = $value->category_id;
+        }
+        $related = News::join('categories','categories.cate_news_id','=','news.category_id')
+            ->where('category_id',$cate_news_id)
+            ->whereNotIn('news.news_id',[$id])
+             ->get();
+        return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
+    }
 
 }
