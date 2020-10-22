@@ -10,7 +10,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName">Tên danh mục sản phẩm con </label>
-                        <input type="text" class="form-control" name="category_sub_product_name" placeholder="Tên danh mục ">
+                        <input value="{{old('category_sub_product_name')}}" type="text" class="form-control" name="category_sub_product_name" placeholder="Tên danh mục ">
                     </div>
                 </div>
                 @if ($errors->has('category_sub_product_name'))
@@ -29,7 +29,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Chú thích danh mục sản phẩm con</label>
-                        <textarea  name="category_sub_product_desc" id="editor1" rows="10" cols="80"></textarea>
+                        <textarea  name="category_sub_product_desc" id="editor1" rows="10" cols="80">{{old('category_sub_product_desc')}}</textarea>
                     </div>
 
                 </div>

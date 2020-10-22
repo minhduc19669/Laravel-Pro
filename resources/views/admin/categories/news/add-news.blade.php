@@ -7,19 +7,10 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-{{--                <div class="form-row">--}}
-{{--                    <div class="form-group col-md-8">--}}
-{{--                        <label for="modelName">Mã</label>--}}
-{{--                        <input type="number" min="1" class="form-control" name="cate_news_id" placeholder="Mã danh mục">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                @if ($errors->has('cate_news_id'))--}}
-{{--                    <p style="color: red">{{ $errors->first('cate_news_id') }}</p>--}}
-{{--                @endif--}}
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
                                         <label for="modelName">Tên danh mục tin tức</label>
-                                        <input type="text" class="form-control" name="category_news_name" placeholder="Tên danh mục tin tức">
+                                        <input value="{{old('category_news_name')}}" type="text" class="form-control" name="category_news_name" placeholder="Tên danh mục tin tức">
                                     </div>
                                 </div>
                                 @if ($errors->has('category_news_name'))
@@ -28,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="price">Chú thích danh mục tin tức</label>
-                        <textarea  name="category_news_desc" id="editor2" rows="10" cols="80"></textarea>
+                        <textarea  name="category_news_desc" id="editor2" rows="10" cols="80">{{old('category_news_desc')}}</textarea>
                     </div>
                 </div>
                 @if ($errors->has('category_news_desc'))
