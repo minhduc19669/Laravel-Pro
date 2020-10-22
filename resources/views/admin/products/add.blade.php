@@ -31,10 +31,11 @@
 
                 <div class="form-row col-md-12">
                     <div class="form-group col-md-5">
-                        <label for="modelName">mã sản phẩm</label>
-                        <input value="{{old('product_code')}}" type="text" class="form-control" name="product_code" placeholder="Mã sản phẩm">
-                        @if ($errors->has('product_code'))
-                            <p style="color: red">{{ $errors->first('product_code') }}</p>
+                        <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
+                        <br>
+                        <input multiple value="{{old('product_image')}}" type="file" class="form-control-file" name="product_image[]" id="imageUpload" >
+                        @if ($errors->has('product_image'))
+                            <p style="color: red">{{ $errors->first('product_image') }}</p>
                         @endif
                     </div>
                     <div class="form-group col-md-5">
@@ -115,14 +116,7 @@
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    <div class="form-group col-md">
-                        <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
-                        <br>
-                        <input multiple value="{{old('product_image')}}" type="file" class="form-control-file" name="product_image[]" id="imageUpload" >
-                        @if ($errors->has('product_image'))
-                            <p style="color: red">{{ $errors->first('product_image') }}</p>
-                        @endif
-                    </div>
+
                 </div>
                 </div>
                 </div>

@@ -24,8 +24,9 @@ class CategoryController extends Controller{
                 }
 
                 public function save(ValidateFormCategory $request ){
-                          $data = array();
-                          $data['cate_pro_id'] = $request->cate_pro_id;
+                    $cate_pro_id = substr(md5(microtime()),rand(0,26),5);
+                    $data = array();
+                          $data['cate_pro_id'] = $request->$cate_pro_id;
                           $data['category_product_name'] = $request->category_product_name;
                           $data['category_product_desc'] = $request->category_product_desc;
                     DB::table('categories')->insert($data);
@@ -40,7 +41,6 @@ class CategoryController extends Controller{
                 public function update(ValidateFormUpdateCategory $request,$id){
 
                     $data = array();
-                    $data['cate_pro_id'] = $request->cate_pro_id;
                     $data['category_product_name'] = $request->category_product_name;
                     $data['category_product_desc'] = $request->category_product_desc;
                           DB::table('categories')->where('cate_pro_id',$id)->update($data);
@@ -121,8 +121,9 @@ class CategoryController extends Controller{
                     return view('admin.categories.news.add-news');
                 }
                 public function save_news(ValidateFormNews_category $request ){
+                    $cate_news_id = substr(md5(microtime()),rand(0,26),5);
                     $data = array();
-                    $data['cate_news_id'] = $request->cate_news_id;
+                    $data['cate_news_id'] = $request->$cate_news_id;
                     $data['category_news_name'] = $request->category_news_name;
                     $data['category_news_desc'] = $request->category_news_desc;
                     DB::table('categories')->insert($data);
@@ -137,7 +138,6 @@ class CategoryController extends Controller{
                 }
                 public function update_news(ValidateUpdateNewscategory $request,$id){
                     $data = array();
-                    $data['cate_news_id'] = $request->cate_news_id;
                     $data['category_news_name'] = $request->category_news_name;
                     $data['category_news_desc'] = $request->category_news_desc;
                     DB::table('categories')->where('cate_news_id',$id)->update($data);
@@ -219,8 +219,9 @@ class CategoryController extends Controller{
                 }
 
                 public function save_sub(ValidateFormSubcategory $request ){
+                    $sub_id = substr(md5(microtime()),rand(0,26),5);
                     $data = array();
-                    $data['sub_id'] = $request->sub_id;
+                    $data['sub_id'] = $request->$sub_id;
                     $data['parent_id'] = $request->cate_product;
                     $data['category_sub_product_name'] = $request->category_sub_product_name;
                     $data['category_sub_product_desc'] = $request->category_sub_product_desc;
@@ -241,7 +242,6 @@ class CategoryController extends Controller{
                 public function update_sub(ValidateUpdateSubcategory $request,$id){
 
                     $data = array();
-                    $data['sub_id'] = $request->sub_id;
                     $data['parent_id'] = $request->cate_product;
                     $data['category_sub_product_name'] = $request->category_sub_product_name;
                     $data['category_sub_product_desc'] = $request->category_sub_product_desc;

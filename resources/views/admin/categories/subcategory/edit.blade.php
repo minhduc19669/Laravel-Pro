@@ -8,16 +8,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
-
-                    <div class="form-group col-md-8">
-                        <label for="modelName">ID</label>
-                        <input value="{{$edit->sub_id}}" type="number" min="1" class="form-control" name="sub_id" placeholder="Id danh mục tin tức">
-                    </div>
-                </div>
-                @if ($errors->has('sub_id'))
-                    <p style="color: red">{{ $errors->first('sub_id') }}</p>
-                @endif
-                <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="modelName" >Tên danh mục sản phẩm con </label>
                         <input value="{{$edit->category_sub_product_name}}" type="text" class="form-control" name="category_sub_product_name" placeholder="Tên danh mục ">
@@ -28,7 +18,7 @@
                 @endif
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="modelName" >Tên danh mục sản phẩm con </label>
+                        <label for="modelName" >Danh mục sản phẩm </label>
                         <select class="form-control" name="cate_product" id="">
                             @foreach($cate_pro as $key => $cate)
                             @if($edit->parent_id == $cate->cate_pro_id)

@@ -11,7 +11,6 @@
                         <label  for="brand" >Khách hàng</label>
                         <select name="shipping_order" class="form-control">
                             @foreach($shipping as $key => $cate)
-                                <option></option>
                                 <option value="{{$cate->id}}">{{$cate->shipping_name}}</option>
                             @endforeach
                         </select>
@@ -32,7 +31,6 @@
                     <div class="form-group col-md-4">
                         <label for="modelName">Trạng thái</label>
                         <select class="custom-select" id="inputGroupSelect01" name="order_status">
-                            <option></option>
                             <option value="0">Chưa giao </option>
                             <option value="1">Đang giao</option>
                             <option value="2">Đã giao</option>

@@ -77,8 +77,9 @@ class PageController extends Controller
         return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
     }
     public function blogCategory($id){
-
-        return view('pages.blogCategory');
+           $category = Category::where('cate_news_id',$id)->first();
+           $news = News::where('category_id',$category->cate_news_id)->get();
+        return view('pages.blogCategory',compact('news'));
     }
 
 }

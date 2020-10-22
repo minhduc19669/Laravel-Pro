@@ -38,8 +38,8 @@ class OrderController extends Controller
             ->join('shippings','shippings.id','=','orders.order_id')
             ->where('orders.order_id',$id)->get();
         $order_detail = DB::table('orders_details')
-               ->join('orders','orders.order_id','=','orders_details.order_id')
-              ->where('orders_details.order_id',$id)->get();
+            ->join('orders','orders.order_id','=','orders_details.order_id')
+            ->where('orders_details.order_id',$id)->get();
 
    return view('admin.order.edit',compact('order','order_detail'));
 
@@ -112,11 +112,21 @@ class OrderController extends Controller
                      <td>Hủy đơn hàng</td>
                      ';
                     }
-
-                $output .= '
-                     <td><a href='.route('order.edit',$row->order_id).'><button class="btn  btn-dark" type="submit">Chi tiết</button></a>  <button id="delete"  data-id="'.$row->order_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                        if ($row->order_status == 3) {
+                            $output .= '
+                     <td><a href=' . route('order.edit', $row->order_id) . '><button class="btn  btn-dark" type="submit">Chi tiết</button></a>
+                      <button id="delete"  data-id="' . $row->order_id . '" class="btn  btn-danger delete" type="submit">xóa</button> </td>
                     </tr>
-                    ';}
+                    ';
+                        }else{
+                            $output .= '
+                     <td><a href=' . route('order.edit', $row->order_id) . '><button class="btn  btn-dark" type="submit">Chi tiết</button></a></td>
+                    </tr>
+                    ';
+                        }
+
+
+                        }
             }
             else
             {
