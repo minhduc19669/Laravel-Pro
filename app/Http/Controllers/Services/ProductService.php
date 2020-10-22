@@ -20,6 +20,10 @@ class ProductService {
         $images= $this->productRepo->getImageOfProduct($id);
         return $images;
     }
+    public function getProductRelatedTo($id){
+        $products=$this->productRepo->productRelatedTo($id);
+        return $products;
+    }
 
 
 }

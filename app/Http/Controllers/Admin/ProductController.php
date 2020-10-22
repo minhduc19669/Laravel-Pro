@@ -54,24 +54,22 @@ class ProductController extends Controller
              $product->product_status = $request->product_status;
 
             $get_image = $request->hasFile('product_image');
-
-            if ($get_image) {
-                $allowedfileExtension = ['jpg', 'png', 'jpeg'];
-                $files = $request->file('product_image');
-                $exe_flg = \true;
-                foreach ($files as $file) {
-                    $extension = $file->getClientOriginalExtension();
-                    $check = in_array($extension, $allowedfileExtension);
-                    if (!$check) {
-                        $exe_flg = \false;
-                        break;
+                if ($get_image) {
+                    $allowedfileExtension = ['jpg', 'png', 'jpeg'];
+                    $files = $request->file('product_image');
+                    $exe_flg = \true;
+                    foreach ($files as $file) {
+                        $extension = $file->getClientOriginalExtension();
+                        $check = in_array($extension, $allowedfileExtension);
+                        if (!$check) {
+                            $exe_flg = \false;
+                            break;
+                        }
                     }
-                }
                 if ($exe_flg) {
                     $product->save();
                     foreach ($request->product_image as $image) {
                         $filename = $image->store('product', 'public');
-
                         $image = new Image();
                         $image->image = $filename;
                         $image->product_id = $product->product_id;
