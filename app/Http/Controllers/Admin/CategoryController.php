@@ -24,9 +24,9 @@ class CategoryController extends Controller{
                 }
 
                 public function save(ValidateFormCategory $request ){
-                    $cate_pro_id = substr(md5(microtime()),rand(0,26),5);
+
                     $data = array();
-                          $data['cate_pro_id'] = $request->$cate_pro_id;
+                          $data['cate_pro_id'] = rand(0,1000);
                           $data['category_product_name'] = $request->category_product_name;
                           $data['category_product_desc'] = $request->category_product_desc;
                     DB::table('categories')->insert($data);
@@ -121,9 +121,8 @@ class CategoryController extends Controller{
                     return view('admin.categories.news.add-news');
                 }
                 public function save_news(ValidateFormNews_category $request ){
-                    $cate_news_id = substr(md5(microtime()),rand(0,26),5);
                     $data = array();
-                    $data['cate_news_id'] = $request->$cate_news_id;
+                    $data['cate_news_id'] =  rand(0,1000);;
                     $data['category_news_name'] = $request->category_news_name;
                     $data['category_news_desc'] = $request->category_news_desc;
                     DB::table('categories')->insert($data);
@@ -219,9 +218,8 @@ class CategoryController extends Controller{
                 }
 
                 public function save_sub(ValidateFormSubcategory $request ){
-                    $sub_id = substr(md5(microtime()),rand(0,26),5);
                     $data = array();
-                    $data['sub_id'] = $request->$sub_id;
+                    $data['sub_id'] =  rand(0,1000);;
                     $data['parent_id'] = $request->cate_product;
                     $data['category_sub_product_name'] = $request->category_sub_product_name;
                     $data['category_sub_product_desc'] = $request->category_sub_product_desc;

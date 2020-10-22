@@ -22,8 +22,10 @@ class OrderController extends Controller
         return view('admin.order.add',['shipping'=>$shipping]);
     }
     public function save(ValidateFormOrder $request){
+        $order_code = substr(md5(microtime()),rand(0,26),5);
         DB::beginTransaction();
             Order::create([
+                'order_code' => $order_code,
                 'shipping_id' => $request->shipping_order,
                 'order_total' => $request->order_total,
                 'order_status' => $request->order_status,
@@ -112,7 +114,7 @@ class OrderController extends Controller
                      <td>Hủy đơn hàng</td>
                      ';
                     }
-                        if ($row->order_status == 3) {
+                        if ($row->order_status == 3 or $row->order_status == 2) {
                             $output .= '
                      <td><a href=' . route('order.edit', $row->order_id) . '><button class="btn  btn-dark" type="submit">Chi tiết</button></a>
                       <button id="delete"  data-id="' . $row->order_id . '" class="btn  btn-danger delete" type="submit">xóa</button> </td>

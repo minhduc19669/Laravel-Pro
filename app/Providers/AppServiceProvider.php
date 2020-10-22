@@ -28,9 +28,6 @@ class AppServiceProvider extends ServiceProvider
 
 
         Schema::defaultStringLength(191);
-
-
-
     }
 
     /**
@@ -45,8 +42,9 @@ class AppServiceProvider extends ServiceProvider
             $products = Product::limit(8)->orderBy('product_id', 'desc')->get();
             $slides = Slide::limit(3)->orderBy('id', 'desc')->get();
             $category = Category::where('cate_pro_id', '!=', 'null')
-            ->select('cate_pro_id', 'category_product_name', 'sub_id', 'category_sub_product_name')
-            ->with('SubCategories')->get();
+            ->select('cate_pro_id', 'category_product_name', 'sub_id', 'category_sub_product_name','parent_id')
+                ->with('SubCategories')
+                ->get();
             $count=Cart::count();
             $data=Cart::content();
             $total = Cart::priceTotal();
