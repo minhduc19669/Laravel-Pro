@@ -163,8 +163,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="{{route('page.about')}}">ABOUT US</a></li>
+                    <li><a href="{{route('page.contact')}}">CONTACT US</a></li>
                   </ul>
                 </nav>
               </div>
@@ -612,5 +612,5 @@
       <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
 <script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
 
-</body>
+  </body>
 </html>

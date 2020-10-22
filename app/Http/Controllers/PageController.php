@@ -78,5 +78,13 @@ class PageController extends Controller
            $news = News::where('category_id',$category->cate_news_id)->get();
         return view('pages.blogCategory',compact('news'));
     }
+//about
 
+ public function about(){
+        return view('pages.about');
+ }
+ //contact
+    public function contact(){
+        return view('pages.contact');
+    }
 }
