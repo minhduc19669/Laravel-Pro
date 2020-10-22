@@ -155,7 +155,7 @@ class NewsController extends Controller
             {
                 $output = '
        <tr>
-        <td align="center" colspan="5">No Data Found</td>
+        <td align="center" colspan="9">No Data Found</td>
        </tr>
        ';
             }

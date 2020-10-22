@@ -16,10 +16,10 @@
                                 <div class="blog-meta">
                                     <ul>
                                         <li>By: <span>Admin</span></li>
-                                        <li>Sep 14, 2018</li>
+                                        <li>{{$item->news_date}}</li>
                                     </ul>
                                 </div>
-                                <h4><a href="{{route('page.blogDetails',$item->news_id)}}">Lorem ipsum dolor amet cons adipisicing elit</a></h4>
+                                <h4><a href="{{route('page.blogDetails',$item->news_id)}}">{{$item->news_title}}</a></h4>
                             </div>
                         </div>
                     </div>

@@ -64,7 +64,6 @@ class CategoryController extends Controller{
             if($query != '')
             {
                 $data = DB::table('categories')
-                    ->orWhere('cate_pro_id', 'like', '%'.$query.'%')
                     ->orWhere('category_product_name', 'like', '%'.$query.'%')
                     ->orWhere('category_product_desc', 'like', '%'.$query.'%')
                     ->orderBy('cate_pro_id', 'desc')
@@ -85,7 +84,6 @@ class CategoryController extends Controller{
                     $output .= '
                     <tr id=item_'.$row->cate_pro_id.'>
                     <td>'.++$key.'</td>
-                     <td>'.$row->cate_pro_id.'</td>
                      <td>'.$row->category_product_name.' </td>
                      <td>'.$row->category_product_desc.'</td>
                      <td><a href='.route('category.edit',$row->cate_pro_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->cate_pro_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
@@ -154,7 +152,6 @@ class CategoryController extends Controller{
                         if($query != '')
                         {
                             $data = DB::table('categories')
-                                ->orWhere('cate_news_id', 'like', '%'.$query.'%')
                                 ->orWhere('category_news_name', 'like', '%'.$query.'%')
                                 ->orWhere('category_news_desc', 'like', '%'.$query.'%')
                                 ->orderBy('cate_news_id', 'desc')
@@ -175,7 +172,6 @@ class CategoryController extends Controller{
                                 $output .= '
                     <tr id=item_'.$row->cate_news_id.'>
                     <td>'.++$key.'</td>
-                     <td>'.$row->cate_news_id.'</td>
                      <td>'.$row->category_news_name.' </td>
                      <td>'.$row->category_news_desc.'</td>
                      <td><a href='.route('category.edit-news',$row->cate_news_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->cate_news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
@@ -258,7 +254,6 @@ class CategoryController extends Controller{
             if($query != '')
             {
                 $data = DB::table('categories')
-                    ->orWhere('sub_id', 'like', '%'.$query.'%')
                     ->orWhere('category_sub_product_name', 'like', '%'.$query.'%')
                     ->orWhere('category_sub_product_desc', 'like', '%'.$query.'%')
                     ->orderBy('sub_id', 'desc')
@@ -279,7 +274,6 @@ class CategoryController extends Controller{
                     $output .= '
                     <tr id=item_'.$row->sub_id.'>
                     <td>'.++$key.'</td>
-                     <td>'.$row->sub_id.'</td>
                      <td>'.$row->category_sub_product_name.' </td>
                      <td>'.$row->category_sub_product_desc.'</td>
                      <td><a href='.route('subcategory.edit',$row->sub_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->sub_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>

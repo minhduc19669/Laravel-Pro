@@ -53,7 +53,10 @@ Route::prefix('home')->group(function(){
     Route::get('blog', 'PageController@showBlog')->name('page.blog');
     Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogDetails');
     Route::get('blog/category/{id}','PageController@blogCategory')->name('page.blogCategory');
-
+    //about
+    Route::get('about','PageController@about')->name('page.about');
+    //contact
+    Route::get('contact','PageController@contact')->name('page.contact');
 
 });
 //social-login
