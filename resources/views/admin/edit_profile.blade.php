@@ -104,7 +104,6 @@
                                         </div>
                                         @if($role_user)
                                         <div class="col-md-8 col-6">
-
                                             @foreach ($user->roles as $role)
                                                 {{$role->role_name}}<br>
                                             @endforeach
@@ -120,9 +119,9 @@
                                     <hr/>
                                     <hr/>
                                     <div class="row" style="margin-left: 400px">
-                                        <button onclick="goBack()" class="btn btn-secondary waves-effect">
+                                    <a href="{{route('user.list')}}" class="btn btn-secondary waves-effect">
                                 Trở về
-                            </button>
+                            </a>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel"
@@ -226,10 +225,5 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-    <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
     <!-- /.modal
 @endsection

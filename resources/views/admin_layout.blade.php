@@ -7,6 +7,9 @@
     <meta content="Responsive bootstrap 4 admin template" name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Plugins css -->
+    <link href="{{asset('assets/libs/dropify/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets\images\favicon.ico')}}">
     <!-- App css -->
@@ -14,8 +17,11 @@
     <link href="{{asset('assets\css\icons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets\css\app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
     <link href="{{asset('assets\css\style.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 @include('sweetalert::alert')
@@ -120,7 +126,7 @@
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="" class="dropdown-item notify-item">
                             <div class="notify-icon bg-secondary">
                                 <i class="mdi mdi-heart"></i>
                             </div>
@@ -218,13 +224,13 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
                    href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset('assets\images\users\avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
-                    <span class="d-none d-sm-inline-block ml-1 font-weight-medium"><?php
-                        $name = Session::get('admin_name');
-                        if ($name) {
-                            echo $name;
-                        }
-                        ?></span>
+                   @if(Auth::user()->avatar)
+                    <img src="{{asset("storage/images/".Auth::user()->avatar)}}" alt="" class="rounded-circle">
+                    @else
+                    <img src="https://lh3.googleusercontent.com/proxy/eQgxPvHakrG090tHZIDqD6e38LuM8neVpEjc7ZyTtyki7lWK1XqTpMh-sR4zfI-AhTXY95IbInAD3EYHPemDchGUsc4PD3yw1PFiEdboWg" alt="" class="rounded-circle">
+                    @endif
+                    <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}
+                        </span>
                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -234,7 +240,7 @@
                     </div>
 
                     <!-- item-->
-                    <a href="" class="dropdown-item notify-item">
+                    <a href="{{route('user.edit',Auth::id())}}" class="dropdown-item notify-item">
                         <i class="mdi mdi-account-outline"></i>
                         <span>Profile</span>
                     </a>
@@ -272,10 +278,10 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="index.html" class="logo text-center logo-dark">
+        <a href="{{route('admin.dashboard')}}" class="logo text-center logo-dark">
                         <span class="logo-lg">
-{{--                            <img src="{{asset('assets\images\logo.png')}}" alt="" height="22">--}}
-                           <span class="logo-lg-text-dark">ADMIN</span>
+                           <img src="{{asset('assets\images\vnext.png')}}" alt="" width="100" height="60">
+                           {{-- <span class="logo-lg-text-dark">VNEXT</span> --}}
                         </span>
                 <span class="logo-sm">
                             <!-- <span class="logo-lg-text-dark">U</span> -->
@@ -478,21 +484,10 @@
                                 <span> Slider </span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="layouts-dark-sidebar.html">Liệt kê slide</a></li>
-                                <li><a href="layouts-small-sidebar.html">Thêm slide</a></li>
+                                <li><a href={{route('slide.add')}}>Thêm slide</a></li>
+                                <li><a href={{route('slide.list')}}>Liệt kê slide</a></li>
                             </ul>
                         </li>
-
-                    <li>
-                        <a href="javascript: void(0);">
-                            <i class="mdi mdi-calendar-month"></i>
-                            <span> Đơn hàng </span>
-                        </a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="layouts-dark-sidebar.html">Quản lí đơn hàng</a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-format-underline"></i>
@@ -509,25 +504,27 @@
 
                     <li>
                         <a href="javascript: void(0);">
-                            <i class="mdi mdi-black-mesa"></i>
-                            <span> Danh mục </span>
+                            <i class="mdi mdi-book-open"></i>
+                            <span> Tin tức </span>
+                            <span style="margin-right: 30px"
+                                  class="badge badge-danger badge-pill float-right">New</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="icons-materialdesign.html">Material Design</a></li>
-                            <li><a href="icons-ionicons.html">Ion Icons</a></li>
+                            <li><a href={{route('news.add')}} >Thêm tin tức</a></li>
+                            <li><a href={{route('news.list')}}>Liệt kê tin tức</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-puzzle-outline"></i>
-                            <span> danh mục sản phẩm </span>
+                            <span> Danh mục   </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="{{route('category.add')}}">thêm danh mục</a></li>
-                            <li><a href={{route('category.list')}}>Liệt kê danh mục</a></li>
+                            <li><a href="{{route('category.list')}}">Danh mục sản phẩm</a></li>
+                            <li><a href={{route('category.list-news')}}>Danh mục tin tức</a></li>
+                            <li><a href="{{route('subcategory.list')}}">Danh mục sản phẩm con</a></li>
                         </ul>
                     </li>
 
@@ -538,25 +535,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-<<<<<<< HEAD
                             <li><a href={{route('brand.add')}}>Thêm thương hiệu</a></li>
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
-=======
-                            <li><a href="layouts-dark-sidebar.html">Thêm thương hiệu</a></li>
-                            <li><a href="layouts-small-sidebar.html">Liệt kê thương hiệu</a></li>
->>>>>>> 7f8aed56f1cb2eb03d8445e4a37f5369a39e120f
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript: void(0);">
-                            <i class="mdi mdi-flip-horizontal"></i>
-                            <span> Mã giảm giá </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="layouts-dark-sidebar.html">Quản lí mã giảm giá</a></li>
-                            <li><a href="layouts-small-sidebar.html">Danh sách mã giảm giá</a></li>
                         </ul>
                     </li>
 
@@ -574,13 +554,33 @@
 
                     <li>
                         <a href="javascript: void(0);">
+                            <i class="mdi mdi-calendar-month"></i>
+                            <span> Đơn hàng </span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href={{route('order.list')}}>Quản lí đơn hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-apple-keyboard-caps"></i>
+                            <span> Thông tin giao hàng</span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="{{route('shipping.list')}}">Quản lý thông tin giao hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
                             <i class=" ion ion-logo-android"></i>
                             <span> Quản lí  </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('user.list')}}">Quản lí thành viên</a></li>
-                            <li><a href="">Them chuc vu</a></li>
+                        <li><a href="{{ route('role.index') }}">Quản lí chức vụ</a></li>
+                            <li><a href="{{ route('customer.list') }}">Quản lí khách hàng</a></li>
+
 
                         </ul>
                     </li>
@@ -693,30 +693,50 @@
     <i class="mdi mdi-settings-outline mdi-spin"></i> &nbsp;Choose Demos
 </a>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
 <!-- Vendor js -->
 <script src="{{asset('assets\js\vendor.min.js')}}"></script>
 
 <!--Morris Chart-->
 <script src="{{asset('assets\libs\morris-js\morris.min.js')}}"></script>
 <script src="{{asset('assets\libs\raphael\raphael.min.js')}}"></script>
-
 <!-- Dashboard init js-->
 <script src="{{asset('assets\js\pages\dashboard.init.js')}}"></script>
-
 <!-- App js -->
 <script src="{{asset('assets\js\app.min.js')}}"></script>
+
+<!--Form Wizard-->
+<script src="{{asset('assets/libs/jquery-steps/jquery.steps.min.js')}}"></script>
+
+<script src="{{asset('assets/libs/jquery-validation/jquery.validate.min.js')}}"></script>
+<!-- Init js-->
+<script src="{{asset('assets/js/pages/form-wizard.init.js')}}"></script>
+<!-- Plugins js -->
+<script src="{{asset('assets/libs/dropify/dropify.min.js')}}"></script>
+
+<!-- Init js-->
+<script src="{{asset('assets/js/pages/form-fileuploads.init.js')}}"></script>
+
+
+<!-- App js -->
 <script>
     $(function () {
         let id_user = $(".pos");
         id_user.click(function (e) {
             let $this = $(this);
             document.getElementById('user-id').value = $this.attr('data-key');
-            console.log($this.attr('data-key'))
+            console.log($this.attr('data-key'));
         })
-    })
+    });
 </script>
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace( 'editor2' );
+
+</script>
+<script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
+<script src="{{asset('assets_page/js/ajax_add_order.js')}}"></script>
 </body>
 </html>
 

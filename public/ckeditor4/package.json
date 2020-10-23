@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      "ckeditor4",
+      "/var/www/laravel-training.local/public_html/laravel-training"
+    ]
+  ],
+  "_from": "ckeditor4@latest",
+  "_hasShrinkwrap": false,
+  "_id": "ckeditor4@4.15.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/ckeditor4",
+  "_nodeVersion": "10.20.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/ckeditor4_4.15.0_1599486520479_0.5493301808430509"
+  },
+  "_npmUser": {
+    "email": "npm@cksource.com",
+    "name": "cksource"
+  },
+  "_npmVersion": "6.14.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "ckeditor4",
+    "raw": "ckeditor4",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.15.0.tgz",
+  "_shasum": "9f66bbec00f4ca1c93ce79298714cb56d21e52bc",
+  "_shrinkwrap": null,
+  "_spec": "ckeditor4",
+  "_where": "/var/www/laravel-training.local/public_html/laravel-training",
+  "author": {
+    "name": "CKSource",
+    "url": "https://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor4/issues"
+  },
+  "dependencies": {},
+  "description": "JavaScript WYSIWYG web text editor.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "fileCount": 2870,
+    "integrity": "sha512-OhL3gqCU2JjulhyrF24LlwLKIZ/CO5sPoiHRdDwihRkz9FOeZQnL+iMa0q/zxXY/jt1R+MxDvt4/6uiQk663hQ==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfVjo5CRA9TVsSAnZWagAAj6IP/ilLgKvLAq3V6md0lEx/\nyyxnbBv8gQJvCD0a10I0Djh9tAloWovWDqhU/HEOB36A2fGVH5U1vJ0hqOmB\n6gdTKYcqW75aDd6yrlbaV8eSDwwh5duWn60/gIoId4BebeKkHIpMSafQvRoF\nx8NZTvdrVF9zGjsBdBRHv/HPbRnPdYLVMNdjlSNBXAiLeQwhj2UJNL1cxjMs\nkYDRPRs87T+5NMz9jxCIEerKPznha5E5nQSE48aTQiBA6y1TCGyhGDMCkC9i\nudeWL/IpqHw7Pe6kXVMeUQ2J2nqErTb3C60XU6sMObUeQ0aquAWsMQebObJY\nkKtv5YLQ4lbNYHtbm2AmBThcheNm7EezgSbArDNXsR0+14vgiZfUmBqpnSSF\n2+alR+/WxQ8lCAeIgo099sPUShl4QWESm17GMA0yLwGlTKBi67xTKmdXgTua\nCEVF3v3lNE+hxyCu1VO7ZhmZ8J+BX0rHdVtRU8ekutVJQzwhHMEKqTEA11Ro\ns2pikPvRrUKPYX4/4CzQpd7gPf93dqduODcMZBe9TYSEV4lHCUSxwq2wj4JG\nXt7bEq3U+RZ+uZl+hWDeyFx5huH2uI2JhFh6qswbut+wgqTY17PkFxcwtIcp\n++/tIJFkhd9C47PnWa3pZ8hascmSk6sSHmZjNQNQoVPoNk6U0qXyxkqhjT8y\nDbVH\r\n=A6lH\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "9f66bbec00f4ca1c93ce79298714cb56d21e52bc",
+    "tarball": "https://registry.npmjs.org/ckeditor4/-/ckeditor4-4.15.0.tgz",
+    "unpackedSize": 6916735
+  },
+  "gitHead": "f233b056a20528c442576e661486170a7d84a7b9",
+  "homepage": "https://ckeditor.com/ckeditor-4/",
+  "keywords": [
+    "ckeditor",
+    "ckeditor4",
+    "editor",
+    "fckeditor",
+    "html",
+    "javascript",
+    "richtext",
+    "text",
+    "wysiwyg"
+  ],
+  "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
+  "main": "ckeditor.js",
+  "maintainers": [
+    {
+      "name": "cksource",
+      "email": "npm@cksource.com"
+    }
+  ],
+  "name": "ckeditor4",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor4-releases.git"
+  },
+  "version": "4.15.0"
+}

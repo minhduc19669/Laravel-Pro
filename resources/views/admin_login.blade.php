@@ -12,7 +12,7 @@
 @include('sweetalert::alert')
 <header>
     <div class="container">
-        <h1 align="center">ADMIN LOGIN </h1>
+        <h1 text-align="center">ADMIN LOGIN </h1>
     </div>
 </header>
 <!--endheader-->
@@ -45,6 +45,9 @@
                             <input id="submit" type="password" name="password">
                         </td>
                     </tr>
+                    @if(Session::get('mess'))
+                <span>{{Session::get('mess')}}</span>
+                @endif
                 </table>
                 <b style="color: red;"></b>
                 <input id="btndangnhap" type="submit" name="login" value="Login">
