@@ -16,7 +16,6 @@
                     <p style="color: red">{{ $errors->first('brand_name') }}</p>
                 @endif
                 <div class="form-row">
-<<<<<<< HEAD
                     <div class="col-lg-4">
                         <div class="card-box">
 
@@ -25,12 +24,6 @@
                             <input name="brand_image" value="{{old('brand_image')}}" type="file" class="dropify" data-default-file="{{asset('assets/images/small/img-1.jpg')}}"  />
                         </div>
                     </div><!-- end col -->
-=======
-                    <div class="form-group col-md-8">
-                        <label for="price">Logo</label>
-                        <input value="{{old('brand_image')}}" type="file" class="form-control" name="brand_image" placeholder="Ảnh thương hiệu">
-                    </div>
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                 </div>
                 @if ($errors->has('brand_image'))
                     <p style="color: red">{{ $errors->first('brand_image') }}</p>
