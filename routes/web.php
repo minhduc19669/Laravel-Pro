@@ -23,10 +23,7 @@ Route::get('logout', 'LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/product', 'HomeController@product')->name('home.product');
-
     //home-customer-login
-
-
     Route::get('login', 'HomeController@showFormLogin')->name('home.getlogin');
     Route::get('register', 'HomeController@showFormRegister')->name('home.getregister');
     Route::post('login', 'HomeController@login')->name('home.postlogin');
@@ -76,6 +73,7 @@ Route::prefix('cart')->group(function(){
     Route::get('shipping','CheckoutController@shipping')->name('cart.shipping');
     Route::post('order', 'CheckoutController@confirm_order')->name('cart.infoorder');
     Route::get('district/{id}', 'DistrictController@showDistrictInCity');
+    Route::get('addproductqty/{id}/{qty}', 'CartController@add_product_folow_quantity');
     // Route::get('info', 'CheckoutController@alert_checkout')->name('cart.info_order');
 });
 //page
