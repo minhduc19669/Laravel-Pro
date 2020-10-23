@@ -7,7 +7,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
-<<<<<<< HEAD
                     <div class="col-lg-4">
                         <div class="card-box">
 
@@ -16,12 +15,7 @@
                             <input name="slide_image" value="{{old('slide_image')}}" type="file" class="dropify" data-default-file="{{asset('assets/images/small/img-1.jpg')}}"  />
                         </div>
                     </div><!-- end col -->
-=======
-                    <div class="form-group col-md-8">
-                        <label for="price">Ảnh</label>
-                        <input value="{{old('slide_image')}}" type="file" class="form-control" name="slide_image" placeholder="desc">
-                    </div>
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
+
                 </div>
                 @if ($errors->has('slide_image'))
                     <p style="color: red">{{ $errors->first('slide_image') }}</p>
@@ -58,13 +52,9 @@
                 @endif
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-<<<<<<< HEAD
-
-=======
             <div class="col-md-4">
                 <img class="img-fluid img-thumbnail" id="imgPreview" src=""/>
             </div>
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
         </div>
     </form>
 @endsection

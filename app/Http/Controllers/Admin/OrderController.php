@@ -1,19 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-<<<<<<< HEAD
 use App\City;
 use App\District;
 use App\Http\Requests\ValidateFormOrder;
 use App\Order;
 use App\Orderdetail;
 use App\Product;
-=======
-use App\Http\Requests\ValidateFormOrder;
-use App\Order;
-use App\Orderdetail;
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 use App\Shipping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +20,6 @@ class OrderController extends Controller
         return view('admin.order.list',compact('order'));
     }
     public function add(){
-<<<<<<< HEAD
         $product = Product::with('images')->get();
         $shipping_city= City::all();
         $shipping_district=District::all();
@@ -40,10 +32,8 @@ class OrderController extends Controller
     public function cart($id){
         $showPrice = Product::where('product_id',$id)->get();
         return response()->json($showPrice);
-=======
       $shipping = DB::table('shippings')->get();
         return view('admin.order.add',['shipping'=>$shipping]);
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     }
     public function save(ValidateFormOrder $request){
         $order_code = substr(md5(microtime()),rand(0,26),5);
