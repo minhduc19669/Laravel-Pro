@@ -61,6 +61,20 @@
                         </div>
                         <div class="form">
                             <div class="form-group col-md">
+<<<<<<< HEAD
+                                <div class="col-lg-4">
+                                    <div class="card-box">
+
+                                        <h4 class="header-title mb-4">Image</h4>
+
+                                        <input name="news_image" value="{{old('news_image')}}" type="file" class="dropify" data-default-file="{{asset('assets/images/small/img-1.jpg')}}"  />
+                                    </div>
+                                </div><!-- end col -->
+                            </div>
+                            @if ($errors->has('news_image'))
+                                <p style="color: red">{{ $errors->first('news_image') }}</p>
+                            @endif
+=======
                                 <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
                                 <br>
                                 <input value="{{old('news_image')}}" type="file" class="form-control-file" name="news_image" >
@@ -68,6 +82,7 @@
                                     <p style="color: red">{{ $errors->first('news_image') }}</p>
                                 @endif
                             </div>
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                             <div class="form-group col-md-3">
                                 <label for="quantity">Trạng thái</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="news_status">

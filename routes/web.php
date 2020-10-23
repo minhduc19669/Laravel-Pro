@@ -23,7 +23,14 @@ Route::get('logout', 'LoginController@logout')->name('admin.logout');
 Route::prefix('home')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/product', 'HomeController@product')->name('home.product');
+<<<<<<< HEAD
+
     //home-customer-login
+
+
+=======
+    //home-customer-login
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     Route::get('login', 'HomeController@showFormLogin')->name('home.getlogin');
     Route::get('register', 'HomeController@showFormRegister')->name('home.getregister');
     Route::post('login', 'HomeController@login')->name('home.postlogin');
@@ -45,6 +52,7 @@ Route::prefix('home')->group(function(){
     //product
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
+<<<<<<< HEAD
 
     //blog
     Route::get('blog', 'PageController@showBlog')->name('page.blog');
@@ -54,6 +62,48 @@ Route::prefix('home')->group(function(){
     Route::get('about','PageController@about')->name('page.about');
     //contact
     Route::get('contact','PageController@contact')->name('page.contact');
+
+});
+//social-login
+Route::get('auth/google', 'SocialController@redirectToGoogle')->name('google');
+Route::get('auth/google/callback', 'SocialController@handleGoogleCallback');
+Route::get('auth/google/logout', 'SocialController@logout')->name('google_logout');
+
+//cart
+Route::prefix('cart')->group(function(){
+    Route::get('add/{id}', 'CartController@addCart');
+    Route::get('quick-view/{id}','CartController@quick_view_product');
+    Route::get('delete/{id}', 'CartController@delete');
+    Route::get('view','CartController@index')->name('cart.view');
+    Route::get('update/{id}/{qty}','CartController@update')->name('cart.update');
+    Route::get('delete-all', 'CartController@delete_all_cart')->name('delete-all');
+    Route::get('checkout','CartController@checkout')->name('cart.checkout');
+    Route::get('shipping','CheckoutController@shipping')->name('cart.shipping');
+    Route::post('order', 'CheckoutController@confirm_order')->name('cart.infoorder');
+    Route::get('district/{id}', 'DistrictController@showDistrictInCity');
+    // Route::get('info', 'CheckoutController@alert_checkout')->name('cart.info_order');
+});
+//page
+Route::prefix('page')->group(function(){
+    //product
+    Route::get('product', 'PageController@allProduct')->name('page.index');
+    Route::get('product/details/{id}', 'PageController@productDetail')->name('page.detail_product');
+    Route::get('product/category/{id}','PageController@productCategory')->name('page.product_category');
+    Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
+    Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
+
+});
+=======
+
+    //blog
+    Route::get('blog', 'PageController@showBlog')->name('page.blog');
+    Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogDetails');
+    Route::get('blog/category/{id}','PageController@blogCategory')->name('page.blogCategory');
+    //about
+    Route::get('about','PageController@about')->name('page.about');
+    //contact
+    Route::get('contact','PageController@contact')->name('page.contact');
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 
 });
 //social-login
@@ -87,7 +137,10 @@ Route::prefix('page')->group(function(){
 
 });
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 //manager//
 Route::middleware(['auth'])->group(function (){
     //user
@@ -172,6 +225,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('brand/active/{id}', 'BrandController@active')->name('brand.active');
             Route::get('brand/un-active/{id}', 'BrandController@unactive')->name('brand.un-active');
             Route::get('brand/search','BrandController@action')->name('brand.search');
+<<<<<<< HEAD
 
         });
 
@@ -196,6 +250,32 @@ Route::middleware(['auth'])->group(function (){
             Route::get('slide/active/{id}','SlideController@active')->name('slide.active');
             Route::get('slide/un-active/{id}','SlideController@unactive')->name('slide.unactive');
 
+=======
+
+        });
+
+            //news
+            Route::get('news','NewsController@index')->name('news.list');
+            Route::get('news/add','NewsController@add')->name('news.add');
+            Route::post('news/save','NewsController@save')->name('news.save');
+            Route::get('news/edit/{id}','NewsController@edit')->name('news.edit');
+            Route::post('news/update/{id}','NewsController@update')->name('news.update');
+            Route::get('news/remove/{id}','NewsController@remove')->name('news.remove');
+            Route::get('news/active/{id}','NewsController@active')->name('news.active');
+            Route::get('news/un-active/{id}','NewsController@unactive')->name('news.un-active');
+            Route::get('news/search','NewsController@action')->name('news.search');
+        //slide
+            Route::get('slide','SlideController@list')->name('slide.list');
+            Route::get('slide/add','SlideController@add')->name('slide.add');
+            Route::post('slide/save','SlideController@save')->name('slide.save');
+            Route::get('slide/add','SlideController@add')->name('slide.add');
+            Route::get('slide/edit/{id}','SlideController@edit')->name('slide.edit');
+            Route::post('slide/update/{id}','SlideController@update')->name('slide.update');
+            Route::get('slide/remove/{id}','SlideController@remove')->name('slide.remove');
+            Route::get('slide/active/{id}','SlideController@active')->name('slide.active');
+            Route::get('slide/un-active/{id}','SlideController@unactive')->name('slide.unactive');
+
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
             Route::get('slide/search/','SlideController@search')->name('slide.search');
             Route::get('slide/search/action','SlideController@action')->name('slide.action');
 
@@ -207,6 +287,11 @@ Route::middleware(['auth'])->group(function (){
               Route::post('order/update/{id}','OrderController@update')->name('order.update');
               Route::get('order/remove/{id}','OrderController@remove')->name('order.remove');
               Route::get('order/search','OrderController@action')->name('order.search');
+<<<<<<< HEAD
+              Route::get('order/product/{id}', 'OrderController@showPrice');
+              Route::get('order/cart/{id}','OrderController@cart');
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 
         //customer
             Route::get('customer', 'CustomerController@list')->name('customer.list');

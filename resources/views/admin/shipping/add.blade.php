@@ -61,9 +61,13 @@
                                     <p style="color: red">{{ $errors->first('shipping_address_receive') }}</p>
                                 @endif
                             </div>
+<<<<<<< HEAD
+                        </div>
+=======
 
                         </div>
 
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                         <div class="form-row">
                             <div class="form-row col-md-12">
                                 <div class="form-group col-md-5">
@@ -77,9 +81,12 @@
                                     <select class="custom-select" id="inputGroupSelect01" name="shipping_payment">
                                             <option selected value="1"> Thanh toán khi nhận hàng </option>
                                     </select>
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="salePrice">Ghi chú</label>
