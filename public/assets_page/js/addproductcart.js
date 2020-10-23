@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
         $(document).ready(function($){
             ///addtocart
@@ -6,6 +7,15 @@
                     var id=$(this).attr('buy-id');
                     $.ajax({
                     url:'http://laravel-training.local/cart/add/'+id,
+=======
+$(document).ready(function($){
+            ///addtocart
+            let listProduct=$("#product #addtocart");
+                listProduct.on('click',function(){
+                    var id = $(this).attr('buy-id');
+                    $.ajax({
+                    url:'http://laravel-training.local/cart/add/' +id,
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                     dataType:'json',
                     success:function(result){
                         let count = result.countCart;

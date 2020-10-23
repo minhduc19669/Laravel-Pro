@@ -23,6 +23,7 @@
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="" />
 =======
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/public/assets_page/js/ajax_add_order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
@@ -33,6 +34,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
@@ -3486,6 +3489,7 @@
       <change beforePath="$PROJECT_DIR$/resources/views/admin/all_role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/all_role.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/add-news.blade.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/edit-news.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/news/list-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/news/list-news.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" afterDir="false" />
@@ -3541,6 +3545,14 @@
       <change beforePath="$PROJECT_DIR$/resources/views/pages/subcategory_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/subcategory_product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/wishlist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/product/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/shipping/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/shipping/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     </list>
 >>>>>>> manhnd3
     <option name="SHOW_DIALOG" value="false" />
@@ -3690,14 +3702,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="node.js.path.for.package.tslint" value="project" />
 =======
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+<<<<<<< HEAD
 >>>>>>> manhnd3
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -3720,10 +3738,14 @@
     </configuration>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
 =======
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
 >>>>>>> manhnd3
+=======
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -3787,8 +3809,11 @@
       <workItem from="1603276410805" duration="224000" />
       <workItem from="1603296671099" duration="3175000" />
       <workItem from="1603329958821" duration="8665000" />
+<<<<<<< HEAD
       <workItem from="1603385255471" duration="1204000" />
       <workItem from="1603416891777" duration="26544000" />
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     </task>
     <servers />
   </component>
@@ -3816,10 +3841,17 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="170" y="146" width="1006" height="517" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1601913201673" />
+<<<<<<< HEAD
     <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603435019664">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603435019664" />
+=======
+    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603249678796">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603249678796" />
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     <state x="359" y="239" width="638" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601347410449">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -3848,10 +3880,17 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
+<<<<<<< HEAD
     <state x="347" y="174" key="run.anything.popup" timestamp="1603448205313">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603448205313" />
+=======
+    <state x="347" y="174" key="run.anything.popup" timestamp="1603349242431">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603349242431" />
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602122495484">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -3860,6 +3899,7 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="408" y="278" width="540" height="245" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1366.741@0.27.1366.741" timestamp="1602040230371" />
+<<<<<<< HEAD
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -3872,5 +3912,7 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+=======
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
   </component>
 </project>

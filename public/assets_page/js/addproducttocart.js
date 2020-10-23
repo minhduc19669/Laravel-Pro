@@ -1,6 +1,10 @@
 let listProduct2=$("#product5 #addtocart5");
                 listProduct2.on('click',function(){
+<<<<<<< HEAD
                     var id=$(this).attr('buy-id1');
+=======
+                    var id = $(this).attr('buy-id1');
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                     $.ajax({
                     url:'http://laravel-training.local/cart/add/'+id,
                     dataType:'json',

@@ -13,10 +13,17 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets\images\favicon.ico')}}">
     <!-- App css -->
+<<<<<<< HEAD
     <link href="{{asset('assets\css\bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
     <link href="{{asset('assets\css\icons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets\css\app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
     <link href="{{asset('assets\css\style.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
+=======
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet">
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -694,9 +701,10 @@
 </a>
 
 <!-- Vendor js -->
-<script src="{{asset('assets\js\vendor.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor.min.js')}}"></script>
 
 <!--Morris Chart-->
+<<<<<<< HEAD
 <script src="{{asset('assets\libs\morris-js\morris.min.js')}}"></script>
 <script src="{{asset('assets\libs\raphael\raphael.min.js')}}"></script>
 <!-- Dashboard init js-->
@@ -718,6 +726,14 @@
 
 
 <!-- App js -->
+=======
+<script src="{{asset('assets/libs/morris-js/morris.min.js')}}"></script>
+<script src="{{asset('assets/libs/raphael/raphael.min.js')}}"></script>
+<!-- Dashboard init js-->
+<script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
+<!-- App js -->
+<script src="{{asset('assets/js/app.min.js')}}"></script>
+>>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 <script>
     $(function () {
         let id_user = $(".pos");
