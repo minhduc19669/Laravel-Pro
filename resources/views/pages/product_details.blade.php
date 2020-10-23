@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content">
-                            <h2>Dog Calcium Food</h2>
+                        <h2><strong>{{$product->product_name}}</strong></h2>
                             <div class="product-rating">
                                 <i class="ti-star theme-color"></i>
                                 <i class="ti-star theme-color"></i>
@@ -26,36 +26,33 @@
                                 <i class="ti-star"></i>
                                 <span> ( 01 Customer Review )</span>
                             </div>
+                            <div>
+                            <p><strong>{{$product->brands->brand_name}}</strong></p>
+                            </div>
                             <div class="product-price">
                                 <span class="new">$20.00 </span>
                                 <span class="old">$50.00</span>
                             </div>
                             <div class="in-stock">
-                                <span><i class="ion-android-checkbox-outline"></i> In Stock</span>
+                                @if ($product->product_status==1)
+                            <span><i class="ion-android-checkbox-outline"></i> Tình trạng: Còn hàng</span>
+                            @else
+                            <span><i class="ion-android-checkbox-outline"></i> Tình trạng: Hết hàng</span>
+                                @endif
                             </div>
                             <div class="sku">
-                                <span>SKU#: MS04</span>
+                            <span>Mã sản phẩm : {{$product->product_code}}</span>
                             </div>
-                            <p>Founded in 1989, Jack & Jones is a Danish brand that offers cool, relaxed designs that express a strong visual style through their diffusion lines, Jack & Jones intelligence and Jack & Jones vintage.</p>
-                            <div class="product-details-style shorting-style mt-30">
-                                <label>color:</label>
-                                <select>
-                                    <option value=""> Choose an option</option>
-                                    <option value=""> orange</option>
-                                    <option value=""> pink</option>
-                                    <option value=""> yellow</option>
-                                </select>
-                            </div>
+                        <p>{{$product->product_content}}</p>
                             <div class="quality-wrapper mt-30 product-quantity">
                                 <label>Qty:</label>
-                                <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                <div class="">
+                                    <input min="1" id="qtyproduct" value="1" class="" type="number" name="qtybutton">
                                 </div>
                             </div>
                             <div class="product-list-action">
                                 <div class="product-list-action-left">
-                                    <a class="addtocart-btn" href="#" title="Add to cart">
-                                        <i class="ion-bag"></i>
+                                    <a class="addtocart-btn" style="cursor: pointer; color: white" id="addproductdetail" data-id="{{$product->product_id}}" title="Add to cart">
                                         Add to cart
                                     </a>
                                 </div>

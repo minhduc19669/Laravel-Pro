@@ -90,7 +90,7 @@
                 </div>
               </div>
               <div class="product-content">
-              <h4><a href="product-details.html">{{$product->product_name}}</a></h4>
+              <h4><a href="{{route('product.details',$product->product_id)}}">{{$product->product_name}}</a></h4>
                 <div class="product-price">
                   <span class="new">{{number_format($product->product_price)}}$</span>
                 <span class="old">{{number_format($product->product_price + $product->product_price_sale)}}$</span>

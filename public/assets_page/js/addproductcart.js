@@ -1,11 +1,10 @@
-
-        $(document).ready(function($){
+$(document).ready(function($){
             ///addtocart
             let listProduct=$("#product #addtocart");
                 listProduct.on('click',function(){
-                    var id=$(this).attr('buy-id');
+                    var id = $(this).attr('buy-id');
                     $.ajax({
-                    url:'http://laravel-training.local/cart/add/'+id,
+                    url:'http://laravel-training.local/cart/add/' +id,
                     dataType:'json',
                     success:function(result){
                         let count = result.countCart;

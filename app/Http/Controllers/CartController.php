@@ -14,25 +14,26 @@ class CartController extends Controller
 
     public function addCart($id){
     $product = Product::find($id);
-        if ($product->price_sale == 0) {
-            Cart::add([
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->product_price,
-                'weight' => 10,
-                'options' => ['image' => $product->product_image]
-            ]);
-        }else{
-            Cart::add([
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->product_price_sale,
-                'weight' => 10,
-                'options' => ['image' => $product->product_image]
-            ]);
-        }
+            if ($product->price_sale == 0) {
+                Cart::add([
+                    'id' => $id,
+                    'name' => $product->product_name,
+                    'qty' => 1,
+                    'price' => $product->product_price,
+                    'weight' => 10,
+                    'options' => ['image' => $product->product_image]
+                ]);
+            } else {
+                Cart::add([
+                    'id' => $id,
+                    'name' => $product->product_name,
+                    'qty' => 1,
+                    'price' => $product->product_price - $product->product_price_sale,
+                    'weight' => 10,
+                    'options' => ['image' => $product->product_image]
+                ]);
+            }
+
         $count=[
             'countCart'=>Cart::count(),
             'contentCart'=>Cart::content(),
@@ -78,6 +79,35 @@ class CartController extends Controller
     public function checkout(){
         $cities=City::all();
         return \view('pages.checkout',\compact('cities'));
+    }
+    public function add_product_folow_quantity($id,$qty){
+        $product = Product::find($id);
+        if ($product->price_sale == 0) {
+            Cart::add([
+                'id' => $id,
+                'name' => $product->product_name,
+                'qty' => $qty,
+                'price' => $product->product_price,
+                'weight' => 10,
+                'options' => ['image' => $product->product_image]
+            ]);
+        } else {
+            Cart::add([
+                'id' => $id,
+                'name' => $product->product_name,
+                'qty' => $qty,
+                'price' => $product->product_price - $product->product_price_sale,
+                'weight' => 10,
+                'options' => ['image' => $product->product_image]
+            ]);
+        }
+
+        $count = [
+            'countCart' => Cart::count(),
+            'contentCart' => Cart::content(),
+            'total' => Cart::priceTotal()
+        ];
+        return response()->json($count);
     }
 
 
