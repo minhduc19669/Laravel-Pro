@@ -7,6 +7,9 @@
     <meta content="Responsive bootstrap 4 admin template" name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Plugins css -->
+    <link href="{{asset('assets/libs/dropify/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets\images\favicon.ico')}}">
     <!-- App css -->
@@ -700,6 +703,21 @@
 <script src="{{asset('assets\js\pages\dashboard.init.js')}}"></script>
 <!-- App js -->
 <script src="{{asset('assets\js\app.min.js')}}"></script>
+
+<!--Form Wizard-->
+<script src="{{asset('assets/libs/jquery-steps/jquery.steps.min.js')}}"></script>
+
+<script src="{{asset('assets/libs/jquery-validation/jquery.validate.min.js')}}"></script>
+<!-- Init js-->
+<script src="{{asset('assets/js/pages/form-wizard.init.js')}}"></script>
+<!-- Plugins js -->
+<script src="{{asset('assets/libs/dropify/dropify.min.js')}}"></script>
+
+<!-- Init js-->
+<script src="{{asset('assets/js/pages/form-fileuploads.init.js')}}"></script>
+
+
+<!-- App js -->
 <script>
     $(function () {
         let id_user = $(".pos");
@@ -717,6 +735,8 @@
     CKEDITOR.replace( 'editor2' );
 
 </script>
+<script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
+<script src="{{asset('assets_page/js/ajax_add_order.js')}}"></script>
 </body>
 </html>
 

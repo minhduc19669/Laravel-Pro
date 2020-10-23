@@ -209,6 +209,8 @@ Route::middleware(['auth'])->group(function (){
               Route::post('order/update/{id}','OrderController@update')->name('order.update');
               Route::get('order/remove/{id}','OrderController@remove')->name('order.remove');
               Route::get('order/search','OrderController@action')->name('order.search');
+              Route::get('order/product/{id}', 'OrderController@showPrice');
+              Route::get('order/cart/{id}','OrderController@cart');
 
         //customer
             Route::get('customer', 'CustomerController@list')->name('customer.list');

@@ -38,6 +38,7 @@
                             <p style="color: red">{{ $errors->first('product_image') }}</p>
                         @endif
                     </div>
+
                     <div class="form-group col-md-5">
                         <label  for="brand" >Thương hiệu sản phẩm</label>
                         <select name="product_brand" class="form-control">
