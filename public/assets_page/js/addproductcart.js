@@ -1,5 +1,4 @@
 
-
 $(document).ready(function($){
             ///addtocart
             let listProduct=$("#product #addtocart");
