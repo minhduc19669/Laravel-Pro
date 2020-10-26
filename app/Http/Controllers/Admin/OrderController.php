@@ -32,8 +32,6 @@ class OrderController extends Controller
     public function cart($id){
         $showPrice = Product::where('product_id',$id)->get();
         return response()->json($showPrice);
-      $shipping = DB::table('shippings')->get();
-        return view('admin.order.add',['shipping'=>$shipping]);
     }
     public function save(ValidateFormOrder $request){
         $order_code = substr(md5(microtime()),rand(0,26),5);

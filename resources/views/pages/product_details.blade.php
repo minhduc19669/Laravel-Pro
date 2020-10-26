@@ -15,6 +15,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content">
+
                             <h2>Dog Calcium Food</h2>
 
                         <h2><strong>{{$product->product_name}}</strong></h2>

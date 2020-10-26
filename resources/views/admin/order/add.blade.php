@@ -150,7 +150,7 @@
                                             <td>{{$product->product_name}}</td>
                                             <td>{{$product->product_price}}</td>
                                             <td><img width="50px" src="{{asset('storage/'.$product->product_image)}}" alt=""></td>
-                                            <td><a id="cartOrder" product-id="{{$product->product_id}}" class="btn btn-outline-success" >Chọn</a></td>
+                                            <td><a id="orderProduct"  data-id="{{$product->product_id}}" class="btn  btn-success delete" type="submit">Chọn</a></td>
                                         </tr>
                                             @endforeach
                                         </tbody>
@@ -180,14 +180,7 @@
                                         </tr>
                                         </thead>
                                         <tbody class="tbodyCart">
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
