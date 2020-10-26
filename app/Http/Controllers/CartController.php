@@ -11,30 +11,8 @@ use App\Product;
 class CartController extends Controller
 {
     //
-
     public function addCart($id){
     $product = Product::find($id);
-<<<<<<< HEAD
-        if ($product->price_sale == 0) {
-            Cart::add([
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->product_price,
-                'weight' => 10,
-                'options' => ['image' => $product->product_image]
-            ]);
-        }else{
-            Cart::add([
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->product_price_sale,
-                'weight' => 10,
-                'options' => ['image' => $product->product_image]
-            ]);
-        }
-=======
             if ($product->price_sale == 0) {
                 Cart::add([
                     'id' => $id,
@@ -54,8 +32,6 @@ class CartController extends Controller
                     'options' => ['image' => $product->product_image]
                 ]);
             }
-
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
         $count=[
             'countCart'=>Cart::count(),
             'contentCart'=>Cart::content(),
@@ -102,8 +78,6 @@ class CartController extends Controller
         $cities=City::all();
         return \view('pages.checkout',\compact('cities'));
     }
-<<<<<<< HEAD
-=======
     public function add_product_folow_quantity($id,$qty){
         $product = Product::find($id);
         if ($product->price_sale == 0) {
@@ -133,7 +107,6 @@ class CartController extends Controller
         ];
         return response()->json($count);
     }
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
 
 
 }

@@ -9,25 +9,32 @@
                         <img width="200px" height="500px"  src="{{asset('storage/'.$product->product_image)}}" alt=""/>
 <div class="mt-12 product-dec-slider owl-carousel">
                         @foreach ($images as $item)
-
                                     <img width="100px" height="150px" src="{{asset('storage/'.$item->image)}}" alt="">
-
                         @endforeach</div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content">
+
+                            <h2>Dog Calcium Food</h2>
+
                         <h2><strong>{{$product->product_name}}</strong></h2>
+
+                            <div class="product-rating">
+                                <i class="ti-star theme-color"></i>
+                                <i class="ti-star theme-color"></i>
+                                <i class="ti-star theme-color"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <span> ( 01 Customer Review )</span>
+                            </div>
                             <div>
                             <p><strong>{{$product->brands->brand_name}}</strong></p>
                             </div>
-                            <div class="quality-wrapper mt-30 product-quantity">
-
-                            @if ($product->product_status==1)
-                            <span><i class="ion-android-checkbox-outline"></i> Tình trạng: Còn hàng</span>
-                            @else
-                            <span><i class="ion-android-checkbox-outline"></i> Tình trạng: Hết hàng</span>
-                                @endif
+                            <div class="product-price">
+                            <span class="new">{{number_format(($product->product_price)-($product->product_price_sale)) }} <u>đ</u> </span>
+                            <span class="old">{{ number_format($product->product_price)}} <u>đ</u></span>
+                            </div>
                             <div class="sku">
                             <span>Mã sản phẩm : {{$product->product_code}}</span>
                             </div>
@@ -40,8 +47,6 @@
                             </div>
                             <div class="product-list-action">
                                 <div class="product-list-action-left">
-                                    <a class="addtocart-btn" href="#" title="Add to cart">
-                                        <i class="ion-bag"></i>
                                     <a class="addtocart-btn" style="cursor: pointer; color: white" id="addproductdetail" data-id="{{$product->product_id}}" title="Add to cart">
                                         Add to cart
                                     </a>
