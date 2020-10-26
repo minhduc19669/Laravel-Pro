@@ -179,11 +179,6 @@ Route::middleware(['auth'])->group(function (){
             Route::get('brand/search','BrandController@action')->name('brand.search');
 
         });
-
-
-
-
-
             //news
             Route::get('news','NewsController@index')->name('news.list');
             Route::get('news/add','NewsController@add')->name('news.add');

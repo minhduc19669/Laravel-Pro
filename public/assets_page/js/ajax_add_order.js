@@ -22,23 +22,24 @@ $(document).ready(function (){
         })
     })
 })
-$(document).ready(function (){
-    $("#cartOrder").on('click',function (){
-        let product_id=$(this).attr('product-id');
-        console.log(product_id);
+$(document).on('click', '#orderProduct', function() {
+        var id = $(this).data('id');
+        console.log(id);
         let origin = location.origin;
         $.ajax({
-            url:origin+ '/users/order/cart/'+product_id,
-            data:{},
+            url:origin+ '/users/order/cart/'+id,
+            data: {
+                "product_id": id,
+            },
             dataType: 'json',
             success: function (data){
                 console.log(data);
                 $.each(data,function (key, value){
                     $('.tbodyCart').append(
-                        "<td>"+ value.product_price +"</td>"
+                        " <tr>+<td><img width='50px' src='/storage/"+ value.product_image +"'></td>+<td>"+ value.product_name +"</td>+<td>"+ value.product_price +"</td>+<td></td>+<td></td>+<td><button class='btn btn-outline-success'>Xóa</button></td></tr> "
+
                     )
                 })
             }
         })
-    })
 })
