@@ -143,8 +143,8 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($product as $key =>$product)
-                                        <tr>
+                                        @foreach($products as $key =>$product)
+                                        <tr id="item_order{{$product->product_id}}">
                                             <th scope="row">{{$key+1}}</th>
                                             <td>{{$product->product_code}}</td>
                                             <td>{{$product->product_name}}</td>
@@ -161,7 +161,7 @@
                     </div>
 
                 </section>
-                <h3>Đơn hàng</h3>
+                <h3>Giỏ hàng</h3>
                 <section>
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="userName1">Xem đơn hàng</label>
@@ -180,6 +180,20 @@
                                         </tr>
                                         </thead>
                                         <tbody class="tbodyCart">
+                                        @foreach($data as $item)
+                                           <tr id="item_id{{$item->rowId}}">
+                                               <td> <img width="50px" alt="" src="{{asset('storage/'.$item->options['image'])}}"/></td>
+                                               <td>{{$item->name}}</td>
+                                               <td>{{$item->price}}</td>
+                                               <td>
+                                                   <input min="1" row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
+                                               </td>
+                                               <td><span id="price-item{{$item->rowId}}">{{number_format($item->price*$item->qty)}}</span></td>
+                                               <td>
+                                                   <a class="btn  btn-danger delete"  style="cursor: pointer;" id="deleteitem" item-id="{{$item->rowId}}">Xóa</a>
+                                               </td>
+                                           </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
@@ -187,27 +201,14 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group row">
-                        <label class="col-lg-2 control-label " for="password1"> Giá tiền</label>
-                        <div class="col-lg-10">
-                            <p id="price"></p>
+                        <label class="col-lg-2 control-label " for="password1">Thành tiền</label>
+                        <div  class="col-lg-10">
+                           <b id="total">{{$total}}</b>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-lg-2 control-label " for="password1"> Số lượng</label>
-                        <div class="col-lg-10">
-                            <input id="password1" name="password" type="text" class="required form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-lg-2 control-label " for="password1">Tổng tiền</label>
-                        <div class="col-lg-10">
-                            <input id="password1" name="password" type="text" class="required form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-lg-12 control-label ">(*) Mandatory</label>
-                    </div>
+
                 </section>
                 <h3>Xem lại đơn hàng</h3>
                 <section>
@@ -237,5 +238,6 @@
             <!-- End #wizard-vertical -->
         </div>
     </div>
+
     <!-- end row -->
 @endsection

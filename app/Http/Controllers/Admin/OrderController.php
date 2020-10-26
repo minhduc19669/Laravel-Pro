@@ -8,6 +8,7 @@ use App\Order;
 use App\Orderdetail;
 use App\Product;
 use App\Shipping;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,10 +21,12 @@ class OrderController extends Controller
         return view('admin.order.list',compact('order'));
     }
     public function add(){
-        $product = Product::with('images')->get();
+        $total = Cart::priceTotal();
+        $data=Cart::content();
+        $products = Product::with('images')->get();
         $shipping_city= City::all();
         $shipping_district=District::all();
-        return view('admin.order.add',compact('shipping_city','shipping_district','product'));
+        return view('admin.order.add',compact('shipping_city','shipping_district','products','data','total'));
     }
     public function showPrice($id){
         $showPrice = Product::where('product_id',$id)->get();
