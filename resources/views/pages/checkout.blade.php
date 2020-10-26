@@ -125,7 +125,7 @@
                     @endif
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
+                                                        <div class="billing-info" style="height: 40px">
                                                             <label>Chọn Tỉnh/thành phố</label>
                                                             <select required class="form-control city-up" name="city_receive" id="district">
                                                             <option value="">--Tỉnh/thành phố--</option>
@@ -137,7 +137,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
+                                                        <div style="height: 40px;" class="billing-info">
                                                         <label>Chọn Quận/huyện</label>
                                                             <select required class="form-control city-up" name="district_receive" id="district">
                                                             <option value="">--Quận/huyện--</option>
@@ -191,7 +191,7 @@
                                                         <label>Thanh toán khi nhận hàng</label>
                                                     </div>
                                                     <div class="single-ship">
-                                                        <input  name="bank" class="radio-check" type="radio" value="2" >
+                                                        <input  name="cod" class="radio-check" type="radio" value="2" >
                                                         <label>Chuyển khoản qua InternetBanking</label>
                                                     </div>
                                                 </div>

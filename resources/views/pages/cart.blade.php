@@ -11,7 +11,6 @@
                                 <table>
                                     <thead>
                                         <tr>
-
                                             <th>Ảnh sản phẩm</th>
                                             <th>Tên sản phẩm</th>
                                             <th>Đơn giá</th>
@@ -29,11 +28,7 @@
                                             <td><a href="#">{{$item->name}}</a></td>
                                             <td style="width: 90px;" ><span style="margin-left: 35px" class="amount">{{number_format($item->price)}} <u>đ</u></span></td>
                                             <td>
-                                                <input row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
-<<<<<<< HEAD
-
-=======
->>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
+                                                <input min="1" row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
                                             </td>
                                         <td><span id="price-item{{$item->rowId}}" style="margin-left: 40px;">{{number_format($item->price*$item->qty)}} <u>đ</u></span></td>
                                             <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>

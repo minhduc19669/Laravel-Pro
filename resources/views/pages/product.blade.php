@@ -46,14 +46,6 @@
                         <img width="100px" height="230px" src="{{asset('storage/'.$item->product_image)}}" alt=""/>
                         </a>
                         <div class="product-action">
-                          <a id="viewproduct" view-id="{{$item->product_id}}"
-                            title="Quick View"
-                            data-toggle="modal"
-                            data-target="#exampleModal"
-                            href="#"
-                          >
-                            <i class="ti-plus"></i>
-                          </a>
                           <a style="cursor: pointer;" id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
                             <i class="ti-shopping-cart"></i>
                           </a>
@@ -96,7 +88,7 @@
                             ></a>
                             <a
                               title="Quick View"
-                              data-toggle="modal"
+                              data-toggle=odal"
                               data-target="#exampleModal"
                               href="#"
                               ><i class="ti-plus"></i

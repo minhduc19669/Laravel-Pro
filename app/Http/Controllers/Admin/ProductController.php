@@ -93,7 +93,7 @@ class ProductController extends Controller
              $edit_product = DB::table('products')->where('product_id',$id)->orderBy('product_id','desc')->get();
              return view('admin.products.edit',['list'=> $edit_product])->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('cate_sub',$cate_sub)->with('images',$images);
          }
- public function update(ValidateFormUpdateProduct $request,$id){
+ public function update(Request $request,$id){
         $product = Product::find($id);
         $product->cate_pro_id = $request->product_cate;
         $product->sub_id = $request->cate_sub;
@@ -105,56 +105,37 @@ class ProductController extends Controller
         $product->product_content = $request->product_content;
         $product->product_desc = $request->product_desc;
         $product->product_status = $request->product_status;
-        if($request->hasFile('product_image')){
-            $this->validate(
-                $request,
-                [
-                    //Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
-                    'product_image' => 'mimes:jpg,jpeg,png,gif|max:2048',
-                ],
-                [
-                    //Tùy chỉnh hiển thị thông báo không thõa điều kiện
-                    'product_image.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
-                    'product_image.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
-                ]
-            );
-            $get_image = $request->hasFile('product_image');
-            if ($get_image) {
-                $allowedfileExtension = ['jpg', 'png', 'jpeg'];
-                $files = $request->file('product_image');
-                $exe_flg = \true;
-                foreach ($files as $file) {
-                    $extension = $file->getClientOriginalExtension();
-                    $check = in_array($extension, $allowedfileExtension);
-                    if (!$check) {
-                        $exe_flg = \false;
-                        break;
-                    }
+        $get_image = $request->hasFile('product_image');
+        if ($get_image) {
+            $allowedfileExtension = ['jpg', 'png', 'jpeg'];
+            $files = $request->file('product_image');
+            $exe_flg = \true;
+            foreach ($files as $file) {
+                $extension = $file->getClientOriginalExtension();
+                $check = in_array($extension, $allowedfileExtension);
+                if (!$check) {
+                    $exe_flg = \false;
+                    break;
                 }
-                if ($exe_flg) {
-
-                    $product->save();
-                    foreach ($request->product_image as $image) {
-                        $filename = $image->store('product', 'public');
-
-                        $image = new Image();
-                        $image->image = $filename;
-                        $image->product_id = $product->product_id;
-                        $image->save();
-                    }
-                    $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
-
-                    foreach ($avatar as $value) {
-                        $product->product_image = $value->image;
-                        $product->save();
-                    }
-                }
-                Alert()->success('Cập nhập thành công !')->autoClose(1500);
-                return \redirect()->route('product.list');
             }
+            if ($exe_flg) {
+                $product->save();
+                foreach ($request->product_image as $image) {
+                    $filename = $image->store('product', 'public');
+                    $image = new Image();
+                    $image->image = $filename;
+                    $image->product_id = $product->product_id;
+                    $image->save();
+                }
+                $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
+                foreach ($avatar as $value) {
+                    $product->product_image = $value->image;
+                    $product->save();
+                }
+            }
+            Alert()->success('Cập nhập thành công !')->autoClose(1500);
+            return \redirect()->route('product.list');
         }
-
-
  }
  public function remove($id){
             $image=Image::where('product_id',$id)->delete();

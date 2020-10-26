@@ -10,4 +10,7 @@ class Customer extends Model
     protected $fillable = ['id',
         'customer_name', 'customer_email','customer_phone', 'customer_avatar', 'customer_address', 'customer_password', 'google_id'
     ];
+    public function posts(){
+        return $this->hasMany('App\Post','customer_id','id');
+    }
 }

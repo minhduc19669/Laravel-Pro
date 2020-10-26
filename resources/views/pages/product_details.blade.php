@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="description-review-wrapper gray-bg pt-40">
                     <div class="description-review-topbar nav text-center">
-                        <a class="active" data-toggle="tab" href="#des-details1">DESCRIPTION</a>
+                        <a class="" data-toggle="tab" href="#des-details1">DESCRIPTION</a>
                         {{-- <a data-toggle="tab" href="#des-details2">MORE INFORMATION</a> --}}
                         <a data-toggle="tab" href="#des-details3">REVIEWS (2)</a>
                     </div>
@@ -96,77 +96,136 @@
                             </div>
                         </div> --}}
                         <div id="des-details3" class="tab-pane">
-                            <div class="rattings-wrapper">
-                                <div class="sin-rattings">
-                                    <div class="star-author-all">
-                                        <div class="product-rating f-left">
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <span>(5)</span>
-                                        </div>
-                                        <div class="ratting-author f-right">
-                                            <h3>tayeb rayed</h3>
-                                            <span>12:24</span>
-                                            <span>9 March 2018</span>
-                                        </div>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
-                                </div>
-                                <div class="sin-rattings">
-                                    <div class="star-author-all">
-                                        <div class="product-rating f-left">
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star theme-color"></i>
-                                            <i class="ti-star"></i>
-                                            <span>(4)</span>
-                                        </div>
-                                        <div class="ratting-author f-right">
-                                            <h3>farhana shuvo</h3>
-                                            <span>12:24</span>
-                                            <span>9 March 2018</span>
-                                        </div>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
-                                </div>
+                            <div class="rattings-wrapper" id="rating">
                             </div>
                             <div class="ratting-form-wrapper">
-                                <h3>Add your Comments :</h3>
-                                <div class="ratting-form">
-                                    <form action="#">
+                                <button style="height: 30px;margin-left: 450px" onclick="displayFormRating()" class="button-border-white"><h3 style="margin-top: 7px">Gửi đánh giá của bạn:</h3></button>
+                                <script>
+                                    function displayFormRating() {
+                                        document.getElementById('form-rating').style.display = 'block';
+                                    }
+                                </script>
+                                <div id='form-rating' style="display: none" class="ratting-form">
+
                                         <div class="star-box">
                                             <h2>Rating:</h2>
-                                                <div class="product-rating">
-                                                <i class="ti-star theme-color"></i>
-                                                <i class="ti-star theme-color"></i>
-                                                <i class="ti-star theme-color"></i>
-                                                <i class="ti-star"></i>
-                                                <i class="ti-star"></i>
-                                                <span>(3)</span>
+                                                <div class="well well-sm">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6 text-center">
+                                                    <h1 class="rating-num">
+                                                        4.0</h1>
+                                                    <div class="rating">
+                                                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                                                        </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                                                        </span><span class="glyphicon glyphicon-star-empty"></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="glyphicon glyphicon-user"></span>1,050,008 total
+                                                    </div>
+                                                </div>
+                                                <div style="margin-top: 10px" class="col-xs-12 col-md-6">
+                                                    <div class="row rating-desc">
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>5
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress progress-striped">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                                    <span class="sr-only">80%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 5 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>4
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                                    <span class="sr-only">60%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 4 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>3
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                                    <span class="sr-only">40%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 3 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>2
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
+                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                                    <span class="sr-only">20%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 2 -->
+                                                        <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>1
+                                                        </div>
+                                                        <div class="col-xs-8 col-md-9">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+                                                                    <span class="sr-only">15%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end 1 -->
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style mb-20">
-                                                    <input placeholder="Name" type="text">
+                                        </div>
+                                        <div class="card">
+                                            <form>
+                                            {{ csrf_field() }}
+                                            <div class="card-header">
+                                                Bạn đánh giá sản phẩm này bao nhiêu sao?
+                                                <div class="row">
+                                                <div class="col-lg-12">
+                                                <div class="star-rating">
+                                                    <span class="fa fa-star-o" data-rating="1"></span>
+                                                    <span class="fa fa-star-o" data-rating="2"></span>
+                                                    <span class="fa fa-star-o" data-rating="3"></span>
+                                                    <span class="fa fa-star-o" data-rating="4"></span>
+                                                    <span class="fa fa-star-o" data-rating="5"></span>
+                                                    <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                                </div>
+                                            <div id="star-error" style="margin-left: 5px" class="row text-danger"></div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style mb-20">
-                                                    <input placeholder="Email" type="text">
-                                                </div>
                                             </div>
+
+                                            <div class="card-body">
+                                                <div class="row">
                                             <div class="col-md-12">
                                                 <div class="rating-form-style form-submit">
+                                                    <input type="hidden" name="rating" id="rating-input">
+                                                <input value="{{$product->product_id}}" type="hidden" name="product_id">
                                                     <textarea name="message" placeholder="Message"></textarea>
-                                                    <input type="submit" value="add review">
+                                                    <button class="btn btn-success btn-submit">Submit</button>
+                                                <div style="margin-left: 5px" class="row">ddfdsfsdfs</div>
                                                 </div>
+
                                             </div>
                                         </div>
+                                            </div>
+                                            </div>
                                     </form>
                                 </div>
                             </div>
@@ -189,9 +248,6 @@
                             <img src="{{asset('storage/'.$item->product_image)}}" alt="">
                             </a>
                             <div class="product-action">
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
-                                    <i class="ti-plus"></i>
-                                </a>
                                 <a title="Add To Cart" href="#">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
@@ -215,6 +271,24 @@
                 </div>
             </div>
     </div>
+<script>
+  $(document).ready(function() {
+        $(".btn-submit").click(function(e){
+            e.preventDefault();
+            var _token = $("input[name=_token]").val();
+            var rating = $("input[name=rating]").val();
+            var product_id = $("input[name='product_id']").val();
+            var message = $("textarea[name='message']").val();
+            $.ajax({
+                url: "/post",
+                data: {_token:_token, rating:rating, product_id:product_id, message:message},
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+    });
+</script>
 
 
 
