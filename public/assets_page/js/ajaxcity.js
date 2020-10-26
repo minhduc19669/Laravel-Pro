@@ -1,9 +1,8 @@
 $(document).ready(function () {
-       $('.ship-wrapper .single-ship .radio-check').on('click', function () {
-                    $('.ship-wrapper .single-ship .radio-check').not(this).prop('checked',false);
-                });
+
                 $("select[name='city']").change(function () {
                     let city_id = $(this).val();
+                    console.log(city_id);
                     let origin = location.origin;
                     $.ajaxSetup({
                         headers: {

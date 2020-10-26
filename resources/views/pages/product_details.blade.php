@@ -9,9 +9,7 @@
                         <img width="200px" height="500px"  src="{{asset('storage/'.$product->product_image)}}" alt=""/>
 <div class="mt-12 product-dec-slider owl-carousel">
                         @foreach ($images as $item)
-
                                     <img width="100px" height="150px" src="{{asset('storage/'.$item->image)}}" alt="">
-
                         @endforeach</div>
                         </div>
                     </div>
@@ -37,8 +35,8 @@
                             </div>
 >>>>>>> e89e83e45017d9d694b518f2d529e77a3fdcdf3a
                             <div class="product-price">
-                                <span class="new">$20.00 </span>
-                                <span class="old">$50.00</span>
+                            <span class="new">{{number_format(($product->product_price)-($product->product_price_sale)) }} <u>đ</u> </span>
+                            <span class="old">{{ number_format($product->product_price)}} <u>đ</u></span>
                             </div>
                             <div class="in-stock">
 <<<<<<< HEAD
