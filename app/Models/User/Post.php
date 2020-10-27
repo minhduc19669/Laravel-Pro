@@ -13,5 +13,8 @@ class Post extends Model
     public function Customer (){
         return $this->belongsTo('App\Customer', 'customer_id', 'id');
     }
+    public function Product(){
+        return $this->belongsTo('App\Product','id_product','product_id');
+    }
 
 }

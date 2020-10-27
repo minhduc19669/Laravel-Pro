@@ -72,8 +72,5 @@
                         <span class="btn-label"><i class="mdi mdi-close"></i>
                         </span>Xóa</button></a>
                 @endif
-                @if($list->order_status == 0)
-                <button style="float: right" class="btn waves-effect waves-light btn-warning"> <i class="mdi mdi-wrench"></i> </button>
-                    @endif
             </div>
 @endsection
