@@ -11,6 +11,7 @@ use App\Shipping;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use SebastianBergmann\CodeCoverage\TestFixture\C;
 
 class OrderController extends Controller
 {
@@ -23,10 +24,11 @@ class OrderController extends Controller
     public function add(){
         $total = Cart::priceTotal();
         $data=Cart::content();
+        $count =Cart::count();
         $products = Product::with('images')->get();
         $shipping_city= City::all();
         $shipping_district=District::all();
-        return view('admin.order.add',compact('shipping_city','shipping_district','products','data','total'));
+        return view('admin.order.add',compact('shipping_city','shipping_district','products','data','total','count'));
     }
     public function showPrice($id){
         $showPrice = Product::where('product_id',$id)->get();
@@ -52,12 +54,11 @@ class OrderController extends Controller
     }
     public function edit($id){
         $order = DB::table('orders')
-            ->join('shippings','shippings.id','=','orders.order_id')
+            ->join('shippings','shippings.id','=','orders.shipping_id')
             ->where('orders.order_id',$id)->get();
         $order_detail = DB::table('orders_details')
             ->join('orders','orders.order_id','=','orders_details.order_id')
             ->where('orders_details.order_id',$id)->get();
-
    return view('admin.order.edit',compact('order','order_detail'));
 
     }
@@ -72,9 +73,11 @@ class OrderController extends Controller
 
     }
     public function remove($id){
-        DB::beginTransaction();
-        Order::where('order_id',$id)->delete();
-        DB::commit();
+        $delete_orDetail = DB::table('orders_details')->where('order_id',$id)->delete();
+        $order_remove = DB::table('orders')->where('order_id',$id)->first();
+        $delete_order = DB::table('orders')->where('order_id',$id)->delete();
+        $delete_shipping = Shipping::where('id',$order_remove->shipping_id)->delete();
+
         Alert()->success('Xóa  thành công !')->autoClose(1500);
         return \redirect()->route('order.list');    }
 
@@ -129,18 +132,10 @@ class OrderController extends Controller
                      <td>Hủy đơn hàng</td>
                      ';
                     }
-                        if ($row->order_status == 3 or $row->order_status == 2) {
-                            $output .= '
-                     <td><a href=' . route('order.edit', $row->order_id) . '><button class="btn  btn-dark" type="submit">Chi tiết</button></a>
-                      <button id="delete"  data-id="' . $row->order_id . '" class="btn  btn-danger delete" type="submit">xóa</button> </td>
-                    </tr>
-                    ';
-                        }else{
                             $output .= '
                      <td><a href=' . route('order.edit', $row->order_id) . '><button class="btn  btn-dark" type="submit">Chi tiết</button></a></td>
                     </tr>
                     ';
-                        }
 
 
                         }
@@ -149,7 +144,7 @@ class OrderController extends Controller
             {
                 $output = '
                    <tr>
-                    <td align="center" colspan="5">No Data Found</td>
+                    <td align="center" colspan="6">No Data Found</td>
                    </tr>
                    ';}
             $data = array(

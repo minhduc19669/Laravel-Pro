@@ -30,14 +30,17 @@
                 <div class="form-row">
 
                 <div class="form-row col-md-12">
-                    <div class="form-group col-md-5">
-                        <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
-                        <br>
-                        <input multiple value="{{old('product_image')}}" type="file" class="form-control-file" name="product_image[]" id="imageUpload" >
-                        @if ($errors->has('product_image'))
-                            <p style="color: red">{{ $errors->first('product_image') }}</p>
-                        @endif
-                    </div>
+                    <div class="col-lg-5">
+                        <div class="card-box">
+
+                            <h4 class="header-title mb-4">Image</h4>
+
+                            <input multiple name="product_image[]" value="{{old('product_image')}}" type="file" class="dropify" data-default-file="{{asset('assets/images/small/img-1.jpg')}}"  />
+                            @if ($errors->has('product_image'))
+                                <p style="color: red">{{ $errors->first('product_image') }}</p>
+                            @endif
+                        </div>
+                    </div><!-- end col -->
 
                     <div class="form-group col-md-5">
                         <label  for="brand" >Thương hiệu sản phẩm</label>

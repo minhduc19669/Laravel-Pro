@@ -14,10 +14,13 @@ $(document).on('click', '#orderProduct', function() {
                 let data=result.contentCart;
                 let element="";
                 $.each(data,function(key,value){
-                    element+= '<tr  id="'+'item_id'+value.rowId+ '">'+'<td><img width="50px" src="/storage/'+ value.options.image + '" /></td>'+'<td>'+value.name+'</td>'+'<td>'+value.price+'</td>'+'<td> <input min="1" row-id="'+value.rowId+'" style="text-align: center;" class="update" type="number" name="qtybutton" value="'+value.qty+'"></td>'+'<td><span id="price-item'+value.rowId+'">'+value.price*value.qty+'</span></td>'+'<td><a class="btn  btn-danger delete shopping-cart-delete"  style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">Xóa</a>\n</td>'+'</tr>';
+                    element+= '<tr  id="'+'item_id'+value.rowId+ '">'+'<td><img width="50px" src="/storage/'+ value.options.image + '" /></td>'+'<td>'+value.name+'</td>'+'<td>'+value.price+'</td>'+'<td><input min="1" row-id="'+ value.rowId +'" style="text-align: center;" id="update" type="number" name="qtybutton" value="'+value.qty+'"></td>'+'<td>'+'<span id="price-item'+value.rowId+'">'+value.price*value.qty+'</span>'+'</td>'+'<td><a class="btn  btn-danger delete shopping-cart-delete"  style="cursor: pointer;" id="deleteitem" item-id="'+value.rowId+'">Xóa</a>\n</td>'+'</tr>';
                 });
                 $('.tbodyCart').html(element);
                 $("#total").html(result.total+" VNĐ")
+                $("#total_x").html("<b>Tổng số tiền:</b>"+ result.total+ " VNĐ")
+                $("#count_x").html("<b>Số đơn hàng:</b>"+count)
+
             }
 
         });
@@ -43,26 +46,32 @@ $(document).on('click','#deleteitem',function(){
             $("#item_id"+rowId).remove();
             let count=data.countCart;
             $("#total").html(data.total+" VNĐ")
+            $("#total_x").html("<b>Tổng số tiền:</b>"+ result.total+ " VNĐ")
+            $("#count_x").html("<b>Số đơn hàng:</b>"+count)
+
 
         }
     })
 });
 // Cập nhật
-$(document).ready(function ($) {
-    $('.update').on('change', function () {
-        var id = $(this).attr('row-id');
+$(document).on('click', '#update', function() {
+    var id = $(this).attr('row-id');
+        console.log(id);
+
         var qty = $(this).val();
         $.ajax({
             url: 'http://laravel-training.local/cart/update/' + id + "/" + qty,
+            data: {'rowId' : id},
             dataType: 'json',
             success: function (result) {
                 let totalPrice = result.totalPriceCart.qty;
                 let price = totalPrice * result.totalPriceCart.price;
                 let prices = new Intl.NumberFormat().format(price);
                 $("#total").html(result.total+" VNĐ")
+                $("#total_x").html("<b>Tổng số tiền:</b>"+ result.total+ " VNĐ")
                 $('#price-item' + id).html(prices +' '+'<u>'+
                     '</u>');
             }
         })
-    });
 })
+

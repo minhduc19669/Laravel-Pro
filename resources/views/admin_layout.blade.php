@@ -748,6 +748,7 @@
 </script>
 <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
 <script src="{{asset('assets_page/js/ajax_add_order.js')}}"></script>
+
 </body>
 </html>
 

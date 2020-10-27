@@ -29,7 +29,6 @@
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="action: activate to sort column ascending">Thành phố</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="action: activate to sort column ascending">Quận/huyện</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="action: activate to sort column ascending">Email</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="action: activate to sort column ascending">Action</th>
 
                     </tr>
                     </thead>
@@ -62,8 +61,6 @@
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Age: activate to sort column ascending">Địa chỉ</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="action: activate to sort column ascending">Thành phố</th>
                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 100px;" aria-label="action: activate to sort column ascending">Quận/huyện</th>
-                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="action: activate to sort column ascending">Action</th>
-
                         </tr>
                         </thead>
                         <tbody class="tbody1">
