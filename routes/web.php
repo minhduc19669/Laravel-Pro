@@ -237,8 +237,14 @@ Route::middleware(['auth'])->group(function (){
             Route::get('comment/search/action','PostController@action')->name('comment.search');
             Route::get('comment/edit/{id}','PostController@edit')->name('comment.edit');
             Route::get('comment/delete/{id}','PostController@delete')->name('comment.delete');
-
-
+        //transport
+            Route::get('transport','TransportController@list')->name('transport.list');
+            Route::get('transport/add','TransportController@add')->name('transport.add');
+            Route::post('transport/save','TransportController@save')->name('transport.save');
+            Route::get('transport/edit/{id}','TransportController@edit')->name('transport.edit');
+            Route::post('transport/update/{id}','TransportController@update')->name('transport.update');
+            Route::get('transport/search/action','TransportController@action')->name('transport.search');
+            Route::get('transport/delete/{id}','TransportController@delete')->name('transport.delete');
     });
     });
 

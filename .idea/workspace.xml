@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038264dc-0489-4d06-874a-50cc6d6170b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/comment/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/comment/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/subcategory/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -195,11 +189,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Models/Admin" />
       <recent name="$PROJECT_DIR$/node_modules" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/resources/views/admin/categories/news" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/categories/product" />
     </key>
   </component>
   <component name="RunManager">
@@ -278,6 +272,7 @@
       <workItem from="1603761943726" duration="7677000" />
       <workItem from="1603769648110" duration="2638000" />
       <workItem from="1603772394483" duration="14214000" />
+      <workItem from="1603803246378" duration="14565000" />
     </task>
     <servers />
   </component>
@@ -305,10 +300,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="170" y="146" width="1006" height="517" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1601913201673" />
-    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603784284433">
+    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603808625801">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603784284433" />
+    <state x="416" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.741@0.27.1366.741" timestamp="1603808625801" />
     <state x="359" y="239" width="638" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601347410449">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -317,10 +312,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" key="DiffContextDialog/0.27.1366.741@0.27.1366.741" timestamp="1603362377373" />
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1603783329916">
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog" timestamp="1603793397222">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1603783329916" />
+    <state x="478" y="323" width="399" height="156" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1603793397222" />
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1601948018871">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -337,10 +332,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="100" y="127" width="1166" height="541" maximized="true" key="dock-window-2/0.27.1366.741@0.27.1366.741" timestamp="1601533403122" />
-    <state x="347" y="174" width="672" height="677" key="run.anything.popup" timestamp="1603786922483">
+    <state x="347" y="174" width="672" height="677" key="run.anything.popup" timestamp="1603807263554">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="347" y="174" width="672" height="677" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603786922483" />
+    <state x="347" y="174" width="672" height="677" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1603807263554" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602122495484">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

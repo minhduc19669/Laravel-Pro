@@ -15,7 +15,7 @@
 
                         <label class="col-lg-2 control-label" for="name1"> Họ và tên *</label>
                         <div class="col-lg-10">
-                            <input id="textBox1" name="name" type="text" class="required form-control">
+                            <input value="{{old('name')}}" id="textBox1" name="name" type="text" class="required form-control">
                             @if($errors->first('name'))
                                 <p class="text-danger">{{ $errors->first('name') }}</p>
                             @endif
@@ -24,7 +24,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="surname1">Số điện thoại *</label>
                         <div class="col-lg-10">
-                            <input id="textBox2" name="phone" type="number" class="required form-control">
+                            <input value="{{old('phone')}}" id="textBox2" name="phone" type="number" class="required form-control">
                             @if($errors->first('phone'))
                                 <p class="text-danger">{{ $errors->first('phone') }}</p>
                             @endif
@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="email1">Email *</label>
                         <div class="col-lg-10">
-                            <input id="email" name="email" type="text" class="required email form-control">
+                            <input value="{{old('email')}}" id="email" name="email" type="text" class="required email form-control">
                             @if($errors->first('email'))
                                 <p class="text-danger">{{ $errors->first('email') }}</p>
                             @endif
@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="address1">Địa chỉ *</label>
                         <div class="col-lg-10">
-                            <input id="textBox3" name="address" type="text" class="form-control">
+                            <input value="{{old('address')}}" id="textBox3" name="address" type="text" class="form-control">
                             @if($errors->first('address'))
                                 <p class="text-danger">{{ $errors->first('address') }}</p>
                             @endif
@@ -86,7 +86,7 @@
 
                         <label class="col-lg-2 control-label" for="name1"> Họ và tên *</label>
                         <div class="col-lg-10">
-                            <input id="textBox10" name="name_receive" type="text" class="required form-control">
+                            <input value="{{old('name_receive')}}" id="textBox10" name="name_receive" type="text" class="required form-control">
                             @if($errors->first('name_receive'))
                                 <p class="text-danger">{{ $errors->first('name_receive') }}</p>
                             @endif
@@ -95,7 +95,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="surname1">Số điện thoại *</label>
                         <div class="col-lg-10">
-                            <input id="textBox6" name="phone_receive" type="number" class="required form-control">
+                            <input value="{{old('phone_receive')}}" id="textBox6" name="phone_receive" type="number" class="required form-control">
                             @if($errors->first('phone_receive'))
                                 <p class="text-danger">{{ $errors->first('phone_receive') }}</p>
                             @endif
@@ -104,7 +104,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="address1">Địa chỉ *</label>
                         <div class="col-lg-10">
-                            <input id="textBox7" name="address_receive" type="text" class="form-control">
+                            <input id="textBox7" value="{{old('address_receive')}}" name="address_receive" type="text" class="form-control">
                             @if($errors->first('address_receive'))
                                 <p class="text-danger">{{ $errors->first('address_receive') }}</p>
                             @endif
