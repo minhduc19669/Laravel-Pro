@@ -8,9 +8,12 @@ $('.update').on('change', function () {
                 success: function (result) {
                     let totalPrice = result.totalPriceCart.qty;
                     let price = totalPrice * result.totalPriceCart.price;
+                    console.log(totalPrice);
                     let prices = new Intl.NumberFormat().format(price);
                     $('#price-item' + id).html(prices +' '+'<u>'+
-                        'đ'+'</u>');
+                        'đ' + '</u>');
+                    $('#grand-total').html('Tổng tiền : '+ prices +' '+'<u>'+
+                        'đ' + '</u>');
                 }
             })
         });

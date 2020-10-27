@@ -17,6 +17,7 @@
     />
 
     <!-- all css here -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="{{asset('assets_page/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/simple-line-icons.css')}}" />
@@ -27,9 +28,9 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_page/css/rating.css')}}">
     <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -593,9 +594,10 @@
     </script>
 
     <!-- all js here -->
-    <script src="{{asset('assets_page/js/vendor/jquery-1.12.0.min.js')}}"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <script src="{{asset('assets_page/js/popper.js')}}"></script>
-    <script src="{{asset('assets_page/js/bootstrap.min.js')}}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="{{asset('assets_page/js/jquery.counterup.min.js')}}"></script>
     <script src="{{asset('assets_page/js/waypoints.min.js')}}"></script>
     <script src="{{asset('assets_page/js/elevetezoom.js')}}"></script>
@@ -607,12 +609,14 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{asset('assets_page/js/addproductcart.js')}}"></script>
     <script src="{{asset('assets_page/js/deleteproductcart.js')}}"></script>
+<script src="{{asset('assets_page/js/rating.js')}}"></script>
     <script src="{{asset('assets_page/js/quickviewcart.js')}}"></script>
     <script src="{{asset('assets_page/js/addproducttocart.js')}}"></script>
     <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
     <script src="{{asset('assets_page/js/addproductdetails.js')}}"></script>
+    <script src="{{asset('assets_page/js/change-cart.js')}}"></script>
+<script src="{{asset('assets_page/js/post.js')}}"></script>
 <script src="{{asset('assets_page/js/change_qty_product.js')}}"></script>
 <script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
-
   </body>
 </html>

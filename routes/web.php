@@ -91,8 +91,7 @@ Route::prefix('page')->group(function(){
 
 });
 
-
-
+Route::post('post', 'PostController@post')->name('customer.rating');
 
 //manager//
 Route::middleware(['auth'])->group(function (){
