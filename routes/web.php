@@ -231,7 +231,13 @@ Route::middleware(['auth'])->group(function (){
             Route::post("shipping/update/{id}","ShippingController@update")->name('shipping.update');
             Route::get("shipping/remove/{id}","ShippingController@remove")->name('shipping.remove');
             Route::get('shipping/search/action','ShippingController@action')->name('shipping.search');
-             Route::get('shipping/search/action_1','ShippingController@action_1')->name('shipping.search_1');
+            Route::get('shipping/search/action_1','ShippingController@action_1')->name('shipping.search_1');
+        //Comment
+            Route::get('comment','PostController@list')->name('comment.list');
+            Route::get('comment/search/action','PostController@action')->name('comment.search');
+            Route::get('comment/edit/{id}','PostController@edit')->name('comment.edit');
+            Route::get('comment/delete/{id}','PostController@delete')->name('comment.delete');
+
 
     });
     });

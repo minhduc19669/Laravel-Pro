@@ -263,13 +263,13 @@
                                 <li ><b id="text_14">Trạng thái:</b> Chưa giao </li>
                             </ul>
                         </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled w-list">
-                                <li id="text_12" ><b >Người nhận :</b>  </li>
-                                <li id="text_13"><b>Số điện thoại:</b> Smith </li>
-                                <li id="text_14"><b>Address:</b> 123 Your City, Cityname. </li>
-                            </ul>
-                        </div>
+{{--                        <div class="col-lg-6">--}}
+{{--                            <ul class="list-unstyled w-list">--}}
+{{--                                <li id="text_12" ><b >Người nhận :</b>  </li>--}}
+{{--                                <li id="text_13"><b>Số điện thoại:</b> Smith </li>--}}
+{{--                                <li id="text_14"><b>Address:</b> 123 Your City, Cityname. </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
                     </div>
 

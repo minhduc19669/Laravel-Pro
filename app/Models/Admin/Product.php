@@ -14,10 +14,10 @@ class Product extends Model
     protected $primaryKey='product_id';
 
     public function categories(){
-        return $this->hasMany('App\Category','cate_pro_id','product_id');
+        return $this->belongsTo('App\Category','cate_pro_id','cate_pro_id');
     }
     public function subcategories(){
-        return $this->belongsTo('App\Category','sub_id','product_id');
+        return $this->belongsTo('App\Category','sub_id','sub_id');
     }
     public function brands(){
         return $this->belongsTo('App\Brand','brand_id','id');

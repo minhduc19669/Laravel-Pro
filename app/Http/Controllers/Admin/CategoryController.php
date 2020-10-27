@@ -252,15 +252,16 @@ class CategoryController extends Controller{
             $query = $request->get('query');
             if($query != '')
             {
-                $data = DB::table('categories')
+                $data =Category::with('categories')
                     ->orWhere('category_sub_product_name', 'like', '%'.$query.'%')
                     ->orWhere('category_sub_product_desc', 'like', '%'.$query.'%')
+                    ->where('sub_id','!=',null)
                     ->orderBy('sub_id', 'desc')
                     ->get();
             }
             else
             {
-                $data = DB::table('categories')
+                $data = Category::with('categories')
                     ->orderBy('sub_id', 'desc')
                     ->where('sub_id','!=',null)
                     ->get();
@@ -274,6 +275,7 @@ class CategoryController extends Controller{
                     <tr id=item_'.$row->sub_id.'>
                     <td>'.++$key.'</td>
                      <td>'.$row->category_sub_product_name.' </td>
+                      <td>'.$row->categories->category_product_name.' </td>
                      <td>'.$row->category_sub_product_desc.'</td>
                      <td><a href='.route('subcategory.edit',$row->sub_id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->sub_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
                     </tr>

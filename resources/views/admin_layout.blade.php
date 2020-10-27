@@ -487,6 +487,7 @@
                             <a href="javascript: void(0);">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span> Slider </span>
+                                <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href={{route('slide.add')}}>Thêm slide</a></li>
@@ -544,6 +545,16 @@
                             <li><a href="{{route('brand.list')}}">Liệt kê thương hiệu</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-package-up"></i>
+                            <span> Bình luận </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href={{route('comment.list')}}>Quản lí bình luận</a></li>
+                        </ul>
+                    </li>
 
                     <li>
                         <a href="javascript: void(0);">
@@ -561,6 +572,7 @@
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-calendar-month"></i>
                             <span> Đơn hàng </span>
+                            <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href={{route('order.list')}}>Quản lí đơn hàng</a></li>
@@ -570,9 +582,12 @@
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-apple-keyboard-caps"></i>
                             <span> Thông tin giao hàng</span>
+                            <span class="menu-arrow"></span>
+
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('shipping.list')}}">Quản lý thông tin giao hàng</a></li>
+
                         </ul>
                     </li>
                     <li>
@@ -692,11 +707,11 @@
 <!-- /Right-bar -->
 
 <!-- Right bar overlay-->
-<div class="rightbar-overlay"></div>
+{{--<div class="rightbar-overlay"></div>--}}
 
-<a href="javascript:void(0);" class="right-bar-toggle demos-show-btn">
-    <i class="mdi mdi-settings-outline mdi-spin"></i> &nbsp;Choose Demos
-</a>
+{{--<a href="javascript:void(0);" class="right-bar-toggle demos-show-btn">--}}
+{{--    <i class="mdi mdi-settings-outline mdi-spin"></i> &nbsp;Choose Demos--}}
+{{--</a>--}}
 
 <!-- Vendor js -->
 <script src="{{asset('assets/js/vendor.min.js')}}"></script>
