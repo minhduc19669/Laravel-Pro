@@ -98,9 +98,29 @@
                         </div> --}}
                         <div id="des-details3" class="tab-pane">
                             <div class="rattings-wrapper" id="rating">
+                                @foreach ($post as $item)
+                                    <div class="sin-rattings">
+                                    <div class="star-author-all">
+                                        <div class="product-rating f-left">
+                                            <i class="ti-star theme-color"></i>
+                                            <i class="ti-star theme-color"></i>
+                                            <i class="ti-star theme-color"></i>
+                                            <i class="ti-star theme-color"></i>
+                                            <i class="ti-star theme-color"></i>
+                                            <span>(5)</span>
+                                        </div>
+                                        <div class="ratting-author f-right">
+                                        <h3>{{$item->customer->customer_name}}</h3>
+                                        <span>{{$item->created_at->format('d/M/Y H:i:s')}}</span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                <p>{{$item->content}}</p>
+                                </div>
+                                @endforeach
                             </div>
                             <div class="ratting-form-wrapper">
-                                <button style="height: 30px;margin-left: 450px" onclick="displayFormRating()" class="button-border-white"><h3 style="margin-top: 7px">Gửi đánh giá của bạn:</h3></button>
+                                <button style="height: 30px;margin-left: 450px;background-color: red;border-radius:5px; " onclick="displayFormRating()" class="button-border-white"><h3 style="margin-top: 7px;color:white">Gửi đánh giá của bạn:</h3></button>
                                 <script>
                                     function displayFormRating() {
                                         document.getElementById('form-rating').style.display = 'block';
@@ -125,7 +145,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-top: 10px" class="col-xs-12 col-md-6">
-                                                    <div class="row rating-desc">
+                                                    <div style="margin-right: 10px" class="row rating-desc">
                                                         <div class="col-xs-3 col-md-3 text-right">
                                                             <span class="glyphicon glyphicon-star"></span>5
                                                         </div>
@@ -138,8 +158,8 @@
                                                             </div>
                                                         </div>
                                                         <!-- end 5 -->
-                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                            <span class="glyphicon glyphicon-star"></span>4
+                                                        <div class="col-xs-3 col-md-3       text-right">
+                                                            <span style="margin-left: 5px" class="glyphicon glyphicon-star"></span>4
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
@@ -163,7 +183,7 @@
                                                         </div>
                                                         <!-- end 3 -->
                                                         <div class="col-xs-3 col-md-3 text-right">
-                                                            <span class="glyphicon glyphicon-star"></span>2
+                                                            <span style="margin-right: 5px" class="glyphicon glyphicon-star"></span>2
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
@@ -175,7 +195,7 @@
                                                         </div>
                                                         <!-- end 2 -->
                                                         <div class="col-xs-3 col-md-3 text-right">
-                                                            <span class="glyphicon glyphicon-star"></span>1
+                                                            <span style="margin-right: 8px" class="glyphicon glyphicon-star"></span>1
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
@@ -218,9 +238,11 @@
                                                 <div class="rating-form-style form-submit">
                                                     <input type="hidden" name="rating" id="rating-input">
                                                 <input value="{{$product->product_id}}" type="hidden" name="product_id">
-                                                    <textarea name="message" placeholder="Message"></textarea>
-                                                    <button class="btn btn-success btn-submit">Submit</button>
-                                                <div style="margin-left: 5px" class="row">ddfdsfsdfs</div>
+
+                                                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                                                    <div id="message-error" style="margin-left: 5px" class="row text-danger"></div>
+                                                    <button class="btn btn-success btn-submit">Gửi</button>
+
                                                 </div>
 
                                             </div>
@@ -272,24 +294,7 @@
                 </div>
             </div>
     </div>
-<script>
-  $(document).ready(function() {
-        $(".btn-submit").click(function(e){
-            e.preventDefault();
-            var _token = $("input[name=_token]").val();
-            var rating = $("input[name=rating]").val();
-            var product_id = $("input[name='product_id']").val();
-            var message = $("textarea[name='message']").val();
-            $.ajax({
-                url: "/post",
-                data: {_token:_token, rating:rating, product_id:product_id, message:message},
-                success: function(data) {
-                    console.log(data);
-                }
-            });
-        });
-    });
-</script>
+
 
 
 

@@ -17,7 +17,13 @@ class PostController extends Controller
             'message'=>'required',
             'rating'=>'required',
             'product_id'=>'required',
-        ]);
+        ],
+        [
+                'message.required'=> 'Mời bạn đánh giá sản phẩm.(Tối thiểu 5 ký tự)',
+                'rating.required'=> 'Vui lòng chọn đánh giá của bạn về sản phẩm này.'
+        ]
+
+    );
         if ($validator->passes()) {
             $post = new Post();
             $post->fill([
@@ -27,8 +33,12 @@ class PostController extends Controller
                 'id_product' => $request->product_id
             ]);
             $post->save();
-            return \response()->json($post);
+            $name= $post->customer->customer_name;
+            return \response()->json([
+                'post'=>$post,
+                'name'=>$name
+            ]);
         }
-
+        return response()->json(['error' => $validator->errors()->all()]);
     }
 }

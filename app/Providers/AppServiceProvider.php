@@ -49,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             $count=Cart::count();
             $data=Cart::content();
             $total = Cart::priceTotal();
-            $post=Post::all();
+            $post=Post::orderBy('id','desc')->get();
             $category_news =Category::where('cate_news_id', '!=', 'null')->get();
             $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category,'post'=>$post]);
         });
