@@ -107,104 +107,83 @@
                                             <i class="ti-star theme-color"></i>
                                             <i class="ti-star theme-color"></i>
                                             <i class="ti-star theme-color"></i>
-                                            <span>(5)</span>
+                                            <span>({{$item->rating}})</span>
                                         </div>
                                         <div class="ratting-author f-right">
                                         <h3>{{$item->customer->customer_name}}</h3>
-                                        <span>{{$item->created_at->format('d/M/Y H:i:s')}}</span>
+                                        <span>{{$item->created_at->format('d M Y')}}</span>
                                             <span></span>
                                         </div>
                                     </div>
                                 <p>{{$item->content}}</p>
                                 </div>
                                 @endforeach
+
                             </div>
                             <div class="ratting-form-wrapper">
-                                <button style="height: 30px;margin-left: 450px;background-color: red;border-radius:5px; " onclick="displayFormRating()" class="button-border-white"><h3 style="margin-top: 7px;color:white">Gửi đánh giá của bạn:</h3></button>
+                                <button style="height: 30px;margin-left: 450px;background-color: red;border-radius:5px; " onclick="displayFormRating()" class="btn-google"><h3 style="margin-top: 7px;color:white">Gửi đánh giá của bạn:</h3></button>
                                 <script>
                                     function displayFormRating() {
-                                        document.getElementById('form-rating').style.display = 'block';
+                                       var hidden = document.getElementById('form-rating');
+                                        if (hidden.style.display === 'none') hidden.style.display = 'block';
+                                        else hidden.style.display = 'none';
                                     }
                                 </script>
                                 <div id='form-rating' style="display: none" class="ratting-form">
-
                                         <div class="star-box">
-                                            <h2>Rating:</h2>
+                                            <h2>Đánh giá:</h2>
                                                 <div class="well well-sm">
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-6 text-center">
                                                     <h1 class="rating-num">
-                                                        4.0</h1>
+                                                    {{round($avg,2)}}/5</h1>
                                                     <div class="rating">
                                                         <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
                                                         </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
                                                         </span><span class="glyphicon glyphicon-star-empty"></span>
                                                     </div>
                                                     <div>
-                                                        <span class="glyphicon glyphicon-user"></span>1,050,008 total
+                                                        @if($total!=null)
+                                                        <span class="glyphicon glyphicon-user"></span>{{$total}} nhận xét và đánh giá
+                                                        @else
+                                                        <span class="glyphicon glyphicon-user"></span>0 nhận xét và đánh giá
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div style="margin-top: 10px" class="col-xs-12 col-md-6">
                                                     <div style="margin-right: 10px" class="row rating-desc">
-                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                            <span class="glyphicon glyphicon-star"></span>5
+                                                        @if ($percent)
+                                                        @foreach($percent as $key => $value)
+                                                            <div class="col-xs-3 col-md-3 text-right">
+                                                            <span id="star{{$key}}" class="glyphicon glyphicon-star"></span>{{$key+1}}
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress progress-striped">
                                                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                            aria-valuemin="0" aria-valuemax="100" style="width: {{$value}}%">
                                                                     <span class="sr-only">80%</span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- end 5 -->
-                                                        <div class="col-xs-3 col-md-3       text-right">
-                                                            <span style="margin-left: 5px" class="glyphicon glyphicon-star"></span>4
+                                                        @endforeach
+                                                        @else
+                                                            @for($i=1;$i<=5;$i++)
+                                                                <div class="col-xs-3 col-md-3 text-right">
+                                                            <span class="glyphicon glyphicon-star"></span>{{$i}}
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
-                                                            <div class="progress">
+                                                            <div class="progress progress-striped">
                                                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                                    <span class="sr-only">60%</span>
+                                                            aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                                    <span class="sr-only">80%</span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- end 4 -->
-                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                            <span class="glyphicon glyphicon-star"></span>3
-                                                        </div>
-                                                        <div class="col-xs-8 col-md-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                                    <span class="sr-only">40%</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end 3 -->
-                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                            <span style="margin-right: 5px" class="glyphicon glyphicon-star"></span>2
-                                                        </div>
-                                                        <div class="col-xs-8 col-md-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                                    <span class="sr-only">20%</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end 2 -->
-                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                            <span style="margin-right: 8px" class="glyphicon glyphicon-star"></span>1
-                                                        </div>
-                                                        <div class="col-xs-8 col-md-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                                                    <span class="sr-only">15%</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                            @endfor
+                                                        @endif
+
+                                                        <!-- end 5 -->
+
                                                         <!-- end 1 -->
                                                     </div>
                                                     <!-- end row -->
@@ -238,10 +217,13 @@
                                                 <div class="rating-form-style form-submit">
                                                     <input type="hidden" name="rating" id="rating-input">
                                                 <input value="{{$product->product_id}}" type="hidden" name="product_id">
-
-                                                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                                                    <textarea id="message" name="message" placeholder="Đánh giá ..."></textarea>
                                                     <div id="message-error" style="margin-left: 5px" class="row text-danger"></div>
-                                                    <button class="btn btn-success btn-submit">Gửi</button>
+                                                    @if (Session::get('customer'))
+                                                        <button style="margin-top: 10px" class="btn btn-success btn-submit">Gửi</button>
+                                                    @else
+                                                        <button onclick="return confirm('Đăng nhập để thực hiện đánh giá!')" style="margin-top: 10px;ma" class="btn btn-success"><a style="color:white;" href="{{route('home.getlogin')}}">Gửi</a></button>
+                                                    @endif
 
                                                 </div>
 

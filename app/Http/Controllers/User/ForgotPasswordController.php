@@ -32,7 +32,6 @@ class ForgotPasswordController extends Controller
             return \back();
         }
         $code = md5(Carbon::now().$request->email);
-        \dd($code);
         $customer->code=$code;
         $customer->time_code=Carbon::now();
         $customer->save();

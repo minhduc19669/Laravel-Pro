@@ -36,7 +36,8 @@ class PostController extends Controller
             $name= $post->customer->customer_name;
             return \response()->json([
                 'post'=>$post,
-                'name'=>$name
+                'name'=>$name,
+                'rating'=> $request->rating
             ]);
         }
         return response()->json(['error' => $validator->errors()->all()]);
