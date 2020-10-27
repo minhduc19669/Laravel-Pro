@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
-class CheckoutController extends Controller
+class CheckoutAdminController extends Controller
 {
     //
 
@@ -31,37 +31,37 @@ class CheckoutController extends Controller
         $cod=$request->radioInline;
         $bank=$request->radioInline;
         if($cod!=\null){
-                $ship->fill([
-                            'shipping_name'=>$request->name,
-                            'shipping_phone'=>$request->phone,
-                            'shipping_address'=>$request->address,
-                            'shipping_city'=>$shipping_city->name,
-                            'shipping_district'=>$shipping_district->name,
-                            'shipping_email'=>$request->email,
-                            'shipping_name_receive'=>$request->name_receive,
-                            'shipping_phone_receive'=>$request->phone_receive,
-                            'shipping_address_receive'=>$request->address_receive,
-                            'shipping_city_receive'=>$shipping_city_receive->name,
-                            'shipping_district_receive'=>$shipping_district_receive->name,
-                            'shipping_payment'=>$cod
-                        ]);
-                $ship->save();
+            $ship->fill([
+                'shipping_name'=>$request->name,
+                'shipping_phone'=>$request->phone,
+                'shipping_address'=>$request->address,
+                'shipping_city'=>$shipping_city->name,
+                'shipping_district'=>$shipping_district->name,
+                'shipping_email'=>$request->email,
+                'shipping_name_receive'=>$request->name_receive,
+                'shipping_phone_receive'=>$request->phone_receive,
+                'shipping_address_receive'=>$request->address_receive,
+                'shipping_city_receive'=>$shipping_city_receive->name,
+                'shipping_district_receive'=>$shipping_district_receive->name,
+                'shipping_payment'=>$cod
+            ]);
+            $ship->save();
         }else{
-                $ship->fill([
-                    'shipping_name' => $request->name,
-                    'shipping_phone' => $request->phone,
-                    'shipping_address' => $request->address,
-                    'shipping_city' => $shipping_city->name,
-                    'shipping_district' => $shipping_district->name,
-                    'shipping_email' => $request->email,
-                    'shipping_name_receive' => $request->name_receive,
-                    'shipping_phone_receive' => $request->phone_receive,
-                    'shipping_address_receive' => $request->address_receive,
-                    'shipping_city_receive' => $shipping_city_receive->name,
-                    'shipping_district_receive' => $shipping_district_receive->name,
-                    'shipping_payment' => $bank
-                ]);
-                $ship->save();
+            $ship->fill([
+                'shipping_name' => $request->name,
+                'shipping_phone' => $request->phone,
+                'shipping_address' => $request->address,
+                'shipping_city' => $shipping_city->name,
+                'shipping_district' => $shipping_district->name,
+                'shipping_email' => $request->email,
+                'shipping_name_receive' => $request->name_receive,
+                'shipping_phone_receive' => $request->phone_receive,
+                'shipping_address_receive' => $request->address_receive,
+                'shipping_city_receive' => $shipping_city_receive->name,
+                'shipping_district_receive' => $shipping_district_receive->name,
+                'shipping_payment' => $bank
+            ]);
+            $ship->save();
         }
 
         $order=new Order();
@@ -93,9 +93,11 @@ class CheckoutController extends Controller
             $customer=Customer::find($id);
             $email=$customer->customer_email;
             $name=$request->name;
-			dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
+            dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
+            return redirect()->route('order.list');
+
         }else{
             $order->fill([
                 'customer_id' => \null,
@@ -125,6 +127,7 @@ class CheckoutController extends Controller
             dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
+            return redirect()->route('order.list');
         }
         return \view('pages.done_checkout',\compact('checkout_code'));
     }

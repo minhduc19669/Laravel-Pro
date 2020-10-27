@@ -98,7 +98,6 @@ DB::commit();
         <td>'.$row->shipping_city.'</td>
         <td>'.$row->shipping_district.'</td>
         <td>'.$row->shipping_email.'</td>
-         <td><a href='.route('shipping.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a>  <button id="delete"  data-id="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
                 }
@@ -152,7 +151,6 @@ DB::commit();
         <td>'.$row->shipping_address_receive.'</td>
         <td>'.$row->shipping_city_receive.'</td>
         <td>'.$row->shipping_district_receive.'</td>
-         <td><a href='.route('shipping.edit',$row->id).'><button class="btn  btn-dark" type="submit">sửa</button></a><button id="delete"  data-id="'.$row->id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
                 }

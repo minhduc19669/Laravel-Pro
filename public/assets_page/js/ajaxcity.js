@@ -66,5 +66,12 @@ $(document).ready(function () {
                     // });
                 });
 
+                    // document.getElementById('text_12').value=document.getElementById('textBox10').value;
+                    // document.getElementById('text_13').value=document.getElementById('textBox6').value;
+                    // document.getElementById('text_14').value=document.getElementById('textBox7').value;
+
+                $('#textBox10').on('chang',function (){
+                    document.getElementById('textBox10').value=document.getElementById('text_12').value;
+                })
    })
 

@@ -7,35 +7,47 @@
              Thêm các đơn hàng mới cho website của bạn
             </p>
 
-            <form id="wizard-vertical">
-
+            <form action="{{route('cart.infoorderAdmin')}}" method="POST" id="wizard-vertical">
+                @csrf
                 <h3>Thông tin người gửi</h3>
                 <section>
                     <div class="form-group row">
 
                         <label class="col-lg-2 control-label" for="name1"> Họ và tên *</label>
                         <div class="col-lg-10">
-                            <input id="textBox1" name="shipping_name" type="text" class="required form-control">
+                            <input id="textBox1" name="name" type="text" class="required form-control">
+                            @if($errors->first('name'))
+                                <p class="text-danger">{{ $errors->first('name') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="surname1">Số điện thoại *</label>
                         <div class="col-lg-10">
-                            <input id="textBox2" name="shipping_phone" type="number" class="required form-control">
+                            <input id="textBox2" name="phone" type="number" class="required form-control">
+                            @if($errors->first('phone'))
+                                <p class="text-danger">{{ $errors->first('phone') }}</p>
+                            @endif
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="email1">Email *</label>
                         <div class="col-lg-10">
-                            <input id="email" name="shipping_email" type="text" class="required email form-control">
+                            <input id="email" name="email" type="text" class="required email form-control">
+                            @if($errors->first('email'))
+                                <p class="text-danger">{{ $errors->first('email') }}</p>
+                            @endif
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="address1">Địa chỉ *</label>
                         <div class="col-lg-10">
-                            <input id="textBox3" name="shipping_address" type="text" class="form-control">
+                            <input id="textBox3" name="address" type="text" class="form-control">
+                            @if($errors->first('address'))
+                                <p class="text-danger">{{ $errors->first('address') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
@@ -74,19 +86,28 @@
 
                         <label class="col-lg-2 control-label" for="name1"> Họ và tên *</label>
                         <div class="col-lg-10">
-                            <input id="textBox10" name="shipping_name_receive" type="text" class="required form-control">
+                            <input id="textBox10" name="name_receive" type="text" class="required form-control">
+                            @if($errors->first('name_receive'))
+                                <p class="text-danger">{{ $errors->first('name_receive') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="surname1">Số điện thoại *</label>
                         <div class="col-lg-10">
-                            <input id="textBox6" name="shipping_phone_receive" type="number" class="required form-control">
+                            <input id="textBox6" name="phone_receive" type="number" class="required form-control">
+                            @if($errors->first('phone_receive'))
+                                <p class="text-danger">{{ $errors->first('phone_receive') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="address1">Địa chỉ *</label>
                         <div class="col-lg-10">
-                            <input id="textBox7" name="shipping_address_receive" type="text" class="form-control">
+                            <input id="textBox7" name="address_receive" type="text" class="form-control">
+                            @if($errors->first('address_receive'))
+                                <p class="text-danger">{{ $errors->first('address_receive') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
@@ -186,7 +207,7 @@
                                                <td>{{$item->name}}</td>
                                                <td>{{$item->price}}</td>
                                                <td>
-                                                   <input min="1" row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
+                                                   <input min="1" row-id="{{$item->rowId}}" style="text-align: center;" id="update" type="number" name="qtybutton" value="{{$item->qty}}">
                                                </td>
                                                <td><span id="price-item{{$item->rowId}}">{{number_format($item->price*$item->qty)}}</span></td>
                                                <td>
@@ -204,37 +225,62 @@
 
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="password1">Thành tiền</label>
-                        <div  class="col-lg-10">
-                           <b id="total">{{$total}}</b>
+                        <div id="total" style="margin-top: 8px"  class="col-lg-10 ">
+                         {{($total)}} vnđ
                         </div>
                     </div>
 
                 </section>
+                <h3>Phương thức thanh toán</h3>
+                <section>
+
+                    <div class="mt-4">
+                        <p class="text-muted font-13">Phương thức thanh toán</p>
+                        <div name="cođ" class="radio radio-info form-check-inline">
+                            <input type="radio" id="inlineRadio1" value="1" name="radioInline" checked="">
+                            <label for="inlineRadio1"> Thanh toán khi nhận hàng </label>
+                        </div>
+                        <div id="bank" class="radio form-check-inline">
+                            <input type="radio" id="inlineRadio2" value="2" name="radioInline">
+                            <label for="inlineRadio2"> Chuyển khoản qua InternetBanking </label>
+                        </div>
+                    </div>
+                </section>
                 <h3>Xem lại đơn hàng</h3>
                 <section>
                     <div class="form-group row">
-                        <div class="col-lg-12">
+{{--                        <div class="col-lg-6">--}}
+{{--                            <ul class="list-unstyled w-list">--}}
+{{--                                <li ><b id="text_12">Người gửi :</b>  </li>--}}
+{{--                                <li ><b id="text_13">Số điện thoại:</b> Smith </li>--}}
+{{--                                <li ><b id="text_14">Address:</b> 123 Your City, Cityname. </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+                        <div class="col-lg-6">
                             <ul class="list-unstyled w-list">
-                                <li><b>First Name :</b> Jonathan </li>
-                                <li><b>Last Name :</b> Smith </li>
-                                <li><b>Emial:</b> jonathan@smith.com</li>
-                                <li><b>Address:</b> 123 Your City, Cityname. </li>
+                                <li id="total_x"><b>Tổng số tiền:</b>{{$total}}</li>
+                                <li id="count_x"><b>Số đơn hàng:</b> {{$count}} </li>
+                                <li ><b id="text_14">Trạng thái:</b> Chưa giao </li>
                             </ul>
                         </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled w-list">
+                                <li id="text_12" ><b >Người nhận :</b>  </li>
+                                <li id="text_13"><b>Số điện thoại:</b> Smith </li>
+                                <li id="text_14"><b>Address:</b> 123 Your City, Cityname. </li>
+                            </ul>
+                        </div>
+
                     </div>
+
                 </section>
                 <h3>Lưu thông tin đơn hàng</h3>
-                <section>
-                    <div class="form-group row">
-                        <div class="col-lg-12">
-                            <div class="checkbox checkbox-primary">
-                                <input id="checkbox-v" type="checkbox">
-                                <label for="checkbox-v"> I agree with the <a href="#">Terms and Conditions</a>. </label>
-                            </div>
-                        </div>
-                    </div>
+                <section style="text-align: center;margin-top: 80px">
+                    <button class="btn btn-primary waves-effect waves-light btn-lg">Tiến hành đặt hàng</button>
                 </section>
+
             </form>
+
             <!-- End #wizard-vertical -->
         </div>
     </div>
