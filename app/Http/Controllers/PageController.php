@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use App\Brand;
 use App\Category;
+use App\Customer;
 use App\Http\Services\ProductService;
 use App\News;
+use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -23,11 +25,39 @@ class PageController extends Controller
         return \view('pages.product',\compact('products','category','brand'));
     }
     public function productDetail($id){
-
         $product=$this->productServ->productDetail($id);
         $images=$this->productServ->getImageProduct($id);
+        $post=Post::where('id_product',$id)->orderBy('created_at','desc')->paginate(4);
+        $rating = Post::where('id_product', $id)->where('rating', '>', '0')->get();
+        $star1 = Post::where('id_product', $id)->where('rating', '=', '1')->get();
+        $star2 = Post::where('id_product', $id)->where('rating', '=', '2')->get();
+        $star3 = Post::where('id_product', $id)->where('rating', '=', '3')->get();
+        $star4 = Post::where('id_product', $id)->where('rating', '=', '4')->get();
+        $star5 = Post::where('id_product', $id)->where('rating', '=', '5')->get();
+        $countStar = [];
+        $count1star = count($star1);
+        $count2star = count($star2);
+        $count3star = count($star3);
+        $count4star = count($star4);
+        $count5star = count($star5);
+        $countRating = count($rating);
+        array_push($countStar, $count1star, $count2star, $count3star, $count4star, $count5star);
+        $sum = $rating->sum('rating');
+        $percent = [];
+        if ($countRating != 0) {
+            $percent1 = ($count1star / $countRating) * 100;
+            $percent2 = ($count2star / $countRating) * 100;
+            $percent3 = ($count3star / $countRating) * 100;
+            $percent4 = ($count4star / $countRating) * 100;
+            $percent5 = ($count5star / $countRating) * 100;
+            array_push($percent, $percent1, $percent2, $percent3, $percent4, $percent5);
+            $avg = $sum / $countRating;
+        } else {
+            $avg = 0;
+        }
+        $total=\count($post);
         $productRelated=$this->productServ->getProductRelatedTo($id);
-        return \view('pages.product_details',\compact('product','images', 'productRelated','image'));
+        return \view('pages.product_details',\compact('product','images', 'productRelated','image','post', 'countRating', 'sum', 'avg', 'countStar', 'percent','total'));
     }
     public function  productCategory($id){
         $brand = Brand::all();

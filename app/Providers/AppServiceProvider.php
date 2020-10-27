@@ -11,12 +11,6 @@ use Illuminate\Support\ServiceProvider;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Schema;
-
-
-
-
-
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -39,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        view()->composer(['pages.product_details','pages.home','pages.cart','layout.layout','pages.checkout'], function ($view) {
+        view()->composer(['pages.home','pages.cart','layout.layout','pages.checkout'], function ($view) {
             $products = Product::limit(8)->orderBy('product_id', 'desc')->get();
             $slides = Slide::limit(3)->orderBy('id', 'desc')->get();
             $category = Category::where('cate_pro_id', '!=', 'null')
@@ -49,9 +43,9 @@ class AppServiceProvider extends ServiceProvider
             $count=Cart::count();
             $data=Cart::content();
             $total = Cart::priceTotal();
-            $post=Post::orderBy('id','desc')->get();
+
             $category_news =Category::where('cate_news_id', '!=', 'null')->get();
-            $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category,'post'=>$post]);
+            $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category]);
         });
 
 
