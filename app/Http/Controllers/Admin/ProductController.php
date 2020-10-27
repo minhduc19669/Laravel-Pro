@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\ValidateFormAddProduct;
 use App\Http\Requests\ValidateFormUpdateProduct;
 use App\Image;
+use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -139,6 +140,7 @@ class ProductController extends Controller
  }
  public function remove($id){
             $image=Image::where('product_id',$id)->delete();
+            $comment = Post::where('id_product',$id)->delete();
             $product =   DB::table('products')->where('product_id',$id)->delete();
              return response()->json($product);
  }

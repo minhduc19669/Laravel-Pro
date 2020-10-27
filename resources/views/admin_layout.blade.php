@@ -563,8 +563,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="icons-materialdesign.html">Material Design</a></li>
-                            <li><a href="icons-ionicons.html">Ion Icons</a></li>
+                            <li><a href="{{route('transport.add')}}">Thêm phí vận chuyển</a></li>
+                            <li><a href="{{route('transport.list')}}">Xem phí vận chuyển</a></li>
                         </ul>
                     </li>
 
