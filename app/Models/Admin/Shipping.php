@@ -12,4 +12,7 @@ class Shipping extends Model
         "shipping_address_receive","shipping_information","shipping_node","shipping_payment",'shipping_district','shipping_city_receive','shipping_district_receive'
 
     ];
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }

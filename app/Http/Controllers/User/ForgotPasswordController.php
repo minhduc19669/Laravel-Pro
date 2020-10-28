@@ -36,7 +36,7 @@ class ForgotPasswordController extends Controller
         $customer->time_code=Carbon::now();
         $customer->save();
         $url='laravel-training.local/home/reset/password/'."$request->email". '/'. "$code";
-        \dispatch(new ForgotPassword($request->email,$url))->onQueue('passwordreset');
+        \dispatch(new ForgotPassword($request->email,$url))->delay(\now()->addSeconds(30));
         return \redirect()->route('email.alert');
     }
     public function reset_password($email,$code){
