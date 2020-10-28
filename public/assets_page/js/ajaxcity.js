@@ -2,7 +2,6 @@ $(document).ready(function () {
 
                 $("select[name='city']").change(function () {
                     let city_id = $(this).val();
-                    console.log(city_id);
                     let origin = location.origin;
                     $.ajaxSetup({
                         headers: {
@@ -41,7 +40,6 @@ $(document).ready(function () {
                         data: {},
                         dataType: 'json',
                         success:function(data){
-                            console.log(data);
                             $("select[name='district_receive']").children().remove();
                             $("select[name='district_receive']").focus();
                             $("select[name='district_receive']").append(
@@ -56,6 +54,7 @@ $(document).ready(function () {
                         }
                     })
                 });
+
                             ///duplicate-address
                 $('#click_check').on('click',function(){
                     document.getElementById('textBox10').value=document.getElementById('textBox1').value;
@@ -74,4 +73,21 @@ $(document).ready(function () {
                     document.getElementById('textBox10').value=document.getElementById('text_12').value;
                 })
    })
+$(document).on('click','#district_receive',function () {
+    let id = $(this).val();
+    let origin = location.origin;
+    $.ajax({
+        url:origin+'/cart/transportFee/'+id,
+        data: {},
+        dataType: 'json',
+        success:function(data){
+            let total = data.total + data.transport[0].fee;
+            let totals = new Intl.NumberFormat().format(total);
+            console.log(totals)
+                $("#fee").html(data.transport[0].fee + 'VNĐ');
+                $('#total' +id).html(totals + "VNĐ")
+
+        }
+    })
+});
 

@@ -48,9 +48,9 @@ class CategoryController extends Controller{
                          return \redirect()->route('category.list');
                 }
 
-                public function remove($id){
-                    $cate_pro = DB::table('categories')->where('cate_pro_id',$id)->delete();
-                    return response()->json($cate_pro);
+                public function remove( $id){
+                        $cate_pro = Category::where('cate_pro_id',$id)->delete();
+                            return response()->json($cate_pro);
 
                 }
 

@@ -35,7 +35,7 @@ class CartController extends Controller
         $count=[
             'countCart'=>Cart::count(),
             'contentCart'=>Cart::content(),
-            'total'=>Cart::priceTotal()
+            'total'=>Cart::priceTotal(),
         ];
         return response()->json($count);
     }

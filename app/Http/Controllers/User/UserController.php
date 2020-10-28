@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\News;
 use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\ValidateFormAddUser;
@@ -18,7 +20,9 @@ class UserController extends Controller
 
 	public function dashboard(){
 	    $countOrder = Order::count();
-		return view('admin.dashboard',compact('countOrder'));
+        $products = Product::count();
+        $news = News::count();
+        return view('admin.dashboard',compact('countOrder','products','news'));
 	}
 	public function index(){
         $users=User::all();

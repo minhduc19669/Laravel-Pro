@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\City;
 use App\Http\Requests\ValidateFormTransprot;
 use App\Transport;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -108,7 +109,10 @@ class TransportController extends Controller
             echo json_encode($data);
         }
     }
-
+    public function showTransportInCityInDistrict($id){
+                 $transport = Transport::where('district_id',$id)->select('id','fee')->get();
+                 return response()->json(['transport'=>$transport,'total'=>Cart::priceTotal()]);
+    }
 
 
 

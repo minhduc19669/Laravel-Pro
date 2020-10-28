@@ -29,4 +29,7 @@ class Category extends Model
         return $this->hasMany(Category::class, 'parent_id','cate_pro_id');
 
     }
+    public function product(){
+        return $this->hasMany('App\Product','cate_pro_id','cate_pro_id');
+    }
 }
