@@ -178,7 +178,7 @@
                     <i class="ti-close s-close"></i>
                   </button>
                   <div class="search-content">
-                    <form action="#">
+                    <form action="{{route('page.product_search')}}">
                       <input type="text" placeholder="Search" />
                       <button>
                         <i class="icon-magnifier s-open"></i>

@@ -59,9 +59,11 @@
                                    @foreach($shipping_city as $key => $value)
                                     <option value="{{$value->id}}">{{$value->name}}</option>
                                     @endforeach
-
                                 </select>
                             </div>
+                            @if($errors->first('city'))
+                                <p class="text-danger">{{ $errors->first('city') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
@@ -71,9 +73,12 @@
                                 <select name="district" class="custom-select" id="district">
                                     <option value="" selected>--Quận\huyện--</option>
                                     <option value=""></option>
-
                                 </select>
-                            </div>                        </div>
+                            </div>
+                            @if($errors->first('district'))
+                                <p class="text-danger">{{ $errors->first('district') }}</p>
+                            @endif
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-12 control-label ">(*) Mandatory</label>
@@ -119,9 +124,11 @@
                                     @foreach($shipping_city as $key => $value)
                                         <option value="{{$value->id}}">{{$value->name}}</option>
                                     @endforeach
-
                                 </select>
                             </div>
+                            @if($errors->first('city_receive'))
+                                <p class="text-danger">{{ $errors->first('city_receive') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
@@ -131,9 +138,11 @@
                                 <select name="district_receive" class="custom-select" id="district_receive">
                                     <option value="" selected>--Quận\huyện--</option>
                                     <option value=""></option>
-
                                 </select>
                             </div>
+                            @if($errors->first('district_receive'))
+                                <p class="text-danger">{{ $errors->first('district_receive') }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="ship-wrapper">
@@ -222,7 +231,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 control-label " for="password1">Phí vận chuyển</label>
+                        <div name="transport" id="fee" style="margin-top: 8px"  class="col-lg-10 ">
 
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label class="col-lg-2 control-label " for="password1">Thành tiền</label>
                         <div id="total" style="margin-top: 8px"  class="col-lg-10 ">

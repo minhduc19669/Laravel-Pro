@@ -20,10 +20,11 @@
                         @endforeach
                     </select>
                 </div>
+                @if($errors->first('city_receive'))
+                    <p class="text-danger">{{ $errors->first('city_receive') }}</p>
+                @endif
             </div>
-            @if($errors->first('city_receive'))
-                <p class="text-danger">{{ $errors->first('city_receive') }}</p>
-            @endif
+
         </div>
         <div class="form-group row">
             <label class="col-lg-2 control-label " for="address1">Quận/huyện *</label>
@@ -33,10 +34,11 @@
                         <option value="{{$transport->district_id}}">{{$transport->district->name}}</option>
                     </select>
                 </div>
+                @if($errors->first('district_receive'))
+                    <p class="text-danger">{{ $errors->first('district_receive') }}</p>
+                @endif
             </div>
-            @if($errors->first('district_receive'))
-                <p class="text-danger">{{ $errors->first('district_receive') }}</p>
-            @endif
+
         </div>
 
         <div class="form-group row">
@@ -44,11 +46,11 @@
             <div class="col-lg-10">
                 <div class="input-group mb-3">
                     <input value="{{($transport->fee)}}" name="fee"  type="text" class="form-control" id="exampleInputPassword1">
-                </div>
             </div>
-            @if($errors->first('fee'))
-                <p class="text-danger">{{ $errors->first('fee') }}</p>
-            @endif
+                @if($errors->first('fee'))
+                    <p class="text-danger">{{ $errors->first('fee') }}</p>
+                @endif
+        </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

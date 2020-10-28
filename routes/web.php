@@ -78,6 +78,7 @@ Route::prefix('cart')->group(function(){
     Route::post('order', 'CheckoutController@confirm_order')->name('cart.infoorder');
     Route::post('order/Admin', 'CheckoutAdminController@confirm_order')->name('cart.infoorderAdmin');
     Route::get('district/{id}', 'DistrictController@showDistrictInCity');
+    Route::get('transportFee/{id}', 'TransportController@showTransportInCityInDistrict');
     // Route::get('info', 'CheckoutController@alert_checkout')->name('cart.info_order');
     Route::get('addproductqty/{id}/{qty}', 'CartController@add_product_folow_quantity');
 });
@@ -89,6 +90,7 @@ Route::prefix('page')->group(function(){
     Route::get('product/category/{id}','PageController@productCategory')->name('page.product_category');
     Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
+    Route::get('product/search','PageController@search')->name('page.product_search');
 
 });
 

@@ -116,4 +116,17 @@ class PageController extends Controller
     public function contact(){
         return view('pages.contact');
     }
+   public function search(Request $request){
+       $brand = Brand::all();
+       $category = Category::with('SubCategories')->get();
+       $products = Product::orWhere('product_name', 'like', '%'.$request->key.'%')
+           ->orWhere('product_code', 'like', '%'.$request->key.'%')
+           ->orderBy('products.product_id', 'desc')
+           ->get();
+       return view('pages.search_product',compact('products','category','brand'));
+   }
+
+
+
+
 }
