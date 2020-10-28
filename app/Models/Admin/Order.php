@@ -13,4 +13,7 @@ class Order extends Model
 
         return $this->belongsTo('App\Orderdetail');
     }
+    public function shipping(){
+        return $this->belongsTo('App\Shipping','shipping_id','order_id');
+    }
 }

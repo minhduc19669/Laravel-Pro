@@ -37,8 +37,6 @@ class ValidateFormTransprot extends FormRequest
             'fee.required' => 'Không được để trống trường này !',
             'fee.numeric' => 'Cần phải nhập số !',
             'fee.min' => 'Số nhỏ nhất là 0'
-
-
         ];
     }
 }

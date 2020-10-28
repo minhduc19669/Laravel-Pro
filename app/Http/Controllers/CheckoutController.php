@@ -122,7 +122,7 @@ class CheckoutController extends Controller
             $email=$request->email;
             $data=$checkout_code;
             $name=$request->name;
-            dispatch(new ConfirmOrder($email, $checkout_code,$name))->onQueue('orders')->delay(15);
+            dispatch(new ConfirmOrder($email, $checkout_code,$name))->delay(\now()->addMinutes(2));
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
         }

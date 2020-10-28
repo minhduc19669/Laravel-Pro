@@ -69,7 +69,7 @@ class HomeController extends Controller
         $customer->customer_password = md5($request->password);
         $customer->save();
         $mail=$request->email;
-        \dispatch(new WellcomeRegis($mail))->onQueue('register')->delay(\now()->addMinutes(2));
+        \dispatch(new WellcomeRegis($mail))->delay(\now()->addMinutes(2));
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
         return redirect()->route('home.getlogin');
     }
