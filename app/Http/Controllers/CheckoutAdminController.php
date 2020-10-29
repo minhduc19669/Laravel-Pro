@@ -128,8 +128,8 @@ class CheckoutAdminController extends Controller
             Alert()->success('Đặt hàng thành công !')->autoClose(1500);
             Cart::destroy();
             return redirect()->route('order.list');
+
         }
-        return \view('pages.done_checkout',\compact('checkout_code'));
     }
 
 

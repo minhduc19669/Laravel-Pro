@@ -51,7 +51,6 @@ class CategoryController extends Controller{
                 public function remove( $id){
                         $cate_pro = Category::where('cate_pro_id',$id)->delete();
                             return response()->json($cate_pro);
-
                 }
 
 

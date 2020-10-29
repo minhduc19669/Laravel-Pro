@@ -119,7 +119,11 @@ class PageController extends Controller
    public function search(Request $request){
        $brand = Brand::all();
        $category = Category::with('SubCategories')->get();
-       $products = Product::orWhere('product_name', 'like', '%'.$request->key.'%')
+       $products = Product::join('brands','brands.id','=','products.brand_id')
+           ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+           ->orWhere('brand_name', 'like', '%'.$request->key.'%')
+           ->orWhere('category_product_name', 'like', '%'.$request->key.'%')
+           ->orWhere('product_name', 'like', '%'.$request->key.'%')
            ->orWhere('product_code', 'like', '%'.$request->key.'%')
            ->orderBy('products.product_id', 'desc')
            ->get();

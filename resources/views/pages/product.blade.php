@@ -2,7 +2,7 @@
 @extends('layout.layout')
 @section('url','https://bizweb.dktcdn.net/100/047/359/themes/66510/assets/women_banner.png?1543757106135')
 @section('content')
-    <div class="shop-area pt-100 pb-100 gray-bg">
+    <div id="manh" class="shop-area pt-100 pb-100 gray-bg">
       <div class="container">
         <div class="row flex-row-reverse">
           <div class="col-lg-9">
@@ -186,5 +186,10 @@
         </div>
       </div>
     </div>
+    <script>
+        $(document).ready( function () {
+            $('#manh').DataTable();
+        } );
+    </script>
 
 @endsection

@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/rating.css')}}">
     <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+      <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -179,7 +181,7 @@
                   </button>
                   <div class="search-content">
                     <form action="{{route('page.product_search')}}">
-                      <input type="text" placeholder="Search" />
+                      <input name="key" type="text" placeholder="Search" />
                       <button>
                         <i class="icon-magnifier s-open"></i>
                       </button>
