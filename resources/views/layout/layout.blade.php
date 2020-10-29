@@ -60,7 +60,7 @@
                     {{Session::get('customer')->customer_name}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     <ul>
                       <li>
-                        <a href="#"
+                        <a href="{{route('page.account',Session::get('customer')->id)}}"
                           >Tài khoản
                         </a>
                       </li>

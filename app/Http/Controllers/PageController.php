@@ -6,8 +6,10 @@ use App\Category;
 use App\Customer;
 use App\Http\Services\ProductService;
 use App\News;
+use App\Order;
 use App\Post;
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -111,6 +113,11 @@ class PageController extends Controller
 
  public function about(){
         return view('pages.about');
+ }
+ public function account($id){
+     $customer=Customer::find($id);
+     $orders=Order::where('customer_id',$id)->get();
+     return \view('pages.account',\compact('customer','orders'));
  }
  //contact
     public function contact(){

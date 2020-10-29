@@ -67,6 +67,7 @@ class HomeController extends Controller
         $customer->customer_name = $request->name;
         $customer->customer_email = $request->email;
         $customer->customer_password = md5($request->password);
+        $customer->customer_phone=$request->phone;
         $customer->save();
         $mail=$request->email;
         \dispatch(new WellcomeRegis($mail))->delay(\now()->addMinutes(2));

@@ -26,7 +26,6 @@ class ValidationFormCheckout extends FormRequest
         return [
             //
             'name'=>'required|min:8|max:50',
-            'email'=>'required|email',
             'phone' => 'required|min:10|max:11|regex:[^[0-9\-\+]{9,15}$]',
             'address' => 'required',
             'city'=>'required',
@@ -45,8 +44,6 @@ class ValidationFormCheckout extends FormRequest
             'name.required'=>'Tên không được để trống !',
             'name.min'=> 'Tên phải nhiều hơn 8 kí tự !',
             'name.max'=> 'Tên phải ít hơn 50 kí tự !',
-            'email.required'=>'Email không được để trống',
-            'email.email'=> 'Email không đúng định dạng (Ví dụ:example@gmail.com) !',
             'phone.required'=> 'Trống !',
             'phone.min'=> 'Số điện thoại không đúng !',
             'phone.max'=> 'Số điện thoại không đúng !',

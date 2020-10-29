@@ -58,6 +58,7 @@ Route::prefix('home')->group(function(){
     Route::get('about','PageController@about')->name('page.about');
     //contact
     Route::get('contact','PageController@contact')->name('page.contact');
+    Route::get('account/{id}', 'PageController@account')->name('page.account');
 
 });
 //social-login

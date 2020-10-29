@@ -21,7 +21,7 @@
                                         <div class="login-register-form">
                                         <form action="{{route('home.postregister')}}" method="post">
                                             @csrf
-                                                <input type="text" name="name" placeholder="Username">
+                                                <input value="{{old('name')}}" type="text" name="name" placeholder="Username">
                                                 @if($errors->first('name'))
                                 <p class="text-danger">{{ $errors->first('email') }}</p>
                             @endif
@@ -29,9 +29,13 @@
                                                 @if($errors->first('password'))
                                 <p class="text-danger">{{ $errors->first('password') }}</p>
                             @endif
-                                                <input name="email" placeholder="Email" type="email">
+                                        <input value="{{old('email')}}" name="email" placeholder="Email" type="email">
                                                 @if($errors->first('email'))
                                 <p class="text-danger">{{ $errors->first('email') }}</p>
+                            @endif
+                                                                            <input value="{{old('phone')}}" name="phone" placeholder="Phone" type="text">
+                                                @if($errors->first('phone'))
+                                <p class="text-danger">{{ $errors->first('phone') }}</p>
                             @endif
                                                 <div class="button-box">
                                                     <button type="submit"><span>Đăng kí</span></button>
