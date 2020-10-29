@@ -35,7 +35,7 @@
                 </ul>
               </div>
             </div>
-            <div class="grid-list-product-wrapper">
+            <div id="product" class="grid-list-product-wrapper">
               <div class="product-view product-grid">
                 <div class="row">
                     @foreach ($products as $item)
@@ -188,7 +188,7 @@
     </div>
     <script>
         $(document).ready( function () {
-            $('#manh').DataTable();
+            $('#product').DataTable();
         } );
     </script>
 
