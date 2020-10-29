@@ -63,17 +63,7 @@
 
                     <div class="col-lg-3 col-md-4">
                         <div class="shop-sidebar blog-mrg">
-                            <div class="shop-widget">
-                                <h4 class="shop-sidebar-title">Search Products</h4>
-                                <div class="shop-search mt-25 mb-50">
-                                    <form class="shop-search-form">
-                                        <input type="text" placeholder="Find a product">
-                                        <button type="submit">
-                                            <i class="icon-magnifier"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+
                             @foreach($category as $key => $category)
                                 <div class="shop-widget mt-50">
                                     <h4 class="shop-sidebar-title">{{$category->category_product_name}}</h4>

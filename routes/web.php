@@ -92,6 +92,7 @@ Route::prefix('page')->group(function(){
     Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
     Route::get('product/search','PageController@search')->name('page.product_search');
+    Route::get('product/search/ajax','PageController@searchAjax')->name('page.product_searchAjax');
 
 });
 

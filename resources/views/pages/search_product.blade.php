@@ -37,7 +37,7 @@
                     </div>
                     <div class="grid-list-product-wrapper">
                         <div class="product-view product-grid">
-                            <div class="row">
+                            <div id="search_product_ajax" class="row">
                                 @foreach ($products as $item)
                                     <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
                                         <div id="product5" class="product-wrapper mb-10">
@@ -136,8 +136,8 @@
                             <h4 class="shop-sidebar-title">Tìm kiếm sản phẩm</h4>
                             <div class="shop-search mt-25 mb-50">
                                 <form class="shop-search-form">
-                                    <input type="text" placeholder="Nhập" />
-                                    <button type="submit">
+                                    <input id="search_product" type="text" placeholder="Nhập" />
+                                    <button disabled type="submit">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>
                                 </form>
