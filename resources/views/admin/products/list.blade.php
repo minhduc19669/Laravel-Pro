@@ -36,31 +36,56 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($data as $key => $row)
+                    <tr role="row" class="odd">
+                        <td class="" tabindex="0">{{++$key}}</td>
+                        <td class="sorting_1" style="font-size: 12px">{{$row->product_code}}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td >
+                            @foreach ($row->images as $value)
+                            <img width="50px" src=" /storage/' . $value->image . ' " alt="">
+                            @endforeach
+                        </td><td style="font-size: 12px">{{$row->product_name }}</td>
+
+                        @if ($row->product_status == 0)
+                        <td>Hết hàng</td>
+
+                        @else
+
+                        <td>Còn hàng</td>
+                        @endif
+
+                        <td><a href=''><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>  <button style="font-size: 12px" id="delete"  data-id="{{$row->product_id}}" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    @endforeach
                     </tbody>
-                </table></div></div>
-    <script>
-        $(document).ready(function(){
-            fetch_customer_data();
-            function fetch_customer_data(query = '')
-            {
-                $.ajax({
-                    url:"{{route('product.search')}}",
-                    method:'GET',
-                    data:{query:query},
-                    dataType:'json',
-                    success:function(data)
-                    {
-                        console.log(data.table_data);
-                        $('tbody').html(data.table_data);
-                        $('#total_records').text(data.total_data);
-                    }
-                })
-            }
-            $(document).on('keyup', '#search', function(){
-                var query = $(this).val();
-                fetch_customer_data(query);
-            });
-        });
+                </table>
+            </div>
+        </div>
+        {!! $data->render() !!}
+
+        <script type="text/javascript">
+          $('#search').on('keyup',function (){
+          $value =  $(this).val();
+          console.log($value)
+              $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+              $.ajax({
+                type: 'get',
+                url: {{route('product.search')}},
+                 data: {
+                    'search' : $value,
+                 },
+              success :function (data){
+                    console.log(data)
+                    $('tbody').html(data)
+              }
+          })
+          })
+
         $(document).on('click', '#delete', function() {
             var id = $(this).data('id');
             console.log(id);

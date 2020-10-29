@@ -133,7 +133,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('product/active{id}', 'ProductController@active')->name('product.active');
             Route::get('product/un-active/{id}', 'ProductController@unactive')->name('product.un-active');
             Route::get('product/search','ProductController@action')->name('product.search');
-
+            //phantrang
+            Route::get('Pagination','ProductController@pagination')->name('product.pagination');
         });
         //Sale-code
         Route::prefix('coupon')->group(function () {
