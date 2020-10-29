@@ -107,6 +107,11 @@ class ProductController extends Controller
         $product->product_desc = $request->product_desc;
         $product->product_status = $request->product_status;
         $get_image = $request->hasFile('product_image');
+        if(!$get_image){
+            $product->save();
+            Alert()->success('Cập nhập thành công !')->autoClose(1500);
+            return \redirect()->route('product.list');
+        }
         if ($get_image) {
             $allowedfileExtension = ['jpg', 'png', 'jpeg'];
             $files = $request->file('product_image');

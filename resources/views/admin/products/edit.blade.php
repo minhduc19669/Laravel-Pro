@@ -133,17 +133,11 @@
                             <div class="form-group col-md-5">
                                 <br>
                                 <button type="submit" class="btn btn-primary">Cập nhập</button>
-                                <button class="btn btn-warning" onclick="goBack()">Go Back</button>
-                                    <script>
-                                    function goBack() {
-                                    window.back();
-                                    }
-                                    </script>
                             </div>
                             <div class="form-group col-md">
                                 <label for="exampleFormControlFile1">Ảnh sản phẩm</label>
                                 <br>
-                                <input multiple type="file" class="form-control-file" name="product_image[]" >
+                            <input multiple type="file" class="form-control-file" name="product_image[]" >
                                 @if ($errors->has('product_image'))
                                     <p style="color: red">{{ $errors->first('product_image') }}</p>
                                 @endif
@@ -154,9 +148,7 @@
             </div>
             <div class="col-md">
                 @foreach ($images as $item)
-
                     <img width="200px" height="200px" class="img-fluid img-thumbnail" id="imgPreview" src="{{asset("storage/".$item->image)}}">
-
                 @endforeach
             </div>
         </div>
