@@ -32,7 +32,6 @@
     <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
       <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-      <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -143,7 +142,7 @@
                     </li>
 
                     <li class="mega-menu-position">
-                    <a href="{{route('page.blog')}}">Blog</a>
+                    <a href="{{route('page.blog')}}">Tin tức</a>
                         <ul class="mega-menu">
                                 <li>
                                     <ul>
@@ -166,8 +165,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{route('page.about')}}">ABOUT US</a></li>
-                    <li><a href="{{route('page.contact')}}">CONTACT US</a></li>
+                    <li><a href="{{route('page.about')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('page.contact')}}">Liên hệ</a></li>
                   </ul>
                 </nav>
               </div>
@@ -594,13 +593,17 @@
         output.innerHTML = this.value + "$";
       };
     </script>
-
+    <script src="">$(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+    </script>
     <!-- all js here -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('assets_page/js/popper.js')}}"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="{{asset('assets_page/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('assets_page/js/search_page_product.js')}}"></script>
     <script src="{{asset('assets_page/js/waypoints.min.js')}}"></script>
     <script src="{{asset('assets_page/js/elevetezoom.js')}}"></script>
     <script src="{{asset('assets_page/js/ajax-mail.js')}}"></script>

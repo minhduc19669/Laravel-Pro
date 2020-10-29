@@ -95,83 +95,14 @@
         </div>
       </div>
     </div>
-    <div class="testimonial-area pt-90 pb-70">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 ml-auto mr-auto">
-            <div class="testimonial-wrap testimonial-white-color">
-              <div class="testimonial-text-slider text-center">
-                <div class="sin-testiText">
-                  <p>
-                    Lorem ipsum dolor sit amet, co adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercita ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-                <div class="sin-testiText">
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or amro porano ja cai tomi tai go
-                    amro porano amro porano ja cai tomi tai go ....
-                  </p>
-                </div>
-                <div class="sin-testiText">
-                  <p>
-                    Lorem ipsum dolor sit amet, co adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercita ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-                <div class="sin-testiText">
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or amro porano ja cai tomi tai go
-                    amro porano amro porano ja cai tomi tai go ....
-                  </p>
-                </div>
-              </div>
-              <div class="testimonial-image-slider text-center">
-                <div class="sin-testiImage">
-                  <img src="{{asset('assets_page/img/testi/3.jpg')}}" alt="" />
-                  <h3>Robiul Islam</h3>
-                  <h5>Customer</h5>
-                </div>
-                <div class="sin-testiImage">
-                  <img src="{{asset('assets_page/img/testi/4.jpg')}}" alt="" />
-                  <h3>Robiul Islam</h3>
-                  <h5>Customer</h5>
-                </div>
-                <div class="sin-testiImage">
-                  <img src="{{asset('assets_page/img/testi/3.jpg')}}" alt="" />
-                  <h3>F. H. Shuvo</h3>
-                  <h5>Developer</h5>
-                </div>
-                <div class="sin-testiImage">
-                  <img src="{{asset('assets_page/img/testi/5.jpg')}}" alt="" />
-                  <h3>T. T. Rayed</h3>
-                  <h5>CEO</h5>
-                </div>
-              </div>
-              <div class="testimonial-shap">
-                <img src="{{asset('assets_page/img/icon-img/testi-shap-2.png')}}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div
       class="deal-area bg-img deal-style-white pt-95 pb-100 bg-img"
       style="background-image: url(assets_page/img/banner/banner-0.jpg)"
     >
       <div class="container">
         <div class="section-title section-title-white text-center mb-50">
-          <h4>Best Product</h4>
-          <h2>Deal of the Week</h2>
+          <h4>Sản phẩm tốt nhất</h4>
+          <h2>Chúng tôi có những sự lựa chọn tuyệt vời dành cho bạn  </h2>
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-6">
@@ -181,25 +112,10 @@
               /></a>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div style="margin-top: 200px" class="col-lg-6 col-md-6">
             <div class="deal-content">
-              <h3><a href="#">Name Your Product</a></h3>
-              <div class="deal-pro-price">
-                <span class="deal-old-price">$16.00 </span>
-                <span> $10.00</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod
-                tempor labore incididunt et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud nisi exercita ullamco laboris ut
-                aliquip ex ea commodo ullamco laboris nisi ut aliquip ex ea
-                commodo consequat aute irure dolor in reprehendrit.
-              </p>
-              <div class="timer timer-style">
-                <div data-countdown="2019/10/01"></div>
-              </div>
               <div class="discount-btn mt-35">
-                <a class="btn-style" href="{{route('home.allProduct')}}">SHOP NOW</a>
+                <a class="btn-style" href="{{route('home.allProduct')}}">Mua hàng ngay</a>
               </div>
             </div>
           </div>
@@ -212,22 +128,22 @@
           <div class="col-lg-4 col-md-4">
             <div class="service-content text-center mb-30 service-color-1">
               <img src="{{asset('assets_page/img/icon-img/shipping.png')}}" alt="" />
-              <h4>FREE SHIPPING</h4>
-              <p>Free shipping on all order</p>
+              <h4>Miễn phí ship</h4>
+              <p>Free shipping trong vòng 3km</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="service-content text-center mb-30 service-color-2">
               <img src="{{asset('assets_page/img/icon-img/support.png')}}" alt="" />
-              <h4>ONLINE SUPPORT</h4>
-              <p>Online support 24 hours a day</p>
+              <h4>HỖ TRỢ TRỰC TUYẾN</h4>
+              <p>Hỗ trợ trực tuyến 24 giờ một ngày</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="service-content text-center mb-30 service-color-3">
               <img src="{{asset('assets_page/img/icon-img/money.png')}}" alt="" />
-              <h4>MONEY RETURN</h4>
-              <p>Back guarantee under 5 days</p>
+              <h4>TIỀN TRẢ LẠI </h4>
+              <p>Đảm bảo trở lại dưới 5 ngày</p>
             </div>
           </div>
         </div>
@@ -236,8 +152,8 @@
     <div class="blog-area pb-70">
       <div class="container">
         <div class="section-title text-center mb-60">
-          <h4>Latest News</h4>
-          <h2>From Our Blog</h2>
+          <h4>Tin tức mới nhất</h4>
+          <h2>Từ Blog của chúng tôi</h2>
         </div>
         <div class="row">
             @foreach($news as $key => $news)

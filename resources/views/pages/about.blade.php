@@ -7,22 +7,18 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="about-us-img pr-30 wow fadeInLeft">
-                            <img alt="" src="assets/img/banner/banner-3.png">
+                            <img alt="" src="{{asset('assets_page/img/banner/banner-4.png')}}">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 d-flex align-items-center">
                         <div class="about-us-content">
-                            <h2>About Marten</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididu ut labore et dolore magna aliqua. Ut enim ad minim  quis nostrud exercitat ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h2>Giới thiệu LOVEPETS</h2>
                             <div class="about-us-list">
-                                <ul>
-                                    <li>There are many variations of passages</li>
-                                    <li>Contrary to popular belief is not simply</li>
-                                    <li>But I must explain to you how all this mistaken </li>
-                                </ul>
+                                Pet Mart là hệ thống pet shop thú cưng tại Hà Nội, TP.HCM, Đà Nẵng và Hải Phòng với hơn 18 cửa hàng thú cưng chuyên cung cấp đồ dùng, quần áo, thức ăn, sữa tắm, chuồng, vòng cổ xích và các phụ kiện cho chó, mèo, cá, thỏ, chuột, sóc, bò sát cảnh hàng đầu tại Việt Nam. Địa chỉ tắm spa, chăm sóc, cắt tỉa lông và trông giữ thú cưng chuyên nghiệp.
+                                Với chất lượng dịch vụ tốt nhất luôn được khách hàng tin tưởng và là điểm đến tuyệt vời dành cho thú cưng.
                             </div>
                             <div class="about-us-btn">
-                                <a class="btn-style" href="#">CONTACT US</a>
+                                <a class="btn-style" href="{{route('page.contact')}}">Liên hệ ngay cho chúng tôi</a>
                             </div>
                         </div>
                     </div>
@@ -34,92 +30,44 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="single-count mb-30 text-center">
-                            <h2 class="count">18</h2>
-                            <span>Years in Business</span>
+                            <h2 class="count">5</h2>
+                            <span>Năm kinh doanh</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="single-count mb-30 text-center">
-                            <h2 class="count">290</h2>
-                            <span>Happy People</span>
+                            <h2 class="count">600</h2>
+                            <span>Kháng hàng hài lòng</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="single-count mb-30 text-center">
                             <h2 class="count">24</h2>
-                            <span>Billion Sales</span>
+                            <span>Cửa hàng khắp cả nước</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="single-count mb-30 text-center">
-                            <h2 class="count">17</h2>
-                            <span>Award Winning</span>
+                            <h2 class="count">10</h2>
+                            <span>Giải thưởng</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<div class="testimonial-area pt-90 pb-70 bg-img" style="background-image:url(assets/img/banner/banner-1.jpg);">
-		    <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 ml-auto mr-auto">
-                        <div class="testimonial-wrap">
-                            <div class="testimonial-text-slider text-center">
-                                <div class="sin-testiText">
-                                    <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or amro porano ja cai tomi tai go amro porano  amro porano ja cai tomi tai go  .... </p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or amro porano ja cai tomi tai go amro porano  amro porano ja cai tomi tai go  .... </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-image-slider text-center">
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/3.jpg" alt="">
-                                    <h3>Samia Robiul</h3>
-                                    <h5>Customer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/4.jpg" alt="">
-                                    <h3>Samia Robiul</h3>
-                                    <h5>Customer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/3.jpg" alt="">
-                                    <h3>F H Shuvo</h3>
-                                    <h5>Developer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/5.jpg" alt="">
-                                    <h3>T T Rayed</h3>
-                                    <h5>CEO</h5>
-                                </div>
-                            </div>
-                            <div class="testimonial-shap">
-                                <img src="assets/img/icon-img/testi-shap.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		</div>
+
 		<div class="team-ara pt-95 pb-70">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h2>Our Team</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                    <h2>Chi nhánh</h2>
+                    <p>LOVEPETS gồm 4 chi nhánh lớn trên khắp cả nước</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team-wrapper mb-30">
                             <div class="team-img">
                                 <a href="#">
-                                    <img src="assets/img/team/team-1.jpg" alt="">
+                                    <img src="{{assert('assets_page/img/testi/4.jpg')}}" alt="">
                                 </a>
                                 <div class="team-social">
                                     <a href="#">
@@ -137,8 +85,8 @@
                                 </div>
                             </div>
                             <div class="team-content text-center">
-                                <h4>Adam Jonson</h4>
-                                <span>Customer </span>
+                                <h4>Hà Nội </h4>
+                                <span>Số 219 Trung Kính Yên Hòa Cầu Giấy Hà Nội</span>
                             </div>
                         </div>
                     </div>
@@ -164,8 +112,8 @@
                                 </div>
                             </div>
                             <div class="team-content text-center">
-                                <h4>Rose Evans</h4>
-                                <span>Manager </span>
+                                <h4>Đà Nẵng</h4>
+                                <span>85 Duy Tân Hòa Thuận Nam Hải Châu Đà Nẵng </span>
                             </div>
                         </div>
                     </div>
@@ -191,8 +139,8 @@
                                 </div>
                             </div>
                             <div class="team-content text-center">
-                                <h4>Bruce Cole</h4>
-                                <span>Customer </span>
+                                <h4>Cần Thơ</h4>
+                                <span>Hẻm tổ 7 Phường An Khánh Bình Thủy Cần Thơ</span>
                             </div>
                         </div>
                     </div>
@@ -218,8 +166,8 @@
                                 </div>
                             </div>
                             <div class="team-content text-center">
-                                <h4>Debra Lane</h4>
-                                <span>Manager </span>
+                                <h4>Hồ Chí Minh</h4>
+                                <span>29 Tân Nhựt Bình Chánh Thành Phố Hồ Chí Minh</span>
                             </div>
                         </div>
                     </div>
