@@ -139,27 +139,15 @@
                         </ul>
                     </li>
 
-                    <li class="mega-menu-position">
+                    <li>
                     <a href="{{route('page.blog')}}">Tin tức</a>
-                        <ul class="mega-menu">
-                                <li>
-                                    <ul>
-                                        @foreach($category_news as $cate => $value)
-                                            <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
+                        <ul class="submenu">
                             <li>
-                                <ul>
-                                    <li>
-                                        <a href="{{route('page.blog')}}"
-                                        ><img
-                                                alt=""
-                                                src="{{asset('assets_page/img/banner/dd.png')}}"
-                                            /></a>
-                                    </li>
-                                </ul>
+                            @foreach($category_news as $cate => $value)
+                                <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
+                                @endforeach
                             </li>
+
                         </ul>
                     </li>
 

@@ -102,7 +102,7 @@
                                 @endforeach
 
                             </div>
-                            <div class="pagination text-center mt-10">
+                            <div class="pagination-style text-center mt-10">
                                 {!! $products->render() !!}
                             </div>
                         </div>
