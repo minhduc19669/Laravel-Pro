@@ -170,7 +170,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/subcategory/edit/{id}', 'CategoryController@edit_sub')->name('subcategory.edit');
             Route::post('category/subcategory/update/{id}', 'CategoryController@update_sub')->name('subcategory.update');
             Route::get('category/subcategory/remove/{id}', 'CategoryController@remove_sub')->name('subcategory.remove');
-            Route::get('slide/search/search_sub','CategoryController@action_sub')->name('category.search_sub');
+            Route::get('category/subcategory/search_sub','CategoryController@action_sub')->name('category.search_sub');
         });
         //brand
         Route::middleware('isAdmin:category')->group(function () {

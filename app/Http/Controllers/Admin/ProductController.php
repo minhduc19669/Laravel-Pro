@@ -21,7 +21,11 @@ class ProductController extends Controller
     //
     public function list(Request $request){
 
-          $data = Product::paginate(5);
+          $data = Product::with('categories')
+              ->with('subcategories')
+              ->with('brands')
+              ->with('images')
+              ->paginate(5);
           if ($request->ajax()){
               return view('admin.products.list',compact('data'));
           }
