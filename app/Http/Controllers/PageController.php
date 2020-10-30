@@ -121,10 +121,13 @@ class PageController extends Controller
              ->get();
         return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
     }
-    public function blogCategory($id){
+    public function blogCategory(Request $request,$id){
            $category = Category::where('cate_news_id',$id)->first();
-           $news = News::where('category_id',$category->cate_news_id)->get();
-        return view('pages.blogCategory',compact('news'));
+           $news = News::where('category_id',$category->cate_news_id)->paginate(4);
+           if ($request->ajax()){
+               return view('pages.blogCategory',compact('news'));
+           }
+        return view('pages.pagination_categoryNews',compact('news'));
     }
 //about
 
@@ -150,8 +153,12 @@ class PageController extends Controller
            ->orWhere('product_name', 'like', '%'.$request->key.'%')
            ->orWhere('product_code', 'like', '%'.$request->key.'%')
            ->orderBy('products.product_id', 'desc')
-           ->get();
-       return view('pages.search_product',compact('products','category','brand'));
+           ->paginate(9);
+       if ($request->ajax()){
+           return view('pages.search_product',compact('products','category','brand'));
+
+       }
+       return view('pages.pagination_search_product',compact('products','category','brand'));
    }
    public function searchAjax(Request $request){
       if($request->ajax()){

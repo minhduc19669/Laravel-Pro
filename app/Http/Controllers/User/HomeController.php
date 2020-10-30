@@ -23,7 +23,7 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        $news = News::all();
+        $news = News::orderBy('news_id','desc')->limit(3)->get();
         $products=Product::limit(8)->orderBy('product_id','desc')->get();
         $slides=Slide::limit(2)->orderBy('id','desc')->get();
         $category =Category::where('cate_pro_id','!=','null')
