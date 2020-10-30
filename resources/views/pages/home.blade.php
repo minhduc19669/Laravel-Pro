@@ -2,10 +2,12 @@
 @section('url','https://www.petcity.vn/media/banner/banner_839ab468.png')
 @section('content')
 <h3 class="animated" style=" text-align: center; margin-top: 20px">❄️ ❄️ ❄️ ❄️ ❄️ Merry Xmas ❄️ ❄️ ❄️ ❄️ ❄️ </h3>
+
     <div class="slider-area">
       <div class="slider-active owl-dot-style owl-carousel">
+          @foreach($slides as $key =>$slide)
         <div class="single-slider pt-215 pb-228 bg-img"
-          style="background-image: url(assets_page/img/slider/slider-2.jpg)">
+          style="background-image: url('/slide/{{$slide->slide_image}}')">
           <div class="container">
             <div class="slider-content slider-content-white slider-animated-2 text-center">
               <h3 class="animated">We keep pets for pleasure.</h3>
@@ -18,20 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="single-slider pt-215 pb-228 bg-img"
-        style="background-image: url(assets_page/img/slider/slider-3.jpg)">
-          <div class="container">
-            <div class="slider-content slider-content-white slider-animated-2 text-center">
-              <h3 class="animated">We keep pets for pleasure.</h3>
-              <h1 class="animated">
-                Standard Food & Vitamins <br />For all Pets
-              </h1>
-              <div class="slider-btn">
-                <a class="animated" href="{{route('home.allProduct')}}">SHOP NOW</a>
-              </div>
-            </div>
-          </div>
-        </div>
+          @endforeach
       </div>
     </div>
     <div class="food-category pt-100 pb-70">
