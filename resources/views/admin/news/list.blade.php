@@ -4,12 +4,8 @@
     <a href="{{route('news.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
         <div class="row"><div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="datatable_length">
-                    <label>Show
-                        <select name="datatable_length" aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm">
-                            <option value="10">10</option><option value="25">25</option>
-                            <option value="50">50</option><option value="100">100</option>
-                        </select> entries</label></div></div><div class="col-sm-12 col-md-6">
+
+            </div><div class="col-sm-12 col-md-6">
                 <div id="datatable_filter" class="dataTables_filter">
                     <label>Search:
                         <input name="search" id="search" type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable">
@@ -77,26 +73,7 @@
                 })
             }
         });
-        $(document).on('click', '#unactive', function() {
-            var id = $(this).data('id');
-            var slide_status =$(this).data('slide_status')
-            var query = $(this).val();
-            console.log(id);
-            $.ajax({
-                url: 'slide/un-active/'+id,
-                method: 'get',
-                dataType: 'json',
-                type: 'unactive',
-                data: {
-                    "id": id,
-                    'slide_status': slide_status,
-                },
-                success: function (data) {
-                }
 
-            })
-
-        });
 
     </script>
 @endsection

@@ -198,10 +198,11 @@ class CategoryController extends Controller{
     //sub-category
 
                 public function list_sub(){
-                    $query = Category::where('sub_id','!=',null)
-                        ->orderBy('sub_id','asc');
-                    $bang = $query->with('categories')->get();
-                    return view('admin.categories.subcategory.list',['list'=>$bang]);
+                    $data = Category::with('categories')
+                        ->orderBy('sub_id', 'desc')
+                        ->where('sub_id','!=',null)
+                        ->get();
+                    return view('admin.categories.subcategory.list',compact('data'));
                 }
                 public function add_sub(){
                     $cate_product = Category::where('cate_pro_id','!=',null)->get();
