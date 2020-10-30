@@ -20,11 +20,15 @@ class PageController extends Controller
         $this->productServ=$productServ;
     }
 //product
-    public function allProduct(){
+    public function allProduct(Request $request){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
-        $products= $this->productServ->get(10);
+        $products= Product::paginate(9);;
+        if ($request->ajax()){
+            return \view('pages.product',\compact('products','category','brand'));
+        }
         return \view('pages.product',\compact('products','category','brand'));
+
     }
     public function productDetail($id){
         $product=$this->productServ->productDetail($id);
@@ -61,33 +65,46 @@ class PageController extends Controller
         $productRelated=$this->productServ->getProductRelatedTo($id);
         return \view('pages.product_details',\compact('product','images', 'productRelated','image','post', 'countRating', 'sum', 'avg', 'countStar', 'percent','total'));
     }
-    public function  productCategory($id){
+    public function  productCategory( Request $request,$id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('cate_pro_id',$id)->first();
-        $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->paginate(9);
+        if($request->ajax()){
+            return \view('pages.category_product',\compact('products','category','brand'));
+        }
+        return \view('pages.pagination_category_product',\compact('products','category','brand'));
     }
-    public function  productSubcategory($id){
+    public function  productSubcategory(Request $request,$id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('sub_id',$id)->first();
-        $products = Product::where('sub_id',$cate_pro->sub_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        $products = Product::where('sub_id',$cate_pro->sub_id)->paginate(9);
+        if ($request->ajax()){
+            return \view('pages.subcategory_product',\compact('products','category','brand'));
+        }
+        return \view('pages.pagination_subcategory',\compact('products','category','brand'));
     }
-    public function  productBrand($id){
+    public function  productBrand(Request $request,$id){
         $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Brand::where('id',$id)->first();
-        $products = Product::where('brand_id',$cate_pro->id)->get();
-        return \view('pages.product',\compact('products','category','brand','category_news'));
+        $products = Product::where('brand_id',$cate_pro->id)->paginate(9);
+        if ($request->ajax()){
+            return \view('pages.brand_product',\compact('products','category','brand','category_news'));
+
+        }
+        return \view('pages.pagination_brand_product',\compact('products','category','brand','category_news'));
     }
 //blog
-    public function showBlog(){
+    public function showBlog(Request $request){
         $category_news =Category::all();
-        $news= News::all();
-        return \view('pages.blog',\compact('news','category_news'));
+        $news= News::paginate(4);
+            if ($request->ajax()){
+                return \view('pages.blog',\compact('news','category_news'));
+            }
+        return \view('pages.pagination_blog',\compact('news','category_news'));
     }
     public function blogDetails($id){
         $category_news =Category::all();

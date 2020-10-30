@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-    <h4 class="header-title">Danh mục sản phẩm con</h4>
+    <h4 class="header-title">Thể loại</h4>
     <a href="{{route('subcategory.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
         <div class="row"><div class="col-sm-12 col-md-6">
@@ -18,7 +18,7 @@
                     <thead  class="col-sm-12">
                     <tr role="row">
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 10px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">#</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Tên danh mục</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Tên </th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Danh mục</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Age: activate to sort column ascending">Ghi chú</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="action: activate to sort column ascending">Action</th>

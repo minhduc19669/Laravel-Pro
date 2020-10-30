@@ -532,7 +532,7 @@
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('category.list')}}">Danh mục sản phẩm</a></li>
                             <li><a href={{route('category.list-news')}}>Danh mục tin tức</a></li>
-                            <li><a href="{{route('subcategory.list')}}">Danh mục sản phẩm con</a></li>
+                            <li><a href="{{route('subcategory.list')}}">Thể loại</a></li>
                         </ul>
                     </li>
 

@@ -43,17 +43,9 @@
                                         <div id="product5" class="product-wrapper mb-10">
                                             <div class="product-img">
                                                 <a href="{{route('product.details',$item->product_id)}}">
-                                                    <img width="100px" height="230px" src="{{asset('product/'.$item->product_image)}}" alt="" />
+                                                    <img width="100px" height="230px" src="{{asset('/storage/'.$item->product_image)}}" alt="" />
                                                 </a>
                                                 <div class="product-action">
-                                                    <a id="viewproduct" view-id="{{$item->product_id}}"
-                                                       title="Quick View"
-                                                       data-toggle="modal"
-                                                       data-target="#exampleModal"
-                                                       href="#"
-                                                    >
-                                                        <i class="ti-plus"></i>
-                                                    </a>
                                                     <a id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
                                                         <i class="ti-shopping-cart"></i>
                                                     </a>
@@ -84,6 +76,7 @@
                                                 <div class="product-list-action">
                                                     <div class="product-list-action-left">
                                                         <a
+                                                            id="addtocart5" buy-id1="{{$item->product_id}}"
                                                             class="addtocart-btn"
                                                             title="Add to cart"
                                                             href="#"
@@ -109,31 +102,8 @@
                                 @endforeach
 
                             </div>
-                            <div class="pagination-style text-center mt-10">
-                                <ul>
-                                    <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-angle-double-left"
-                                                aria-hidden="true"
-                                            ></i
-                                            ></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-angle-double-right"
-                                                aria-hidden="true"
-                                            ></i
-                                            ></a>
-                                    </li>
-                                </ul>
+                            <div class="pagination text-center mt-10">
+                                {!! $products->render() !!}
                             </div>
                         </div>
                     </div>
@@ -171,7 +141,7 @@
                                 <div class="shop-list-style mt-20">
                                     <ul>
                                         @foreach($category->SubCategories as $subcategory)
-                                            <li><a href="#">{{$subcategory->category_sub_product_name}}</a></li>
+                                            <li><a href="{{route('page.product_subcategory',$subcategory->sub_id)}}">{{$subcategory->category_sub_product_name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -184,7 +154,7 @@
                             <div class="shop-list-style mt-20">
                                 <ul>
                                     @foreach($brand as $key => $brand)
-                                        <li><a href="#">{{$brand->brand_name}}</a></li>
+                                        <li><a href="{{route('page.product_brand',$brand->id)}}">{{$brand->brand_name}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

@@ -30,31 +30,47 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($data as $key => $row)
+                    <tr id="item_{{$row->news_id}}">
+                        <td style="font-size: 12px">{{++$key}}</td>
+                        <td style="font-size: 12px">{{$row->news_title}}</td>
+                        <td style="font-size: 12px">{{$row->newCategory->category_news_name}}</td>
+                        <td style="font-size: 12px">{{$row->news_content}}</td>
+                        <td style="font-size: 12px"><img width="50px" src=" \news\{{$row->news_image}}" alt=""></td>
+                        <td style="font-size: 12px">{{$row->news_desc}}</td>
+                        <td style="font-size: 12px">{{$row->news_date}}</td>
+                        @if ($row->news_status == 0)
+                        <td><a href={{route('news.un-active',$row->news_id)}}><button style="font-size: 12px" id="unactive" data-id="'.$row->news_id.'"  class="btn btn-danger"> Ẩn </button></a></td>
+                        @else
+                        <td><a href={{route('news.active',$row->news_id)}}><button style="font-size: 12px" class="btn btn-primary">Hiện</button></a></td>
+                        @endif
+
+                        <td><a href={{route('news.edit',$row->news_id)}}><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>
+                            <button style="font-size: 12px" id="delete"  data-id="'.$row->news_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    @endforeach
                    </tbody>
                 </table></div></div>
-    <script>
-        $(document).ready(function(){
-            fetch_customer_data();
-            function fetch_customer_data(query = '')
-            {
+        {!! $data->render() !!}
+        <script>
+            $('#search').on('keyup',function(){
+                $value = $(this).val();
                 $.ajax({
-                    url:"{{ route('news.search') }}",
-                    method:'GET',
-                    data:{query:query},
-                    dataType:'json',
-                    success:function(data)
-                    {
-                        $('tbody').html(data.table_data);
-                        $('#total_records').text(data.total_data);
+                    type: 'get',
+                    url: '{{route('news.search')}}',
+                    data: {
+                        'search': $value
+                    },
+                    success:function(data){
+                        $('tbody').html(data);
                     }
-                })
-            }
+                });
+            })
+            $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
 
-            $(document).on('keyup', '#search', function(){
-                var query = $(this).val();
-                fetch_customer_data(query);
-            });
-        });
+
+
+
         $(document).on('click', '#delete', function() {
             var id = $(this).data('id');
             console.log(id);

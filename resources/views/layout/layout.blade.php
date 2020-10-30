@@ -111,35 +111,32 @@
                     <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="#">Danh mục</a>
-                                            <ul class="mega-menu">
-                                                @foreach($category as $key => $cate)
-                                                <li>
-                            <ul>
-                              <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
-                                 @foreach($cate -> Subcategories as $cate)
-                                <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
-                                @endforeach
-
-                          </ul>
-
-                        </li>
-                                                @endforeach
-                                                <li>
-                          <ul>
-                            <li>
-                              <a href="shop-page.html"
-                                ><img
-                                  alt=""
-                                  src="{{asset('assets_page/img/banner/menu-img-4.jpg')}}"
-                              /></a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
                     <a href="{{route('home.allProduct')}}">Sản phẩm</a>
+                        <ul class="mega-menu">
+                            @foreach($category as $key => $cate)
+                                <li>
+                                    <ul>
+                                        <li class="mega-menu-title"><a href="#"><b>{{$cate->category_product_name}}</b></a></li>
+                                        @foreach($cate -> Subcategories as $cate)
+                                            <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
+                                        @endforeach
+
+                                    </ul>
+
+                                </li>
+                            @endforeach
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="shop-page.html"
+                                        ><img
+                                                alt=""
+                                                src="{{asset('assets_page/img/banner/menu-img-4.jpg')}}"
+                                            /></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="mega-menu-position">
