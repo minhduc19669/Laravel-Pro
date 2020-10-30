@@ -78,7 +78,8 @@
                         <div class="product-list-action">
                           <div class="product-list-action-left">
                             <a
-                              class="addtocart-btn"
+                                id="addtocart5" buy-id1="{{$item->product_id}}"
+                                class="addtocart-btn"
                               title="Add to cart"
                               href="#"
                               ><i class="ion-bag"></i> Add to cart</a
@@ -105,31 +106,8 @@
                     @endforeach
 
                 </div>
-                <div class="pagination-style text-center mt-10">
-                  <ul>
-                    <li>
-                      <a href="#"
-                        ><i
-                          class="fa fa-angle-double-left"
-                          aria-hidden="true"
-                        ></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="#">1</a>
-                    </li>
-                    <li>
-                      <a href="#">2</a>
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i
-                          class="fa fa-angle-double-right"
-                          aria-hidden="true"
-                        ></i
-                      ></a>
-                    </li>
-                  </ul>
+                <div class=" text-center mt-10">
+                    {!! $products->render() !!}
                 </div>
               </div>
             </div>

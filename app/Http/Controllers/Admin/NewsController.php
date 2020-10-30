@@ -7,16 +7,18 @@ use App\Http\Requests\ValidateFormAddNews;
 use App\Http\Requests\ValidateFormUpdaateNews;
 use App\News;
 use App\Newscategory;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
-    public function index(){
-        $news = DB::table('news')
-            ->join('categories','categories.cate_news_id','=','news.category_id')
-            ->get();
-        return view('admin.news.list',['news'=>$news]);
+    public function index(Request $request){
+        $data = News::with('newCategory')->paginate(5);
+        if ($request->ajax()){
+            return view('admin.news.list',compact('data'));
+        }
+        return view('admin.news.pagination',compact('data'));
     }
     public function add(){
         $news_cate = Category::where('cate_news_id','!=',null)->get();
@@ -103,26 +105,13 @@ class NewsController extends Controller
         if($request->ajax())
         {
             $output = '';
-            $query = $request->get('query');
-            if($query != '')
-            {
-                $data = DB::table('news')
-                    ->join('categories','categories.cate_news_id','=','news.category_id')
-                    ->orWhere('news_title', 'like', '%'.$query.'%')
-                    ->orWhere('news_desc', 'like', '%'.$query.'%')
-                    ->orderBy('news.news_id', 'desc')
-                    ->get();
-            }
-            else
-            {
-                $data = DB::table('news')
-                    ->join('categories','categories.cate_news_id','=','news.category_id')
-                    ->orderBy('news.news_id', 'desc')
-                    ->get();
-            }
-            $total_row = $data->count();
-            if($total_row > 0)
-            {
+            $data = DB::table('news')
+                ->join('categories','categories.cate_news_id','=','news.category_id')
+                ->orWhere('news_title', 'like', '%'.$request->search.'%')
+                ->orWhere('news_desc', 'like', '%'.$request->search.'%')
+                ->orderBy('news.news_id', 'desc')
+                ->get();
+            if ($data){
                 foreach($data as $key => $row)
                 {
                     $output .= '
@@ -150,21 +139,9 @@ class NewsController extends Controller
         </tr>
         ';
                 }
-            }
-            else
-            {
-                $output = '
-       <tr>
-        <td align="center" colspan="9">No Data Found</td>
-       </tr>
-       ';
-            }
-            $data = array(
-                'table_data'  => $output,
-                'total_data'  => $total_row
-            );
 
-            echo json_encode($data);
+            }
+            return Response($output);
         }
     }
 

@@ -1,7 +1,9 @@
-@extends('admin_layout')
-@section('admin_contend')
+
+@extends('layout.layout')
+@section('url','https://bizweb.dktcdn.net/100/047/359/themes/66510/assets/women_banner.png?1543757106135')
+@section('content')
     <div id="tag_container">
-        @include('admin.news.list')
+        @include('pages.blog')
     </div>
     <script type="text/javascript">
         $(window).on('hashchange', function() {
@@ -46,4 +48,5 @@
             });
         }
     </script>
+
 @endsection

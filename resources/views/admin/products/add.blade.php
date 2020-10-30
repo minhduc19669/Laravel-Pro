@@ -67,7 +67,7 @@
                             @endif
                         </div>
                         <div class="form-group col-md-5">
-                            <label  for="category" >Danh mục sản phẩm con</label>
+                            <label  for="category" >Thể loại</label>
                             <select name="cate_sub" class="form-control">
                                 @foreach($cate_sub as $key => $cate)
                                     <option value="{{$cate->sub_id}}">{{$cate->category_sub_product_name}}</option>

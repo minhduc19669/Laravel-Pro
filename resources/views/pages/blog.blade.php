@@ -29,17 +29,10 @@
                 <div class="pagination-style text-center mt-20">
                     <ul>
                         <li>
-                            <a href="#"><i class="icon-arrow-left"></i></a>
+                            {!! $news->render() !!}
+
                         </li>
-                        <li>
-                            <a href="#" class="active">1</a>
-                        </li>
-                        <li>
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a class="" href="#"><i class="icon-arrow-right"></i></a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

@@ -77,7 +77,7 @@
                             @endif
                         </div>
                         <div class="form-group col-md-5">
-                            <label  for="category" >Danh mục sản phẩm con</label>
+                            <label  for="category" >Thể loại</label>
                             <select name="cate_sub" class="form-control">
                                 @foreach($cate_sub as $key => $cate)
                                     @if($cate->sub_id == $edit->sub_id)
