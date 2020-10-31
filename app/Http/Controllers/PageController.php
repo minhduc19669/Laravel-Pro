@@ -20,11 +20,12 @@ class PageController extends Controller
         $this->productServ=$productServ;
     }
 //product
-    public function allProduct(){
+    public function allProduct(Request $request){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $products= $this->productServ->get(10);
-        return \view('pages.product',\compact('products','category','brand'));
+        $count=$request->search;
+        return \view('pages.product',\compact('products','category','brand','count'));
     }
     public function productDetail($id){
         $product=$this->productServ->productDetail($id);
@@ -136,6 +137,7 @@ class PageController extends Controller
            ->get();
        return view('pages.search_product',compact('products','category','brand'));
    }
+
 
 
 
