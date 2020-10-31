@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <div class="checkout-wrapper">
                             <div id="faq" class="panel-group">
-                                <div class="panel panel-default show">
+                                <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-1">Tài khoản của bạn </a></h5>
                                     </div>
