@@ -35,7 +35,6 @@ class AppServiceProvider extends ServiceProvider
         //
         view()->composer(['pages.home','pages.cart','layout.layout','pages.checkout'], function ($view) {
             $products = Product::limit(8)->orderBy('product_id', 'desc')->get();
-            $slides = Slide::limit(3)->orderBy('id', 'desc')->get();
             $category = Category::where('cate_pro_id', '!=', 'null')
             ->select('cate_pro_id', 'category_product_name', 'sub_id', 'category_sub_product_name','parent_id')
                 ->with('SubCategories')
@@ -45,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
             $total = Cart::priceTotal();
 
             $category_news =Category::where('cate_news_id', '!=', 'null')->get();
-            $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'slides'=>$slides,'category'=>$category]);
+            $view->with(['category_news'=>$category_news,'count'=>$count,'data'=>$data,'total'=>$total,'products'=>$products,'category'=>$category]);
         });
 
 

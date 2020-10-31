@@ -4,12 +4,9 @@
     <a href="{{route('product.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
         <div class="row"><div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="datatable_length">
-                    <label>Show
-                        <select name="datatable_length" aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm">
-                            <option value="10">10</option><option value="25">25</option>
-                            <option value="50">50</option><option value="100">100</option>
-                        </select> entries</label></div></div><div class="col-sm-12 col-md-6">
+
+            </div>
+            <div class="col-sm-12 col-md-6">
                 <div id="datatable_filter" class="dataTables_filter">
                     <label>Search:
                         <input name="search" id="search" type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable">
@@ -36,31 +33,54 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($data as $key => $row)
+                    <tr id="item_{{$row->product_id}}" role="row" class="odd">
+                        <td class="" tabindex="0">{{++$key}}</td>
+                        <td class="sorting_1" style="font-size: 12px">{{$row->product_code}}</td>
+                        <td style="font-size: 12px">{{$row->product_name }}</td>
+                        <td style="font-size: 12px">{{$row->categories->category_product_name }}</td>
+                        <td style="font-size: 12px">{{$row->brands->brand_name }}</td>
+                        <td style="font-size: 12px">{{$row->product_price }}</td>
+                        <td style="font-size: 12px">{{$row->product_price_sale }}</td>
+                        <td >
+                            @foreach ($row->images as $value)
+                            <img width="50px" src=" /storage/{{$value->image}} " alt="">
+                            @endforeach
+                        </td><td style="font-size: 12px">{{$row->product_content }}</td>
+
+                        @if ($row->product_status == 0)
+                        <td style="font-size: 12px">Hết hàng</td>
+
+                        @else
+
+                        <td style="font-size: 12px">Còn hàng</td>
+                        @endif
+
+                        <td style="font-size: 12px"><a href='{{route('product.edit',$row->product_id)}}'><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>  <button style="font-size: 12px" id="delete"  data-id="{{$row->product_id}}" class="btn  btn-danger delete" type="submit">xóa</button> </td>
+                    </tr>
+                    @endforeach
                     </tbody>
-                </table></div></div>
-    <script>
-        $(document).ready(function(){
-            fetch_customer_data();
-            function fetch_customer_data(query = '')
-            {
+                </table>
+            </div>
+        </div>
+        {!! $data->render() !!}
+
+        <script type="text/javascript">
+            $('#search').on('keyup',function(){
+                $value = $(this).val();
                 $.ajax({
-                    url:"{{route('product.search')}}",
-                    method:'GET',
-                    data:{query:query},
-                    dataType:'json',
-                    success:function(data)
-                    {
-                        console.log(data.table_data);
-                        $('tbody').html(data.table_data);
-                        $('#total_records').text(data.total_data);
+                    type: 'get',
+                    url: '{{route('product.search')}}',
+                    data: {
+                        'search': $value
+                    },
+                    success:function(data){
+                        $('tbody').html(data);
                     }
-                })
-            }
-            $(document).on('keyup', '#search', function(){
-                var query = $(this).val();
-                fetch_customer_data(query);
-            });
-        });
+                });
+            })
+            $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+
         $(document).on('click', '#delete', function() {
             var id = $(this).data('id');
             console.log(id);

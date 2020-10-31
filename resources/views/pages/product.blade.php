@@ -41,7 +41,9 @@
             </div>
             <div id="product" class="grid-list-product-wrapper">
               <div class="product-view product-grid">
-                <div class="row">
+                <div id="search_product_ajax" class="row">
+
+
                     @foreach ($products as $item)
                 <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
                     <div id="product5" class="product-wrapper mb-10">
@@ -80,7 +82,8 @@
                         <div class="product-list-action">
                           <div class="product-list-action-left">
                             <a
-                              class="addtocart-btn"
+                                id="addtocart5" buy-id1="{{$item->product_id}}"
+                                class="addtocart-btn"
                               title="Add to cart"
                               href="#"
                               ><i class="ion-bag"></i> Add to cart</a
@@ -102,34 +105,13 @@
                       </div>
                     </div>
                   </div>
+
+
                     @endforeach
 
                 </div>
                 <div class="pagination-style text-center mt-10">
-                  <ul>
-                    <li>
-                      <a href="#"
-                        ><i
-                          class="fa fa-angle-double-left"
-                          aria-hidden="true"
-                        ></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="#">1</a>
-                    </li>
-                    <li>
-                      <a href="#">2</a>
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i
-                          class="fa fa-angle-double-right"
-                          aria-hidden="true"
-                        ></i
-                      ></a>
-                    </li>
-                  </ul>
+                    {!! $products->render() !!}
                 </div>
               </div>
             </div>
@@ -140,8 +122,8 @@
                 <h4 class="shop-sidebar-title">Tìm kiếm sản phẩm</h4>
                 <div class="shop-search mt-25 mb-50">
                   <form class="shop-search-form">
-                    <input type="text" placeholder="Nhập" />
-                    <button type="submit">
+                    <input name="search_product" id="search_product" type="text" placeholder="Nhập" />
+                    <button disabled          type="submit">
                       <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                   </form>
@@ -184,10 +166,5 @@
         </div>
       </div>
     </div>
-    <script>
-        $(document).ready( function () {
-            $('#product').DataTable();
-        } );
-    </script>
 
 @endsection

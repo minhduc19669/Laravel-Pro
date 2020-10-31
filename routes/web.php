@@ -93,6 +93,7 @@ Route::prefix('page')->group(function(){
     Route::get('product/subcategory/{id}','PageController@productSubcategory')->name('page.product_subcategory');
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
     Route::get('product/search','PageController@search')->name('page.product_search');
+    Route::get('product/search/ajax','PageController@searchAjax')->name('page.product_searchAjax');
 
 });
 
@@ -133,7 +134,8 @@ Route::middleware(['auth'])->group(function (){
             Route::get('product/active{id}', 'ProductController@active')->name('product.active');
             Route::get('product/un-active/{id}', 'ProductController@unactive')->name('product.un-active');
             Route::get('product/search','ProductController@action')->name('product.search');
-
+            //phantrang
+            Route::get('Pagination','ProductController@pagination')->name('product.pagination');
         });
         //Sale-code
         Route::prefix('coupon')->group(function () {
@@ -169,7 +171,7 @@ Route::middleware(['auth'])->group(function (){
             Route::get('category/subcategory/edit/{id}', 'CategoryController@edit_sub')->name('subcategory.edit');
             Route::post('category/subcategory/update/{id}', 'CategoryController@update_sub')->name('subcategory.update');
             Route::get('category/subcategory/remove/{id}', 'CategoryController@remove_sub')->name('subcategory.remove');
-            Route::get('slide/search/search_sub','CategoryController@action_sub')->name('category.search_sub');
+            Route::get('category/subcategory/search_sub','CategoryController@action_sub')->name('category.search_sub');
         });
         //brand
         Route::middleware('isAdmin:category')->group(function () {

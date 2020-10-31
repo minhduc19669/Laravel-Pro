@@ -1,15 +1,10 @@
 @extends('admin_layout')
 @section('admin_content')
-    <h4 class="header-title">Danh mục sản phẩm con</h4>
+    <h4 class="header-title">Thể loại</h4>
     <a href="{{route('subcategory.add')}}"><i class="ion ion-md-add"></i><span>Thêm mới</span></a>
     <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
         <div class="row"><div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="datatable_length">
-                    <label>Show
-                        <select name="datatable_length" aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm">
-                            <option value="10">10</option><option value="25">25</option>
-                            <option value="50">50</option><option value="100">100</option>
-                        </select> entries</label></div></div><div class="col-sm-12 col-md-6">
+                </div><div class="col-sm-12 col-md-6">
                 <div id="datatable_filter" class="dataTables_filter">
                     <label>Search:
                         <input name="search" id="search" type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable">
@@ -23,7 +18,7 @@
                     <thead  class="col-sm-12">
                     <tr role="row">
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 10px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">#</th>
-                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Tên danh mục</th>
+                        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Tên </th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 116px;" aria-label="Office: activate to sort column ascending">Danh mục</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240px;" aria-label="Age: activate to sort column ascending">Ghi chú</th>
                         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 180px;" aria-label="action: activate to sort column ascending">Action</th>

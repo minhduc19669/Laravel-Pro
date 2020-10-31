@@ -3,7 +3,7 @@
 @section('url','https://petnhatrang.com/wp-content/themes/petshop/images/background-banner.jpg')
 @section('content')
     <div  class="contact-area pt-100 pb-100">
-        <h1 style="margin-left: 700px;margin-bottom: 60px">Liên hệ</h1>
+        <h1 style="text-align:center;margin-bottom: 100px " >Liên hệ</h1>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">

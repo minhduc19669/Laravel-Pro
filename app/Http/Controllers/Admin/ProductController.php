@@ -19,20 +19,19 @@ use function simplehtmldom_1_5\str_get_html;
 class ProductController extends Controller
 {
     //
-    public function list(){
+    public function list(Request $request){
 
-//        $list = DB::table('products')
-//            ->join('categories', function ($join) {
-//                $join->on('products.cate_pro_id', '=', 'categories.cate_pro_id')->orOn('products.sub_id', '=', 'categories.sub_id');
-//            })
-////            ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-//            ->join('brands','brands.id','=','products.brand_id')
-//            ->orderBy('products.product_id', 'asc')
-//            ->get();
-        return view('admin.products.list');
+          $data = Product::with('categories')
+              ->with('subcategories')
+              ->with('brands')
+              ->with('images')
+              ->paginate(5);
+          if ($request->ajax()){
+              return view('admin.products.list',compact('data'));
+          }
+        return view('admin.products.pagination',compact('data'));
+
     }
-
-
     public function add(){
             $cate_sub = DB::table('categories')->where('sub_id','!=',null)->orderBy('sub_id','desc')->get();
             $cate_product = DB::table('categories')->where('cate_pro_id','!=',null)->orderBy('cate_pro_id','desc')->get();
@@ -161,34 +160,19 @@ class ProductController extends Controller
     }
     public function action(Request $request)
     {
-        if($request->ajax())
-        {
-            $output = '';
-            $query = $request->get('query');
-            if($query != '')
-            {
-                $data = Product::join('brands','brands.id','=','products.brand_id')
-                    ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-                    ->orWhere('product_name', 'like', '%'.$query.'%')
-                    ->orWhere('product_code', 'like', '%'.$query.'%')
-                    ->orderBy('products.product_id', 'desc')
-                    ->get();
-            }
-            else
-            {
-                $data = Product::join('brands','brands.id','=','products.brand_id')
-                    ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
-                    ->orderBy('products.product_id', 'desc')
-                    ->get();
-            }
-            $total_row = $data->count();
-            if($total_row > 0)
-            {
+       if($request->ajax()){
+         $output = '';
+           $product = Product::join('brands','brands.id','=','products.brand_id')
+               ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+               ->orWhere('product_name', 'like', '%'.$request->search.'%')
+               ->orWhere('product_code', 'like', '%'.$request->search.'%')
+               ->orderBy('products.product_id', 'desc')
+               ->get();
+           if($product){
+               foreach($product as $key => $row)
+               {
 
-                foreach($data as $key => $row)
-                {
-
-                        $output .= '
+                   $output .= '
         <tr role="row" class="odd" id=item_' . $row->product_id . '>
         <td class="" tabindex="0">' . ++$key . '</td>
         <td class="sorting_1" style="font-size: 12px">' . $row->product_code . '</td>
@@ -198,47 +182,35 @@ class ProductController extends Controller
          <td style="font-size: 12px">' . $row->product_price . '</td>
          <td style="font-size: 12px">' . $row->product_price_sale . '</td>
          <td >';
-                    foreach ($row->images as $value) {
-                    $output .= '
+                   foreach ($row->images as $value) {
+                       $output .= '
         <img width="50px" src=" /storage/' . $value->image . ' " alt="">
         ';
-                    }
-                    $output .= '
+                   }
+                   $output .= '
            </td><td style="font-size: 12px">' . $row->product_content . '</td>
          ';
 
 
 
-                    if ($row->product_status == 0) {
-                        $output .= '
+                   if ($row->product_status == 0) {
+                       $output .= '
                      <td>Hết hàng</td>
 ';
-                    }else{
-                        $output .= '
+                   }else{
+                       $output .= '
                     <td>Còn hàng</td>
 ';
-                    }
-                    $output .= '
+                   }
+                   $output .= '
          <td><a href='.route('product.edit',$row->product_id).'><button style="font-size: 12px" class="btn  btn-dark" type="submit">sửa</button></a>  <button style="font-size: 12px" id="delete"  data-id="'.$row->product_id .'" class="btn  btn-danger delete" type="submit">xóa</button> </td>
         </tr>
         ';
-                }
-            }
-            else
-            {
-                $output = '
-       <tr>
-        <td align="center" colspan="11">No Data Found</td>
-       </tr>
-       ';
-            }
-            $data = array(
-                'table_data'  => $output,
-                'total_data'  => $total_row
-            );
+               }
+           }
+           return Response($output);
 
-            echo json_encode($data);
-        }
+       }
     }
 
 

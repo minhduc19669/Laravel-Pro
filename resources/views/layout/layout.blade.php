@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="{{asset('assets_page/css/responsive.css')}}" />
     <link rel="stylesheet" href="{{asset('assets_page/css/stylelogin.css')}}">
     <link rel="stylesheet" href="{{asset('assets_page/css/rating.css')}}">
-    <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
       <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <link
@@ -112,58 +113,43 @@
                     <a href="{{route('home')}}">Trang chủ</a>
                     </li>
                     <li class="mega-menu-position">
-                      <a href="#">Danh mục</a>
-                                            <ul class="mega-menu">
-                                                @foreach($category as $key => $cate)
-                                                <li>
-                            <ul>
-                              <li class="mega-menu-title"><a href="{{route('page.product_category',$cate->cate_pro_id)}}"><b>{{$cate->category_product_name}}</b></a></li>
-                                 @foreach($cate -> Subcategories as $cate)
-                                <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
-                                @endforeach
-
-                          </ul>
-
-                        </li>
-                                                @endforeach
-                                                <li>
-                          <ul>
-                            <li>
-                              <a href="shop-page.html"
-                                ><img
-                                  alt=""
-                                  src="{{asset('assets_page/img/banner/menu-img-4.jpg')}}"
-                              /></a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
                     <a href="{{route('home.allProduct')}}">Sản phẩm</a>
-                    </li>
-
-                    <li class="mega-menu-position">
-                    <a href="{{route('page.blog')}}">Tin tức</a>
                         <ul class="mega-menu">
+                            @foreach($category as $key => $cate)
                                 <li>
                                     <ul>
-                                        @foreach($category_news as $cate => $value)
-                                            <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
+                                        <li class="mega-menu-title"><a href="#"><b>{{$cate->category_product_name}}</b></a></li>
+                                        @foreach($cate -> Subcategories as $cate)
+                                            <li><a href="{{route('page.product_subcategory',$cate->sub_id)}}">{{$cate->category_sub_product_name}}</a></li>
                                         @endforeach
+
                                     </ul>
+
                                 </li>
+                            @endforeach
                             <li>
                                 <ul>
                                     <li>
-                                        <a href="{{route('page.blog')}}"
+                                        <a href="shop-page.html"
                                         ><img
                                                 alt=""
-                                                src="{{asset('assets_page/img/banner/dd.png')}}"
+                                                src="{{asset('assets_page/img/banner/menu-img-4.jpg')}}"
                                             /></a>
                                     </li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a href="{{route('page.blog')}}">Tin tức</a>
+                        <ul class="submenu">
+                            <li>
+                            @foreach($category_news as $cate => $value)
+                                <li><a href="{{route('page.blogCategory',$value->cate_news_id)}}">{{$value->category_news_name}}</a></li>
+                                @endforeach
+                            </li>
+
                         </ul>
                     </li>
 
@@ -590,8 +576,8 @@
         } );
     </script>
     <!-- all js here -->
+    <script src="{{asset('assets_page/js/search_page_product.js')}}"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('assets_page/js/popper.js')}}"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="{{asset('assets_page/js/jquery.counterup.min.js')}}"></script>

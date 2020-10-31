@@ -23,9 +23,12 @@ class PageController extends Controller
     public function allProduct(Request $request){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
-        $products= $this->productServ->get(10);
-        $count=$request->search;
-        return \view('pages.product',\compact('products','category','brand','count'));
+
+        $products= Product::paginate(9);;
+        if ($request->ajax()){
+            return \view('pages.product',\compact('products','category','brand'));
+        }
+        return \view('pages.product',\compact('products','category','brand'));
     }
     public function productDetail($id){
         $product=$this->productServ->productDetail($id);
@@ -62,33 +65,46 @@ class PageController extends Controller
         $productRelated=$this->productServ->getProductRelatedTo($id);
         return \view('pages.product_details',\compact('product','images', 'productRelated','image','post', 'countRating', 'sum', 'avg', 'countStar', 'percent','total'));
     }
-    public function  productCategory($id){
+    public function  productCategory( Request $request,$id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('cate_pro_id',$id)->first();
-        $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        $products = Product::where('cate_pro_id',$cate_pro->cate_pro_id)->paginate(9);
+        if($request->ajax()){
+            return \view('pages.category_product',\compact('products','category','brand'));
+        }
+        return \view('pages.pagination_category_product',\compact('products','category','brand'));
     }
-    public function  productSubcategory($id){
+    public function  productSubcategory(Request $request,$id){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Category::where('sub_id',$id)->first();
-        $products = Product::where('sub_id',$cate_pro->sub_id)->get();
-        return \view('pages.product',\compact('products','category','brand'));
+        $products = Product::where('sub_id',$cate_pro->sub_id)->paginate(9);
+        if ($request->ajax()){
+            return \view('pages.subcategory_product',\compact('products','category','brand'));
+        }
+        return \view('pages.pagination_subcategory',\compact('products','category','brand'));
     }
-    public function  productBrand($id){
+    public function  productBrand(Request $request,$id){
         $category_news =Category::all();
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
         $cate_pro= Brand::where('id',$id)->first();
-        $products = Product::where('brand_id',$cate_pro->id)->get();
-        return \view('pages.product',\compact('products','category','brand','category_news'));
+        $products = Product::where('brand_id',$cate_pro->id)->paginate(9);
+        if ($request->ajax()){
+            return \view('pages.brand_product',\compact('products','category','brand','category_news'));
+
+        }
+        return \view('pages.pagination_brand_product',\compact('products','category','brand','category_news'));
     }
 //blog
-    public function showBlog(){
+    public function showBlog(Request $request){
         $category_news =Category::all();
-        $news= News::all();
-        return \view('pages.blog',\compact('news','category_news'));
+        $news= News::paginate(4);
+            if ($request->ajax()){
+                return \view('pages.blog',\compact('news','category_news'));
+            }
+        return \view('pages.pagination_blog',\compact('news','category_news'));
     }
     public function blogDetails($id){
         $category_news =Category::all();
@@ -105,10 +121,13 @@ class PageController extends Controller
              ->get();
         return \view('pages.blog_detail',\compact('news','category','brand','cate_news','related','category_news'));
     }
-    public function blogCategory($id){
+    public function blogCategory(Request $request,$id){
            $category = Category::where('cate_news_id',$id)->first();
-           $news = News::where('category_id',$category->cate_news_id)->get();
-        return view('pages.blogCategory',compact('news'));
+           $news = News::where('category_id',$category->cate_news_id)->paginate(4);
+           if ($request->ajax()){
+               return view('pages.blogCategory',compact('news'));
+           }
+        return view('pages.pagination_categoryNews',compact('news'));
     }
 //about
 
@@ -134,8 +153,93 @@ class PageController extends Controller
            ->orWhere('product_name', 'like', '%'.$request->key.'%')
            ->orWhere('product_code', 'like', '%'.$request->key.'%')
            ->orderBy('products.product_id', 'desc')
-           ->get();
-       return view('pages.search_product',compact('products','category','brand'));
+           ->paginate(9);
+       if ($request->ajax()){
+           return view('pages.search_product',compact('products','category','brand'));
+
+       }
+       return view('pages.pagination_search_product',compact('products','category','brand'));
+   }
+   public function searchAjax(Request $request){
+      if($request->ajax()){
+      $output = '';
+          $products = Product::join('brands','brands.id','=','products.brand_id')
+              ->join('categories','categories.cate_pro_id','=','products.cate_pro_id')
+              ->orWhere('brand_name', 'like', '%'.$request->search_product.'%')
+              ->orWhere('category_product_name', 'like', '%'.$request->search_product.'%')
+              ->orWhere('product_name', 'like', '%'.$request->search_product.'%')
+              ->orWhere('product_code', 'like', '%'.$request->search_product.'%')
+              ->orderBy('products.product_id', 'desc')
+              ->get();
+          if ($products){
+              foreach ($products as $key =>$product){
+                $output .= '
+                       <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
+                    <div id="product5" class="product-wrapper mb-10">
+                      <div class="product-img">
+                        <a href="'.route('product.details',$product->product_id).'">
+                        <img width="100px" height="230px" src="/storage/'.$product->product_image.'" alt=""/>
+                        </a>
+                        <div class="product-action">
+                          <a style="cursor: pointer;" id="addtocart5" buy-id1="'.$product->product_id.'" title="Add To Cart">
+                            <i class="ti-shopping-cart"></i>
+                          </a>
+                        </div>
+                        <div class="product-action-wishlist">
+                          <a title="Wishlist" href="#">
+                            <i class="ti-heart"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-content">
+                        <h4>
+                        <a href="'.route('product.details',$product->product_id).'">'.$product->product_name.'</a>
+                        </h4>
+                        <div class="product-price">
+                        <span class="new">'.number_format($product->product_price).'<u>đ</u></span>
+                        <span class="old">'.number_format(($product->product_price)-($product->product_price_sale)).'<u>đ</u></span>
+                        </div>
+                      </div>
+                      <div class="product-list-content">
+                        <h4><a href="#">'.$product->product_name.'</a></h4>
+                        <div class="product-price">
+                          <span class="new">'.number_format($product->product_price).'<u>đ</u> </span>
+                        </div>
+                        <p>
+                          '.$product->product_desc.'
+                        </p>
+                        <div class="product-list-action">
+                          <div class="product-list-action-left">
+                            <a
+                              class="addtocart-btn"
+                              title="Add to cart"
+                              href="#"
+                              ><i class="ion-bag"></i> Add to cart</a
+                            >
+                          </div>
+                          <div class="product-list-action-right">
+                            <a title="Wishlist" href="#"
+                              ><i class="ti-heart"></i
+                            ></a>
+                            <a
+                              title="Quick View"
+                              data-toggle=odal"
+                              data-target="#exampleModal"
+                              href="#"
+                              ><i class="ti-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ';
+
+              }
+          }
+          return Response($output);
+
+      }
    }
 
 
