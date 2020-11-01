@@ -500,8 +500,6 @@
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-format-underline"></i>
                             <span> Sản phẩm </span>
-                            <span style="margin-right: 30px"
-                                  class="badge badge-danger badge-pill float-right">New</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
@@ -514,8 +512,6 @@
                         <a href="javascript: void(0);">
                             <i class="mdi mdi-book-open"></i>
                             <span> Tin tức </span>
-                            <span style="margin-right: 30px"
-                                  class="badge badge-danger badge-pill float-right">New</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
@@ -589,6 +585,18 @@
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li><a href="{{route('shipping.list')}}">Quản lý thông tin giao hàng</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="mdi mdi-apple-finder"></i>
+                            <span> Phản hồi</span>
+                            <span class="menu-arrow"></span>
+
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="{{route('feedback.list')}}">Thông tin phản hồi</a></li>
 
                         </ul>
                     </li>
