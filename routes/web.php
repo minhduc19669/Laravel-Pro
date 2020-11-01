@@ -51,6 +51,7 @@ Route::prefix('home')->group(function(){
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
     Route::post('product/show','PageController@allProduct')->name('product.total');
 
+
     //blog
     Route::get('blog', 'PageController@showBlog')->name('page.blog');
     Route::get('blog/details/{id}','PageController@blogDetails' )->name('page.blogDetails');

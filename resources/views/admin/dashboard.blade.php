@@ -34,9 +34,10 @@
             <div class="card-box tilebox-one">
                 <i class="icon-rocket float-right m-0 h2 text-muted"></i>
                 <h6 class="text-muted text-uppercase mt-0">Mail</h6>
-                <h3 class="my-3" data-plugin="counterup">1,890</h3>
+                <h3 class="my-3" >{{$feedback}}</h3>
                 <span class="badge badge-warning mr-1"> +89% </span> <span class="text-muted">Last year</span>
             </div>
         </div>
+
     </div>
 @endsection

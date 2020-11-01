@@ -93,20 +93,18 @@
                             <a title="Wishlist" href="#"
                               ><i class="ti-heart"></i
                             ></a>
-                            <a
-                              title="Quick View"
-                              data-toggle=odal"
-                              data-target="#exampleModal"
-                              href="#"
-                              ><i class="ti-plus"></i
-                            ></a>
+{{--                            <a--}}
+{{--                              title="Quick View"--}}
+{{--                              data-toggle=odal"--}}
+{{--                              data-target="#exampleModal"--}}
+{{--                              href="#"--}}
+{{--                              ><i class="ti-plus"></i--}}
+{{--                            ></a>--}}
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
-
                     @endforeach
 
                 </div>
