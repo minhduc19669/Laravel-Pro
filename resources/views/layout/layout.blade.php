@@ -36,7 +36,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
       <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
@@ -475,26 +476,26 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
               <div class="footer-widget mb-30 pl-50">
-                <h4 class="footer-title">USEFUL LINKS</h4>
+                <h4 class="footer-title">LIÊN KẾT HỮU ÍCH</h4>
                 <div class="footer-content">
                   <ul>
-                    <li><a href="#">Help & Contact Us</a></li>
-                    <li><a href="#">Returns & Refunds</a></li>
-                    <li><a href="#">Online Stores</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="{{route('page.contact')}}">Liên hệ và giúp đỡ</a></li>
+                    <li><a href="#">Trả hàng và hoàn tiền</a></li>
+                    <li><a href="{{route('page.index')}}">Cửa hàng trực tuyến</a></li>
+                    <li><a href="#">Điều khoản và Điều kiện</a></li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
               <div class="footer-widget mb-30 pl-70">
-                <h4 class="footer-title">HELP</h4>
+                <h4 class="footer-title">GIÚP ĐỠ</h4>
                 <div class="footer-content">
                   <ul>
                     <li><a href="#">Faq's </a></li>
-                    <li><a href="#">Pricing Plans</a></li>
-                    <li><a href="#">Order Traking</a></li>
-                    <li><a href="#">Returns </a></li>
+                    <li><a href="#">Gói định giá</a></li>
+                    <li><a href="#">Đặt hàng theo dõi </a></li>
+                    <li><a href="#">Lợi nhuận</a></li>
                   </ul>
                 </div>
               </div>
@@ -503,8 +504,8 @@
               <div class="footer-widget">
                 <div class="newsletter-wrapper">
                   <p>
-                    Subscribe to our newsletter and get 10% off your first
-                    purchase..
+                      Đăng ký nhận bản tin của chúng tôi và được giảm giá 10% khi mua hàng đầu tiên ..
+
                   </p>
                   <div class="newsletter-style">
                     <div id="mc_embed_signup" class="subscribe-form">

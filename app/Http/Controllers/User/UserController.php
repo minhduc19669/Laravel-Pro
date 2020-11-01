@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Feedback;
 use App\News;
 use App\Order;
 use App\Product;
@@ -19,10 +20,11 @@ class UserController extends Controller
     //
 
 	public function dashboard(){
+	    $feedback = Feedback::count();
 	    $countOrder = Order::count();
         $products = Product::count();
         $news = News::count();
-        return view('admin.dashboard',compact('countOrder','products','news'));
+        return view('admin.dashboard',compact('countOrder','products','news','feedback'));
 	}
 	public function index(){
         $users=User::all();
