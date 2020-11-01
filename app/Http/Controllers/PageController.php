@@ -23,12 +23,12 @@ class PageController extends Controller
     public function allProduct(Request $request){
         $brand = Brand::all();
         $category = Category::with('SubCategories')->get();
+
         $products= Product::paginate(9);;
         if ($request->ajax()){
             return \view('pages.product',\compact('products','category','brand'));
         }
         return \view('pages.product',\compact('products','category','brand'));
-
     }
     public function productDetail($id){
         $product=$this->productServ->productDetail($id);
@@ -241,6 +241,7 @@ class PageController extends Controller
 
       }
    }
+
 
 
 

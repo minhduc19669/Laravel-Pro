@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
       <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+
   </head>
   <body>
     @include('sweetalert::alert')
@@ -575,16 +576,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value + "$"; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider.oninput = function () {
-        output.innerHTML = this.value + "$";
-      };
-    </script>
     <script src="">$(document).ready( function () {
             $('#datatable').DataTable();
         } );
@@ -612,9 +603,26 @@
     <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
     <script src="{{asset('assets_page/js/addproductdetails.js')}}"></script>
     <script src="{{asset('assets_page/js/change-cart.js')}}"></script>
-    <script src="{{asset('assets_page/js/comment.js')}}"></script>
-{{--    <script src="{{asset('assets_page/js/change_qty_product.js')}}"></script>--}}
-    <script src="{{asset('assets_page/js/contactForm.js')}}"></script>
-    {{-- <script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script> --}}
+
+<script src="{{asset('assets_page/js/comment.js')}}"></script>
+<script src="{{asset('assets_page/js/change_qty_product.js')}}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+ $(document).ready(function(){
+    $( "#slider-range" ).slider({
+      orientation: "horizontal",
+      range: true,
+      values: [ 17, 100 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.values[ 0 ]+"đ"+'-'  +ui.values[ 1 ]+ "đ"  );
+      }
+    });
+
+    $( "#amount" ).val($( "#slider-range" ).slider( "values", 0 )+ "đ" +'-'+ $( "#slider-range" ).slider( "values", 1 )+
+      " đ"  );
+ });
+  </script>
+
+{{-- <script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script> --}}
   </body>
 </html>

@@ -67,7 +67,7 @@
                         <div class="team-wrapper mb-30">
                             <div class="team-img">
                                 <a href="#">
-                                    <img src="{{assert('assets_page/img/testi/4.jpg')}}" alt="">
+                                    <img src="" alt="">
                                 </a>
                                 <div class="team-social">
                                     <a href="#">

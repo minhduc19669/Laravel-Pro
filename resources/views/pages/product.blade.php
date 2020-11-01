@@ -9,15 +9,19 @@
             <div class="shop-topbar-wrapper">
               <div class="product-sorting-wrapper">
                 <div class="product-show shorting-style">
-                  <label
-                    >Showing <span>1-20</span> of
+<form action="{{route('product.total')}}" method="POST">
+    @csrf
+                <label>Showing <span>@if(isset($count)){{$count}}@endif</span> of
                     <span>100</span> Results</label
                   >
-                  <select>
-                    <option value="">12</option>
-                    <option value="">24</option>
-                    <option value="">36</option>
+                  <select onchange="this.form.submit()" name="search">
+                    <option value="10"@if(isset($count)) {{$count==10?'selected' : ''}} @endif
+                    >10</option>
+                    <option value="20"  @if(isset($count)) {{$count==20?'selected' : ''}} @endif >20</option>
+                    <option value="30" @if(isset($count)) {{$count==30?'selected' : ''}} @endif >30</option>
                   </select>
+
+</form>
                 </div>
               </div>
               <div class="grid-list-options">
@@ -125,19 +129,13 @@
                   </form>
                 </div>
               </div>
-              <div class="shop-widget">
+              <div style="height:20px" class="shop-widget">
                 <h4 class="shop-sidebar-title">Lọc theo giá</h4>
-                <div class="slidecontainer">
-                  <input
-                    type="range"
-                    min="1"
-                    max="100"
-                    value="50"
-                    class="slider"
-                    id="myRange"
-                  />
-                </div>
-                <div><p id="demo">$</p></div>
+                <form action="">
+                    <div id="slider-range" class="slidecontainer">
+                    </div>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold; height: 13px;">
+                </form>
               </div>
                 @foreach($category as $key => $category)
               <div class="shop-widget mt-50">
