@@ -32,13 +32,13 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="{{asset('assets_page/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-      <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 
   </head>
   <body>
@@ -509,7 +509,7 @@
                   <div class="newsletter-style">
                     <div id="mc_embed_signup" class="subscribe-form">
                       <form
-                        action="#"
+                        action="{{route('feedback.addSale')}}"
                         method="post"
                         id="mc-embedded-subscribe-form"
                         name="mc-embedded-subscribe-form"
@@ -517,11 +517,12 @@
                         target="_blank"
                         novalidate
                       >
+                          @csrf
                         <div id="mc_embed_signup_scroll" class="mc-form">
                           <input
                             type="email"
                             value=""
-                            name="EMAIL"
+                            name="email"
                             class="email"
                             placeholder="Your mail address"
                             required
@@ -533,6 +534,7 @@
                               name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef"
                               tabindex="-1"
                               value=""
+                              required
                             />
                           </div>
                           <div class="clear">
@@ -546,6 +548,9 @@
                           </div>
                         </div>
                       </form>
+                        @if ($errors->has('email'))
+                            <p style="color: red">{{ $errors->first('email') }}</p>
+                        @endif
                     </div>
                   </div>
                 </div>
@@ -592,12 +597,13 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{asset('assets_page/js/addproductcart.js')}}"></script>
     <script src="{{asset('assets_page/js/deleteproductcart.js')}}"></script>
-<script src="{{asset('assets_page/js/rating.js')}}"></script>
+    <script src="{{asset('assets_page/js/rating.js')}}"></script>
     <script src="{{asset('assets_page/js/quickviewcart.js')}}"></script>
     <script src="{{asset('assets_page/js/addproducttocart.js')}}"></script>
     <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
     <script src="{{asset('assets_page/js/addproductdetails.js')}}"></script>
     <script src="{{asset('assets_page/js/change-cart.js')}}"></script>
+
 <script src="{{asset('assets_page/js/comment.js')}}"></script>
 <script src="{{asset('assets_page/js/change_qty_product.js')}}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

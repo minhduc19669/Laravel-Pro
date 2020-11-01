@@ -251,6 +251,18 @@ Route::middleware(['auth'])->group(function (){
             Route::post('transport/update/{id}','TransportController@update')->name('transport.update');
             Route::get('transport/search/action','TransportController@action')->name('transport.search');
             Route::get('transport/delete/{id}','TransportController@delete')->name('transport.delete');
+            //feedback
+            Route::post('feedback/save','FeedbackController@save')->name('feedback.save');
+            Route::get('feedback','FeedbackController@list')->name('feedback.list');
+            Route::get('feedback/edit/{id}','FeedbackController@edit')->name('feedback.edit');
+            Route::get('feedback/search','FeedbackController@search')->name('feedback.search');
+            Route::get('feedback/delete/{id}','FeedbackController@delete')->name('feedback.delete');
+            Route::post('feedback/update/{id}','FeedbackController@update')->name('feedback.update');
+            Route::post('feedback/addSale','FeedbackController@addSale')->name('feedback.addSale');
+
+
+
+
     });
     });
 

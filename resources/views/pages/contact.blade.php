@@ -48,32 +48,44 @@
                     <div class="contact-message-wrapper">
                         <h4 class="contact-title">LIÊN LẠC</h4>
                         <div class="contact-message">
-                            <form id="contact-form" action="assets/mail.php" method="post">
+                            <form class="contact-form" action="{{route('feedback.save')}}"  method="post" >
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="contact-form-style mb-20">
-                                            <input name="name" placeholder="Full Name" type="text">
+                                            <input id="name" name="name" placeholder="Full Name" type="text">
                                         </div>
+                                        @if ($errors->has('name'))
+                                            <p style="color: red">{{ $errors->first('name') }}</p>
+                                        @endif
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="contact-form-style mb-20">
-                                            <input name="email" placeholder="Email Address" type="email">
+                                            <input id="email" name="email" placeholder="Email Address" type="email">
                                         </div>
+                                        @if ($errors->has('email'))
+                                            <p style="color: red">{{ $errors->first('email') }}</p>
+                                        @endif
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-form-style mb-20">
-                                            <input name="subject" placeholder="Subject" type="text">
+                                            <input id="title" name="title" placeholder="Subject" type="text">
                                         </div>
+                                        @if ($errors->has('title'))
+                                            <p style="color: red">{{ $errors->first('title') }}</p>
+                                        @endif
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-form-style">
-                                            <textarea name="message" placeholder="Message"></textarea>
-                                            <button class="submit btn-style" type="submit">SEND MESSAGE</button>
+                                            <textarea id="content" name="content" placeholder="content"></textarea>
+                                            @if ($errors->has('content'))
+                                                <p style="color: red">{{ $errors->first('content') }}</p>
+                                            @endif
+                                            <button id="saveContact" class="submit btn-style" type="submit">SEND MESSAGE</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <p class="form-messege"></p>
                         </div>
                     </div>
                 </div>
@@ -83,4 +95,5 @@
             </div>
         </div>
     </div>
+
 @endsection

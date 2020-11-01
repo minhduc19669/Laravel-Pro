@@ -157,8 +157,7 @@
                 <h3>lựa chọn sản phẩm</h3>
                 <section>
                     <div class="form-group row">
-                        <label class="col-lg-2 control-label " for="userName1">Sản phẩm</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-14">
                             <div class="card-box">
                                 <div class="table-responsive">
                                     <table class="table mb-0">
