@@ -9,13 +9,13 @@
                     <div class="shop-topbar-wrapper">
                         <div class="product-sorting-wrapper">
                             <div class="product-show shorting-style">
-                                <form action="{{route('product.total')}}" method="POST">
+                                <form action="{{route('productBrand.total',$id)}}" method="POST">
                                     @csrf
                                     <label>Showing <span>@if(isset($count)){{$count}}@endif</span> of
                                         <span>100</span> Results</label
                                     >
                                     <select onchange="this.form.submit()" name="search">
-                                        <option value="10"@if(isset($count)) {{$count==10?'selected' : ''}} @endif
+                                        <option value="10"@if(isset($count)) {{$count==1?'selected' : ''}} @endif
                                         >10</option>
                                         <option value="20"  @if(isset($count)) {{$count==20?'selected' : ''}} @endif >20</option>
                                         <option value="30" @if(isset($count)) {{$count==30?'selected' : ''}} @endif >30</option>
@@ -41,17 +41,17 @@
                     </div>
                     <div class="grid-list-product-wrapper">
                         <div class="product-view product-grid">
-                            <div id="search_product_ajax" class="row">
+                            <div id="search_BrandProduct_ajax" class="row">
                                 @foreach ($products as $item)
                                     <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
-                                        <div id="product5" class="product-wrapper mb-10">
+                                        <div id="brandProduct" class="product-wrapper mb-10">
                                             <div class="product-img">
                                                 <a href="{{route('product.details',$item->product_id)}}">
                                                     <img width="100px" height="230px" src="{{asset('storage/'.$item->product_image)}}" alt="" />
                                                 </a>
                                                 <div class="product-action">
 
-                                                    <a id="addtocart5" buy-id1="{{$item->product_id}}" title="Add To Cart">
+                                                        <a id="addtocartBrand" data-id="{{$item->product_id}}" title="Add To Cart">
                                                         <i class="ti-shopping-cart"></i>
                                                     </a>
                                                 </div>
@@ -81,7 +81,7 @@
                                                 <div class="product-list-action">
                                                     <div class="product-list-action-left">
                                                         <a
-                                                            id="addtocart5" buy-id1="{{$item->product_id}}"
+                                                            id="addtocartBrand" data-id="{{$item->product_id}}"
                                                             class="addtocart-btn"
                                                             title="Add to cart"
                                                             href="#"
@@ -119,7 +119,7 @@
                             <h4 class="shop-sidebar-title">Tìm kiếm sản phẩm</h4>
                             <div class="shop-search mt-25 mb-50">
                                 <form class="shop-search-form">
-                                    <input id="search_product" type="text" placeholder="Nhập" />
+                                    <input id="search_product_brand" data-id="{{$id}}" type="text" placeholder="Nhập" />
                                     <button disabled type="submit">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>

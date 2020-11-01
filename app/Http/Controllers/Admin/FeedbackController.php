@@ -85,7 +85,7 @@ class FeedbackController extends Controller
     public function addSale(ValidateFormFeedBackUpdate $request){
         DB::table('feedback')->insert([
             'name' => 'Người nhận khuyến mãi',
-            'email' =>$request->email,
+            'email' =>$request->email1,
             'title' =>'Nhận thông tin khuyến mãi',
             'content' =>'Nhận tất cả các thông tin khuyến mãi từ cửa hàng',
             'status' =>'0'

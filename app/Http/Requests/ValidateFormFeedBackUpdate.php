@@ -24,15 +24,15 @@ class ValidateFormFeedBackUpdate extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
+            'email1' => 'required|email',
 
         ];
     }
     public function  messages()
     {
         return [
-            'email.required' =>'không được phép để trống!',
-            'email.email' =>'Bạn cần nhập định dạng email',
+            'email1.required' =>'không được phép để trống!',
+            'email1.email' =>'Bạn cần nhập định dạng email',
 
         ];
     }
