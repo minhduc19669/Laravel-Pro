@@ -22,7 +22,7 @@ class CheckoutController extends Controller
 {
     //
     public function confirm_order(ValidationFormCheckout $request){
-        if(Cart::content()==null){
+        if(Cart::content()!==null){
             $ship = new Shipping();
             $shipping_city = City::find($request->city);
             $shipping_district = District::find($request->district);
@@ -103,9 +103,8 @@ class CheckoutController extends Controller
             }
             $order = new Order();
             $checkout_code = substr(md5(microtime()), rand(0, 26), 5);
-            $id = Session::get('customer')->id;
-            if ($id) {
-
+            if(Session::get('customer')) {
+                $id= Session::get('customer')->id;
                 $order->fill([
                     'customer_id' => $id,
                     'shipping_id' => $ship->id,
@@ -128,7 +127,6 @@ class CheckoutController extends Controller
                     ]);
                     $order_detail->save();
                 }
-
                 $customer = Customer::find($id);
                 $email = $customer->customer_email;
                 $name = $request->name;

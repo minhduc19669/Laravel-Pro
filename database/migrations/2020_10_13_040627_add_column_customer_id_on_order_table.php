@@ -15,7 +15,7 @@ class AddColumnCustomerIdOnOrderTable extends Migration
     {
         //
         Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('customer_id')->after('order_id');
+            $table->unsignedBigInteger('customer_id')->after('order_id')->nullable();
             $table->foreign('customer_id')->references('id')->on('customers');
         });
     }

@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->longText('product_content');
             $table->integer('product_price');
             $table->integer('product_price_sale');
-            $table->string('product_image');
+            $table->string('product_image')->nullable();
             $table->integer('product_status');
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands');

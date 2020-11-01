@@ -44,7 +44,7 @@
                         <td style="font-size: 12px">{{$row->product_price_sale }}</td>
                         <td >
                             @foreach ($row->images as $value)
-                            <img width="50px" src=" /storage/{{$value->image}} " alt="">
+                            <img width="50px" src=" /storage/{{$value->image}}" alt="">
                             @endforeach
                         </td><td style="font-size: 12px">{{$row->product_content }}</td>
 
