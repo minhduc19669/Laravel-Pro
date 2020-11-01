@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use App\Console\Commands\AddProduct;
 use App\Console\Commands\SendNotificationStatusOrderEmail;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -17,7 +16,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
             SendNotificationStatusOrderEmail::class,
-            AddProduct::class
     ];
 
     /**
@@ -28,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('product:add')->everyMinute()->withoutOverlapping();
+        $schedule->command('order:emails')->dailyAt('08:00')->withoutOverlapping();
     }
     /**
      * Register the commands for the application.
