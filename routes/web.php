@@ -50,6 +50,8 @@ Route::prefix('home')->group(function(){
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
     Route::post('product/show','PageController@allProduct')->name('product.total');
+    Route::post('product/brand/show/{id}','PageController@productBrand')->name('productBrand.total');
+
 
 
     //blog
@@ -95,6 +97,10 @@ Route::prefix('page')->group(function(){
     Route::get('product/brand/{id}','PageController@productBrand')->name('page.product_brand');
     Route::get('product/search','PageController@search')->name('page.product_search');
     Route::get('product/search/ajax','PageController@searchAjax')->name('page.product_searchAjax');
+    Route::get('product/brand/search/ajax/{id}','PageController@searchBrandAjax')->name('page.productBrand_searchAjax');
+    Route::get('product/subcategory/search/ajax/{id}','PageController@searchSubcategoryAjax')->name('page.productSubcategory_searchAjax');
+
+
 
 });
 

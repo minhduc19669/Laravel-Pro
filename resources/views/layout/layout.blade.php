@@ -523,7 +523,7 @@
                           <input
                             type="email"
                             value=""
-                            name="email"
+                            name="email1"
                             class="email"
                             placeholder="Your mail address"
                             required
@@ -549,8 +549,8 @@
                           </div>
                         </div>
                       </form>
-                        @if ($errors->has('email'))
-                            <p style="color: red">{{ $errors->first('email') }}</p>
+                        @if ($errors->has('email1'))
+                            <p style="color: red">{{ $errors->first('email1') }}</p>
                         @endif
                     </div>
                   </div>
@@ -604,8 +604,14 @@
     <script src="{{asset('assets_page/js/ajaxcity.js')}}"></script>
     <script src="{{asset('assets_page/js/addproductdetails.js')}}"></script>
     <script src="{{asset('assets_page/js/change-cart.js')}}"></script>
+    <script src="{{asset('assets_page/js/addSearchAjax.js')}}"></script>
+    <script src="{{asset('assets_page/js/brandProductAddCart.js')}}"></script>
+    <script src="{{asset('assets_page/js/subcategoryAddCart.js')}}"></script>
 
-<script src="{{asset('assets_page/js/comment.js')}}"></script>
+
+
+
+    <script src="{{asset('assets_page/js/comment.js')}}"></script>
 <script src="{{asset('assets_page/js/change_qty_product.js')}}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>

@@ -112,9 +112,10 @@
                                 </div>
                             </div>
 
-                            @foreach($related as $key => $item)
                             <div class="shop-widget mt-50">
                                 <h4 class="shop-sidebar-title">Tin tức liên quan</h4>
+                                @foreach($related as $key => $item)
+
                                 <div class="recent-post-wrapper mt-25">
                                     <div class="single-recent-post mb-20">
                                         <div class="recent-post-img">
@@ -126,9 +127,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-
-                            @endforeach
                         </div>
                     </div>
                 </div>
