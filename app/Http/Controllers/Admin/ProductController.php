@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 use Sunra\PhpSimple\HtmlDomParser;
 use function simplehtmldom_1_5\str_get_html;
 
@@ -40,19 +41,18 @@ class ProductController extends Controller
 
 }
     public function save(ValidateFormAddProduct $request ){
-        $product_code =substr(md5(microtime()),rand(0,26),5) ;
+            $product_code =substr(md5(microtime()),rand(0,26),5);
              $product = new Product();
              $product->cate_pro_id = $request->product_cate;
              $product->sub_id = $request->cate_sub;
              $product->brand_id = $request->product_brand;
              $product->product_name = $request->product_name;
-             $product->product_code = $product_code;
+             $product->product_code = '#'.$product_code;
              $product->product_price = $request->product_price;
              $product->product_price_sale = $request->product_price_sale;
              $product->product_content = $request->product_content;
              $product->product_desc = $request->product_desc;
              $product->product_status = $request->product_status;
-
             $get_image = $request->hasFile('product_image');
                 if ($get_image) {
                     $allowedfileExtension = ['jpg', 'png', 'jpeg'];
@@ -63,6 +63,7 @@ class ProductController extends Controller
                         $check = in_array($extension, $allowedfileExtension);
                         if (!$check) {
                             $exe_flg = \false;
+                            Alert()->error('fails','File khong dung dinh dang');
                             break;
                         }
                     }
@@ -74,12 +75,13 @@ class ProductController extends Controller
                         $image->image = $filename;
                         $image->product_id = $product->product_id;
                         $image->save();
+                        $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
+                        foreach ($avatar as $value) {
+                            $product->product_image = $value->image;
+                            $product->save();
+                        }
                     }
-                    $avatar = Image::where('product_id', $product->product_id)->limit(1)->get();
-                    foreach ($avatar as $value) {
-                        $product->product_image = $value->image;
-                        $product->save();
-                    }
+
                 }
                 Alert()->success('Thêm  thành công !')->autoClose(1500);
                 return \redirect()->route('product.list');
