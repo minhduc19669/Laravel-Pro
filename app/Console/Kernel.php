@@ -26,9 +26,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('order:emails')->everyMinute()->withoutOverlapping();
+        $schedule->command('order:emails')->dailyAt('08:00')->withoutOverlapping();
     }
-
     /**
      * Register the commands for the application.
      *
