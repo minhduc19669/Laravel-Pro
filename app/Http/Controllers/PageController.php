@@ -411,5 +411,8 @@ class PageController extends Controller
         }
     }
 
-
+//wishlist
+public function wishlist(){
+        return view('pages.wishlists');
+}
 }

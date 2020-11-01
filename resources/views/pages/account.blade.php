@@ -57,7 +57,7 @@
                                             <p style="margin-left: 70px">#{{$order->order_code}}</p>
                                             </td>
                                         <td class="product-name"><p style="margin-left: 40px">{{$order->created_at->format(' H:m:s D/m/Y')}}</p></td>
-                                            <td class="product-price-cart"><span class="amount">{{number_format($order->order_total)}} <u>đ</u></span></td>
+                                            <td class="product-price-cart"><span class="amount">{{$order->order_total}} <u>đ</u></span></td>
                                             <td class="product-quantity">
                                                 <div class="">
                                                     @if($order->order_status==0)

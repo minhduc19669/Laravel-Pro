@@ -51,6 +51,8 @@ Route::prefix('home')->group(function(){
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
     Route::post('product/show','PageController@allProduct')->name('product.total');
     Route::post('product/brand/show/{id}','PageController@productBrand')->name('productBrand.total');
+   //wishlist
+    Route::get('wishlist', 'PageController@wishlist')->name('home.wishlist');
 
 
 

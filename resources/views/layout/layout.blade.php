@@ -69,7 +69,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#"
+                        <a href="{{route('home.wishlist')}}"
                           >Yêu thích</a
                         >
                       </li>
