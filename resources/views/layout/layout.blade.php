@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Pet Food eCommerce</title>
+    <title>@yield('title')</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -202,7 +202,6 @@
                         @endforeach
                     </ul>
                     <div class="shopping-cart-total">
-                      <h4>Phí vận chuyển : <span>$20.00</span></h4>
                     <h4>Tổng tiền : <span class="shop-total" id="total" >{{$total}} VNĐ</span></h4>
                     </div>
                     <div class="shopping-cart-btn">

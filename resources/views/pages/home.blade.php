@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title','Pet Food eCommerce')
 @section('url','https://www.petcity.vn/media/banner/banner_839ab468.png')
 @section('content')
 <h3 class="animated" style=" text-align: center; margin-top: 20px">❄️ ❄️ ❄️ ❄️ ❄️ Merry Xmas ❄️ ❄️ ❄️ ❄️ ❄️ </h3>

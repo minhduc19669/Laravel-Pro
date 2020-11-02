@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title','Đăng nhập')
 @section('url','https://dietmoitruongan.com/images/b/cho-meo.jpg')
 @section('page_name','Hãy trở thành một phần của chúng tôi')
 @section('note1','Để được trải nghiệm những tiện ích mua sắm, chế độ chăm sóc khách hàng VIP')

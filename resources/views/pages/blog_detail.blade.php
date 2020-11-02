@@ -1,5 +1,6 @@
 
 @extends('layout.layout')
+@section('title','Blog')
 @section('url','https://petnhatrang.com/wp-content/themes/petshop/images/background-banner.jpg')
 @section('content')
 <div class="shop-area pt-100 pb-100">

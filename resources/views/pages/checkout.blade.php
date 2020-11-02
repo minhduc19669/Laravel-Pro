@@ -1,5 +1,6 @@
 
 @extends('layout.layout')
+@section('title','Thanh toán giỏ hàng')
 @section('url','https://images-na.ssl-images-amazon.com/images/I/71GiSOhBeEL.jpg')
 @section('content')
 <form action="{{route('cart.infoorder')}}" method="POST">
