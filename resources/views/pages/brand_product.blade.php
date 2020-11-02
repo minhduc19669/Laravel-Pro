@@ -9,19 +9,14 @@
                     <div class="shop-topbar-wrapper">
                         <div class="product-sorting-wrapper">
                             <div class="product-show shorting-style">
-                                <form action="{{route('productBrand.total',$id)}}" method="POST">
-                                    @csrf
-                                    <label>Showing <span>@if(isset($count)){{$count}}@endif</span> of
-                                        <span>100</span> Results</label
-                                    >
-                                    <select onchange="this.form.submit()" name="search">
-                                        <option value="10"@if(isset($count)) {{$count==1?'selected' : ''}} @endif
-                                        >10</option>
-                                        <option value="20"  @if(isset($count)) {{$count==20?'selected' : ''}} @endif >20</option>
-                                        <option value="30" @if(isset($count)) {{$count==30?'selected' : ''}} @endif >30</option>
-                                    </select>
-
-                                </form>
+                                <label>Showing <span></span> of
+                                    <span>100</span> Results</label
+                                >
+                                <select id="numberBrandProduct" >
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                </select>
                             </div>
                         </div>
                         <div class="grid-list-options">
@@ -131,11 +126,11 @@
                             <div class="slidecontainer">
                                 <input
                                     type="range"
-                                    min="1"
-                                    max="100"
-                                    value="50"
+                                    min="1000"
+                                    max="1190000"
+                                    value="0"
                                     class="slider"
-                                    id="myRange"
+                                    id="myRangeBrand"
                                 />
                             </div>
                             <div><p id="demo">$</p></div>

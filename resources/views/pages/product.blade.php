@@ -122,14 +122,21 @@
                   </form>
                 </div>
               </div>
-              <div style="height:20px" class="shop-widget">
-                <h4 class="shop-sidebar-title">Lọc theo giá</h4>
-                <form action="">
-                    <div id="slider-range" class="slidecontainer">
+                <div class="shop-widget">
+                    <h4 class="shop-sidebar-title">Lọc theo giá</h4>
+                    <div class="slidecontainer">
+                        <input
+                            type="range"
+                            min="1000"
+                            max="1190000"
+                            value="0"
+                            class="slider"
+                            id="myRange"
+                        />
                     </div>
-                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold; height: 13px;">
-                </form>
-              </div>
+
+                    <div><p id="demo">Vnđ</p></div>
+                </div>
                 @foreach($category as $key => $category)
               <div class="shop-widget mt-50">
                 <h4 class="shop-sidebar-title">{{$category->category_product_name}}</h4>

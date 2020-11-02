@@ -108,7 +108,83 @@ class PageController extends Controller
     };
 
     }
+    public function allProductfilter(Request $request){
+        if($request->ajax()){
+            $filter = $request->myRange;
+            $products= Product::where('product_price',$filter)->get();
+            $output = '';
+            if ($products){
+                foreach ($products as $key =>$product){
+                    $output .= '
+                       <div class="product-width col-lg-6 col-xl-4 col-md-6 col-sm-6">
+                    <div id="productSearch" class="product-wrapper mb-10">
+                      <div class="product-img">
+                        <a href="'.route('product.details',$product->product_id).'">
+                        <img width="100px" height="230px" src="/storage/'.$product->product_image.'" alt=""/>
+                        </a>
+                        <div class="product-action">
+                          <a style="cursor: pointer;" id="addtocartSearch" data-id='.$product->product_id.' title="Add To Cart">
+                            <i class="ti-shopping-cart"></i>
+                          </a>
+                        </div>
+                        <div class="product-action-wishlist">
+                          <a title="Wishlist" href="#">
+                            <i class="ti-heart"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-content">
+                        <h4>
+                        <a href="'.route('product.details',$product->product_id).'">'.$product->product_name.'</a>
+                        </h4>
+                        <div class="product-price">
+                        <span class="new">'.number_format($product->product_price).'<u>đ</u></span>
+                        <span class="old">'.number_format(($product->product_price)-($product->product_price_sale)).'<u>đ</u></span>
+                        </div>
+                      </div>
+                      <div class="product-list-content">
+                        <h4><a href="#">'.$product->product_name.'</a></h4>
+                        <div class="product-price">
+                          <span class="new">'.number_format($product->product_price).'<u>đ</u> </span>
+                        </div>
+                        <p>
+                          '.$product->product_desc.'
+                        </p>
+                        <div class="product-list-action">
+                          <div  class="product-list-action-left">
+                            <a
+                            id="addtocartSearch"
+                            search-id="'.$product->product_id.'"
+                              class="addtocart-btn"
+                              title="Add to cart"
+                              href="#"
+                              ><i class="ion-bag"></i> Add to cart</a
+                            >
+                          </div>
+                          <div class="product-list-action-right">
+                            <a title="Wishlist" href="#"
+                              ><i class="ti-heart"></i
+                            ></a>
+                            <a
+                              title="Quick View"
+                              data-toggle=odal"
+                              data-target="#exampleModal"
+                              href="#"
+                              ><i class="ti-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ';
 
+                }
+            }
+            return Response($output);
+        };
+
+    }
 
 
     public function productDetail($id){
