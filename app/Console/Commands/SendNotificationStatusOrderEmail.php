@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\SendEmailNotificationStatusOrder;
 use App\Mail\OrderStatusEmail;
 use App\Order;
 use App\Shipping;
@@ -43,21 +44,21 @@ class SendNotificationStatusOrderEmail extends Command
     public function handle()
     {
         // get all order for today
-        $orders=Order::where('order_status',1)->orderBy('shipping_id')->get();
-            $data=[];
-            foreach($orders as $order){
-                $data[$order->shipping_id][]=$order->toArray();
+        $orders = Order::where('order_status', 1)->orderBy('shipping_id')->get();
+        $data = [];
+        foreach ($orders as $order) {
+            $data[$order->shipping_id][] = $order->toArray();
+        }
+        foreach ($data as $shipping_ID => $order) {
+            $ship = Shipping::find($shipping_ID)->toArray();
+            foreach ($order as $value) {
+                $this->sendEmailToCustomer($shipping_ID, $ship, $value['order_total'], $value['order_code']);
             }
-            foreach($data as $shipping_ID =>$order){
-                $ship=Shipping::find($shipping_ID)->toArray();
-                foreach($order as $value){
-                    $this->sendEmailToCustomer($shipping_ID, $ship, $value['order_total'],$value['order_code']);
-                }
-            }
+        }
     }
     public function sendEmailToCustomer($shipping_ID,$ship,$total,$code){
         $customer=Shipping::find($shipping_ID);
         $customer_email=$customer->shipping_email;
-        Mail::to($customer_email)->send(new OrderStatusEmail($ship,$total,$code));
+        dispatch(new SendEmailNotificationStatusOrder($customer_email,$ship,$total,$code))->onQueue('status-order');
     }
 }
