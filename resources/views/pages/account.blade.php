@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title','Tài khoản')
 @section('url','https://petnhatrang.com/wp-content/themes/petshop/images/background-banner.jpg')
 @section('content')
         <div class="my-account-area pt-100 pb-70">

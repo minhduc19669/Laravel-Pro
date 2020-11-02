@@ -1,5 +1,6 @@
 
 @extends('layout.layout')
+@section('title','Kiểm tra email')
 @section('url','https://images-na.ssl-images-amazon.com/images/I/71GiSOhBeEL.jpg')
 @section('content')
         <div class="checkout-area pt-95 pb-70">

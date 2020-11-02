@@ -1,4 +1,5 @@
 @extends('layout.layout')
+@section('title','Giỏ hàng của bạn')
 @section('url','https://images-na.ssl-images-amazon.com/images/I/71j6Xi6mLSL.jpg')
 @section('content')
 <div class="cart-main-area pt-95 pb-100">
