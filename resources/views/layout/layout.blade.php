@@ -607,6 +607,8 @@
     <script src="{{asset('assets_page/js/addSearchAjax.js')}}"></script>
     <script src="{{asset('assets_page/js/brandProductAddCart.js')}}"></script>
     <script src="{{asset('assets_page/js/subcategoryAddCart.js')}}"></script>
+    <script src="{{asset('assets_page/js/numberProduct.js')}}"></script>
+
 
 
 

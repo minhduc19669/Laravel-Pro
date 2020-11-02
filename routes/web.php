@@ -49,7 +49,7 @@ Route::prefix('home')->group(function(){
     //product
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
-    Route::post('product/show','PageController@allProduct')->name('product.total');
+    Route::get('product/show','PageController@allProductotal')->name('product.total');
     Route::post('product/brand/show/{id}','PageController@productBrand')->name('productBrand.total');
    //wishlist
     Route::get('wishlist', 'PageController@wishlist')->name('home.wishlist');
