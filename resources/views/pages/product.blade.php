@@ -9,7 +9,6 @@
             <div class="shop-topbar-wrapper">
               <div class="product-sorting-wrapper">
                 <div class="product-show shorting-style">
-
                 <label>Showing <span></span> of
                     <span>100</span> Results</label
                   >

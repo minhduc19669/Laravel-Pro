@@ -74,7 +74,7 @@
                         >
                       </li>
                                             <li>
-                        <a href="#"
+                                            <a href="{{route('change.password')}}"
                           >Đổi mật khẩu</a
                         >
                       </li>

@@ -37,6 +37,8 @@ Route::prefix('home')->group(function(){
     Route::get('sent/mail','ForgotPasswordController@alert')->name('email.alert');
     Route::get('reset/password/{email}/{code}','ForgotPasswordController@reset_password');
     Route::post('save/password', 'ForgotPasswordController@save_change_password_reset')->name('save.password');
+    Route::get('change/password', 'HomeController@changePassword')->name('change.password');
+    Route::post('reset/password','HomeController@savePassword')->name('new.password');
 
 
     //customer
