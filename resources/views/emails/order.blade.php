@@ -1,7 +1,7 @@
 @component('mail::message')
 # Introduction
 
-The body of your message.
+Dang giao hang`
 
 @component('mail::table')
 
