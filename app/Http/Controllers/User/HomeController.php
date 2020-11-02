@@ -62,7 +62,6 @@ class HomeController extends Controller
     }
     public function register(ValidateFormRegister $request)
     {
-
         $customer = new Customer();
         $customer->customer_name = $request->name;
         $customer->customer_email = $request->email;
@@ -73,6 +72,36 @@ class HomeController extends Controller
         \dispatch(new WellcomeRegis($mail));
         Alert()->success('Đăng kí thành công !')->autoClose(1500);
         return redirect()->route('home.getlogin');
+    }
+    public function changePassword(){
+        return view('pages.changepassword');
+    }
+    public function savePassword(Request $request){
+        $request->validate([
+            'password' => 'required|min:6|max:16|regex:[^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$]',
+            'change_password'=> 'required|min:6|max:16|regex:[^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$]',
+            'confirm_password'=> 'required|min:6|max:16|regex:[^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$]|same:change_password'
+        ],
+        [
+                'password.required' => 'Mật khẩu không được để trống!',
+                'password.min' => 'Mật khẩu không được ít hơn 6 ký tự',
+                'password.max' => 'Mật khẩu không được quá hơn 16 ký tự',
+                'password.regex' => 'Mật khẩu phải có chữ và số (Không có ký tự đặc biệt!)',
+                'confirm_password.same' => 'Mật khẩu nhập lại không đúng!'
+        ]);
+        $password_now=md5($request->password);
+        $customer=Customer::where('customer_password',$password_now)->first();
+        if($customer){
+            $customer->update([
+                'customer_password'=>$request->confirm_password
+            ]);
+            Session::put('customer', null);
+            Alert()->Success('Thay đổi mật khẩu thành công!');
+            return \redirect()->route('home.getlogin');
+        }
+        // Session::put('customer',null);
+        Session::put('error', 'Mật khẩu không đúng!');
+        return \redirect()->back();
     }
     public function logout(){
         Session::put('customer', \null);

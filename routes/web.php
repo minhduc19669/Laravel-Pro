@@ -37,6 +37,8 @@ Route::prefix('home')->group(function(){
     Route::get('sent/mail','ForgotPasswordController@alert')->name('email.alert');
     Route::get('reset/password/{email}/{code}','ForgotPasswordController@reset_password');
     Route::post('save/password', 'ForgotPasswordController@save_change_password_reset')->name('save.password');
+    Route::get('change/password', 'HomeController@changePassword')->name('change.password');
+    Route::post('reset/password','HomeController@savePassword')->name('new.password');
 
 
     //customer
@@ -49,7 +51,6 @@ Route::prefix('home')->group(function(){
     //product
     Route::get('product', 'PageController@allProduct')->name('home.allProduct');
     Route::get('product/details/{id}','PageController@productDetail')->name('product.details');
-    Route::post('product/show','PageController@allProduct')->name('product.total');
     Route::post('product/brand/show/{id}','PageController@productBrand')->name('productBrand.total');
 
 
