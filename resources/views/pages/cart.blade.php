@@ -22,7 +22,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach($data as $key => $item)
-                                        <tr>
+                                        <tr id="item_id1_{{$item->rowId}}">
                                             <td class="product-thumbnail">
                                             <a href="#"><img width="150px" height="130px" src="{{asset('storage/'.$item->options['image'])}}" alt=""></a>
                                             </td>
@@ -32,7 +32,7 @@
                                                 <input min="1" row-id="{{$item->rowId}}" style="text-align: center;" class="update" type="number" name="qtybutton" value="{{$item->qty}}">
                                             </td>
                                         <td><span id="price-item{{$item->rowId}}" style="margin-left: 40px;">{{number_format($item->price*$item->qty)}} <u>đ</u></span></td>
-                                            <td class="product-remove"><a href="#"><i class="ti-trash"></i></a></td>
+                                            <td class="product-remove"><a style="cursor: pointer;" id="deleteitem1" item-id1="{{$item->rowId}}"><i class="ti-close"></i></a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

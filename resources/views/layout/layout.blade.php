@@ -597,6 +597,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{asset('assets_page/js/addproductcart.js')}}"></script>
     <script src="{{asset('assets_page/js/deleteproductcart.js')}}"></script>
+    <script src="{{asset('assets_page/js/deleteproductcart1.js')}}"></script>
     <script src="{{asset('assets_page/js/rating.js')}}"></script>
     <script src="{{asset('assets_page/js/quickviewcart.js')}}"></script>
     <script src="{{asset('assets_page/js/addproducttocart.js')}}"></script>
