@@ -27,7 +27,7 @@ class ValidateFormRegister extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|unique:customers,customer_email',
-            'password' => 'required|min:6|max:12|regex:[^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$]',
+            'password' => 'required|min:6|max:16|regex:[^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$]',
             'phone' => 'required|min:10|max:11|regex:[^[0-9\-\+]{9,15}$]',
         ];
     }
