@@ -9,19 +9,14 @@
                     <div class="shop-topbar-wrapper">
                         <div class="product-sorting-wrapper">
                             <div class="product-show shorting-style">
-                                <form action="{{route('product.total')}}" method="POST">
-                                    @csrf
-                                    <label>Showing <span>@if(isset($count)){{$count}}@endif</span> of
-                                        <span>100</span> Results</label
-                                    >
-                                    <select onchange="this.form.submit()" name="search">
-                                        <option value="10"@if(isset($count)) {{$count==10?'selected' : ''}} @endif
-                                        >10</option>
-                                        <option value="20"  @if(isset($count)) {{$count==20?'selected' : ''}} @endif >20</option>
-                                        <option value="30" @if(isset($count)) {{$count==30?'selected' : ''}} @endif >30</option>
-                                    </select>
-
-                                </form>
+                                <label>Showing <span></span> of
+                                    <span>100</span> Results</label
+                                >
+                                <select id="numberSubProduct" >
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                </select>
                             </div>
                         </div>
                         <div class="grid-list-options">
