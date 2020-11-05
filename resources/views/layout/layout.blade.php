@@ -100,9 +100,8 @@
         <div class="container">
           <div class="row">
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-5">
-              <div class="logo pt-39">
-              <a href="{{route('home')}}"
-                  ><img alt="" src="{{asset('assets_page/img/logo/logo.png')}}"
+              <div style="margin-top: -50px" class="logo pt-39">
+              <a href="{{route('home')}}"><img style="width: 300px;height: 150px;" alt="" src="{{asset('assets_page/img/logo/logo3.png')}}"
                 /></a>
               </div>
             </div>
@@ -634,6 +633,6 @@
  });
   </script>
 
-{{-- <script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script> --}}
+<script lang="javascript">var __vnp = {code : 3004,key:'', secret : 'be431cde844f943799bf285ddf03546f'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
   </body>
 </html>

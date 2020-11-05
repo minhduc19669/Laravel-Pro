@@ -59,6 +59,6 @@ class SendNotificationStatusOrderEmail extends Command
     public function sendEmailToCustomer($shipping_ID,$ship,$total,$code){
         $customer=Shipping::find($shipping_ID);
         $customer_email=$customer->shipping_email;
-        dispatch(new SendEmailNotificationStatusOrder($customer_email,$ship,$total,$code))->onQueue('status-order');
+        dispatch(new SendEmailNotificationStatusOrder($customer_email,$ship,$total,$code));
     }
 }

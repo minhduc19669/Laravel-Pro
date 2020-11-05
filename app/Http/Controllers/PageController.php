@@ -220,7 +220,7 @@ class PageController extends Controller
         }
         $total=\count($post);
         $productRelated=$this->productServ->getProductRelatedTo($id);
-        return \view('pages.product_details',\compact('product','images', 'productRelated','image','post', 'countRating', 'sum', 'avg', 'countStar', 'percent','total'));
+        return \view('pages.product_details',\compact('product','images', 'productRelated','post', 'countRating', 'sum', 'avg', 'countStar', 'percent','total'));
     }
     public function  productCategory( Request $request,$id){
         $brand = Brand::all();
