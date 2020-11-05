@@ -8,7 +8,7 @@
         <div class="checkout-area pt-95 pb-70">
             <div class="container">
                 <h3 class="page-title">Thanh toán</h3>
-                <div class="row">
+                <div style="margin-left: 200px" class="row">
                     <div class="col-lg-9">
                         <div class="checkout-wrapper">
                             <div id="faq" class="panel-group">
@@ -359,5 +359,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
                     </form>
 @endsection

@@ -31,12 +31,13 @@ class CheckAdmin
         //lay tat ca cac permission khi user login vao he thong
         // $listRoleOfUser=DB::table('roles')->join('role_permission','roles.id','=','role_permission.role_id')->join('permissions','role_permission.permission_id','=','permissions.id')->whereIn('roles.id', $listRoleOfUser1)->select('permissions.*')->get()->pluck('id');
         //lay cac man hinh tuong ung voi user
+        
             $checkPermission = Role::where("nick_name", $permission)->value('id');
-        // die();
-        if ($listRoleOfUser1->contains($checkPermission)) {
+            
+        	if ($listRoleOfUser1->contains($checkPermission)) {
                 return $next($request);
-            }
-            abort(403, 'Oops ! Bạn không có quyền thực hiện thao tác này!');
+            	}
+            	abort(403, 'Oops ! Bạn không có quyền thực hiện thao tác này!');
 
     }
         //check user duoc phep vao man hinh nay

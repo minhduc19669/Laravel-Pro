@@ -64,7 +64,6 @@ class CartController extends Controller
         $data=Cart::content();
         return \view('pages.cart')->with(['data'=>$data]);
     }
-
     public function update($id,$qty){
         Cart::update($id, $qty);
         $data = [

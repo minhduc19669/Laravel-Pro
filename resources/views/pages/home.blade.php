@@ -75,8 +75,8 @@
 
               <h4><a href="{{route('product.details',$product->product_id)}}">{{$product->product_name}}</a></h4>
                 <div class="product-price">
-                  <span class="new">{{number_format($product->product_price)}}$</span>
-                <span class="old">{{number_format($product->product_price + $product->product_price_sale)}}$</span>
+                  <span class="new">{{number_format($product->product_price)}}<u>đ</u></span>
+                <span class="old">{{number_format($product->product_price + $product->product_price_sale)}}<u>đ</u></span>
                 </div>
               </div>
             </div>
